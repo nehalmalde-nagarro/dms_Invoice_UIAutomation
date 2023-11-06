@@ -1,0 +1,16 @@
+com\dms\Queries\Query.class
+com\dms\Core\CoreFunctions.class
+com\dms\Utils\MyListeners.class
+com\dms\BrowserInstance\BrowserHandle.class
+com\dms\Utils\Database.class
+com\dms\Utils\Database$QA$MI_CRM_SUPERVISOR.class
+com\dms\Utils\Log.class
+com\dms\Utils\ReadFromDB.class
+com\dms\Utils\Database$QA.class
+com\dms\Utils\ExcelReader.class
+com\dms\Utils\ReadFromProperty.class
+com\dms\PageObjects\LoginPOM.class
+com\dms\Utils\Database$QA$COMMON_SUPERVISOR.class
+com\dms\Utils\Constants.class
+com\dms\Utils\DBConnectionUtils.class
+com\dms\Utils\PageUtil.class

@@ -1,0 +1,3 @@
+com\dms\StepDefinitions\LoginStepDef.class
+com\dms\Runner\TestRunner.class
+com\dms\AppHooks\ApplicationHooks.class
