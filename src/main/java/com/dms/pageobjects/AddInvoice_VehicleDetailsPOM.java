@@ -53,4 +53,12 @@ public class AddInvoice_VehicleDetailsPOM {
 	public WebElement chooseLoyaltyCardType(String loyalyCardTypeValue) {
 		return PageUtil.findBy(By.xpath("//span[contains(text(),'"+loyalyCardTypeValue+"')]"));
 	}
+	
+	public WebElement reasons() {
+		return PageUtil.findBy(By.id("reasons"));
+	}
+	public WebElement chooseReasons(String reasonsValue) {
+		return PageUtil.findBy(By.xpath("//span[contains(text(),'"+reasonsValue+"')]"));
+	}
+
 }
