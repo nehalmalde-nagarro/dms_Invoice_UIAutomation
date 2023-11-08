@@ -19,7 +19,7 @@ import com.dms.logs.Logs;
 import com.dms.utils.ReadFromProperty;
 
 public class CoreFunctions {
-	
+	//Core functions
 	public static String readConfig(String str) throws IOException 
 	{
 		ReadFromProperty readFromProperty;
