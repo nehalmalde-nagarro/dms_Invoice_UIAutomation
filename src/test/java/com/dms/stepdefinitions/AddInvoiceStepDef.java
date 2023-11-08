@@ -92,14 +92,14 @@ public class AddInvoiceStepDef {
 
 		// AsssertAllotNum
 		text = CoreFunctions.waitUntilAttrAvailable(addInvoicePOM.allotmentNo(), 20, "value");
-		String dataFromDB = Query.get_fields_From_ShAllot(orderId, "ALLOT_NUM");
+		String dataFromDB = Query.get_fields_From_STAllot("ALLOT_NUM", "ORDER_NUM", orderId);
 		System.out.println("FE  : " + text);
 		System.out.println("BE  :" + dataFromDB);
 		Assert.assertEquals(text, dataFromDB);
 
 		// AsssertAllotDate //yet to assert
 		text = CoreFunctions.waitUntilAttrAvailable(addInvoicePOM.allotmentDate(), 20, "value");
-		dataFromDB = Query.get_fields_From_ShAllot(orderId, "ALLOT_DATE");
+		dataFromDB = Query.get_fields_From_STAllot("ALLOT_DATE","ORDER_NUM",orderId);
 		System.out.println("FE  : " + text);
 		System.out.println("BE  :" + dataFromDB);
 //		Assert.assertEquals(text, dataFromDB);

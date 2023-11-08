@@ -57,7 +57,7 @@ public class Query {
 		return data;
 	}
 	
-
+	
 	// get column from shInvoice
 	public static String get_fields_From_ShInvoice(String selectCol, String conditionCol, String conditionVal)
 			throws Exception {
@@ -69,16 +69,8 @@ public class Query {
 		return data;
 	}
 
-	// get column from SHAllot
-	public static String get_fields_From_ShAllot(String orderNum, String column) throws Exception {
-//		query = "(SELECT \"" + column + "\" FROM \"MULDMS\".\"ST_ALLOT\" where \"ORDER_NUM\" ='" + orderNum
-//				+ "' and \"DEALER_MAP_CD\"=" + dealer_Code + ");";
-		query = "(SELECT \"" + column + "\" FROM \"MULDMS\".\"ST_ALLOT\" where \"ORDER_NUM\" ='" + orderNum + "' );";
-		System.out.println(query);
-		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
-		return data;
-	}
-
+	
+	
 	/*
 	 * public static String allotmentNumber(String OrderNum) throws Exception {
 	 * query =
@@ -108,6 +100,7 @@ public class Query {
 		return mobileNo;
 	}
 
+	
 	public static String cityDesc(String OrderNum) throws Exception {
 
 		String cityCode = get_fields_From_ShOrderBook("CITY_CD", "ORDER_NUM", OrderNum);
@@ -174,6 +167,58 @@ public class Query {
 		List<String> count_CampName = ReadFromDB.getData(Database.MULDMS, query);
 		return count_CampName;
 	}
+	
+	
+	public static String get_fields_From_GM_MOD(String selectCol, String conditionCol, String conditionVal)
+			throws Exception {
+		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"GM_MOD\" where \"" + conditionCol + "\" ='"
+				+ conditionVal + "');";
+ 
+		System.out.println(query);
+		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
+		return data;
+	}
+	public static String get_fields_From_GM_VAR(String selectCol, String conditionCol, String conditionVal)
+			throws Exception {
+		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"GM_VAR\" where \"" + conditionCol + "\" ='"
+				+ conditionVal + "');";
+ 
+		System.out.println(query);
+		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
+		return data;
+	}
+	
+	public static String get_fields_From_GM_ECLR(String selectCol, String conditionCol, String conditionVal)
+			throws Exception {
+		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"GM_ECLR\" where \"" + conditionCol + "\" ='"
+				+ conditionVal + "');";
+ 
+		System.out.println(query);
+		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
+		return data;
+	}
+	
+	public static String get_fields_From_SD_GRN(String selectCol, String conditionCol, String conditionVal)
+			throws Exception {
+		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"SD_GRN\" where \"" + conditionCol + "\" ='"
+				+ conditionVal + "' AND \"DEALER_MAP_CD\" = " + dealer_Code + ");";
+ 
+		System.out.println(query);
+		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
+		return data;
+	}
+	
+	// get column from STAllot
+	public static String get_fields_From_STAllot(String selectCol, String conditionCol, String conditionVal) throws Exception {
+//		query = "(SELECT \"" + column + "\" FROM \"MULDMS\".\"ST_ALLOT\" where \"ORDER_NUM\" ='" + orderNum
+//				+ "' and \"DEALER_MAP_CD\"=" + dealer_Code + ");";
+		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"ST_ALLOT\" where \""+conditionCol+"\" ='" + conditionVal + "' );";
+		System.out.println(query);
+		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
+		return data;
+	}
+	
+	
 	
 
 //	public static List<String> countCampNameSearchedOnDashboard(String CampName) throws Exception {

@@ -61,4 +61,77 @@ public class AddInvoice_VehicleDetailsPOM {
 		return PageUtil.findBy(By.xpath("//span[contains(text(),'"+reasonsValue+"')]"));
 	}
 
+	public WebElement clickFastTagpopup() {
+		return PageUtil.findBy(By.xpath("//div[text()='FASTTAG']"));
+	}
+
+public WebElement clickPrefSrvDealerpopup() {
+		return PageUtil.findBy(By.xpath("//div[contains(text(),'PREFERRED SRV DEALER')]"));
+	}
+
+public WebElement clickCCPSalepopup() {
+		return PageUtil.findBy(By.xpath("//div[contains(text(),'CCP Sale')]"));
+	}
+
+//FastTag popup
+public WebElement fastTagId() {
+		return PageUtil.findBy(By.id("'formInput-'fastTagId"));
+	}
+
+public WebElement fastTagBank() {
+	return PageUtil.findBy(By.id("fastTagBank"));
+}
+public WebElement choosefastTagBank(String fastTagBankValue) {
+	return PageUtil.findBy(By.xpath("//span[contains(text(),'"+fastTagBankValue+"')]"));
+}
+
+
+public WebElement fastTagFitmentValue() {
+	return PageUtil.findBy(By.id("inputDatefasTagFitmentDate"));
+}
+
+public WebElement fastTagFitmentdatePicker() {
+	return PageUtil.findBy(By.xpath("//input[@id='inputDatefasTagFitmentDate']/following-sibling::mat-datepicker"));
+}
+
+public WebElement fastTagClearButton() {
+	return PageUtil.findBy(By.xpath("//span[text()=' CLEAR ']"));
+}
+
+
+
+//SrvDealerPopup
+	public WebElement selectStateDropdown() {
+		return PageUtil.findBy(By.id("dealerState"));
+	}
+public WebElement chooseState(String stateValue) {
+	return PageUtil.findBy(By.xpath("//span[contains(text(),'"+stateValue+"')]"));
+}
+
+public WebElement searchInDropdown() {
+	return PageUtil.findBy(By.xpath("//input[@placeholder='Select']"));
+}
+
+	public WebElement selectCityDropdown() {
+		return PageUtil.findBy(By.id("dealerCity"));
+	}
+public WebElement chooseCity(String cityValue) {
+	return PageUtil.findBy(By.xpath("//span[contains(text(),'"+cityValue+"')]"));
+}
+//search button 
+
+//select the user provided dealer
+public WebElement chooseDealer(String dealerName) {
+	return PageUtil.findBy(By.xpath("//span[contains(text(),'"+dealerName+"')]/parent::div"));
+}
+//ok button
+
+//Extended Waaranty section
+
+public WebElement selectExtendedWarrantyDropdown() {
+		return PageUtil.findBy(By.id("extendedWarranty"));
+	}
+public WebElement chooseExtendedWarranty(String extendedWarrantyValue) {
+	return PageUtil.findBy(By.xpath("//span[contains(text(),'"+extendedWarrantyValue+"')]"));
+}
 }
