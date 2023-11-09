@@ -31,39 +31,41 @@ public class AddInvoiceStepDef {
 
 	@When("User click on Search Order")
 	public void user_click_on_search_order() {
+		testData=CoreFunctions.test("InvoiceDetails");
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName());
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(addInvoicePOM.addInvoiceOrderNumber()));
 		CoreFunctions.click(addInvoicePOM.addInvoiceOrderNumber(), null);
 	}
 
-	@When("User enters OrderId from {int}")
-	public void user_enters_for_order_id(int orderID) {
-		testData=CoreFunctions.test("InvoiceDetails");
+	@When("User enters OrderId from scenario {int}")
+	public void user_enters_for_order_id(int rowNo) {
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName());
-		String Text = testData.get(orderID).get("OrderId").toString();
+		rowNo--;
+		String Text = testData.get(rowNo).get("OrderId").toString();
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(addInvoicePOM.searchByOrderNumber()));
 		CoreFunctions.setText(addInvoicePOM.searchByOrderNumber(), Text);
 
 	}
 
-	@When("User enters Mobile Number from {int}")
-	public void user_enters_for_mobile_number(String mobileNum) {
+	@When("User enters Mobile Number from scenario {int}")
+	public void user_enters_for_mobile_number(int rowNo) {
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName());
-
+		rowNo--;
+		String Text = testData.get(rowNo).get("MobileNumber").toString();
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(addInvoicePOM.searchByMobileNumber()));
-		CoreFunctions.setText(addInvoicePOM.searchByMobileNumber(), mobileNum);
+		CoreFunctions.setText(addInvoicePOM.searchByMobileNumber(), Text);
 
 	}
 
-	@When("User select from displayed orders for {int}")
-	public void user_select_from_displayed_orders(int OrderId) {
+	@When("User select from displayed orders for scenario {int}")
+	public void user_select_from_displayed_orders(int rowNo) {
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName());
-		String Text = testData.get(OrderId).get("OrderId").toString();
-
+		rowNo--;
+		String Text = testData.get(rowNo).get("OrderId").toString();
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(addInvoicePOM.chooseOrder(Text)));
 
 		CoreFunctions.click(addInvoicePOM.chooseOrder(Text), null);
@@ -71,11 +73,12 @@ public class AddInvoiceStepDef {
 	
 	
 
-	@Then("Verify Prefilled fields for OrderId from {int} on invoice Details tab")
-	public void verify_prefilled_fields_on_invoice_details_tab(int number) throws Exception {
+	@Then("Verify Prefilled fields for OrderId from scenario {int} on invoice Details tab")
+	public void verify_prefilled_fields_on_invoice_details_tab(int rowNo) throws Exception {
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName());
-		String orderId = testData.get(number).get("OrderId").toString();
+		rowNo--;
+		String orderId = testData.get(rowNo).get("OrderId").toString();
 
 		// Assert LOC_CD
 		String text = CoreFunctions.waitUntilAttrAvailable(addInvoicePOM.locationId(), 20, "value");
@@ -152,9 +155,11 @@ public class AddInvoiceStepDef {
 
 	}
 
-	@Then("Verify data on search by Mobile Number from {int}")
-	public void verify_data_on_search_by(String mobile) throws Exception {
-		String name = Query.get_fields_From_GM_CIN_by_Mobile("FULL_NAME", "MOBILE_PHONE", mobile);
+	@Then("Verify data on search by Mobile Number for scenario {int}")
+	public void verify_data_on_search_by(int rowNo) throws Exception {
+		rowNo--;
+		String Text = testData.get(rowNo).get("MobileNumber").toString();
+		String name = Query.get_fields_From_GM_CIN_by_Mobile("FULL_NAME", "MOBILE_PHONE", Text);
 		BrowserHandle.wait.until(ExpectedConditions.visibilityOf(addInvoicePOM.isOrderDetailVisible(name)));
 		Assert.assertTrue(addInvoicePOM.isOrderDetailVisible(name).isDisplayed());
 
@@ -211,6 +216,14 @@ public void user_enters_in_bill_gstn_field(String string) {
   CoreFunctions.setText(addInvoicePOM.billGSTN(), string);
 }
 
+@Then("user enters Bill GSTN field from {int}")
+public void user_enters_in_bill_gstn_field(int rowNo) {
+	rowNo--;
+	String Text = testData.get(rowNo).get("Bill GSTN").toString();
+	CoreFunctions.clearText(addInvoicePOM.billGSTN());
+  CoreFunctions.setText(addInvoicePOM.billGSTN(), Text);
+}
+
 @Then("Verify if Sales Type is {string}")
 public void verify_is_Sales_type(String salesType) {
 	String text=CoreFunctions.getElementText(addInvoicePOM.salesType() );
@@ -224,14 +237,18 @@ public void verify_Shipping_Info_section_is_disabled() {
 	Assert.assertEquals(countDisabledElements, 13);
 }
 
-@When("user enters Workspace as {string}")
-public void user_enters_workspace_as(String workplace) {
-    CoreFunctions.setText(addInvoicePOM.workplace(), workplace);
+@When("user enters Workspace from {int}")
+public void user_enters_workspace_as(int rowNo) {
+	rowNo--;
+	String Text = testData.get(rowNo).get("OrderId").toString();
+    CoreFunctions.setText(addInvoicePOM.workplace(), Text);
 }
 
-@When("user enters Aadhar Number as {string}")
-public void user_enters_aadhar_number_as(String addharNumber) {
-        CoreFunctions.setText(addInvoicePOM.aadharNumber(), addharNumber);
+@When("user enters Aadhar Number from {int}")
+public void user_enters_aadhar_number_as(int rowNo) {
+	rowNo--;
+	String Text = testData.get(rowNo).get("Aadhar Num").toString();
+        CoreFunctions.setText(addInvoicePOM.aadharNumber(), Text);
 
 }
 
