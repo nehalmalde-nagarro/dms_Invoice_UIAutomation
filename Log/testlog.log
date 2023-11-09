@@ -327,3 +327,233 @@
 2023-11-07 15:00:11,240 - Logger_file -INFO - Clicking on NEXT
 2023-11-07 15:00:11,282 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on NEXT
 2023-11-07 15:00:11,283 - Logger_file -INFO - finding Web element By.id: ownerManualRef
+2023-11-08 17:56:16,499 - Logger_file -INFO - Setting Up chrome 
+2023-11-08 17:58:09,133 - Logger_file -INFO - Setting Up chrome 
+2023-11-08 17:58:18,923 - Logger_file -INFO - user_is_on_login_page
+2023-11-08 17:58:21,450 - Logger_file -INFO - user_click_on_btn Dealer
+2023-11-08 17:58:21,451 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-08 17:58:23,120 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-08 17:58:27,335 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-08 17:58:27,354 - Logger_file -INFO - Clicking on Dealer
+2023-11-08 17:58:27,468 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on Dealer
+2023-11-08 17:58:27,470 - Logger_file -INFO - user_enters_and username : grn_sale password : Welcome@1234
+2023-11-08 17:58:27,471 - Logger_file -INFO - finding Web element By.id: 'formInput-'username
+2023-11-08 17:58:27,494 - Logger_file -INFO - Enteringgrn_sale
+2023-11-08 17:58:27,615 - Logger_file -INFO - Pass:grn_sale is entered
+2023-11-08 17:58:27,616 - Logger_file -INFO - finding Web element By.id: 'formInput-'password
+2023-11-08 17:58:27,647 - Logger_file -INFO - EnteringWelcome@1234
+2023-11-08 17:58:27,774 - Logger_file -INFO - Pass:Welcome@1234 is entered
+2023-11-08 17:58:27,775 - Logger_file -INFO - user_click_on_button LOGIN
+2023-11-08 17:58:27,779 - Logger_file -INFO - finding Web element By.xpath: //button[contains(text(),'LOGIN')]
+2023-11-08 17:58:27,809 - Logger_file -INFO - Clicking on LOGIN
+2023-11-08 17:58:28,174 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on LOGIN
+2023-11-08 17:58:28,175 - Logger_file -INFO - user_logged_in_is_on_home_page
+2023-11-08 17:58:28,175 - Logger_file -INFO - finding Web element By.id: searchBy
+2023-11-08 17:58:34,693 - Logger_file -INFO - user_click_on_btn Add Invoice
+2023-11-08 17:58:34,693 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Add Invoice')]
+2023-11-08 17:58:34,769 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Add Invoice')]
+2023-11-08 17:58:38,959 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Add Invoice')]
+2023-11-08 17:58:38,983 - Logger_file -INFO - Clicking on Add Invoice
+2023-11-08 17:58:39,058 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on Add Invoice
+2023-11-08 17:58:39,058 - Logger_file -INFO - user_click_on_search_order
+2023-11-08 17:58:39,059 - Logger_file -INFO - finding Web element By.id: 'formInput-'orderNumber
+2023-11-08 17:58:40,060 - Logger_file -INFO - finding Web element By.id: 'formInput-'orderNumber
+2023-11-08 17:58:40,101 - Logger_file -INFO - Clicking on null
+2023-11-08 17:58:40,831 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on null
+2023-11-08 17:58:48,019 - Logger_file -INFO - Setting Up chrome 
+2023-11-08 18:00:34,438 - Logger_file -INFO - Setting Up chrome 
+2023-11-08 18:00:40,649 - Logger_file -INFO - user_is_on_login_page
+2023-11-08 18:00:41,909 - Logger_file -INFO - user_click_on_btn Dealer
+2023-11-08 18:00:41,910 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-08 18:00:43,220 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-08 18:00:47,461 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-08 18:00:47,481 - Logger_file -INFO - Clicking on Dealer
+2023-11-08 18:00:47,608 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on Dealer
+2023-11-08 18:00:47,609 - Logger_file -INFO - user_enters_and username : grn_sale password : Welcome@1234
+2023-11-08 18:00:47,610 - Logger_file -INFO - finding Web element By.id: 'formInput-'username
+2023-11-08 18:00:47,635 - Logger_file -INFO - Enteringgrn_sale
+2023-11-08 18:00:47,767 - Logger_file -INFO - Pass:grn_sale is entered
+2023-11-08 18:00:47,768 - Logger_file -INFO - finding Web element By.id: 'formInput-'password
+2023-11-08 18:00:47,813 - Logger_file -INFO - EnteringWelcome@1234
+2023-11-08 18:00:47,932 - Logger_file -INFO - Pass:Welcome@1234 is entered
+2023-11-08 18:00:47,933 - Logger_file -INFO - user_click_on_button LOGIN
+2023-11-08 18:00:47,937 - Logger_file -INFO - finding Web element By.xpath: //button[contains(text(),'LOGIN')]
+2023-11-08 18:00:47,966 - Logger_file -INFO - Clicking on LOGIN
+2023-11-08 18:00:48,288 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on LOGIN
+2023-11-08 18:00:48,290 - Logger_file -INFO - user_logged_in_is_on_home_page
+2023-11-08 18:00:48,290 - Logger_file -INFO - finding Web element By.id: searchBy
+2023-11-08 18:00:51,592 - Logger_file -INFO - user_click_on_btn Add Invoice
+2023-11-08 18:00:51,592 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Add Invoice')]
+2023-11-08 18:00:51,656 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Add Invoice')]
+2023-11-08 18:00:55,815 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Add Invoice')]
+2023-11-08 18:00:55,833 - Logger_file -INFO - Clicking on Add Invoice
+2023-11-08 18:00:55,904 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on Add Invoice
+2023-11-08 18:00:55,905 - Logger_file -INFO - user_click_on_search_order
+2023-11-08 18:00:55,906 - Logger_file -INFO - finding Web element By.id: 'formInput-'orderNumber
+2023-11-08 18:00:56,313 - Logger_file -INFO - finding Web element By.id: 'formInput-'orderNumber
+2023-11-08 18:00:56,326 - Logger_file -INFO - Clicking on null
+2023-11-08 18:00:56,495 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on null
+2023-11-08 18:01:02,551 - Logger_file -INFO - Setting Up chrome 
+2023-11-08 18:01:06,925 - Logger_file -INFO - user_is_on_login_page
+2023-11-08 18:01:08,079 - Logger_file -INFO - user_click_on_btn Dealer
+2023-11-08 18:01:08,081 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-08 18:01:09,654 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-08 18:01:13,909 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-08 18:01:13,932 - Logger_file -INFO - Clicking on Dealer
+2023-11-08 18:01:14,084 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on Dealer
+2023-11-08 18:01:14,085 - Logger_file -INFO - user_enters_and username : grn_sale password : Welcome@1234
+2023-11-08 18:01:14,085 - Logger_file -INFO - finding Web element By.id: 'formInput-'username
+2023-11-08 18:01:14,105 - Logger_file -INFO - Enteringgrn_sale
+2023-11-08 18:01:14,257 - Logger_file -INFO - Pass:grn_sale is entered
+2023-11-08 18:01:14,258 - Logger_file -INFO - finding Web element By.id: 'formInput-'password
+2023-11-08 18:01:14,303 - Logger_file -INFO - EnteringWelcome@1234
+2023-11-08 18:01:14,448 - Logger_file -INFO - Pass:Welcome@1234 is entered
+2023-11-08 18:01:14,449 - Logger_file -INFO - user_click_on_button LOGIN
+2023-11-08 18:01:14,449 - Logger_file -INFO - finding Web element By.xpath: //button[contains(text(),'LOGIN')]
+2023-11-08 18:01:14,494 - Logger_file -INFO - Clicking on LOGIN
+2023-11-08 18:01:14,862 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on LOGIN
+2023-11-08 18:01:14,863 - Logger_file -INFO - user_logged_in_is_on_home_page
+2023-11-08 18:01:14,863 - Logger_file -INFO - finding Web element By.id: searchBy
+2023-11-08 18:01:18,170 - Logger_file -INFO - user_click_on_btn Add Invoice
+2023-11-08 18:01:18,170 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Add Invoice')]
+2023-11-08 18:01:18,241 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Add Invoice')]
+2023-11-08 18:01:22,399 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Add Invoice')]
+2023-11-08 18:01:22,416 - Logger_file -INFO - Clicking on Add Invoice
+2023-11-08 18:01:22,480 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on Add Invoice
+2023-11-08 18:01:22,481 - Logger_file -INFO - user_click_on_search_order
+2023-11-08 18:01:22,481 - Logger_file -INFO - finding Web element By.id: 'formInput-'orderNumber
+2023-11-08 18:01:22,913 - Logger_file -INFO - finding Web element By.id: 'formInput-'orderNumber
+2023-11-08 18:01:22,928 - Logger_file -INFO - Clicking on null
+2023-11-08 18:01:23,139 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on null
+2023-11-08 18:01:23,140 - Logger_file -INFO - user_enters_for_mobile_number
+2023-11-08 18:01:23,142 - Logger_file -INFO - finding Web element By.id: 'formInput-'phoneNumber
+2023-11-08 18:01:23,211 - Logger_file -INFO - finding Web element By.id: 'formInput-'phoneNumber
+2023-11-08 18:01:23,231 - Logger_file -INFO - Entering9844035228
+2023-11-08 18:01:23,489 - Logger_file -INFO - Pass:9844035228 is entered
+2023-11-08 18:01:23,492 - Logger_file -INFO - user_click_on_btn_on_popup SEARCH
+2023-11-08 18:01:23,492 - Logger_file -INFO - finding Web element By.xpath: //mat-dialog-container//button//span[contains(text(),'SEARCH')]
+2023-11-08 18:01:23,591 - Logger_file -INFO - finding Web element By.xpath: //mat-dialog-container//button//span[contains(text(),'SEARCH')]
+2023-11-08 18:01:23,624 - Logger_file -INFO - Clicking on SEARCH
+2023-11-08 18:01:23,768 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on SEARCH
+2023-11-08 18:01:23,769 - Logger_file -INFO - finding Web element By.xpath: //span[contains(text(),'OK')]//parent::button
+2023-11-08 18:01:23,997 - Logger_file -INFO - finding Web element By.xpath: //span[contains(text(),'OK')]//parent::button
+2023-11-08 18:01:24,050 - Logger_file -INFO - finding Web element By.xpath: //span[contains(text(),'OK')]//parent::button
+2023-11-08 18:02:29,760 - Logger_file -INFO - Setting Up chrome 
+2023-11-08 18:02:33,919 - Logger_file -INFO - user_is_on_login_page
+2023-11-08 18:02:34,939 - Logger_file -INFO - user_click_on_btn Dealer
+2023-11-08 18:02:34,940 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-08 18:02:36,107 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-08 18:02:40,348 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-08 18:02:40,364 - Logger_file -INFO - Clicking on Dealer
+2023-11-08 18:02:40,455 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on Dealer
+2023-11-08 18:02:40,455 - Logger_file -INFO - user_enters_and username : grn_sale password : Welcome@1234
+2023-11-08 18:02:40,456 - Logger_file -INFO - finding Web element By.id: 'formInput-'username
+2023-11-08 18:02:40,476 - Logger_file -INFO - Enteringgrn_sale
+2023-11-08 18:02:40,602 - Logger_file -INFO - Pass:grn_sale is entered
+2023-11-08 18:02:40,604 - Logger_file -INFO - finding Web element By.id: 'formInput-'password
+2023-11-08 18:02:40,623 - Logger_file -INFO - EnteringWelcome@1234
+2023-11-08 18:02:40,724 - Logger_file -INFO - Pass:Welcome@1234 is entered
+2023-11-08 18:02:40,725 - Logger_file -INFO - user_click_on_button LOGIN
+2023-11-08 18:02:40,729 - Logger_file -INFO - finding Web element By.xpath: //button[contains(text(),'LOGIN')]
+2023-11-08 18:02:40,750 - Logger_file -INFO - Clicking on LOGIN
+2023-11-08 18:02:40,931 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on LOGIN
+2023-11-08 18:02:40,931 - Logger_file -INFO - user_logged_in_is_on_home_page
+2023-11-08 18:02:40,932 - Logger_file -INFO - finding Web element By.id: searchBy
+2023-11-08 18:02:44,099 - Logger_file -INFO - user_click_on_btn Add Invoice
+2023-11-08 18:02:44,099 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Add Invoice')]
+2023-11-08 18:02:44,168 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Add Invoice')]
+2023-11-08 18:02:48,336 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Add Invoice')]
+2023-11-08 18:02:48,350 - Logger_file -INFO - Clicking on Add Invoice
+2023-11-08 18:02:48,409 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on Add Invoice
+2023-11-08 18:02:48,410 - Logger_file -INFO - user_click_on_search_order
+2023-11-08 18:02:48,410 - Logger_file -INFO - finding Web element By.id: 'formInput-'orderNumber
+2023-11-08 18:02:48,783 - Logger_file -INFO - finding Web element By.id: 'formInput-'orderNumber
+2023-11-08 18:02:48,799 - Logger_file -INFO - Clicking on null
+2023-11-08 18:02:49,018 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on null
+2023-11-08 18:02:49,105 - Logger_file -INFO - user_enters_for_order_id
+2023-11-08 18:04:05,999 - Logger_file -INFO - Setting Up chrome 
+2023-11-08 18:04:10,498 - Logger_file -INFO - user_is_on_login_page
+2023-11-08 18:04:11,635 - Logger_file -INFO - user_click_on_btn Dealer
+2023-11-08 18:04:11,636 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-08 18:04:12,766 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-08 18:04:17,001 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-08 18:04:17,020 - Logger_file -INFO - Clicking on Dealer
+2023-11-08 18:04:17,140 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on Dealer
+2023-11-08 18:04:17,141 - Logger_file -INFO - user_enters_and username : grn_sale password : Welcome@1234
+2023-11-08 18:04:17,142 - Logger_file -INFO - finding Web element By.id: 'formInput-'username
+2023-11-08 18:04:17,166 - Logger_file -INFO - Enteringgrn_sale
+2023-11-08 18:04:17,294 - Logger_file -INFO - Pass:grn_sale is entered
+2023-11-08 18:04:17,294 - Logger_file -INFO - finding Web element By.id: 'formInput-'password
+2023-11-08 18:04:17,315 - Logger_file -INFO - EnteringWelcome@1234
+2023-11-08 18:04:17,432 - Logger_file -INFO - Pass:Welcome@1234 is entered
+2023-11-08 18:04:17,433 - Logger_file -INFO - user_click_on_button LOGIN
+2023-11-08 18:04:17,437 - Logger_file -INFO - finding Web element By.xpath: //button[contains(text(),'LOGIN')]
+2023-11-08 18:04:17,461 - Logger_file -INFO - Clicking on LOGIN
+2023-11-08 18:04:17,682 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on LOGIN
+2023-11-08 18:04:17,683 - Logger_file -INFO - user_logged_in_is_on_home_page
+2023-11-08 18:04:17,683 - Logger_file -INFO - finding Web element By.id: searchBy
+2023-11-08 18:04:20,958 - Logger_file -INFO - user_click_on_btn Add Invoice
+2023-11-08 18:04:20,960 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Add Invoice')]
+2023-11-08 18:04:21,050 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Add Invoice')]
+2023-11-08 18:04:25,233 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Add Invoice')]
+2023-11-08 18:04:25,250 - Logger_file -INFO - Clicking on Add Invoice
+2023-11-08 18:04:25,306 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on Add Invoice
+2023-11-08 18:04:25,307 - Logger_file -INFO - user_click_on_search_order
+2023-11-08 18:04:25,308 - Logger_file -INFO - finding Web element By.id: 'formInput-'orderNumber
+2023-11-08 18:04:25,676 - Logger_file -INFO - finding Web element By.id: 'formInput-'orderNumber
+2023-11-08 18:04:25,691 - Logger_file -INFO - Clicking on null
+2023-11-08 18:04:25,868 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on null
+2023-11-08 18:04:27,568 - Logger_file -INFO - user_enters_for_order_id
+2023-11-08 18:04:27,568 - Logger_file -INFO - finding Web element By.id: 'formInput-'orderId
+2023-11-08 18:04:27,717 - Logger_file -INFO - finding Web element By.id: 'formInput-'orderId
+2023-11-08 18:04:27,744 - Logger_file -INFO - EnteringSOB23000623
+2023-11-08 18:04:28,079 - Logger_file -INFO - Pass:SOB23000623 is entered
+2023-11-08 18:04:28,081 - Logger_file -INFO - user_click_on_btn SEARCH
+2023-11-08 18:04:28,081 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'SEARCH')]
+2023-11-08 18:04:28,205 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'SEARCH')]
+2023-11-08 18:04:32,386 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'SEARCH')]
+2023-11-08 18:04:32,406 - Logger_file -INFO - Clicking on SEARCH
+2023-11-08 18:04:32,497 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on SEARCH
+2023-11-08 18:04:32,498 - Logger_file -INFO - user_select_from_displayed_orders
+2023-11-08 18:04:32,499 - Logger_file -INFO - finding Web element By.xpath: //div[contains(text(),'SOB23000623')]
+2023-11-08 18:04:32,829 - Logger_file -INFO - finding Web element By.xpath: //div[contains(text(),'SOB23000623')]
+2023-11-08 18:04:32,881 - Logger_file -INFO - Clicking on null
+2023-11-08 18:04:32,998 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on null
+2023-11-08 18:04:32,998 - Logger_file -INFO - user_click_on_btn OK
+2023-11-08 18:04:32,999 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'OK')]
+2023-11-08 18:04:33,137 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'OK')]
+2023-11-08 18:04:37,326 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'OK')]
+2023-11-08 18:04:37,347 - Logger_file -INFO - Clicking on OK
+2023-11-08 18:04:37,417 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on OK
+2023-11-08 18:04:37,418 - Logger_file -INFO - verify_prefilled_fields_on_invoice_details_tab
+2023-11-08 18:04:37,420 - Logger_file -INFO - finding Web element By.id: 'formInput-'location
+2023-11-08 18:04:37,508 - Logger_file -INFO - Wait for the element to be displayed
+2023-11-08 18:04:38,573 - Logger_file -INFO - Wait for the element to be displayed
+2023-11-08 18:04:39,633 - Logger_file -INFO - Wait for the element to be displayed
+2023-11-08 18:04:40,677 - Logger_file -INFO - Wait for the element to be displayed
+2023-11-08 18:04:41,743 - Logger_file -INFO - Wait for the element to be displayed
+2023-11-08 18:04:42,799 - Logger_file -INFO - Wait for the element to be displayed
+2023-11-08 18:04:43,866 - Logger_file -INFO - Wait for the element to be displayed
+2023-11-08 18:04:44,927 - Logger_file -INFO - Wait for the element to be displayed
+2023-11-08 18:04:45,957 - Logger_file -INFO - Wait for the element to be displayed
+2023-11-08 18:04:47,002 - Logger_file -INFO - Wait for the element to be displayed
+2023-11-08 18:04:48,038 - Logger_file -INFO - Wait for the element to be displayed
+2023-11-08 18:04:49,081 - Logger_file -INFO - Wait for the element to be displayed
+2023-11-08 18:04:50,121 - Logger_file -INFO - Wait for the element to be displayed
+2023-11-08 18:04:51,167 - Logger_file -INFO - Wait for the element to be displayed
+2023-11-08 18:04:52,206 - Logger_file -INFO - Wait for the element to be displayed
+2023-11-08 18:04:53,233 - Logger_file -INFO - Wait for the element to be displayed
+2023-11-08 18:04:54,268 - Logger_file -INFO - Wait for the element to be displayed
+2023-11-08 18:04:55,309 - Logger_file -INFO - Wait for the element to be displayed
+2023-11-08 18:04:57,843 - Logger_file -INFO - finding Web element By.xpath: //mat-select[@id='sellingPriceFor']//span/span
+2023-11-08 18:04:57,859 - Logger_file -INFO - Getting Element Text
+2023-11-08 18:04:57,878 - Logger_file -INFO - Pass:Text is:JAMSHEDPUR
+2023-11-08 18:04:59,914 - Logger_file -INFO - finding Web element By.id: inputDateorderDate
+2023-11-08 18:04:59,955 - Logger_file -INFO - finding Web element By.id: 'formInput-'state
+2023-11-08 18:05:01,012 - Logger_file -INFO - finding Web element By.id: 'formInput-'allotmentNumber
+2023-11-08 18:05:01,914 - Logger_file -INFO - finding Web element By.id: inputDateallotmentDate
+2023-11-08 18:05:02,963 - Logger_file -INFO - finding Web element By.id: 'formInput-'shippingGST
+2023-11-08 18:05:03,450 - Logger_file -INFO - finding Web element By.id: 'formInput-'pinCode
+2023-11-08 18:05:03,932 - Logger_file -INFO - finding Web element By.id: 'formInput-'billingAddress1
+2023-11-08 18:05:04,434 - Logger_file -INFO - finding Web element By.id: 'formInput-'billingAddress2
+2023-11-08 18:05:04,930 - Logger_file -INFO - finding Web element By.id: 'formInput-'billingAddress3

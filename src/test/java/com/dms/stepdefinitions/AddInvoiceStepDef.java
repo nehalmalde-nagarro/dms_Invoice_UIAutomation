@@ -1,5 +1,9 @@
 package com.dms.stepdefinitions;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
@@ -16,6 +20,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class AddInvoiceStepDef {
+	public static List<Map<String, String>> testData = new ArrayList<>();
+
 
 	// add
 	AddInvoice_InvoiceDetailsPOM addInvoicePOM = new AddInvoice_InvoiceDetailsPOM();
@@ -31,17 +37,18 @@ public class AddInvoiceStepDef {
 		CoreFunctions.click(addInvoicePOM.addInvoiceOrderNumber(), null);
 	}
 
-	@When("User enters {string} for OrderId")
-	public void user_enters_for_order_id(String orderID) {
+	@When("User enters OrderId from {int}")
+	public void user_enters_for_order_id(int orderID) {
+		testData=CoreFunctions.test("InvoiceDetails");
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName());
-
+		String Text = testData.get(orderID).get("OrderId").toString();
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(addInvoicePOM.searchByOrderNumber()));
-		CoreFunctions.setText(addInvoicePOM.searchByOrderNumber(), orderID);
+		CoreFunctions.setText(addInvoicePOM.searchByOrderNumber(), Text);
 
 	}
 
-	@When("User enters {string} for Mobile Number")
+	@When("User enters Mobile Number from {int}")
 	public void user_enters_for_mobile_number(String mobileNum) {
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName());
@@ -51,22 +58,25 @@ public class AddInvoiceStepDef {
 
 	}
 
-	@When("User select from displayed orders for {string}")
-	public void user_select_from_displayed_orders(String OrderId) {
+	@When("User select from displayed orders for {int}")
+	public void user_select_from_displayed_orders(int OrderId) {
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName());
+		String Text = testData.get(OrderId).get("OrderId").toString();
 
-		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(addInvoicePOM.chooseOrder(OrderId)));
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(addInvoicePOM.chooseOrder(Text)));
 
-		CoreFunctions.click(addInvoicePOM.chooseOrder(OrderId), null);
+		CoreFunctions.click(addInvoicePOM.chooseOrder(Text), null);
 	}
 	
 	
 
-	@Then("Verify Prefilled fields for {string} on invoice Details tab")
-	public void verify_prefilled_fields_on_invoice_details_tab(String orderId) throws Exception {
+	@Then("Verify Prefilled fields for OrderId from {int} on invoice Details tab")
+	public void verify_prefilled_fields_on_invoice_details_tab(int number) throws Exception {
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName());
+		String orderId = testData.get(number).get("OrderId").toString();
+
 		// Assert LOC_CD
 		String text = CoreFunctions.waitUntilAttrAvailable(addInvoicePOM.locationId(), 20, "value");
 		System.out.println(" Vlaue from coreFuycntion" + text);
@@ -142,7 +152,7 @@ public class AddInvoiceStepDef {
 
 	}
 
-	@Then("Verify data on search by {string}")
+	@Then("Verify data on search by Mobile Number from {int}")
 	public void verify_data_on_search_by(String mobile) throws Exception {
 		String name = Query.get_fields_From_GM_CIN_by_Mobile("FULL_NAME", "MOBILE_PHONE", mobile);
 		BrowserHandle.wait.until(ExpectedConditions.visibilityOf(addInvoicePOM.isOrderDetailVisible(name)));
