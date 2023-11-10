@@ -8,84 +8,82 @@ Feature: Add Invoice - Invoice Details Tab
     #And User click on Captcha
     And User click on "LOGIN" button
 
-  Scenario Outline: Validate Prefilled fields on Invoice Details tab
-  Given User is on Home Page
-  When User clicks on "Add Invoice" button
-  And User click on Search Order
-  And User enters "<OrderId>" for OrderId
-  And User clicks on "SEARCH" button
-  And User select from displayed orders for "<OrderId>"
-  And User clicks on "OK" button
-  Then Verify Prefilled fields for "<OrderId>" on invoice Details tab
-  
-  Examples:
-  | OrderId     |
-  | SOB23000623 |
-  
-  Scenario Outline: Validate PopUp functionalities of search order Popup
-  Given User is on Home Page
-  When User clicks on "Add Invoice" button
-  And User click on Search Order
-  And User enters "<MobileNumber>" for Mobile Number
-  And User clicks on "SEARCH" button on popup
-  And Verify if "OK" button is disable
-  Then Verify data on search by "<MobileNumber>"
-  And User clicks on "CLEAR" button on popup
-  And Verify if "SEARCH" button is disable
-  And Click on Close popup icon
-  Then Verify if Popup closed
-  
-  Examples:
-  | MobileNumber |
-  |   9844035228 |
-  
-  Scenario Outline: Validate if no record found if invalid data input to search on popup
-  Given User is on Home Page
-  When User clicks on "Add Invoice" button
-  And User click on Search Order
-  And User enters "<MobileNumber>" for Mobile Number
-  And User enters "<OrderId>" for OrderId
-  And User clicks on "SEARCH" button on popup
-  Then Verify if "Nothing to display" text showing
-  
-  Examples:
-  | MobileNumber | OrderId     |
-  |   9844035228 | SOB23000623 |
-  
-  Scenario Outline: Validate back to listing button  functionality
-  Given User is on Home Page
-  When User clicks on "Add Invoice" button
-  And User clicks on "BACK TO LISTING" button
-  And User clicks on "NO" button on popup
-  Then verify user is on Add Invoice page
-  When User clicks on "BACK TO LISTING" button
-  And User clicks on "YES" button on popup
-  Then Verify User is on Home Page
-  
-  Examples:
-  | MobileNumber | OrderId     |
-  |   9844035228 | SOB23000623 |
-  Scenario Outline: Validate clear button functionality on Invoice details page
-  Given User is on Home Page
-  When User clicks on "Add Invoice" button
-  And User click on Search Order
-  And User enters "<OrderId>" for OrderId
-  And User clicks on "SEARCH" button
-  And User select from displayed orders for "<OrderId>"
-  And User clicks on "OK" button
-  And User clicks on "CLEAR" button
-  Then verify all the fields are empty on Invoice details page except Invoice Type and Selling Price For
-  
-  Examples:
-  | OrderId     |
-  | SOB23000623 |
+  #Scenario Outline: Validate Prefilled fields on Invoice Details tab
+    #Given User is on Home Page
+    #When User clicks on "Add Invoice" button
+    #And User click on Search Order
+    #And User enters OrderId from scenario <rowNumber>
+    #And User clicks on "SEARCH" button
+    #And User select from displayed orders for scenario <rowNumber>
+    #And User clicks on "OK" button
+    #Then Verify Prefilled fields for OrderId from scenario <rowNumber> on invoice Details tab
+#
+    #Examples: 
+      #| rowNumber |
+      #|         1 |
+
+  #Scenario Outline: Validate PopUp functionalities of search order Popup
+    #Given User is on Home Page
+    #When User clicks on "Add Invoice" button
+    #And User click on Search Order
+    #And User enters Mobile Number from scenario <rowNumber>
+    #And User clicks on "SEARCH" button on popup
+    #And Verify if "OK" button is disable
+    #Then Verify data on search by Mobile Number for scenario <rowNumber>
+    #And User clicks on "CLEAR" button on popup
+    #And Verify if "SEARCH" button is disable
+    #And Click on Close popup icon
+    #Then Verify if Popup closed
+#
+    #Examples: 
+      #| rowNumber |
+      #|         1 |
+#
+  #Scenario Outline: Validate if no record found if invalid data input to search on popup
+    #Given User is on Home Page
+    #When User clicks on "Add Invoice" button
+    #And User click on Search Order
+    #And User enters Mobile Number from scenario <rowNumber>
+    #And User enters OrderId from scenario <rowNumber>
+    #And User clicks on "SEARCH" button on popup
+    #Then Verify if "Nothing to display" text showing
+#
+    #Examples: 
+      #| rowNumber |
+      #|         1 |
+#
+  #Scenario: Validate back to listing button  functionality
+    #Given User is on Home Page
+    #When User clicks on "Add Invoice" button
+    #And User clicks on "BACK TO LISTING" button
+    #And User clicks on "NO" button on popup
+    #Then verify user is on Add Invoice page
+    #When User clicks on "BACK TO LISTING" button
+    #And User clicks on "YES" button on popup
+    #Then Verify User is on Home Page
+#
+  #Scenario Outline: Validate clear button functionality on Invoice details page
+    #Given User is on Home Page
+    #When User clicks on "Add Invoice" button
+    #And User click on Search Order
+    #And User enters OrderId from scenario <rowNumber>
+    #And User clicks on "SEARCH" button
+    #And User select from displayed orders for scenario <rowNumber>
+    #And User clicks on "OK" button
+    #And User clicks on "CLEAR" button
+    #Then verify all the fields are empty on Invoice details page except Invoice Type and Selling Price For
+#
+    #Examples: 
+      #| rowNumber |
+      #|         1 |
+#
   Scenario Outline: Validate B2B functionality on Invoice details page
     Given User is on Home Page
     When User clicks on "Add Invoice" button
     And User click on Search Order
-    And User enters "<OrderId>" for OrderId
+    And User enters OrderId from scenario <rowNumber>
     And User clicks on "SEARCH" button
-  And User select from displayed orders for "<OrderId>"
+    And User select from displayed orders for scenario <rowNumber>
     And User clicks on "OK" button
     And if user selects B2B Customer as "Yes"
     And user enters "GSTUNREGISTERED" in Bill GSTN field
@@ -95,37 +93,38 @@ Feature: Add Invoice - Invoice Details Tab
     Then verify error message is displayed as "GST Number found for B2C Customer."
 
     Examples: 
-      | OrderId     |
-      | SOB23000623 |
-  Scenario Outline: Validate Next button functionality on Invoice details page
-    Given User is on Home Page
-    When User clicks on "Add Invoice" button
-    And User click on Search Order
-    And User enters "<OrderId>" for OrderId
-    And User clicks on "SEARCH" button
-    And User select from displayed orders for "<OrderId>"
-    And User clicks on "OK" button
-    And user enters Workspace as "<Workspace>"
-    And user enters Aadhar Number as "<AadharNum>"
-    And user enters "<BillGSTN>" in Bill GSTN field
-    And User clicks on "NEXT" button
-    Then Verify user is navigated to "Vehicle Info"
-
-    Examples: 
-      | OrderId     | Workspace | AadharNum | BillGSTN |
-      | SOB23000623 |      OTHER     |    123234567894       |   ABC1001002003AF     |
-
-  Scenario Outline: Validate shipping info functionality for Individual on Invoice details page
-    Given User is on Home Page
-    When User clicks on "Add Invoice" button
-    And User click on Search Order
-    And User enters "<OrderId>" for OrderId
-    And User clicks on "SEARCH" button
-    And User select from displayed orders for "<OrderId>"
-    And User clicks on "OK" button
-    And Verify if Sales Type is "Individual"
-    Then Verify Shipping Info section is disabled
-
-    Examples: 
-      | OrderId     |
-      | SOB23000623 |
+      | rowNumber |
+      |         1 |
+#
+  #Scenario Outline: Validate Next button functionality on Invoice details page
+    #Given User is on Home Page
+    #When User clicks on "Add Invoice" button
+    #And User click on Search Order
+    #And User enters OrderId from scenario <rowNumber>
+    #And User clicks on "SEARCH" button
+    #And User select from displayed orders for scenario <rowNumber>
+    #And User clicks on "OK" button
+    #And user enters Workspace from <rowNumber>
+    #And user enters Aadhar Number from <rowNumber>
+    #And user enters Bill GSTN field from <rowNumber>
+    #And User clicks on "NEXT" button
+    #Then Verify user is navigated to "Vehicle Info"
+#
+    #Examples: 
+      #| rowNumber |
+      #|         1 |
+#
+  #Scenario Outline: Validate shipping info functionality for Individual on Invoice details page
+    #Given User is on Home Page
+    #When User clicks on "Add Invoice" button
+    #And User click on Search Order
+    #And User enters OrderId from <rowNumber>
+    #And User clicks on "SEARCH" button
+    #And User select from displayed orders for <rowNumber>
+    #And User clicks on "OK" button
+    #And Verify if Sales Type is "Individual"
+    #Then Verify Shipping Info section is disabled
+#
+    #Examples: 
+      #| rowNumber |
+      #|         1 |

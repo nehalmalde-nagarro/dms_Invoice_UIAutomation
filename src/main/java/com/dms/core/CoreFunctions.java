@@ -3,19 +3,23 @@ package com.dms.core;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.dms.browserInstance.BrowserHandle;
 import com.dms.logs.Logs;
+import com.dms.utils.Constants;
+import com.dms.utils.ExcelReader;
 import com.dms.utils.ReadFromProperty;
 
 public class CoreFunctions {
@@ -29,6 +33,19 @@ public class CoreFunctions {
 		String output = prop.getProperty(str);
 		return output;
 	}
+	
+	public static List<Map<String, String>> test(String sheetName)
+    {
+     List<Map<String, String>> testData = new ArrayList<>();
+            ExcelReader reader = new ExcelReader();
+        try {
+            testData = reader.getData(Constants.TESTDATA_CSV, sheetName);
+        } 
+        catch (InvalidFormatException | IOException e) {
+            e.printStackTrace();
+        }
+    return testData;
+    }
 
 	public static String dateFormatterwithTime(String dateFromBE)
 	{
