@@ -6642,3 +6642,201 @@
 2023-11-16 01:12:32,359 - Logger_file -INFO - Clicking on CLEAR
 2023-11-16 01:12:33,527 - Logger_file -INFO - Fail:Could not click on CLEAR
 2023-11-16 01:12:33,531 - Logger_file -INFO - finding Web element By.id: 'formInput-'fastTagId
+2023-11-16 17:38:47,325 - Logger_file -INFO - Setting Up chrome 
+2023-11-16 17:38:54,645 - Logger_file -INFO - user_is_on_login_page
+2023-11-16 17:38:56,916 - Logger_file -INFO - user_click_on_btn Dealer
+2023-11-16 17:38:56,921 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-16 17:38:58,284 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-16 17:39:02,532 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-16 17:39:02,555 - Logger_file -INFO - Clicking on Dealer
+2023-11-16 17:39:02,705 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on Dealer
+2023-11-16 17:39:02,707 - Logger_file -INFO - user_enters_and username : grn_sale password : Welcome@1234
+2023-11-16 17:39:02,707 - Logger_file -INFO - finding Web element By.id: 'formInput-'username
+2023-11-16 17:39:02,724 - Logger_file -INFO - Enteringgrn_sale
+2023-11-16 17:39:02,847 - Logger_file -INFO - Pass:grn_sale is entered
+2023-11-16 17:39:02,849 - Logger_file -INFO - finding Web element By.id: 'formInput-'password
+2023-11-16 17:39:02,864 - Logger_file -INFO - EnteringWelcome@1234
+2023-11-16 17:39:02,953 - Logger_file -INFO - Pass:Welcome@1234 is entered
+2023-11-16 17:39:02,954 - Logger_file -INFO - user_click_on_button LOGIN
+2023-11-16 17:39:02,956 - Logger_file -INFO - finding Web element By.xpath: //button[contains(text(),'LOGIN')]
+2023-11-16 17:39:02,974 - Logger_file -INFO - Clicking on LOGIN
+2023-11-16 17:39:03,257 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on LOGIN
+2023-11-16 17:39:03,261 - Logger_file -INFO - finding Web element By.id: user_icon
+2023-11-16 17:39:09,552 - Logger_file -INFO - Clicking on user icon
+2023-11-16 17:39:09,665 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on user icon
+2023-11-16 17:39:09,667 - Logger_file -INFO - finding Web element By.xpath: //mat-label[contains(text(),'PARENT GROUP')]/following-sibling::mat-label
+2023-11-16 17:39:09,682 - Logger_file -INFO - Getting Element Text
+2023-11-16 17:39:09,707 - Logger_file -INFO - Pass:Text is:PREM
+2023-11-16 17:39:15,978 - Logger_file -INFO - Setting Up chrome 
+2023-11-16 17:39:18,416 - Logger_file -INFO - user_is_on_login_page
+2023-11-16 17:39:19,283 - Logger_file -INFO - user_click_on_btn Dealer
+2023-11-16 17:39:19,283 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-16 17:39:20,412 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-16 17:39:24,566 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-16 17:39:24,577 - Logger_file -INFO - Clicking on Dealer
+2023-11-16 17:39:24,674 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on Dealer
+2023-11-16 17:39:24,675 - Logger_file -INFO - user_enters_and username : grn_sale password : Welcome@1234
+2023-11-16 17:39:24,676 - Logger_file -INFO - finding Web element By.id: 'formInput-'username
+2023-11-16 17:39:24,691 - Logger_file -INFO - Enteringgrn_sale
+2023-11-16 17:39:24,816 - Logger_file -INFO - Pass:grn_sale is entered
+2023-11-16 17:39:24,817 - Logger_file -INFO - finding Web element By.id: 'formInput-'password
+2023-11-16 17:39:24,836 - Logger_file -INFO - EnteringWelcome@1234
+2023-11-16 17:39:24,922 - Logger_file -INFO - Pass:Welcome@1234 is entered
+2023-11-16 17:39:24,923 - Logger_file -INFO - user_click_on_button LOGIN
+2023-11-16 17:39:24,924 - Logger_file -INFO - finding Web element By.xpath: //button[contains(text(),'LOGIN')]
+2023-11-16 17:39:24,941 - Logger_file -INFO - Clicking on LOGIN
+2023-11-16 17:39:25,160 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on LOGIN
+2023-11-16 17:39:25,161 - Logger_file -INFO - finding Web element By.id: user_icon
+2023-11-16 17:39:28,729 - Logger_file -INFO - Clicking on user icon
+2023-11-16 17:39:28,822 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on user icon
+2023-11-16 17:39:28,823 - Logger_file -INFO - finding Web element By.xpath: //mat-label[contains(text(),'PARENT GROUP')]/following-sibling::mat-label
+2023-11-16 17:39:28,840 - Logger_file -INFO - Getting Element Text
+2023-11-16 17:39:28,868 - Logger_file -INFO - Pass:Text is:PREM
+2023-11-16 17:39:35,020 - Logger_file -INFO - Setting Up chrome 
+2023-11-16 17:42:11,733 - Logger_file -INFO - Setting Up chrome 
+2023-11-16 17:42:15,515 - Logger_file -INFO - user_is_on_login_page
+2023-11-16 17:42:16,403 - Logger_file -INFO - user_click_on_btn Dealer
+2023-11-16 17:42:16,406 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-16 17:42:17,560 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-16 17:42:21,767 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-16 17:42:21,791 - Logger_file -INFO - Clicking on Dealer
+2023-11-16 17:42:21,891 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on Dealer
+2023-11-16 17:42:21,892 - Logger_file -INFO - user_enters_and username : grn_sale password : Welcome@1234
+2023-11-16 17:42:21,893 - Logger_file -INFO - finding Web element By.id: 'formInput-'username
+2023-11-16 17:42:21,911 - Logger_file -INFO - Enteringgrn_sale
+2023-11-16 17:42:22,061 - Logger_file -INFO - Pass:grn_sale is entered
+2023-11-16 17:42:22,063 - Logger_file -INFO - finding Web element By.id: 'formInput-'password
+2023-11-16 17:42:22,078 - Logger_file -INFO - EnteringWelcome@1234
+2023-11-16 17:42:22,170 - Logger_file -INFO - Pass:Welcome@1234 is entered
+2023-11-16 17:42:22,172 - Logger_file -INFO - user_click_on_button LOGIN
+2023-11-16 17:42:22,174 - Logger_file -INFO - finding Web element By.xpath: //button[contains(text(),'LOGIN')]
+2023-11-16 17:42:22,190 - Logger_file -INFO - Clicking on LOGIN
+2023-11-16 17:42:22,410 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on LOGIN
+2023-11-16 17:42:22,413 - Logger_file -INFO - finding Web element By.id: user_icon
+2023-11-16 17:42:26,128 - Logger_file -INFO - Clicking on user icon
+2023-11-16 17:42:26,228 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on user icon
+2023-11-16 17:42:26,229 - Logger_file -INFO - finding Web element By.xpath: //mat-label[contains(text(),'PARENT GROUP')]/following-sibling::mat-label
+2023-11-16 17:42:26,248 - Logger_file -INFO - Getting Element Text
+2023-11-16 17:42:26,273 - Logger_file -INFO - Pass:Text is:
+2023-11-16 17:42:32,350 - Logger_file -INFO - Setting Up chrome 
+2023-11-16 17:42:34,451 - Logger_file -INFO - user_is_on_login_page
+2023-11-16 17:42:35,637 - Logger_file -INFO - user_click_on_btn Dealer
+2023-11-16 17:42:35,637 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-16 17:42:36,770 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-16 17:42:40,950 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-16 17:42:40,963 - Logger_file -INFO - Clicking on Dealer
+2023-11-16 17:42:41,058 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on Dealer
+2023-11-16 17:42:41,060 - Logger_file -INFO - user_enters_and username : grn_sale password : Welcome@1234
+2023-11-16 17:42:41,061 - Logger_file -INFO - finding Web element By.id: 'formInput-'username
+2023-11-16 17:42:41,077 - Logger_file -INFO - Enteringgrn_sale
+2023-11-16 17:42:41,213 - Logger_file -INFO - Pass:grn_sale is entered
+2023-11-16 17:42:41,213 - Logger_file -INFO - finding Web element By.id: 'formInput-'password
+2023-11-16 17:42:41,231 - Logger_file -INFO - EnteringWelcome@1234
+2023-11-16 17:42:41,311 - Logger_file -INFO - Pass:Welcome@1234 is entered
+2023-11-16 17:42:41,312 - Logger_file -INFO - user_click_on_button LOGIN
+2023-11-16 17:42:41,314 - Logger_file -INFO - finding Web element By.xpath: //button[contains(text(),'LOGIN')]
+2023-11-16 17:42:41,329 - Logger_file -INFO - Clicking on LOGIN
+2023-11-16 17:42:41,524 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on LOGIN
+2023-11-16 17:42:41,526 - Logger_file -INFO - finding Web element By.id: user_icon
+2023-11-16 17:42:44,905 - Logger_file -INFO - Clicking on user icon
+2023-11-16 17:42:45,077 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on user icon
+2023-11-16 17:42:45,078 - Logger_file -INFO - finding Web element By.xpath: //mat-label[contains(text(),'PARENT GROUP')]/following-sibling::mat-label
+2023-11-16 17:42:45,101 - Logger_file -INFO - Getting Element Text
+2023-11-16 17:42:45,128 - Logger_file -INFO - Pass:Text is:PREM
+2023-11-16 17:42:51,214 - Logger_file -INFO - Setting Up chrome 
+2023-11-16 17:46:27,208 - Logger_file -INFO - Setting Up chrome 
+2023-11-16 17:46:31,161 - Logger_file -INFO - user_is_on_login_page
+2023-11-16 17:46:32,167 - Logger_file -INFO - user_click_on_btn Dealer
+2023-11-16 17:46:32,168 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-16 17:46:33,381 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-16 17:46:37,564 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-16 17:46:37,576 - Logger_file -INFO - Clicking on Dealer
+2023-11-16 17:46:37,674 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on Dealer
+2023-11-16 17:46:37,675 - Logger_file -INFO - user_enters_and username : grn_sale password : Welcome@1234
+2023-11-16 17:46:37,676 - Logger_file -INFO - finding Web element By.id: 'formInput-'username
+2023-11-16 17:46:37,696 - Logger_file -INFO - Enteringgrn_sale
+2023-11-16 17:46:37,831 - Logger_file -INFO - Pass:grn_sale is entered
+2023-11-16 17:46:37,831 - Logger_file -INFO - finding Web element By.id: 'formInput-'password
+2023-11-16 17:46:37,847 - Logger_file -INFO - EnteringWelcome@1234
+2023-11-16 17:46:38,012 - Logger_file -INFO - Pass:Welcome@1234 is entered
+2023-11-16 17:46:38,016 - Logger_file -INFO - user_click_on_button LOGIN
+2023-11-16 17:46:38,020 - Logger_file -INFO - finding Web element By.xpath: //button[contains(text(),'LOGIN')]
+2023-11-16 17:46:38,046 - Logger_file -INFO - Clicking on LOGIN
+2023-11-16 17:46:38,256 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on LOGIN
+2023-11-16 17:46:38,259 - Logger_file -INFO - finding Web element By.id: user_icon
+2023-11-16 17:46:41,620 - Logger_file -INFO - Clicking on user icon
+2023-11-16 17:46:41,735 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on user icon
+2023-11-16 17:46:41,736 - Logger_file -INFO - finding Web element By.xpath: //mat-label[contains(text(),'PARENT GROUP')]/following-sibling::mat-label
+2023-11-16 17:46:41,772 - Logger_file -INFO - Getting Element Text
+2023-11-16 17:46:41,797 - Logger_file -INFO - Pass:Text is:PREM
+2023-11-16 17:46:41,798 - Logger_file -INFO - finding Web element By.xpath: //mat-label[contains(text(),'DEALER MAP CODE')]/following-sibling::mat-label
+2023-11-16 17:46:41,817 - Logger_file -INFO - Getting Element Text
+2023-11-16 17:46:41,830 - Logger_file -INFO - Pass:Text is:12356
+2023-11-16 17:46:41,831 - Logger_file -INFO - finding Web element By.id: //mat-label[contains(text(),'LOCATION CODE')]/following-sibling::mat-label
+2023-11-16 17:47:48,118 - Logger_file -INFO - Setting Up chrome 
+2023-11-16 17:47:50,415 - Logger_file -INFO - user_is_on_login_page
+2023-11-16 17:47:50,925 - Logger_file -INFO - user_click_on_btn Dealer
+2023-11-16 17:47:50,926 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-16 17:52:29,077 - Logger_file -INFO - Setting Up chrome 
+2023-11-16 17:52:32,821 - Logger_file -INFO - user_is_on_login_page
+2023-11-16 17:52:33,730 - Logger_file -INFO - user_click_on_btn Dealer
+2023-11-16 17:52:33,733 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-16 17:52:34,935 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-16 17:52:39,108 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-16 17:52:39,129 - Logger_file -INFO - Clicking on Dealer
+2023-11-16 17:52:39,227 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on Dealer
+2023-11-16 17:52:39,228 - Logger_file -INFO - user_enters_and username : grn_sale password : Welcome@1234
+2023-11-16 17:52:39,228 - Logger_file -INFO - finding Web element By.id: 'formInput-'username
+2023-11-16 17:52:39,246 - Logger_file -INFO - Enteringgrn_sale
+2023-11-16 17:52:39,424 - Logger_file -INFO - Pass:grn_sale is entered
+2023-11-16 17:52:39,425 - Logger_file -INFO - finding Web element By.id: 'formInput-'password
+2023-11-16 17:52:39,449 - Logger_file -INFO - EnteringWelcome@1234
+2023-11-16 17:52:39,532 - Logger_file -INFO - Pass:Welcome@1234 is entered
+2023-11-16 17:52:39,532 - Logger_file -INFO - user_click_on_button LOGIN
+2023-11-16 17:52:39,533 - Logger_file -INFO - finding Web element By.xpath: //button[contains(text(),'LOGIN')]
+2023-11-16 17:52:39,554 - Logger_file -INFO - Clicking on LOGIN
+2023-11-16 17:52:39,833 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on LOGIN
+2023-11-16 17:52:39,836 - Logger_file -INFO - finding Web element By.id: user_icon
+2023-11-16 17:52:43,156 - Logger_file -INFO - Clicking on user icon
+2023-11-16 17:52:43,270 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on user icon
+2023-11-16 17:52:43,271 - Logger_file -INFO - finding Web element By.xpath: //mat-label[contains(text(),'PARENT GROUP')]/following-sibling::mat-label
+2023-11-16 17:52:43,293 - Logger_file -INFO - Getting Element Text
+2023-11-16 17:52:43,318 - Logger_file -INFO - Pass:Text is:PREM
+2023-11-16 17:52:43,321 - Logger_file -INFO - finding Web element By.xpath: //mat-label[contains(text(),'DEALER MAP CODE')]/following-sibling::mat-label
+2023-11-16 17:52:43,341 - Logger_file -INFO - Getting Element Text
+2023-11-16 17:52:43,359 - Logger_file -INFO - Pass:Text is:12356
+2023-11-16 17:52:43,360 - Logger_file -INFO - finding Web element By.id: //mat-label[contains(text(),'LOCATION CODE')]/following-sibling::mat-label
+2023-11-16 17:53:49,617 - Logger_file -INFO - Setting Up chrome 
+2023-11-16 17:53:51,735 - Logger_file -INFO - user_is_on_login_page
+2023-11-16 17:53:52,581 - Logger_file -INFO - user_click_on_btn Dealer
+2023-11-16 17:53:52,582 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-16 17:53:53,766 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-16 17:53:57,951 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-16 17:53:57,971 - Logger_file -INFO - Clicking on Dealer
+2023-11-16 17:53:58,069 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on Dealer
+2023-11-16 17:53:58,069 - Logger_file -INFO - user_enters_and username : grn_sale password : Welcome@1234
+2023-11-16 17:53:58,070 - Logger_file -INFO - finding Web element By.id: 'formInput-'username
+2023-11-16 17:53:58,086 - Logger_file -INFO - Enteringgrn_sale
+2023-11-16 17:53:58,199 - Logger_file -INFO - Pass:grn_sale is entered
+2023-11-16 17:53:58,199 - Logger_file -INFO - finding Web element By.id: 'formInput-'password
+2023-11-16 17:53:58,216 - Logger_file -INFO - EnteringWelcome@1234
+2023-11-16 17:53:58,297 - Logger_file -INFO - Pass:Welcome@1234 is entered
+2023-11-16 17:53:58,298 - Logger_file -INFO - user_click_on_button LOGIN
+2023-11-16 17:53:58,299 - Logger_file -INFO - finding Web element By.xpath: //button[contains(text(),'LOGIN')]
+2023-11-16 17:53:58,314 - Logger_file -INFO - Clicking on LOGIN
+2023-11-16 17:53:58,517 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on LOGIN
+2023-11-16 17:53:58,519 - Logger_file -INFO - finding Web element By.id: user_icon
+2023-11-16 17:54:01,860 - Logger_file -INFO - Clicking on user icon
+2023-11-16 17:54:01,971 - Logger_file -INFO - Pass:SuccessfuLogsy clicked on user icon
+2023-11-16 17:54:01,972 - Logger_file -INFO - finding Web element By.xpath: //mat-label[contains(text(),'PARENT GROUP')]/following-sibling::mat-label
+2023-11-16 17:54:01,994 - Logger_file -INFO - Getting Element Text
+2023-11-16 17:54:02,017 - Logger_file -INFO - Pass:Text is:PREM
+2023-11-16 17:54:02,017 - Logger_file -INFO - finding Web element By.xpath: //mat-label[contains(text(),'DEALER MAP CODE')]/following-sibling::mat-label
+2023-11-16 17:54:02,035 - Logger_file -INFO - Getting Element Text
+2023-11-16 17:54:02,051 - Logger_file -INFO - Pass:Text is:12356
+2023-11-16 17:54:02,051 - Logger_file -INFO - finding Web element By.id: //mat-label[contains(text(),'LOCATION CODE')]/following-sibling::mat-label
+2023-11-16 17:55:08,088 - Logger_file -INFO - Setting Up chrome 
+2023-11-16 17:55:10,153 - Logger_file -INFO - user_is_on_login_page
+2023-11-16 17:55:11,127 - Logger_file -INFO - user_click_on_btn Dealer
+2023-11-16 17:55:11,127 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]
+2023-11-16 17:55:12,226 - Logger_file -INFO - finding Web element By.xpath: //button//span[contains(text(),'Dealer')]

@@ -5,14 +5,15 @@ import java.util.List;
 import com.dms.core.CoreFunctions;
 
 public class Query {
+	
 
 	static String query;
-	static int dealer_Code = 10265;
-	static int principal_map_cd = 1;
-	static String LOC_CD="BIS";
-	static String COMP_FA="PML";
+	public static int dealer_Code=12356;
+	public static int principal_map_cd=1;
+	public static String LOC_CD="GRN";
+	public static String COMP_FA="PREM";
 	static String ORDER_STATUS="A";
-	static String PARENT_GROUP="PEBCO";
+	public static String PARENT_GROUP="PREM";
 	
 
 	public static String get_dealer_map_code() throws Exception {

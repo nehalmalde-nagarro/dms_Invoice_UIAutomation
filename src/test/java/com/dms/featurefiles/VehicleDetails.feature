@@ -5,7 +5,8 @@ Feature: Add Invoice - Vehicle Details Tab
     Given User is on Login Page
     And User clicks on "Dealer" button
     And User enters "grn_sale" and "Welcome@1234"
-    And User click on "LOGIN" button
+    And User click on "LOGIN" button 
+    Then verify user profile
 
   Scenario Outline: Validate prefilled data on Vehicles details page
     Given User is on Home Page

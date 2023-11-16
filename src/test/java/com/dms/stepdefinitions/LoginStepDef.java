@@ -71,6 +71,8 @@ public class LoginStepDef {
 		CoreFunctions.click(loginPOM.popupButton(btn), btn);
 	}
 
+	
+
 	@Then("Verify if user Logs in sucessfully")
 	public void verify_if_user_logs_in_sucessfully() {
 		Logs.logger.info(new Object() {
@@ -78,6 +80,7 @@ public class LoginStepDef {
 		Assert.assertTrue(loginPOM.signOut().isDisplayed());
 	}
 
+	
 	@Then("Verify if user not Logs in sucessfully")
 	public void verify_if_user_not_logs_in_sucessfully() {
 		Logs.logger.info(new Object() {

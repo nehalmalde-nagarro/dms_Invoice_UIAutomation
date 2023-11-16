@@ -52,4 +52,7 @@ public class DealerInformationPOM {
 		return PageUtil.findBy(By.xpath("//mat-label[text()='DEALER']/following-sibling::mat-label"));
 	}
 
+	public WebElement closeIcon() {
+		return PageUtil.findBy(By.xpath("//mat-icon[text()='clear']"));
+	}
 }
