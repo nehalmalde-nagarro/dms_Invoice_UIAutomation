@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.core.Core;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
@@ -14,6 +15,7 @@ import com.dms.pageobjects.AddInvoice_FinancialInfo;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class FinancialInfoStepDef {
 	
@@ -109,5 +111,156 @@ public class FinancialInfoStepDef {
 			Assert.assertTrue(financialInfoPOM.financeAmount().isEnabled());
 			Assert.assertFalse(financialInfoPOM.FinancialDetailsPopUpButton().isEnabled());
 		}
+		
+//		User selects tax rate for scenario <rowNumber>
+//	    And User selects TDS Amount for scenario <rowNumber>
+//	    And User selects the MSGA finance flag
+//	    And user selects MSGA Financier Name from scenario <rowNumber>
+//	    And user clicks on Receipt Details
+//	    And user selects the receipt
+//	    And user clicks on "OK" button
+	    
+	    @When("User selects TDS Amount for scenario {int}")
+	    public void User_selects_tdsAmount_for_scenario(int rowNo) {
+		    String tdsAmt=testData.get(rowNo).get("TDSAmount").toString();
+	    	CoreFunctions.click(financialInfoPOM.tdsAmount(), null);
+		    CoreFunctions.setText(financialInfoPOM.tdsAmount(), tdsAmt);
+
+	    }
+	    @When("User selects tax rate for scenario {int}")
+	    public void User_selects_tax_rate_for_scenario(int rowNo) {
+	    	CoreFunctions.click(financialInfoPOM.clicktaxrateDropdown(), null);
+		    String taxRate=testData.get(rowNo).get("TaxRate").toString();
+		    CoreFunctions.click(financialInfoPOM.choosetaxrateDropdown(taxRate), taxRate);
+
+	    }
+	    @When("User selects the MSGA finance flag")
+	    public void User_selects_the_MSGA_finance_flag() {
+	    	CoreFunctions.click(financialInfoPOM.msgaFinanceFlag(), null);
+	    }
+	    @When("user selects MSGA Financier Name from scenario {int}")
+	    public void User_selects_msga_financer_for_scenario(int rowNo) {
+		    String msgafinancer=testData.get(rowNo).get("MSGAFinancierName").toString();
+	    	CoreFunctions.click(financialInfoPOM.clickMSGAFiancierDropdown(), null);
+		    CoreFunctions.click(financialInfoPOM.chooseFinancierDropdown(msgafinancer), msgafinancer);
+
+	    }
+	    @When("user clicks on Receipt Details")
+	    public void user_clicks_on_Receipt_Details() {
+	    	CoreFunctions.click(financialInfoPOM.ReceiptDetailsPopUpButton(), null);
+	    }
+	    @When("user selects the receipt")
+	    public void user_selects_the_receipt() {
+	    	CoreFunctions.click(financialInfoPOM.chooseFirstReceiptDetails(), null);
+	    }
+	   
+	  
+//	    And User selects TCS Flag as "<TCSFlag>"
+//	    User selects Financier for scenario <rowNumber>
+//	    And User selects Finance Amount for scenario <rowNumber>
+	    @When("User selects Financier for scenario {int}")
+	    public void User_selects_financer_for_scenario(int rowNo) {
+		    String financier=testData.get(rowNo).get("Financier").toString();
+	    	CoreFunctions.click(financialInfoPOM.chooseFinancierDropdown(financier), null);
+
+	    }
+	    @When("User selects Finance Amount for scenario {int}")
+	    public void User_selects_financer_Amount_for_scenario(int rowNo) {
+		    String financierAmt=testData.get(rowNo).get("FinancierAmt").toString();
+	    	CoreFunctions.setText(financialInfoPOM.financeAmount(), financierAmt);
+
+	    }
+	    @When("User selects TCS Flag as {string}")
+	    public void User_selects_tcs_flag(String tcsFlag) {
+	    	CoreFunctions.click(financialInfoPOM.clickTCSFlagDropdown(),null);
+	    	CoreFunctions.click(financialInfoPOM.chooseTCSFlagDropdown(tcsFlag), tcsFlag);
+
+	    }
+	    
+	    @When("User clicks on Financial Details")
+		public void user_clicks_on_financial_details() {
+		    // Write code here that turns the phrase above into concrete actions
+			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.FinancialDetailsPopUpButton()));
+			CoreFunctions.click(financialInfoPOM.FinancialDetailsPopUpButton(), "Clicking on Financial Details Pop up");
+		}
+ 
+		@When("User selects Loan Type for scenario {int}")
+		public void user_selects_loan_type_for_scenario(Integer rowNo) {
+		    // Write code here that turns the phrase above into concrete actions
+			
+			String loanType = testData.get(rowNo).get("LoanType").toString();
+			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.clickLoanTypeDropdown()));
+			CoreFunctions.click(financialInfoPOM.clickLoanTypeDropdown(), "Clicking on Loan Type dropdown");
+			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.chooseFromDropdown(loanType)));
+			CoreFunctions.click(financialInfoPOM.chooseFromDropdown(loanType), "Choosing Loan Type");
+		}
+ 
+		@When("User selects Loan Status for scenario {int}")
+		public void user_selects_loan_status_for_scenario(Integer rowNo) {
+		    // Write code here that turns the phrase above into concrete actions
+			String loanStatus = testData.get(rowNo).get("LoanStatus").toString();
+			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.clickLoanStatusDropdown()));
+			CoreFunctions.click(financialInfoPOM.clickLoanStatusDropdown(), "Clicking on Loan Status dropdown");
+			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.chooseFromDropdown(loanStatus)));
+			CoreFunctions.click(financialInfoPOM.chooseFromDropdown(loanStatus), "Choosing Loan Status");
+		}
+ 
+		@When("User selects Loan Application Date for scenario {int}")
+		public void user_selects_loan_application_date_for_scenario(Integer rowNo) throws Exception {
+		    // Write code here that turns the phrase above into concrete actions
+		    String loanApplicationDate = testData.get(rowNo).get("LoanApplicationDate").toString();
+		    
+		    BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.loanApplicationDatePicker()));
+			CoreFunctions.click(financialInfoPOM.loanApplicationDatePicker(), "Choosing Loan Application Date");
+		    CoreFunctions.selectDate(BrowserHandle.getDriver(), loanApplicationDate);
+		}
+ 
+		@When("User selects Loan Approval Date for scenario {int}")
+		public void user_selects_loan_approval_date_for_scenario(Integer rowNo) throws Exception {
+		    // Write code here that turns the phrase above into concrete actions
+			String loanApprovalDate = testData.get(rowNo).get("LoanApprovalDate").toString();
+			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.loanApprovalDatePicker()));
+			CoreFunctions.click(financialInfoPOM.loanApprovalDatePicker(), "Choosing Loan Approval Date");
+		    CoreFunctions.selectDate(BrowserHandle.getDriver(), loanApprovalDate);
+		}
+ 
+		@When("User selects Loan Closing Date for scenario {int}")
+		public void user_selects_loan_closing_date_for_scenario(Integer rowNo) throws Exception {
+		    // Write code here that turns the phrase above into concrete actions
+			String loanClosingDate = testData.get(rowNo).get("LoanClosingDate").toString();
+			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.loanClosingDatePicker()));
+			CoreFunctions.click(financialInfoPOM.loanClosingDatePicker(), "Choosing Loan Closing Date");
+			CoreFunctions.selectDate(BrowserHandle.getDriver(), loanClosingDate);
+		}
+ 
+		@When("User selects Down Payment Mode for scenario {int}")
+		public void user_selects_down_payment_mode_for_scenario(Integer rowNo) {
+		    // Write code here that turns the phrase above into concrete actions
+			String downPaymentMode = testData.get(rowNo).get("DownPaymentMode").toString();
+			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.downPaymentMode()));
+			CoreFunctions.setText(financialInfoPOM.downPaymentMode(),downPaymentMode );
+		}
+ 
+		@When("User selects Loan Rejection Date for scenario {int}")
+		public void user_selects_loan_rejection_date_for_scenario(Integer rowNo) throws Exception {
+		    // Write code here that turns the phrase above into concrete actions
+			String loanRejectionDate = testData.get(rowNo).get("LoanRejectionDate").toString();
+			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.loanRejectionDatePicker()));
+			CoreFunctions.click(financialInfoPOM.loanRejectionDatePicker(), "Choosing Loan Rejection Date");
+			CoreFunctions.selectDate(BrowserHandle.getDriver(), loanRejectionDate);
+		}
+		
+		@Then("Verify the Financial Details fields are cleared out")
+		public void verify_the_Financial_Details_fields_are_cleared_out() throws Exception {
+			
+			String loanTypeFE = CoreFunctions.getElementText(financialInfoPOM.getDropdownValueForClear("loanType"));
+			Assert.assertEquals(loanTypeFE,"Select");
+			Assert.assertTrue(financialInfoPOM.financierBranch().isEnabled());
+			Assert.assertTrue(financialInfoPOM.financeAmount().isEnabled());
+			Assert.assertFalse(financialInfoPOM.FinancialDetailsPopUpButton().isEnabled());
+		}
+	    
+	    
+	    
 	 
 	}
