@@ -31,7 +31,7 @@ public class AddInvoiceStepDef {
 
 	@When("User click on Search Order")
 	public void user_click_on_search_order() {
-		testData=CoreFunctions.test("InvoiceDetails");
+		testData=CoreFunctions.test("InvoiceData");
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName());
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(addInvoicePOM.addInvoiceOrderNumber()));
@@ -194,7 +194,7 @@ public void if_user_selects_b2b_customer_as(String option) throws InterruptedExc
 //	ac.moveToElement(addIn/voicePOM.b2bCustomer()).build().perform();
 //	js.executeScript("window.scrollTo(0,250)");
 //	Thread.sleep(4000);
-	CoreFunctions.moveToElement(addInvoicePOM.b2bCustomer());
+	CoreFunctions.moveToElement(addInvoicePOM.aadharNumber());
 	BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(addInvoicePOM.b2bCustomer()));
 
 	CoreFunctions.click(addInvoicePOM.b2bCustomer(), "click on b2b customer");

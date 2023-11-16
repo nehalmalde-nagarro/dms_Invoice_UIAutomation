@@ -116,7 +116,6 @@ public class SearchAllInvoicesStepDef {
 		try {
 			CoreFunctions.selectDate(BrowserHandle.getDriver(), fromDate);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

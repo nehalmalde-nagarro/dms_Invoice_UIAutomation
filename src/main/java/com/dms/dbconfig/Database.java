@@ -12,8 +12,8 @@ public class Database {
 
 		public static final String URL = "jdbc:postgresql://localhost:6868/postgres";
 		public static final class MULDMS {
-			public static final String USERNAME = "postgres";
-			public static final String PASSWORD = "DCIPdms098";
+			public static final String USERNAME = "nagarro_read_write";
+			public static final String PASSWORD = "nagarro_read_write";
 		}
 		
 		

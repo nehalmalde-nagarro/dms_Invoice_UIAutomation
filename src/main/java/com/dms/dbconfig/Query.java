@@ -218,7 +218,15 @@ public class Query {
 		return data;
 	}
 	
-	
+	public static String get_fields_From_SM_PRICE_FOR(String selectCol, String conditionCol, String conditionVal)
+			throws Exception {
+		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"SM_SPRICE_FOR\" where \"" + conditionCol + "\" ='"
+				+ conditionVal + "');";
+ 
+		System.out.println(query);
+		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
+		return data;
+	}
 	
 
 //	public static List<String> countCampNameSearchedOnDashboard(String CampName) throws Exception {

@@ -11,27 +11,27 @@ public class AddInvoice_VehicleDetailsPOM {
 	public WebElement model() {
 		return PageUtil.findBy(By.id("'formInput-'modelNo"));
 	}
- 
+
 	public WebElement variant() {
 		return PageUtil.findBy(By.id("'formInput-'varient"));
 	}
- 
+
 	public WebElement vehicleID() {
 		return PageUtil.findBy(By.id("'formInput-'vehicleId"));
 	}
- 
+
 	public WebElement chassisNum() {
 		return PageUtil.findBy(By.id("'formInput-'chassisNumber"));
 	}
- 
+
 	public WebElement color() {
 		return PageUtil.findBy(By.id("'formInput-'color"));
 	}
- 
+
 	public WebElement engineNum() {
 		return PageUtil.findBy(By.id("'formInput-'engineNumber"));
 	}
- 
+
 	public WebElement keyNum() {
 		return PageUtil.findBy(By.id("'formInput-'keyNumber"));
 	}
@@ -53,7 +53,7 @@ public class AddInvoice_VehicleDetailsPOM {
 	public WebElement chooseLoyaltyCardType(String loyalyCardTypeValue) {
 		return PageUtil.findBy(By.xpath("//span[contains(text(),'"+loyalyCardTypeValue+"')]"));
 	}
-	
+
 	public WebElement reasons() {
 		return PageUtil.findBy(By.id("reasons"));
 	}
@@ -62,76 +62,74 @@ public class AddInvoice_VehicleDetailsPOM {
 	}
 
 	public WebElement clickFastTagpopup() {
-		return PageUtil.findBy(By.xpath("//div[text()='FASTTAG']"));
+		return PageUtil.findBy(By.xpath("//div[text()='FASTAG']//ancestor::div[@class='modal-btn-container']"));
 	}
 
-public WebElement clickPrefSrvDealerpopup() {
+	public WebElement clickPrefSrvDealerpopup() {
 		return PageUtil.findBy(By.xpath("//div[contains(text(),'PREFERRED SRV DEALER')]"));
 	}
 
-public WebElement clickCCPSalepopup() {
+	public WebElement clickCCPSalepopup() {
 		return PageUtil.findBy(By.xpath("//div[contains(text(),'CCP Sale')]"));
 	}
 
-//FastTag popup
-public WebElement fastTagId() {
+	//FastTag popup
+	public WebElement fastTagId() {
 		return PageUtil.findBy(By.id("'formInput-'fastTagId"));
 	}
 
-public WebElement fastTagBank() {
-	return PageUtil.findBy(By.id("fastTagBank"));
-}
-public WebElement choosefastTagBank(String fastTagBankValue) {
-	return PageUtil.findBy(By.xpath("//span[contains(text(),'"+fastTagBankValue+"')]"));
-}
+	public WebElement fastTagBank() {
+		return PageUtil.findBy(By.id("fastTagBank"));
+	}
+	public WebElement choosefastTagBank(String fastTagBankValue) {
+		return PageUtil.findBy(By.xpath("//span[contains(text(),'"+fastTagBankValue+"')]"));
+	}
 
 
-public WebElement fastTagFitmentValue() {
-	return PageUtil.findBy(By.id("inputDatefasTagFitmentDate"));
-}
+	public WebElement fastTagFitmentValue() {
+		return PageUtil.findBy(By.id("inputDatefasTagFitmentDate"));
+	}
 
-public WebElement fastTagFitmentdatePicker() {
-	return PageUtil.findBy(By.xpath("//input[@id='inputDatefasTagFitmentDate']/following-sibling::mat-datepicker"));
-}
+	public WebElement fastTagFitmentdatePicker() {
+		return PageUtil.findBy(By.xpath("//button[@aria-label='Open calendar']"));
+	}
 
-public WebElement fastTagClearButton() {
-	return PageUtil.findBy(By.xpath("//span[text()=' CLEAR ']"));
-}
+	public WebElement fastTagClearButton() {
+		return PageUtil.findBy(By.xpath("//span[text()=' CLEAR ']"));
+	}
 
 
-
-//SrvDealerPopup
+	//SrvDealerPopup
 	public WebElement selectStateDropdown() {
 		return PageUtil.findBy(By.id("dealerState"));
 	}
-public WebElement chooseState(String stateValue) {
-	return PageUtil.findBy(By.xpath("//span[contains(text(),'"+stateValue+"')]"));
-}
+	public WebElement chooseState(String stateValue) {
+		return PageUtil.findBy(By.xpath("//span[contains(text(),'"+stateValue+"')]"));
+	}
 
-public WebElement searchInDropdown() {
-	return PageUtil.findBy(By.xpath("//input[@placeholder='Select']"));
-}
+	public WebElement searchInDropdown() {
+		return PageUtil.findBy(By.xpath("//input[@placeholder='Select']"));
+	}
 
 	public WebElement selectCityDropdown() {
 		return PageUtil.findBy(By.id("dealerCity"));
 	}
-public WebElement chooseCity(String cityValue) {
-	return PageUtil.findBy(By.xpath("//span[contains(text(),'"+cityValue+"')]"));
-}
-//search button 
+	public WebElement chooseCity(String cityValue) {
+		return PageUtil.findBy(By.xpath("//span[contains(text(),'"+cityValue+"')]"));
+	}
+	//search button 
 
-//select the user provided dealer
-public WebElement chooseDealer(String dealerName) {
-	return PageUtil.findBy(By.xpath("//span[contains(text(),'"+dealerName+"')]/parent::div"));
-}
-//ok button
+	//select the user provided dealer
+	public WebElement chooseDealer(String dealerName) {
+		return PageUtil.findBy(By.xpath("//span[contains(text(),'"+dealerName+"')]/parent::div"));
+	}
 
-//Extended Waaranty section
+	//Extended Waaranty section
 
-public WebElement selectExtendedWarrantyDropdown() {
+	public WebElement selectExtendedWarrantyDropdown() {
 		return PageUtil.findBy(By.id("extendedWarranty"));
 	}
-public WebElement chooseExtendedWarranty(String extendedWarrantyValue) {
-	return PageUtil.findBy(By.xpath("//span[contains(text(),'"+extendedWarrantyValue+"')]"));
-}
+	public WebElement chooseExtendedWarranty(String extendedWarrantyValue) {
+		return PageUtil.findBy(By.xpath("//span[contains(text(),'"+extendedWarrantyValue+"')]"));
+	}
 }
