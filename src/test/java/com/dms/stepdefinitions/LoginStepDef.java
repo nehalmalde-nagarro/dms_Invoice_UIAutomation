@@ -38,8 +38,15 @@ public class LoginStepDef {
 //   CoreFunctions.click(loginPOM.dealerBtn(), "dealer");
 		CoreFunctions.setText(loginPOM.inputUsername(), username);
 		CoreFunctions.setText(loginPOM.inputPassword(), password);
+		
+		BrowserHandle.getDriver().switchTo().frame(1);
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.closeZendesk()));
+		CoreFunctions.click(loginPOM.closeZendesk(), "Closing Zendesk");
+		
+		BrowserHandle.getDriver().switchTo().defaultContent();
 	}
 
+	
 	@When("User click on Captcha")
 	public void user_click_on_captcha() {
 		Logs.logger.info(new Object() {
@@ -111,4 +118,31 @@ public class LoginStepDef {
 		Assert.assertTrue(loginPOM.invalidPassword().isDisplayed());
 	}
 
+	
+	@When("User clicks on open Zendesk messaging window button")
+	public void User_clicks_on_open_Zendesk_messaging_window_button() {
+		
+		BrowserHandle.getDriver().switchTo().frame("launcher");
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.openZendeskMessagingWindow()));
+		CoreFunctions.click(loginPOM.openZendeskMessagingWindow(), "open Zendesk");
+		Logs.logger.info(new Object() {
+		}.getClass().getEnclosingMethod().getName() + " " + loginPOM.openZendeskMessagingWindow());
+		
+		
+		
+	}
+	
+	@Then("Verify user is able to access the Zendesk messaging window")
+	public void Verify_user_is_able_to_access_the_Zendesk_messaging_window() {
+		
+		
+		BrowserHandle.getDriver().switchTo().defaultContent();
+		BrowserHandle.getDriver().switchTo().frame("Messaging window");
+		BrowserHandle.wait.until(ExpectedConditions.visibilityOf(loginPOM.zendeskMessagingWindow()));
+		
+		Assert.assertTrue(loginPOM.zendeskMessagingWindow().isDisplayed());
+		BrowserHandle.getDriver().switchTo().defaultContent();
+		
+		
+	}
 }

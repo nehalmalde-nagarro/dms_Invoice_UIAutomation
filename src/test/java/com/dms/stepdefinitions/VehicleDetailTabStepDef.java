@@ -10,6 +10,7 @@ import org.testng.Assert;
 import com.dms.browserInstance.BrowserHandle;
 import com.dms.core.CoreFunctions;
 import com.dms.dbconfig.Query;
+import com.dms.pageobjects.AddInvoice_FinancialInfo;
 import com.dms.pageobjects.AddInvoice_VehicleDetailsPOM;
 
 import io.cucumber.java.en.Then;
@@ -19,6 +20,7 @@ public class VehicleDetailTabStepDef {
 
 	AddInvoice_VehicleDetailsPOM vehicleDetailsPOM=new AddInvoice_VehicleDetailsPOM();
 	public static List<Map<String, String>> testData = new ArrayList<>();
+	AddInvoice_FinancialInfo financialInfoPOM = new AddInvoice_FinancialInfo();
 
 	@Then("Verify Prefilled fields for OrderId from scenario {int} on Vehicle Details tab")
 	public void verify_preFilled_Data_on_Vehicle_Detail_Tab(int rowNo) throws Exception {
@@ -77,10 +79,11 @@ public class VehicleDetailTabStepDef {
 
 	
 	@When("user selects Owners Manual Preference for scenario {int}")
-	public void user_selects_owners_manual_preference_as(int rowNo) {
-		testData=CoreFunctions.test("VehicleDetails");
+	public void user_selects_owners_manual_preference_as(int rowNo) throws InterruptedException {
+		testData=CoreFunctions.test("InvoiceData");
 		rowNo--;
 		String ownerManualValue = testData.get(rowNo).get("OwnerManualPref").toString();
+		CoreFunctions.moveToElement(vehicleDetailsPOM.clickownersManualPrefDropdown());
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.clickownersManualPrefDropdown()));
 		CoreFunctions.click(vehicleDetailsPOM.clickownersManualPrefDropdown(), "Clicking on Owner Pref");
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.chooseownersManualPref(ownerManualValue)));
@@ -154,7 +157,7 @@ public class VehicleDetailTabStepDef {
 	@When("user selects Extended Warranty for scenario {int}")
 	public void user_selects_extended_warranty_as(int rowNo) {
 		rowNo--;
-		testData=CoreFunctions.test("VehicleDetails");
+		testData=CoreFunctions.test("InvoiceData");
 		String extendedWarrantyValue = testData.get(rowNo).get("ExtendedWarranty").toString();
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.selectExtendedWarrantyDropdown()));
 		CoreFunctions.click(vehicleDetailsPOM.selectExtendedWarrantyDropdown(),"Clicking on Extended Warranty dropdown");
@@ -201,15 +204,15 @@ public class VehicleDetailTabStepDef {
 
 	@Then("Verify the FastTag fields are cleared out")
 	public void verify_the_FastTag_fields_are_cleared_out() {
-		Assert.assertTrue(vehicleDetailsPOM.fastTagId().getAttribute("value")==null);
-		Assert.assertEquals(vehicleDetailsPOM.fastTagBank().getAttribute("placeholder"), "Select");
-		Assert.assertTrue(vehicleDetailsPOM.fastTagFitmentValue().getAttribute("value")==null);
+		Assert.assertTrue(vehicleDetailsPOM.fastTagId().getAttribute("value").isEmpty());
+		Assert.assertEquals(financialInfoPOM.getDropdownValueForClear("fastTagBank").getText(),"Select");	
+		Assert.assertTrue(vehicleDetailsPOM.fastTagFitmentValue().getAttribute("value").isEmpty());
 	}
 
 	@Then("Verify the Preferred SRV fields are cleared out")
 	public void verify_the_preferred_srv_fields_are_cleared_out() {
-		Assert.assertTrue(vehicleDetailsPOM.selectStateDropdown().getText().isEmpty());
-		Assert.assertTrue(vehicleDetailsPOM.selectCityDropdown().getText().isEmpty());
+		Assert.assertEquals(financialInfoPOM.getDropdownValueForClear("dealerState").getText(),"Select");	
+		Assert.assertEquals(financialInfoPOM.getDropdownValueForClear("dealerCity").getText(),"Select");	
 
 	}
 

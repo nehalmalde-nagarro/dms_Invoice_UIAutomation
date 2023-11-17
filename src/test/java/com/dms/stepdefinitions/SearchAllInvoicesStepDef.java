@@ -80,8 +80,8 @@ public class SearchAllInvoicesStepDef {
 		String custName = Query.get_fields_From_GM_CIN("FULL_NAME","CUST_CD",custCode);
 		String phoneNumber = Query.get_fields_From_GM_CIN("MOBILE_PHONE","CUST_CD",custCode);
 		String orderDateBE = CoreFunctions.dateFormatterwithTime(Query.get_fields_From_ShOrderBook("ORDER_DATE","ORDER_NUM",orderId));
-		String orderDateFE =CoreFunctions.dateFormatterwithoutTime(searchInvoice.searchResultsOrderInvoiceDate(orderId).getText());
-		System.out.println();
+		String orderDateFE =CoreFunctions.getElementText(searchInvoice.searchResultsOrderInvoiceDate(orderId));
+		System.out.println(orderDateBE+" -------------------- "+orderDateFE);
 		Assert.assertEquals(custCode, searchInvoice.searchResultsCustomerID(orderId).getText());
 		Assert.assertEquals(CoreFunctions.trim(custName), CoreFunctions.trim(searchInvoice.searchResultsCustomerName(orderId).getText()));
 		Assert.assertEquals(phoneNumber, searchInvoice.searchResultsPhoneNumber(orderId).getText());
@@ -95,7 +95,7 @@ public class SearchAllInvoicesStepDef {
 		String custCd = Query.get_fields_From_GM_CIN("CUST_CD","MOBILE_PHONE",mobileNum);
 		String orderNum = Query.get_fields_From_ShOrderBook("ORDER_NUM","CUST_CD",custCd);
 		String orderDateBE = CoreFunctions.dateFormatterwithTime(Query.get_fields_From_ShOrderBook("ORDER_DATE","CUST_CD",custCd));
-		String orderDateFE =CoreFunctions.dateFormatterwithoutTime(searchInvoice.searchResultsOrderInvoiceDate(orderNum).getText());
+		String orderDateFE=searchInvoice.searchResultsOrderInvoiceDate(orderNum).getText();
 		String fullName = Query.get_fields_From_GM_CIN("FULL_NAME","MOBILE_PHONE",mobileNum);
 		Assert.assertEquals(custCd, searchInvoice.searchResultsCustomerID(orderNum).getText());
 		Assert.assertEquals(CoreFunctions.trim(fullName)  , CoreFunctions.trim(searchInvoice.searchResultsCustomerName(orderNum).getText()));
@@ -160,7 +160,7 @@ public class SearchAllInvoicesStepDef {
 			String custName = CoreFunctions.trim(Query.get_fields_From_GM_CIN("FULL_NAME","CUST_CD",orderPartyCd));
 			String mobileNum = Query.get_fields_From_GM_CIN("MOBILE_PHONE","CUST_CD",orderPartyCd);
 			String invoiceDateBE = CoreFunctions.dateFormatterwithTime(Query.get_fields_From_ShInvoice("INV_DATE", "INV_NUM",invoiceNum));
-			String invoiceDateFE =CoreFunctions.dateFormatterwithoutTime(searchInvoice.searchResultsOrderInvoiceDate(invoiceNum).getText());
+			String invoiceDateFE =(searchInvoice.searchResultsOrderInvoiceDate(invoiceNum).getText());
 			Assert.assertEquals(orderPartyCd, searchInvoice.searchResultsCustomerID(invoiceNum).getText());
 			Assert.assertEquals(custName,CoreFunctions.trim(searchInvoice.searchResultsCustomerName(invoiceNum).getText()));
 			Assert.assertEquals(mobileNum, searchInvoice.searchResultsPhoneNumber(invoiceNum).getText());
@@ -172,13 +172,20 @@ public class SearchAllInvoicesStepDef {
 	public void verify_user_is_able_to_view_customer_details_by_invoice_based_on_vinNumber(String vinNum) throws Exception {
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName());
-		 String orderPartyCd=Query.get_fields_From_ShInvoice("ORDER_PARTY_CD", "VIN", vinNum);
-			String custName = CoreFunctions.trim(Query.get_fields_From_GM_CIN("FULL_NAME","CUST_CD",orderPartyCd));
-			String mobileNum = Query.get_fields_From_GM_CIN("MOBILE_PHONE","CUST_CD",orderPartyCd);
-		    String invNum=Query.get_fields_From_ShInvoice("INV_NUM", "VIN", vinNum);
-			String invoiceDateBE = CoreFunctions.dateFormatterwithTime(Query.get_fields_From_ShInvoice("INV_DATE", "VIN",vinNum));
-			String invoiceDateFE =CoreFunctions.dateFormatterwithoutTime(searchInvoice.searchResultsOrderInvoiceDate(invNum).getText());
-			Assert.assertEquals(orderPartyCd, searchInvoice.searchResultsCustomerID(invNum).getText());
+//		 String orderPartyCd=Query.get_fields_From_ShInvoice("ORDER_PARTY_CD", "VIN", vinNum);
+//			String custName = CoreFunctions.trim(Query.get_fields_From_GM_CIN("FULL_NAME","CUST_CD",orderPartyCd));
+//			String mobileNum = Query.get_fields_From_GM_CIN("MOBILE_PHONE","CUST_CD",orderPartyCd);
+		    String invNum=Query.search_for_invoice("INV_NUM", "VIN", vinNum);
+//			String invoiceDateBE = CoreFunctions.dateFormatterwithTime(Query.get_fields_From_ShInvoice("INV_DATE", "VIN",vinNum));
+			String invoiceDateFE =(searchInvoice.searchResultsOrderInvoiceDate(invNum).getText());
+		
+			 String orderPartyCd=Query.search_for_invoice("ORDER_PARTY_CD", "VIN", vinNum);
+		     String custName = CoreFunctions.trim(Query.search_for_gmcin_for_invoice("FULL_NAME", "VIN", vinNum));
+				String mobileNum = Query.search_for_gmcin_for_invoice("MOBILE_PHONE","VIN", vinNum);
+				 String invoiceDateBE=CoreFunctions.dateFormatterwithTime(Query.search_for_invoice("INV_DATE", "VIN", vinNum));
+
+		
+		    Assert.assertEquals(orderPartyCd, searchInvoice.searchResultsCustomerID(invNum).getText());
 			Assert.assertEquals(custName,CoreFunctions.trim(searchInvoice.searchResultsCustomerName(invNum).getText()));
 			Assert.assertEquals(mobileNum, searchInvoice.searchResultsPhoneNumber(invNum).getText());
 			Assert.assertEquals(invoiceDateBE,invoiceDateFE );
@@ -190,15 +197,20 @@ public class SearchAllInvoicesStepDef {
 	public void verify_user_is_able_to_view_customer_details_by_invoice_based_on_phone_number(String mobileNum) throws Exception {
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName());
-		String custCD = Query.get_fields_From_GM_CIN("CUST_CD","MOBILE_PHONE",mobileNum);
+//		String custCD = Query.get_All_fields_From_GM_CIN("CUST_CD","MOBILE_PHONE",mobileNum);
+		
+		
+		String custCD = Query.search_for_gmcin_for_invoice_mobile("ORDER_PARTY_CD","MOBILE_PHONE",mobileNum);
 	    String invNum=Query.get_fields_From_ShInvoice("INV_NUM", "ORDER_PARTY_CD", custCD);
 		String custName = Query.get_fields_From_GM_CIN("FULL_NAME","CUST_CD",custCD);
-		String invoiceDateBE = CoreFunctions.dateFormatterwithTime(Query.get_fields_From_ShInvoice("INV_DATE", "INV_NUM",invNum));
-		String invoiceDateFE =CoreFunctions.dateFormatterwithoutTime(searchInvoice.searchResultsOrderInvoiceDate(invNum).getText());
+		String invoiceDateFE =(searchInvoice.searchResultsOrderInvoiceDate(invNum).getText());
+
 		Assert.assertEquals(custCD, searchInvoice.searchResultsCustomerID(invNum).getText());
 		Assert.assertEquals(CoreFunctions.trim(custName),CoreFunctions.trim(searchInvoice.searchResultsCustomerName(invNum).getText()));
 		Assert.assertEquals(invNum, searchInvoice.searchResults(invNum).get(0).getText());
+		String invoiceDateBE = CoreFunctions.dateFormatterwithTime(Query.get_fields_From_ShInvoice("INV_DATE", "INV_NUM",invNum));
 		Assert.assertEquals(invoiceDateBE,invoiceDateFE );
+
 		
 	}
 	
@@ -211,10 +223,10 @@ public class SearchAllInvoicesStepDef {
 		String custCd2=Query.get_fields_From_ShOrderBook("CUST_CD","ORDER_NUM",orderNum);
 		Assert.assertEquals(custCd, custCd2);
 		String orderDateBE = CoreFunctions.dateFormatterwithTime(Query.get_fields_From_ShOrderBook("ORDER_DATE","CUST_CD",custCd));
-		String orderDateFE =CoreFunctions.dateFormatterwithoutTime(searchInvoice.searchResultsOrderInvoiceDate(orderNum).getText());
+		String orderDateFE =(searchInvoice.searchResultsOrderInvoiceDate(orderNum).getText());
 		String fullName = Query.get_fields_From_GM_CIN("FULL_NAME","CUST_CD",custCd);
 		Assert.assertEquals(custCd, searchInvoice.searchResultsCustomerID(orderNum).getText());
-		Assert.assertEquals(fullName, searchInvoice.searchResultsCustomerName(orderNum).getText());
+		Assert.assertEquals(CoreFunctions.trim(fullName) ,CoreFunctions.trim(searchInvoice.searchResultsCustomerName(orderNum).getText()));
 		Assert.assertEquals(orderDateBE,orderDateFE );
 		Assert.assertEquals(orderNum, searchInvoice.searchResults(orderNum).get(0).getText());
 	}

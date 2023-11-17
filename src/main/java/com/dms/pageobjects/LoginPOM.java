@@ -13,7 +13,26 @@ public class LoginPOM {
 	public WebElement inputUsername() {
 		return PageUtil.findBy(By.id("'formInput-'username"));
 	}
-
+	
+	public WebElement closeZendesk() {
+		return PageUtil.findBy(By.xpath("//button[@aria-label='Close message']"));
+	}
+	//launcher
+	public WebElement needHelpZendesk() {
+		return PageUtil.findBy(By.xpath("//button/div[text()='Hi. Need any help?']"));
+	}
+	public WebElement openZendeskMessagingWindow() {
+		return PageUtil.findBy(By.xpath("//button[@aria-label='Open messaging window']"));
+	}
+	//Messaging window
+	public WebElement zendeskMessagingWindow() {
+		return PageUtil.findBy(By.xpath("//h2[text()='Maruti Suzuki India Limited']"));
+	}
+	public WebElement closeZendeskMessagingWindow() {
+		return PageUtil.findBy(By.xpath("//button[@aria-label='Close']"));
+	}
+	
+	
 	public WebElement inputPassword() {
 		return PageUtil.findBy(By.id("'formInput-'password"));
 	}

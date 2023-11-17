@@ -52,7 +52,7 @@ public class AddInvoice_InvoiceDetailsPOM {
 	}
 
 	public WebElement sellingPriceFor() {
-		return PageUtil.findBy(By.xpath("//mat-select[@id='sellingPriceFor']//span/span"));
+		return PageUtil.findBy(By.xpath("//mat-select[@id='sellingPriceFor']/div//span"));
 	}
 
 	public WebElement orderDateID() {

@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="32" passed="25" failed="7" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-06T17:08:27 IST" name="Suite" finished-at="2023-11-06T17:09:05 IST" duration-ms="38505">
+  <suite started-at="2023-11-17T14:13:06 IST" name="Suite" finished-at="2023-11-17T14:36:04 IST" duration-ms="1378176">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-11-06T17:08:27 IST" name="Cucumber UI with TestNG Test" finished-at="2023-11-06T17:09:05 IST" duration-ms="38505">
+    <test started-at="2023-11-17T14:13:06 IST" name="Cucumber UI with TestNG Test" finished-at="2023-11-17T14:36:04 IST" duration-ms="1378176">
       <class name="com.dms.runner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-06T17:08:27 IST" name="setUpClass" finished-at="2023-11-06T17:08:27 IST" duration-ms="618" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:13:06 IST" name="setUpClass" finished-at="2023-11-17T14:13:07 IST" duration-ms="1200" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@14457a95]]>
+                <![CDATA[org.testng.TestRunner@1dae615d]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-06T17:08:27 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-06T17:09:04 IST" duration-ms="37211" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:13:07 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:13:59 IST" duration-ms="51538" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Validate shipping info functionality for Individual on Invoice details page"]]>
+                <![CDATA["Validate Prefilled fields on Invoice Details tab"]]>
               </value>
             </param>
             <param index="1">
@@ -37,7 +37,682 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-06T17:09:04 IST" name="tearDownClass" finished-at="2023-11-06T17:09:05 IST" duration-ms="626" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:13:59 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:15:33 IST" duration-ms="94092" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate PopUp functionalities of search order Popup"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Add Invoice - Invoice Details Tab"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:15:33 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:15:57 IST" duration-ms="24391" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate if no record found if invalid data input to search on popup"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Add Invoice - Invoice Details Tab"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:15:57 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:16:30 IST" duration-ms="33040" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate back to listing button  functionality"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Add Invoice - Invoice Details Tab"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:16:30 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:17:09 IST" duration-ms="39163" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate clear button functionality on Invoice details page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Add Invoice - Invoice Details Tab"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:17:09 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:18:00 IST" duration-ms="50654" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate B2B functionality on Invoice details page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Add Invoice - Invoice Details Tab"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:18:00 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:18:42 IST" duration-ms="41862" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate Next button functionality on Invoice details page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Add Invoice - Invoice Details Tab"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:18:42 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:19:02 IST" duration-ms="19896" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate Dealer Information Functionality"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Dealer Information Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:19:02 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:20:44 IST" duration-ms="102549" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate prefilled data on Financial Info page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Add Invoice - Vehicle Details Tab"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"#ownerManualRef"}
+  (Session info: chrome=119.0.6045.124)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c5acff34b9c916e66fbea27f9e6675c1, findElement {using=id, value=ownerManualRef}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.124, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61753}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61753/devtoo..., se:cdpVersion: 119.0.6045.124, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c5acff34b9c916e66fbea27f9e6675c1]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#ownerManualRef"}
+  (Session info: chrome=119.0.6045.124)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c5acff34b9c916e66fbea27f9e6675c1, findElement {using=id, value=ownerManualRef}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.124, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61753}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61753/devtoo..., se:cdpVersion: 119.0.6045.124, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c5acff34b9c916e66fbea27f9e6675c1
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
+at com.dms.pageobjects.AddInvoice_VehicleDetailsPOM.clickownersManualPrefDropdown(AddInvoice_VehicleDetailsPOM.java:39)
+at com.dms.stepdefinitions.VehicleDetailTabStepDef.user_selects_owners_manual_preference_as(VehicleDetailTabStepDef.java:86)
+at ✽.user selects Owners Manual Preference for scenario 1(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/FinancialInfo.feature:23)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:20:44 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:21:38 IST" duration-ms="53364" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate the Finance and Leasing payment Type dependent fields"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Add Invoice - Vehicle Details Tab"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "String.toString()" because the return value of "java.util.Map.get(Object)" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "String.toString()" because the return value of "java.util.Map.get(Object)" is null
+at com.dms.stepdefinitions.VehicleDetailTabStepDef.user_selects_city_as(VehicleDetailTabStepDef.java:142)
+at ✽.user selects city for scenario 1(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/FinancialInfo.feature:56)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:21:38 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:22:34 IST" duration-ms="56707" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate the next button is enabled in Financial Info page and able to navigate to next screen when Payment Type is Cash"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Add Invoice - Vehicle Details Tab"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "String.toString()" because the return value of "java.util.Map.get(Object)" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "String.toString()" because the return value of "java.util.Map.get(Object)" is null
+at com.dms.stepdefinitions.VehicleDetailTabStepDef.user_selects_city_as(VehicleDetailTabStepDef.java:142)
+at ✽.user selects city for scenario 1(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/FinancialInfo.feature:90)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:22:34 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:22:54 IST" duration-ms="19901" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Login as a Dealer with Valid Credentials"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:22:54 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:23:11 IST" duration-ms="17159" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Login as a Dealer with InValid Credentials"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:23:12 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:23:26 IST" duration-ms="14491" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Login as a Dealer with InValid Credentials username length less than 6 digits"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:23:26 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:23:42 IST" duration-ms="15897" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Login as a Dealer with InValid Credentials username length less than 6 digits"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:23:42 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:23:57 IST" duration-ms="14789" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Login as a Dealer with InValid Credentials password length less than 6 digits"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:23:57 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:24:10 IST" duration-ms="13710" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Login as a Dealer with InValid Credentials password length less than 6 digits"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:24:10 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:24:31 IST" duration-ms="20326" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate if dealer is able to view all order deatils on click on search button"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Search by Order or Invoice on Dashboard Page"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:24:31 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:24:51 IST" duration-ms="20121" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate if dealer is able filter search by order based on Order ID"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Search by Order or Invoice on Dashboard Page"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:24:51 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:25:46 IST" duration-ms="55117" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate if dealer is able filter search by order based on Phone number"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Search by Order or Invoice on Dashboard Page"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:25:46 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:26:20 IST" duration-ms="33723" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate if dealer is able filter search by order based on dates"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Search by Order or Invoice on Dashboard Page"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:26:20 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:28:00 IST" duration-ms="99840" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate if dealer is able filter search by order based on various Valid params"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Search by Order or Invoice on Dashboard Page"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//td[contains(text(),'SOB15000006')]/following-sibling::td[4]"}
+  (Session info: chrome=119.0.6045.124)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [551bea16767915e25920962a7926d37c, findElement {using=xpath, value=//td[contains(text(),'SOB15000006')]/following-sibling::td[4]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.124, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62417}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62417/devtoo..., se:cdpVersion: 119.0.6045.124, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 551bea16767915e25920962a7926d37c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//td[contains(text(),'SOB15000006')]/following-sibling::td[4]"}
+  (Session info: chrome=119.0.6045.124)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [551bea16767915e25920962a7926d37c, findElement {using=xpath, value=//td[contains(text(),'SOB15000006')]/following-sibling::td[4]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.124, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62417}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62417/devtoo..., se:cdpVersion: 119.0.6045.124, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 551bea16767915e25920962a7926d37c
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
+at com.dms.pageobjects.SearchInvoice.searchResultsOrderInvoiceDate(SearchInvoice.java:89)
+at com.dms.stepdefinitions.SearchAllInvoicesStepDef.userDetailsBasedOnMultpleParam(SearchAllInvoicesStepDef.java:226)
+at ✽.Verify user is able to view Customer details by order based on "SOB15000006" "20-06-2023" "21-09-2023" "9643785691"(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/SearchAllInvoices.feature:62)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:28:00 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:28:33 IST" duration-ms="33757" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate if dealer is able filter search by order based on various invalid params"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Search by Order or Invoice on Dashboard Page"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:28:33 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:29:09 IST" duration-ms="35325" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify if clear icon clear search text box for order search by"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Search by Order or Invoice on Dashboard Page"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:29:09 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:29:28 IST" duration-ms="19195" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate search button not activated if Phone Number is not of 10 digit for search by order"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Search by Order or Invoice on Dashboard Page"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:29:28 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:29:51 IST" duration-ms="22881" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify if click on Generate Invoice Add invoice"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Search by Order or Invoice on Dashboard Page"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:29:51 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:30:36 IST" duration-ms="45325" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate prefilled data on Vehicles details page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Add Invoice - Vehicle Details Tab"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:30:36 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:31:19 IST" duration-ms="42923" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate previous button functionality on Vehicles details page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Add Invoice - Vehicle Details Tab"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:31:19 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:32:33 IST" duration-ms="73781" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate back to listing button  functionality"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Add Invoice - Vehicle Details Tab"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"#searchBy"}
+  (Session info: chrome=119.0.6045.124)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4b433da3a87e6e21fed669efbf10a493, findElement {using=id, value=searchBy}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.124, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62801}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62801/devtoo..., se:cdpVersion: 119.0.6045.124, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4b433da3a87e6e21fed669efbf10a493]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#searchBy"}
+  (Session info: chrome=119.0.6045.124)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4b433da3a87e6e21fed669efbf10a493, findElement {using=id, value=searchBy}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.124, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62801}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62801/devtoo..., se:cdpVersion: 119.0.6045.124, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4b433da3a87e6e21fed669efbf10a493
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
+at com.dms.pageobjects.SearchInvoice.searchBy(SearchInvoice.java:17)
+at com.dms.stepdefinitions.SearchAllInvoicesStepDef.user_logged_in_is_on_home_page(SearchAllInvoicesStepDef.java:28)
+at ✽.User is on Home Page(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/VehicleDetails.feature:52)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:32:33 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:33:23 IST" duration-ms="50257" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate next button functionality on Vehicles details page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Add Invoice - Vehicle Details Tab"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "String.toString()" because the return value of "java.util.Map.get(Object)" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "String.toString()" because the return value of "java.util.Map.get(Object)" is null
+at com.dms.stepdefinitions.VehicleDetailTabStepDef.user_selects_city_as(VehicleDetailTabStepDef.java:142)
+at ✽.user selects city for scenario 1(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/VehicleDetails.feature:92)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:33:23 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:35:21 IST" duration-ms="117790" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate Fasttag functionalities of Vehicle details tab"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Add Invoice - Vehicle Details Tab"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:35:21 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-17T14:36:03 IST" duration-ms="42600" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate Preferred SRV functionalities of Vehicle details tab"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Add Invoice - Vehicle Details Tab"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "String.toString()" because the return value of "java.util.Map.get(Object)" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "String.toString()" because the return value of "java.util.Map.get(Object)" is null
+at com.dms.stepdefinitions.VehicleDetailTabStepDef.user_selects_city_as(VehicleDetailTabStepDef.java:142)
+at ✽.user selects city for scenario 1(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/VehicleDetails.feature:150)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-17T14:36:03 IST" name="tearDownClass" finished-at="2023-11-17T14:36:04 IST" duration-ms="701" status="FAIL">
           <exception class="com.google.gson.JsonIOException">
             <message>
               <![CDATA[Failed making field 'java.lang.Throwable#detailMessage' accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.]]>

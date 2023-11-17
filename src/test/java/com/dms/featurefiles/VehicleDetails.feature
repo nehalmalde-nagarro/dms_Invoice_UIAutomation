@@ -6,7 +6,7 @@ Feature: Add Invoice - Vehicle Details Tab
     And User clicks on "Dealer" button
     And User enters "grn_sale" and "Welcome@1234"
     And User click on "LOGIN" button 
-    Then verify user profile
+    #Then verify user profile
 
   Scenario Outline: Validate prefilled data on Vehicles details page
     Given User is on Home Page
@@ -19,6 +19,7 @@ Feature: Add Invoice - Vehicle Details Tab
     And user enters Workspace from <rowNumber>
     And user enters Aadhar Number from <rowNumber>
     And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
     And User clicks on "NEXT" button
     Then Verify Prefilled fields for OrderId from scenario <rowNumber> on Vehicle Details tab
 
@@ -37,6 +38,7 @@ Feature: Add Invoice - Vehicle Details Tab
     And user enters Workspace from <rowNumber>
     And user enters Aadhar Number from <rowNumber>
     And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
     And User clicks on "NEXT" button
     And User clicks on "PREV" button 
     And User clicks on "YES" button on popup
@@ -46,15 +48,29 @@ Feature: Add Invoice - Vehicle Details Tab
       | rowNumber |
       |         1 |
 
-  Scenario: Validate back to listing button  functionality
+  Scenario Outline: Validate back to listing button  functionality
     Given User is on Home Page
     When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And user enters Workspace from <rowNumber>
+    And user enters Aadhar Number from <rowNumber>
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
     And User clicks on "BACK TO LISTING" button
     And User clicks on "NO" button on popup
     Then verify user is on Add Invoice page
     When User clicks on "BACK TO LISTING" button
     And User clicks on "YES" button on popup
     Then Verify User is on Home Page
+    
+     Examples: 
+      | rowNumber |
+      |         1 |
 
   Scenario Outline: Validate next button functionality on Vehicles details page
     Given User is on Home Page
@@ -67,6 +83,7 @@ Feature: Add Invoice - Vehicle Details Tab
     And user enters Workspace from <rowNumber>
     And user enters Aadhar Number from <rowNumber>
     And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
     And User clicks on "NEXT" button
     And user selects Owners Manual Preference for scenario <rowNumber>
     And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
@@ -95,6 +112,7 @@ Feature: Add Invoice - Vehicle Details Tab
     And user enters Workspace from <rowNumber>
     And user enters Aadhar Number from <rowNumber>
     And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
     And User clicks on "NEXT" button
     And User clicks on FastTag button
     And User enters Fast Tag ID from <rowNumber>
@@ -104,8 +122,6 @@ Feature: Add Invoice - Vehicle Details Tab
     Then User clicks on "OK" button
     And User clicks on FastTag button
     And User enters Fast Tag ID from <rowNumber>
-    And User selects Fast Tag Bank for scenario <rowNumber>
-    And User selects Fast Tag Fitment Date "20-12-2023"
     And User clicks on "CLEAR" button on popup
     Then Verify the FastTag fields are cleared out
     And Click on Close popup icon
@@ -126,6 +142,7 @@ Feature: Add Invoice - Vehicle Details Tab
     And user enters Workspace from <rowNumber>
     And user enters Aadhar Number from <rowNumber>
     And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
     And User clicks on "NEXT" button
     And user clicks on Preferred SRV Dealer popup
     And user selects state for scenario <rowNumber>

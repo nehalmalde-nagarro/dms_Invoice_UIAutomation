@@ -48,6 +48,16 @@ public class Query {
 		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
 		return data;
 	}
+	public static String get_All_fields_From_GM_CIN(String selectCol, String conditionCol, String conditionVal)
+			throws Exception {
+		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"GM_CIN\" where \"" + conditionCol + "\" ='"
+				+ conditionVal + "');";
+
+		System.out.println(query);
+		List<String> data = ReadFromDB.getData(Database.MULDMS, query);
+		
+		return CoreFunctions.appendingStringValues(data);
+	}
 	public static String get_fields_From_GM_CIN_by_Mobile(String selectCol, String conditionCol, String conditionVal)
 			throws Exception {
 		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"GM_CIN\" where \"" + conditionCol + "\" like '%"
@@ -228,6 +238,44 @@ public class Query {
 		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
 		return data;
 	}
+	
+	public static String search_for_invoice(String selectCol, String conditionCol, String conditionVal)
+			throws Exception {
+		String query="( select s1_0.\""+selectCol+"\" from \"MULDMS\".\"SH_INVOICE\" s1_0 "
+		  +"  join \"MULDMS\".\"GM_CIN\" g1_0 on s1_0.\"ORDER_PARTY_CD\" = g1_0.\"CUST_CD\" "
+		   +" where "
+			+"s1_0.\""+conditionCol+"\" = '"+conditionVal+"'"
+			+"and s1_0.\"DEALER_MAP_CD\" = "+dealer_Code+" )";
+ 
+		System.out.println(query);
+		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
+		return data;
+	}
+	
+	public static String search_for_gmcin_for_invoice(String selectCol, String conditionCol, String conditionVal)
+			throws Exception {
+		String query="( select g1_0.\""+selectCol+"\" from \"MULDMS\".\"SH_INVOICE\" s1_0 "
+		  +"  join \"MULDMS\".\"GM_CIN\" g1_0 on s1_0.\"ORDER_PARTY_CD\" = g1_0.\"CUST_CD\" "
+		   +" where "
+			+"s1_0.\""+conditionCol+"\" = '"+conditionVal+"'"
+			+"and s1_0.\"DEALER_MAP_CD\" = "+dealer_Code+" )";
+ 
+		System.out.println(query);
+		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
+		return data;
+	}	
+	public static String search_for_gmcin_for_invoice_mobile(String selectCol, String conditionCol, String conditionVal)
+			throws Exception {
+		String query="( select s1_0.\""+selectCol+"\" from \"MULDMS\".\"SH_INVOICE\" s1_0 "
+		  +"  join \"MULDMS\".\"GM_CIN\" g1_0 on s1_0.\"ORDER_PARTY_CD\" = g1_0.\"CUST_CD\" "
+		   +" where "
+			+"g1_0.\""+conditionCol+"\" = '"+conditionVal+"'"
+			+"and s1_0.\"DEALER_MAP_CD\" = "+dealer_Code+" )";
+ 
+		System.out.println(query);
+		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
+		return data;
+	}	
 	
 
 //	public static List<String> countCampNameSearchedOnDashboard(String CampName) throws Exception {

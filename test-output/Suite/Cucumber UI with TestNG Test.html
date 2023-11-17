@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Cucumber UI with TestNG Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>25/7/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Nov 06 17:08:27 IST 2023</td>
+<td>Started on:</td><td>Fri Nov 17 14:13:06 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>38 seconds (38505 ms)</td>
+<tr><td>Total time:</td><td>1378 seconds (1378176 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -122,8 +122,8 @@ function toggleAllBoxes() {
 	at io.cucumber.testng.AbstractTestNGCucumberTests.tearDownClass(AbstractTestNGCucumberTests.java:57)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	... 69 more
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace433756475", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace433756475'><pre>com.google.gson.JsonIOException: Failed making field &apos;java.lang.Throwable#detailMessage&apos; accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.
+... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace837034165", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace837034165'><pre>com.google.gson.JsonIOException: Failed making field &apos;java.lang.Throwable#detailMessage&apos; accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.
 	at com.google.gson.internal.reflect.ReflectionHelper.makeAccessible(ReflectionHelper.java:38)
 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.getBoundFields(ReflectiveTypeAdapterFactory.java:286)
 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.create(ReflectiveTypeAdapterFactory.java:130)
@@ -205,6 +205,239 @@ Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field p
 <td>0</td>
 <td>com.dms.runner.TestRunner@1ff4931d</td></tr>
 </table><p>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate the Finance and Leasing payment Type dependent fields", "Add Invoice - Vehicle Details Tab"</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;String.toString()&quot; because the return value of &quot;java.util.Map.get(Object)&quot; is null
+	at com.dms.stepdefinitions.VehicleDetailTabStepDef.user_selects_city_as(VehicleDetailTabStepDef.java:142)
+	at ✽.user selects city for scenario 1(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/FinancialInfo.feature:56)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1847234168", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1847234168'><pre>java.lang.NullPointerException: Cannot invoke &quot;String.toString()&quot; because the return value of &quot;java.util.Map.get(Object)&quot; is null
+	at com.dms.stepdefinitions.VehicleDetailTabStepDef.user_selects_city_as(VehicleDetailTabStepDef.java:142)
+	at ✽.user selects city for scenario 1(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/FinancialInfo.feature:56)
+</pre></div></td>
+<td>53</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate next button functionality on Vehicles details page", "Add Invoice - Vehicle Details Tab"</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;String.toString()&quot; because the return value of &quot;java.util.Map.get(Object)&quot; is null
+	at com.dms.stepdefinitions.VehicleDetailTabStepDef.user_selects_city_as(VehicleDetailTabStepDef.java:142)
+	at ✽.user selects city for scenario 1(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/VehicleDetails.feature:92)
+</pre></div><a href='#' onClick='toggleBox("stack-trace942531611", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace942531611'><pre>java.lang.NullPointerException: Cannot invoke &quot;String.toString()&quot; because the return value of &quot;java.util.Map.get(Object)&quot; is null
+	at com.dms.stepdefinitions.VehicleDetailTabStepDef.user_selects_city_as(VehicleDetailTabStepDef.java:142)
+	at ✽.user selects city for scenario 1(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/VehicleDetails.feature:92)
+</pre></div></td>
+<td>50</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate back to listing button  functionality", "Add Invoice - Vehicle Details Tab"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#searchBy&quot;}
+  (Session info: chrome=119.0.6045.124)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4b433da3a87e6e21fed669efbf10a493, findElement {using=id, value=searchBy}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.124, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62801}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62801/devtoo..., se:cdpVersion: 119.0.6045.124, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4b433da3a87e6e21fed669efbf10a493
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
+	at com.dms.pageobjects.SearchInvoice.searchBy(SearchInvoice.java:17)
+	at com.dms.stepdefinitions.SearchAllInvoicesStepDef.user_logged_in_is_on_home_page(SearchAllInvoicesStepDef.java:28)
+	at ✽.User is on Home Page(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/VehicleDetails.feature:52)
+... Removed 5 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1007387379", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1007387379'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#searchBy&quot;}
+  (Session info: chrome=119.0.6045.124)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4b433da3a87e6e21fed669efbf10a493, findElement {using=id, value=searchBy}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.124, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62801}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62801/devtoo..., se:cdpVersion: 119.0.6045.124, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4b433da3a87e6e21fed669efbf10a493
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
+	at com.dms.pageobjects.SearchInvoice.searchBy(SearchInvoice.java:17)
+	at com.dms.stepdefinitions.SearchAllInvoicesStepDef.user_logged_in_is_on_home_page(SearchAllInvoicesStepDef.java:28)
+	at ✽.User is on Home Page(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/VehicleDetails.feature:52)
+</pre></div></td>
+<td>73</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate prefilled data on Financial Info page", "Add Invoice - Vehicle Details Tab"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#ownerManualRef&quot;}
+  (Session info: chrome=119.0.6045.124)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c5acff34b9c916e66fbea27f9e6675c1, findElement {using=id, value=ownerManualRef}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.124, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61753}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61753/devtoo..., se:cdpVersion: 119.0.6045.124, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c5acff34b9c916e66fbea27f9e6675c1
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
+	at com.dms.pageobjects.AddInvoice_VehicleDetailsPOM.clickownersManualPrefDropdown(AddInvoice_VehicleDetailsPOM.java:39)
+	at com.dms.stepdefinitions.VehicleDetailTabStepDef.user_selects_owners_manual_preference_as(VehicleDetailTabStepDef.java:86)
+	at ✽.user selects Owners Manual Preference for scenario 1(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/FinancialInfo.feature:23)
+... Removed 5 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1208989446", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1208989446'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#ownerManualRef&quot;}
+  (Session info: chrome=119.0.6045.124)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c5acff34b9c916e66fbea27f9e6675c1, findElement {using=id, value=ownerManualRef}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.124, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61753}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61753/devtoo..., se:cdpVersion: 119.0.6045.124, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c5acff34b9c916e66fbea27f9e6675c1
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
+	at com.dms.pageobjects.AddInvoice_VehicleDetailsPOM.clickownersManualPrefDropdown(AddInvoice_VehicleDetailsPOM.java:39)
+	at com.dms.stepdefinitions.VehicleDetailTabStepDef.user_selects_owners_manual_preference_as(VehicleDetailTabStepDef.java:86)
+	at ✽.user selects Owners Manual Preference for scenario 1(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/FinancialInfo.feature:23)
+</pre></div></td>
+<td>102</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate if dealer is able filter search by order based on various Valid params", "Search by Order or Invoice on Dashboard Page"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//td[contains(text(),&apos;SOB15000006&apos;)]/following-sibling::td[4]&quot;}
+  (Session info: chrome=119.0.6045.124)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [551bea16767915e25920962a7926d37c, findElement {using=xpath, value=//td[contains(text(),&apos;SOB15000006&apos;)]/following-sibling::td[4]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.124, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62417}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62417/devtoo..., se:cdpVersion: 119.0.6045.124, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 551bea16767915e25920962a7926d37c
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
+	at com.dms.pageobjects.SearchInvoice.searchResultsOrderInvoiceDate(SearchInvoice.java:89)
+	at com.dms.stepdefinitions.SearchAllInvoicesStepDef.userDetailsBasedOnMultpleParam(SearchAllInvoicesStepDef.java:226)
+	at ✽.Verify user is able to view Customer details by order based on &quot;SOB15000006&quot; &quot;20-06-2023&quot; &quot;21-09-2023&quot; &quot;9643785691&quot;(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/SearchAllInvoices.feature:62)
+... Removed 5 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace620922030", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace620922030'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//td[contains(text(),&apos;SOB15000006&apos;)]/following-sibling::td[4]&quot;}
+  (Session info: chrome=119.0.6045.124)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [551bea16767915e25920962a7926d37c, findElement {using=xpath, value=//td[contains(text(),&apos;SOB15000006&apos;)]/following-sibling::td[4]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.124, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62417}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62417/devtoo..., se:cdpVersion: 119.0.6045.124, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 551bea16767915e25920962a7926d37c
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
+	at com.dms.pageobjects.SearchInvoice.searchResultsOrderInvoiceDate(SearchInvoice.java:89)
+	at com.dms.stepdefinitions.SearchAllInvoicesStepDef.userDetailsBasedOnMultpleParam(SearchAllInvoicesStepDef.java:226)
+	at ✽.Verify user is able to view Customer details by order based on &quot;SOB15000006&quot; &quot;20-06-2023&quot; &quot;21-09-2023&quot; &quot;9643785691&quot;(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/SearchAllInvoices.feature:62)
+</pre></div></td>
+<td>99</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Preferred SRV functionalities of Vehicle details tab", "Add Invoice - Vehicle Details Tab"</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;String.toString()&quot; because the return value of &quot;java.util.Map.get(Object)&quot; is null
+	at com.dms.stepdefinitions.VehicleDetailTabStepDef.user_selects_city_as(VehicleDetailTabStepDef.java:142)
+	at ✽.user selects city for scenario 1(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/VehicleDetails.feature:150)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1016848519", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1016848519'><pre>java.lang.NullPointerException: Cannot invoke &quot;String.toString()&quot; because the return value of &quot;java.util.Map.get(Object)&quot; is null
+	at com.dms.stepdefinitions.VehicleDetailTabStepDef.user_selects_city_as(VehicleDetailTabStepDef.java:142)
+	at ✽.user selects city for scenario 1(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/VehicleDetails.feature:150)
+</pre></div></td>
+<td>42</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate the next button is enabled in Financial Info page and able to navigate to next screen when Payment Type is Cash", "Add Invoice - Vehicle Details Tab"</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;String.toString()&quot; because the return value of &quot;java.util.Map.get(Object)&quot; is null
+	at com.dms.stepdefinitions.VehicleDetailTabStepDef.user_selects_city_as(VehicleDetailTabStepDef.java:142)
+	at ✽.user selects city for scenario 1(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/FinancialInfo.feature:90)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1113209589", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1113209589'><pre>java.lang.NullPointerException: Cannot invoke &quot;String.toString()&quot; because the return value of &quot;java.util.Map.get(Object)&quot; is null
+	at com.dms.stepdefinitions.VehicleDetailTabStepDef.user_selects_city_as(VehicleDetailTabStepDef.java:142)
+	at ✽.user selects city for scenario 1(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/FinancialInfo.feature:90)
+</pre></div></td>
+<td>56</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -213,9 +446,129 @@ Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field p
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate shipping info functionality for Individual on Invoice details page", "Add Invoice - Invoice Details Tab"</td>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Dealer Information Functionality", "Dealer Information Functionality"</td>
 <td></td>
-<td>37</td>
+<td>19</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Next button functionality on Invoice details page", "Add Invoice - Invoice Details Tab"</td>
+<td></td>
+<td>41</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate back to listing button  functionality", "Add Invoice - Invoice Details Tab"</td>
+<td></td>
+<td>33</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate if no record found if invalid data input to search on popup", "Add Invoice - Invoice Details Tab"</td>
+<td></td>
+<td>24</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate search button not activated if Phone Number is not of 10 digit for search by order", "Search by Order or Invoice on Dashboard Page"</td>
+<td></td>
+<td>19</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate if dealer is able filter search by order based on Order ID", "Search by Order or Invoice on Dashboard Page"</td>
+<td></td>
+<td>20</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate B2B functionality on Invoice details page", "Add Invoice - Invoice Details Tab"</td>
+<td></td>
+<td>50</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Prefilled fields on Invoice Details tab", "Add Invoice - Invoice Details Tab"</td>
+<td></td>
+<td>51</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify if clear icon clear search text box for order search by", "Search by Order or Invoice on Dashboard Page"</td>
+<td></td>
+<td>35</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate if dealer is able filter search by order based on Phone number", "Search by Order or Invoice on Dashboard Page"</td>
+<td></td>
+<td>55</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate if dealer is able filter search by order based on dates", "Search by Order or Invoice on Dashboard Page"</td>
+<td></td>
+<td>33</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate prefilled data on Vehicles details page", "Add Invoice - Vehicle Details Tab"</td>
+<td></td>
+<td>45</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Fasttag functionalities of Vehicle details tab", "Add Invoice - Vehicle Details Tab"</td>
+<td></td>
+<td>117</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login as a Dealer with InValid Credentials password length less than 6 digits", "Login"</td>
+<td></td>
+<td>14</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate PopUp functionalities of search order Popup", "Add Invoice - Invoice Details Tab"</td>
+<td></td>
+<td>94</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login as a Dealer with InValid Credentials username length less than 6 digits", "Login"</td>
+<td></td>
+<td>15</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login as a Dealer with Valid Credentials", "Login"</td>
+<td></td>
+<td>19</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login as a Dealer with InValid Credentials password length less than 6 digits", "Login"</td>
+<td></td>
+<td>13</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify if click on Generate Invoice Add invoice", "Search by Order or Invoice on Dashboard Page"</td>
+<td></td>
+<td>22</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate if dealer is able filter search by order based on various invalid params", "Search by Order or Invoice on Dashboard Page"</td>
+<td></td>
+<td>33</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login as a Dealer with InValid Credentials", "Login"</td>
+<td></td>
+<td>17</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate previous button functionality on Vehicles details page", "Add Invoice - Vehicle Details Tab"</td>
+<td></td>
+<td>42</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login as a Dealer with InValid Credentials username length less than 6 digits", "Login"</td>
+<td></td>
+<td>14</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate if dealer is able to view all order deatils on click on search button", "Search by Order or Invoice on Dashboard Page"</td>
+<td></td>
+<td>20</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate clear button functionality on Invoice details page", "Add Invoice - Invoice Details Tab"</td>
+<td></td>
+<td>39</td>
 <td>com.dms.runner.TestRunner@1ff4931d</td></tr>
 </table><p>
 </body>

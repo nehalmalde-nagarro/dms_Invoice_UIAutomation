@@ -1,5 +1,7 @@
 package com.dms.pageobjects;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -39,7 +41,29 @@ public class AddInvoice_FinancialInfo {
 	public WebElement clickFinancerDropdown() {
 		return PageUtil.findBy(By.id("financer"));
 	}
-
+	
+	
+	public List<WebElement> FinancierDisabled() {
+		return PageUtil.findBys(By.xpath("//mat-select[@aria-disabled='true']/preceding-sibling::label[@for='financer']"));
+	}
+	public List<WebElement> FinancerNameDisabled() {
+		return PageUtil.findBys(By.xpath("//input[@id=\"'formInput-'financerName\" and @disabled]"));
+	}
+	
+	public List<WebElement> BranchDisabled() {
+		return PageUtil.findBys(By.xpath("//input[@id=\"'formInput-'branch\" and @disabled]"));
+	}
+	public List<WebElement> FinanceAmountDisabled() {
+		return PageUtil.findBys(By.xpath("//input[@id=\"'formInput-'financeAmount\" and @disabled]"));
+	}
+	public List<WebElement> FinanceDetailsDisabled() {
+		return PageUtil.findBys(By.xpath("//div[@class='modal-btn-container disabled']//div[text()='Financial Details']"));
+	}
+	public List<WebElement> ReceiptDetailsDisabled() {
+		return PageUtil.findBys(By.xpath("//div[@class='modal-btn-container disabled']//div[text()='Receipt Details']"));
+	}
+	
+	
 	public WebElement chooseFinancierDropdown(String financerValue) {
 		return PageUtil.findBy(By.xpath("//mat-option//span[text()='" + financerValue + "']"));
 	}

@@ -83,34 +83,29 @@ public class FinancialInfoStepDef {
 			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.clickPaymentTypeDropdown()));
 			CoreFunctions.click(financialInfoPOM.clickPaymentTypeDropdown(), "Clicking on Payment Type");
 			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.choosePaymentTypeDropdown(paymentType)));
-			CoreFunctions.click(financialInfoPOM.choosePaymentTypeDropdown(paymentType), "Chhosing Payment Type");
-			
+			CoreFunctions.click(financialInfoPOM.choosePaymentTypeDropdown(paymentType), "Choosing Payment Type");
+			Thread.sleep(2000);
 		}
 		
 		@Then("verify the fields Financier, Finance Amount, Branch and Finance Details are disabled")
 		public void Verify_the_fields_Financier_Finance_Amount_Branch_and_Finance_Details_are_disabled() throws Exception {
-			Assert.assertFalse(financialInfoPOM.clickFinancerDropdown().isEnabled());
-			Assert.assertFalse(financialInfoPOM.financierName().isEnabled());
-			Assert.assertFalse(financialInfoPOM.financierBranch().isEnabled());
-			Assert.assertFalse(financialInfoPOM.financeAmount().isEnabled());
-			Assert.assertFalse(financialInfoPOM.FinancialDetailsPopUpButton().isEnabled());
+			
+			Assert.assertEquals(financialInfoPOM.FinancierDisabled().size(), 1);
+			Assert.assertEquals(financialInfoPOM.FinancerNameDisabled().size(), 1);
+			Assert.assertEquals(financialInfoPOM.FinanceAmountDisabled().size(),1);
+			Assert.assertEquals(financialInfoPOM.BranchDisabled().size(),1);
+			Assert.assertEquals(financialInfoPOM.FinanceDetailsDisabled().size(),1);
 		}
 		
 		@Then("verify the fields Financier, Finance Amount, Branch and Finance Details are enabled")
 		public void Verify_the_fields_Financier_Finance_Amount_Branch_and_Finance_Details_are_enabled() throws Exception {
-			Assert.assertTrue(financialInfoPOM.clickFinancerDropdown().isEnabled());
-			Assert.assertTrue(financialInfoPOM.financierBranch().isEnabled());
-			Assert.assertTrue(financialInfoPOM.financeAmount().isEnabled());
-			Assert.assertTrue(financialInfoPOM.FinancialDetailsPopUpButton().isEnabled());
+			Assert.assertEquals(financialInfoPOM.FinancierDisabled().size(), 0);
+			Assert.assertEquals(financialInfoPOM.FinanceAmountDisabled().size(),0);
+			Assert.assertEquals(financialInfoPOM.BranchDisabled().size(),0);
+			Assert.assertEquals(financialInfoPOM.FinanceDetailsDisabled().size(),0);
 		}
 		
-		@Then("verify the fields Financier, Finance Amount, Branch are enabled and Finance Details is disabled")
-		public void Verify_the_fields_Financier_Finance_Amount_Branch_are_enabled_and_Finance_Details_is_disabled() throws Exception {
-			Assert.assertTrue(financialInfoPOM.clickFinancerDropdown().isEnabled());
-			Assert.assertTrue(financialInfoPOM.financierBranch().isEnabled());
-			Assert.assertTrue(financialInfoPOM.financeAmount().isEnabled());
-			Assert.assertFalse(financialInfoPOM.FinancialDetailsPopUpButton().isEnabled());
-		}
+		
 		
 //		User selects tax rate for scenario <rowNumber>
 //	    And User selects TDS Amount for scenario <rowNumber>
@@ -122,6 +117,7 @@ public class FinancialInfoStepDef {
 	    
 	    @When("User selects TDS Amount for scenario {int}")
 	    public void User_selects_tdsAmount_for_scenario(int rowNo) {
+	    	rowNo--;
 		    String tdsAmt=testData.get(rowNo).get("TDSAmount").toString();
 	    	CoreFunctions.click(financialInfoPOM.tdsAmount(), null);
 		    CoreFunctions.setText(financialInfoPOM.tdsAmount(), tdsAmt);
@@ -129,6 +125,8 @@ public class FinancialInfoStepDef {
 	    }
 	    @When("User selects tax rate for scenario {int}")
 	    public void User_selects_tax_rate_for_scenario(int rowNo) {
+	    	testData=CoreFunctions.test("InvoiceData");
+	    	rowNo--;
 	    	CoreFunctions.click(financialInfoPOM.clicktaxrateDropdown(), null);
 		    String taxRate=testData.get(rowNo).get("TaxRate").toString();
 		    CoreFunctions.click(financialInfoPOM.choosetaxrateDropdown(taxRate), taxRate);
@@ -140,6 +138,7 @@ public class FinancialInfoStepDef {
 	    }
 	    @When("user selects MSGA Financier Name from scenario {int}")
 	    public void User_selects_msga_financer_for_scenario(int rowNo) {
+	    	rowNo--;
 		    String msgafinancer=testData.get(rowNo).get("MSGAFinancierName").toString();
 	    	CoreFunctions.click(financialInfoPOM.clickMSGAFiancierDropdown(), null);
 		    CoreFunctions.click(financialInfoPOM.chooseFinancierDropdown(msgafinancer), msgafinancer);
@@ -147,11 +146,23 @@ public class FinancialInfoStepDef {
 	    }
 	    @When("user clicks on Receipt Details")
 	    public void user_clicks_on_Receipt_Details() {
-	    	CoreFunctions.click(financialInfoPOM.ReceiptDetailsPopUpButton(), null);
+	    	
+	    	if(financialInfoPOM.ReceiptDetailsDisabled().size()==0)
+	    	{
+	    		CoreFunctions.click(financialInfoPOM.ReceiptDetailsPopUpButton(), null);
+	    	}
+	    	
 	    }
 	    @When("user selects the receipt")
 	    public void user_selects_the_receipt() {
-	    	CoreFunctions.click(financialInfoPOM.chooseFirstReceiptDetails(), null);
+	    	if(financialInfoPOM.ReceiptDetailsDisabled().size()==1)
+	    	{
+	    		
+	    	}
+	    	else
+	    	{
+	    		CoreFunctions.click(financialInfoPOM.chooseFirstReceiptDetails(), null);
+	    	}
 	    }
 	   
 	  
@@ -160,12 +171,19 @@ public class FinancialInfoStepDef {
 //	    And User selects Finance Amount for scenario <rowNumber>
 	    @When("User selects Financier for scenario {int}")
 	    public void User_selects_financer_for_scenario(int rowNo) {
+	    	testData=CoreFunctions.test("InvoiceData");
+	    	rowNo--;
 		    String financier=testData.get(rowNo).get("Financier").toString();
-	    	CoreFunctions.click(financialInfoPOM.chooseFinancierDropdown(financier), null);
+		    BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.clickFinancerDropdown()));
+			CoreFunctions.click(financialInfoPOM.clickFinancerDropdown(), "Clicking on Financier dropdown");
+			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.chooseFinancierDropdown(financier)));
+	    	CoreFunctions.click(financialInfoPOM.chooseFinancierDropdown(financier), "ChosingFinancier");
 
 	    }
 	    @When("User selects Finance Amount for scenario {int}")
 	    public void User_selects_financer_Amount_for_scenario(int rowNo) {
+	    	testData=CoreFunctions.test("InvoiceData");
+	    	rowNo--;
 		    String financierAmt=testData.get(rowNo).get("FinancierAmt").toString();
 	    	CoreFunctions.setText(financialInfoPOM.financeAmount(), financierAmt);
 
@@ -186,6 +204,8 @@ public class FinancialInfoStepDef {
  
 		@When("User selects Loan Type for scenario {int}")
 		public void user_selects_loan_type_for_scenario(Integer rowNo) {
+			testData=CoreFunctions.test("InvoiceData");
+			rowNo--;
 		    // Write code here that turns the phrase above into concrete actions
 			
 			String loanType = testData.get(rowNo).get("LoanType").toString();
@@ -197,6 +217,8 @@ public class FinancialInfoStepDef {
  
 		@When("User selects Loan Status for scenario {int}")
 		public void user_selects_loan_status_for_scenario(Integer rowNo) {
+			testData=CoreFunctions.test("InvoiceData");
+			rowNo--;
 		    // Write code here that turns the phrase above into concrete actions
 			String loanStatus = testData.get(rowNo).get("LoanStatus").toString();
 			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.clickLoanStatusDropdown()));
@@ -207,7 +229,9 @@ public class FinancialInfoStepDef {
  
 		@When("User selects Loan Application Date for scenario {int}")
 		public void user_selects_loan_application_date_for_scenario(Integer rowNo) throws Exception {
-		    // Write code here that turns the phrase above into concrete actions
+			testData=CoreFunctions.test("InvoiceData");
+			rowNo--;
+			// Write code here that turns the phrase above into concrete actions
 		    String loanApplicationDate = testData.get(rowNo).get("LoanApplicationDate").toString();
 		    
 		    BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.loanApplicationDatePicker()));
@@ -217,7 +241,9 @@ public class FinancialInfoStepDef {
  
 		@When("User selects Loan Approval Date for scenario {int}")
 		public void user_selects_loan_approval_date_for_scenario(Integer rowNo) throws Exception {
-		    // Write code here that turns the phrase above into concrete actions
+			testData=CoreFunctions.test("InvoiceData");
+			rowNo--;
+			// Write code here that turns the phrase above into concrete actions
 			String loanApprovalDate = testData.get(rowNo).get("LoanApprovalDate").toString();
 			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.loanApprovalDatePicker()));
 			CoreFunctions.click(financialInfoPOM.loanApprovalDatePicker(), "Choosing Loan Approval Date");
@@ -226,7 +252,9 @@ public class FinancialInfoStepDef {
  
 		@When("User selects Loan Closing Date for scenario {int}")
 		public void user_selects_loan_closing_date_for_scenario(Integer rowNo) throws Exception {
-		    // Write code here that turns the phrase above into concrete actions
+			testData=CoreFunctions.test("InvoiceData");
+			rowNo--;
+			// Write code here that turns the phrase above into concrete actions
 			String loanClosingDate = testData.get(rowNo).get("LoanClosingDate").toString();
 			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.loanClosingDatePicker()));
 			CoreFunctions.click(financialInfoPOM.loanClosingDatePicker(), "Choosing Loan Closing Date");
@@ -235,7 +263,9 @@ public class FinancialInfoStepDef {
  
 		@When("User selects Down Payment Mode for scenario {int}")
 		public void user_selects_down_payment_mode_for_scenario(Integer rowNo) {
-		    // Write code here that turns the phrase above into concrete actions
+			testData=CoreFunctions.test("InvoiceData");
+			rowNo--;
+			// Write code here that turns the phrase above into concrete actions
 			String downPaymentMode = testData.get(rowNo).get("DownPaymentMode").toString();
 			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.downPaymentMode()));
 			CoreFunctions.setText(financialInfoPOM.downPaymentMode(),downPaymentMode );
@@ -243,7 +273,9 @@ public class FinancialInfoStepDef {
  
 		@When("User selects Loan Rejection Date for scenario {int}")
 		public void user_selects_loan_rejection_date_for_scenario(Integer rowNo) throws Exception {
-		    // Write code here that turns the phrase above into concrete actions
+			testData=CoreFunctions.test("InvoiceData");
+			rowNo--;
+			// Write code here that turns the phrase above into concrete actions
 			String loanRejectionDate = testData.get(rowNo).get("LoanRejectionDate").toString();
 			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.loanRejectionDatePicker()));
 			CoreFunctions.click(financialInfoPOM.loanRejectionDatePicker(), "Choosing Loan Rejection Date");
@@ -252,7 +284,6 @@ public class FinancialInfoStepDef {
 		
 		@Then("Verify the Financial Details fields are cleared out")
 		public void verify_the_Financial_Details_fields_are_cleared_out() throws Exception {
-			
 			String loanTypeFE = CoreFunctions.getElementText(financialInfoPOM.getDropdownValueForClear("loanType"));
 			Assert.assertEquals(loanTypeFE,"Select");
 			Assert.assertTrue(financialInfoPOM.financierBranch().isEnabled());

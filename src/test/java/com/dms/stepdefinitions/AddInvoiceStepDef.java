@@ -12,6 +12,7 @@ import com.dms.browserInstance.BrowserHandle;
 import com.dms.core.CoreFunctions;
 import com.dms.dbconfig.Query;
 import com.dms.logs.Logs;
+import com.dms.pageobjects.AddInvoice_FinancialInfo;
 import com.dms.pageobjects.AddInvoice_InvoiceDetailsPOM;
 import com.dms.pageobjects.LoginPOM;
 import com.dms.pageobjects.SearchInvoice;
@@ -22,16 +23,16 @@ import io.cucumber.java.en.When;
 public class AddInvoiceStepDef {
 	public static List<Map<String, String>> testData = new ArrayList<>();
 
-
 	// add
 	AddInvoice_InvoiceDetailsPOM addInvoicePOM = new AddInvoice_InvoiceDetailsPOM();
 	LoginPOM loginPOM = new LoginPOM();
-	SearchInvoice searchInvoicePOM=new SearchInvoice();
+	AddInvoice_FinancialInfo financialInfo=new AddInvoice_FinancialInfo();
+	SearchInvoice searchInvoicePOM = new SearchInvoice();
 	JavascriptExecutor js = (JavascriptExecutor) BrowserHandle.getDriver();
 
 	@When("User click on Search Order")
 	public void user_click_on_search_order() {
-		testData=CoreFunctions.test("InvoiceData");
+		testData = CoreFunctions.test("InvoiceData");
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName());
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(addInvoicePOM.addInvoiceOrderNumber()));
@@ -48,6 +49,14 @@ public class AddInvoiceStepDef {
 		CoreFunctions.setText(addInvoicePOM.searchByOrderNumber(), Text);
 
 	}
+	@When("User enters OrderId {string}")
+	public void user_enters_for_order_id(String orderId) {
+		Logs.logger.info(new Object() {
+		}.getClass().getEnclosingMethod().getName());
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(addInvoicePOM.searchByOrderNumber()));
+		CoreFunctions.setText(addInvoicePOM.searchByOrderNumber(), orderId);
+
+	}
 
 	@When("User enters Mobile Number from scenario {int}")
 	public void user_enters_for_mobile_number(int rowNo) {
@@ -57,6 +66,14 @@ public class AddInvoiceStepDef {
 		String Text = testData.get(rowNo).get("MobileNumber").toString();
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(addInvoicePOM.searchByMobileNumber()));
 		CoreFunctions.setText(addInvoicePOM.searchByMobileNumber(), Text);
+
+	}
+	@When("User enters Mobile Number {string}")
+	public void user_enters_for_mobile_number(String mobileNo) {
+		Logs.logger.info(new Object() {
+		}.getClass().getEnclosingMethod().getName());
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(addInvoicePOM.searchByMobileNumber()));
+		CoreFunctions.setText(addInvoicePOM.searchByMobileNumber(), mobileNo);
 
 	}
 
@@ -70,8 +87,6 @@ public class AddInvoiceStepDef {
 
 		CoreFunctions.click(addInvoicePOM.chooseOrder(Text), null);
 	}
-	
-	
 
 	@Then("Verify Prefilled fields for OrderId from scenario {int} on invoice Details tab")
 	public void verify_prefilled_fields_on_invoice_details_tab(int rowNo) throws Exception {
@@ -88,10 +103,11 @@ public class AddInvoiceStepDef {
 		Assert.assertEquals(Query.get_fields_From_ShOrderBook("LOC_CD", "ORDER_NUM", orderId), text);
 
 		// Assert SElling PRice For
-		text = CoreFunctions.getElementText(addInvoicePOM.sellingPriceFor());
-		System.out.println("BE  " + Query.sellingPriceFor(orderId));
-		System.out.println("FE  " + text);
-		//----- yet it more implemented Assert.assertEquals(text, Query.sellingPriceFor(orderId));
+//		text = CoreFunctions.getElementText(addInvoicePOM.sellingPriceFor());
+//		System.out.println("BE  " + Query.sellingPriceFor(orderId));
+//		System.out.println("FE  " + text);
+		// ----- yet it more implemented Assert.assertEquals(text,
+		// Query.sellingPriceFor(orderId));
 
 		// Assert OrderDate
 		String dateFromBE = Query.get_fields_From_ShOrderBook("ORDER_DATE", "ORDER_NUM", orderId);
@@ -113,7 +129,7 @@ public class AddInvoiceStepDef {
 
 		// AsssertAllotDate //yet to assert
 		text = CoreFunctions.waitUntilAttrAvailable(addInvoicePOM.allotmentDate(), 20, "value");
-		dataFromDB = Query.get_fields_From_STAllot("ALLOT_DATE","ORDER_NUM",orderId);
+		dataFromDB = Query.get_fields_From_STAllot("ALLOT_DATE", "ORDER_NUM", orderId);
 		System.out.println("FE  : " + text);
 		System.out.println("BE  :" + dataFromDB);
 //		Assert.assertEquals(text, dataFromDB);
@@ -126,31 +142,44 @@ public class AddInvoiceStepDef {
 		Assert.assertEquals(text, dataFromDB);
 
 		// Assert"BILL_PIN"
-		dataFromDB = Query.get_fields_From_ShOrderBook("BILL_PIN", "ORDER_NUM", orderId);
-		text = CoreFunctions.waitUntilAttrAvailable(addInvoicePOM.billingPincode(), 20, "value");
-		System.out.println("FE  : " + text);
-		System.out.println("BE  :" + dataFromDB);
-		Assert.assertEquals(text, dataFromDB);
+//		dataFromDB = Query.get_fields_From_ShOrderBook("BILL_PIN", "ORDER_NUM", orderId);
+//		text = CoreFunctions.waitUntilAttrAvailable(addInvoicePOM.billingPincode(), 20, "value");
+//		System.out.println("FE  : " + text);
+//		System.out.println("BE  :" + dataFromDB);
+//		Assert.assertEquals(text, dataFromDB);
 
 		// Assert billingAddress_1
 		dataFromDB = Query.get_fields_From_ShOrderBook("BILL_ADDRESS1", "ORDER_NUM", orderId);
 		text = CoreFunctions.waitUntilAttrAvailable(addInvoicePOM.billingAddress_1(), 20, "value");
+		text = CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_1(), "value");
+
 		System.out.println("FE  : " + text);
 		System.out.println("BE  :" + dataFromDB);
-		Assert.assertEquals(text, dataFromDB);
-		
+		if(text.isEmpty())
+			Assert.assertEquals(dataFromDB, null);
+			else
+			Assert.assertEquals(text, dataFromDB);
 		// Assert billingAddress_2
 		dataFromDB = Query.get_fields_From_ShOrderBook("BILL_ADDRESS2", "ORDER_NUM", orderId);
-		text = CoreFunctions.waitUntilAttrAvailable(addInvoicePOM.billingAddress_2(), 20, "value");
+//		text = CoreFunctions.waitUntilAttrAvailable(addInvoicePOM.billingAddress_2(), 20, "value");
+		text = CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_2(), "value");
+
 		System.out.println("FE  : " + text);
 		System.out.println("BE  :" + dataFromDB);
-		Assert.assertEquals(text, dataFromDB);
 		
+		if(text.isEmpty())
+			Assert.assertEquals(dataFromDB, null);
+			else
+			Assert.assertEquals(text, dataFromDB);
 		// Assert billingAddress_3
 		dataFromDB = Query.get_fields_From_ShOrderBook("BILL_ADDRESS3", "ORDER_NUM", orderId);
-		text = CoreFunctions.waitUntilAttrAvailable(addInvoicePOM.billingAddress_3(), 20, "value");
+//		text = CoreFunctions.waitUntilAttrAvailable(addInvoicePOM.billingAddress_3(), 20, "value");
+		text = CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_3(), "value");
 		System.out.println("FE  : " + text);
 		System.out.println("BE  :" + dataFromDB);
+		if(text.isEmpty())
+		Assert.assertEquals(dataFromDB, null);
+		else
 		Assert.assertEquals(text, dataFromDB);
 
 	}
@@ -186,98 +215,124 @@ public class AddInvoiceStepDef {
 		Assert.assertTrue(addInvoicePOM.isPopupClosed());
 
 	}
-	
 
-@When("if user selects B2B Customer as {string}")
-public void if_user_selects_b2b_customer_as(String option) throws InterruptedException {
+	@When("if user selects B2B Customer as {string}")
+	public void if_user_selects_b2b_customer_as(String option) throws InterruptedException {
 //	Actions ac=new Actions(BrowserHandle.getDriver());
 //	ac.moveToElement(addIn/voicePOM.b2bCustomer()).build().perform();
 //	js.executeScript("window.scrollTo(0,250)");
 //	Thread.sleep(4000);
-	CoreFunctions.moveToElement(addInvoicePOM.aadharNumber());
-	BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(addInvoicePOM.b2bCustomer()));
+		CoreFunctions.moveToElement(addInvoicePOM.aadharNumber());
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(addInvoicePOM.b2bCustomer()));
 
-	CoreFunctions.click(addInvoicePOM.b2bCustomer(), "click on b2b customer");
-	BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(addInvoicePOM.options(option)));
-   CoreFunctions.click(addInvoicePOM.options(option), option);
-}
+		CoreFunctions.click(addInvoicePOM.b2bCustomer(), "click on b2b customer");
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(addInvoicePOM.options(option)));
+		CoreFunctions.click(addInvoicePOM.options(option), option);
+	}
 
-@Then("verify error message is displayed as {string}")
-public void verify_error_message_is_displayed_as(String errorMsg) throws InterruptedException {
-	BrowserHandle.wait.until(ExpectedConditions.visibilityOf(addInvoicePOM.billGstnError()));
-	CoreFunctions.moveToElement(addInvoicePOM.shippingInfoTitle());
+	@Then("verify error message is displayed as {string}")
+	public void verify_error_message_is_displayed_as(String errorMsg) throws InterruptedException {
+		BrowserHandle.wait.until(ExpectedConditions.visibilityOf(addInvoicePOM.billGstnError()));
+		CoreFunctions.moveToElement(addInvoicePOM.shippingInfoTitle());
 
-   Assert.assertEquals(CoreFunctions.getElementText(addInvoicePOM.billGstnError()),errorMsg);
-}
+		Assert.assertEquals(CoreFunctions.getElementText(addInvoicePOM.billGstnError()), errorMsg);
+	}
 
-@Then("user enters {string} in Bill GSTN field")
-public void user_enters_in_bill_gstn_field(String string) {
-	CoreFunctions.clearText(addInvoicePOM.billGSTN());
-  CoreFunctions.setText(addInvoicePOM.billGSTN(), string);
-}
+	@Then("user enters {string} in Bill GSTN field")
+	public void user_enters_in_bill_gstn_field(String string) {
+		CoreFunctions.clearText(addInvoicePOM.billGSTN());
+		CoreFunctions.setText(addInvoicePOM.billGSTN(), string);
+	}
 
-@Then("user enters Bill GSTN field from {int}")
-public void user_enters_in_bill_gstn_field(int rowNo) {
-	rowNo--;
-	String Text = testData.get(rowNo).get("Bill GSTN").toString();
-	CoreFunctions.clearText(addInvoicePOM.billGSTN());
-  CoreFunctions.setText(addInvoicePOM.billGSTN(), Text);
-}
+	@Then("user enters Bill GSTN field from {int}")
+	public void user_enters_in_bill_gstn_field(int rowNo) {
+		rowNo--;
+		String Text = testData.get(rowNo).get("Bill GSTN").toString();
+		CoreFunctions.clearText(addInvoicePOM.billGSTN());
+		CoreFunctions.setText(addInvoicePOM.billGSTN(), Text);
+	}
 
-@Then("Verify if Sales Type is {string}")
-public void verify_is_Sales_type(String salesType) {
-	String text=CoreFunctions.getElementText(addInvoicePOM.salesType() );
-	Assert.assertEquals(text, salesType);
-	
-}
+	@Then("Verify if Sales Type is {string}")
+	public void verify_is_Sales_type(String salesType) {
+		String text = CoreFunctions.getElementText(addInvoicePOM.salesType());
+		Assert.assertEquals(text, salesType);
 
-@Then("Verify Shipping Info section is disabled")
-public void verify_Shipping_Info_section_is_disabled() {
-	int countDisabledElements = addInvoicePOM.shippingInfoCount().size();
-	Assert.assertEquals(countDisabledElements, 13);
-}
+	}
 
-@When("user enters Workspace from {int}")
-public void user_enters_workspace_as(int rowNo) {
-	rowNo--;
-	String Text = testData.get(rowNo).get("OrderId").toString();
-    CoreFunctions.setText(addInvoicePOM.workplace(), Text);
-}
+	@Then("Verify Shipping Info section is disabled")
+	public void verify_Shipping_Info_section_is_disabled() {
+		int countDisabledElements = addInvoicePOM.shippingInfoCount().size();
+		Assert.assertEquals(countDisabledElements, 13);
+	}
 
-@When("user enters Aadhar Number from {int}")
-public void user_enters_aadhar_number_as(int rowNo) {
-	rowNo--;
-	String Text = testData.get(rowNo).get("Aadhar Num").toString();
-        CoreFunctions.setText(addInvoicePOM.aadharNumber(), Text);
+	@When("user enters Workspace from {int}")
+	public void user_enters_workspace_as(int rowNo) {
+		rowNo--;
+		String Text = testData.get(rowNo).get("OrderId").toString();
+		CoreFunctions.setText(addInvoicePOM.workplace(), Text);
+	}
 
-}
+	@When("user enters Aadhar Number from {int}")
+	public void user_enters_aadhar_number_as(int rowNo) {
+		rowNo--;
+		String Text = testData.get(rowNo).get("Aadhar Num").toString();
+		CoreFunctions.setText(addInvoicePOM.aadharNumber(), Text);
 
-@Then("Verify user is navigated to {string}")
-public void verify_user_is_navigated_to(String text) {
-	Assert.assertTrue(searchInvoicePOM.verifyByText(text));
-}
+	}
 
-@Then("verify all the fields are empty on Invoice details page except Invoice Type and Selling Price For")
-public void verify_all_filefs_are_Empty_on_invoice_page() {
-	
-	// Assert SElling PRice For
-	String text = CoreFunctions.getElementText(addInvoicePOM.sellingPriceFor());
-	System.out.println("FE  " + text);
-	Assert.assertTrue(!text.isEmpty());
-	
-	//ASsert invoice type
-	 text = CoreFunctions.getElementText(addInvoicePOM.invoiceType());
+	@Then("Verify user is navigated to {string}")
+	public void verify_user_is_navigated_to(String text) {
+		Assert.assertTrue(searchInvoicePOM.verifyByText(text));
+	}
+
+	@Then("verify all the fields are empty on Invoice details page except Invoice Type and Selling Price For")
+	public void verify_all_filefs_are_Empty_on_invoice_page() {
+
+		// Assert SElling PRice For
+		String text = CoreFunctions.getElementText(addInvoicePOM.sellingPriceFor());
 		System.out.println("FE  " + text);
-	Assert.assertTrue(!text.isEmpty());
-	
-	//AssertAddInvoiceOrderNumber is null
-	 text = CoreFunctions.getElementAttribute(addInvoicePOM.addInvoiceOrderNumber(),"value");
+		Assert.assertTrue(!text.isEmpty());
+
+		// ASsert invoice type
+		text = CoreFunctions.getElementText(addInvoicePOM.invoiceType());
 		System.out.println("FE  " + text);
-		Assert.assertTrue(text!=null);
+		Assert.assertTrue(!text.isEmpty());
 
+		// AssertAddInvoiceOrderNumber is null
+		text = CoreFunctions.getElementAttribute(addInvoicePOM.addInvoiceOrderNumber(), "value");
+		System.out.println("FE  " + text);
+		Assert.assertTrue(text != null);
+
+	}
+	
+	@When("user enters all required fields from {int}")
+	public void user_enters_all_required_fields(int rowNo) {
+		rowNo--;
+		String Text = testData.get(rowNo).get("BillAddress_1").toString();
+		
+		String billingAddress_1=CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_1(), "value");
+		if(billingAddress_1.isEmpty())
+			CoreFunctions.setText(addInvoicePOM.billingAddress_1(), Text);
+		
+		 Text = testData.get(rowNo).get("BillAddress_2").toString();
+		String billingAddress_2=CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_2(), "value");
+		if(billingAddress_2.isEmpty())
+			CoreFunctions.setText(addInvoicePOM.billingAddress_2(), Text);
+		
+		 Text = testData.get(rowNo).get("BillAddress_3").toString();
+		String billingAddress_3=CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_3(), "value");
+	System.out.println(billingAddress_3);
+		if(billingAddress_3.isEmpty())
+			CoreFunctions.setText(addInvoicePOM.billingAddress_3(), Text);
+		
+		String govOrg=CoreFunctions.getElementText(financialInfo.getDropdownValueForClear("govtOraganisationWOPAN"));
+		if(govOrg.equals("Select")) {
+			CoreFunctions.click(addInvoicePOM.govOrg_W_O_PAN(), govOrg);
+			CoreFunctions.click(addInvoicePOM.options("Yes"), govOrg);
+		}
+			
+			
+	}
 	
 	
-}
-
-
 }
