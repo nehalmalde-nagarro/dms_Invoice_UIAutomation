@@ -11,7 +11,9 @@ import org.testng.Assert;
 import com.dms.browserInstance.BrowserHandle;
 import com.dms.core.CoreFunctions;
 import com.dms.dbconfig.Query;
+import com.dms.logs.Logs;
 import com.dms.pageobjects.AddInvoice_FinancialInfo;
+import com.dms.pageobjects.LoginPOM;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -21,6 +23,7 @@ public class FinancialInfoStepDef {
 	
 	public static List<Map<String, String>> testData = new ArrayList<>();
 	AddInvoice_FinancialInfo financialInfoPOM = new AddInvoice_FinancialInfo();
+	LoginPOM loginPOM = new LoginPOM();
 
 	@Then("Verify Prefilled fields for OrderId from scenario {int} on Financial Info tab")
 	public void Verify_Prefilled_fields_for_OrderId_from_scenario_on_Financial_Info_tab(int rowNo) throws Exception {
@@ -165,7 +168,22 @@ public class FinancialInfoStepDef {
 	    	}
 	    }
 	   
-	  
+	    @When("User clicks on Receipt Details Popup {string} button")
+		public void user_click_on_btn(String btn) throws InterruptedException {
+			
+	    	if(financialInfoPOM.ReceiptDetailsDisabled().size()==1)
+	    	{
+	    		
+	    	}
+	    	else
+	    	{
+		    	Logs.logger.info(new Object() {
+				}.getClass().getEnclosingMethod().getName() + " " + btn);
+				BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.spanButton(btn)));
+				CoreFunctions.moveToElement(loginPOM.spanButton(btn));
+				CoreFunctions.click(loginPOM.spanButton(btn), btn);
+	    	}
+		}
 //	    And User selects TCS Flag as "<TCSFlag>"
 //	    User selects Financier for scenario <rowNumber>
 //	    And User selects Finance Amount for scenario <rowNumber>
@@ -188,8 +206,11 @@ public class FinancialInfoStepDef {
 	    	CoreFunctions.setText(financialInfoPOM.financeAmount(), financierAmt);
 
 	    }
-	    @When("User selects TCS Flag as {string}")
-	    public void User_selects_tcs_flag(String tcsFlag) {
+	    @When("User selects TCS Flag for scenario {int}")
+	    public void User_selects_tcs_flag_for_Scenario(int rowNo) {
+	    	testData=CoreFunctions.test("InvoiceData");
+	    	rowNo--;
+	    	String tcsFlag=testData.get(rowNo).get("TCSFlag").toString();
 	    	CoreFunctions.click(financialInfoPOM.clickTCSFlagDropdown(),null);
 	    	CoreFunctions.click(financialInfoPOM.chooseTCSFlagDropdown(tcsFlag), tcsFlag);
 
@@ -233,10 +254,12 @@ public class FinancialInfoStepDef {
 			rowNo--;
 			// Write code here that turns the phrase above into concrete actions
 		    String loanApplicationDate = testData.get(rowNo).get("LoanApplicationDate").toString();
-		    
+		    System.out.println(loanApplicationDate);
+		   
 		    BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.loanApplicationDatePicker()));
 			CoreFunctions.click(financialInfoPOM.loanApplicationDatePicker(), "Choosing Loan Application Date");
-		    CoreFunctions.selectDate(BrowserHandle.getDriver(), loanApplicationDate);
+		    Thread.sleep(3000);
+			CoreFunctions.selectDate(BrowserHandle.getDriver(), loanApplicationDate);
 		}
  
 		@When("User selects Loan Approval Date for scenario {int}")
@@ -260,7 +283,18 @@ public class FinancialInfoStepDef {
 			CoreFunctions.click(financialInfoPOM.loanClosingDatePicker(), "Choosing Loan Closing Date");
 			CoreFunctions.selectDate(BrowserHandle.getDriver(), loanClosingDate);
 		}
- 
+		
+		@When("User selects Loan Disbursal Date for scenario {int}")
+		public void user_selects_loan_disbursal_date_for_scenario(Integer rowNo) throws Exception {
+			testData=CoreFunctions.test("InvoiceData");
+			rowNo--;
+			// Write code here that turns the phrase above into concrete actions
+			String loanDisbursalDate = testData.get(rowNo).get("LoanDisbursalDate").toString();
+			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.loanDisbursalDatePicker()));
+			CoreFunctions.click(financialInfoPOM.loanDisbursalDatePicker(), "Choosing Loan Disbursal Date");
+			CoreFunctions.selectDate(BrowserHandle.getDriver(), loanDisbursalDate);
+		}
+		
 		@When("User selects Down Payment Mode for scenario {int}")
 		public void user_selects_down_payment_mode_for_scenario(Integer rowNo) {
 			testData=CoreFunctions.test("InvoiceData");
@@ -286,9 +320,20 @@ public class FinancialInfoStepDef {
 		public void verify_the_Financial_Details_fields_are_cleared_out() throws Exception {
 			String loanTypeFE = CoreFunctions.getElementText(financialInfoPOM.getDropdownValueForClear("loanType"));
 			Assert.assertEquals(loanTypeFE,"Select");
-			Assert.assertTrue(financialInfoPOM.financierBranch().isEnabled());
-			Assert.assertTrue(financialInfoPOM.financeAmount().isEnabled());
-			Assert.assertFalse(financialInfoPOM.FinancialDetailsPopUpButton().isEnabled());
+			
+			String loanStatusFE = CoreFunctions.getElementText(financialInfoPOM.getDropdownValueForClear("loanStatus"));
+			Assert.assertEquals(loanStatusFE,"Select");
+			
+			String applicationDate = CoreFunctions.getElementAttribute(financialInfoPOM.loanApplicationDateInput(), "value") ;
+			String approvalDate = CoreFunctions.getElementAttribute(financialInfoPOM.loanApprovalDateInput(), "value") ;
+			String closingDate = CoreFunctions.getElementAttribute(financialInfoPOM.loanClosingDateInput(), "value") ;
+			String disbursalDate = CoreFunctions.getElementAttribute(financialInfoPOM.loanDisbursalDateInput(), "value") ;
+			
+			Assert.assertTrue(applicationDate.isEmpty());
+			Assert.assertTrue(approvalDate.isEmpty());
+			Assert.assertTrue(closingDate.isEmpty());
+			Assert.assertTrue(disbursalDate.isEmpty());
+			
 		}
 	    
 	    

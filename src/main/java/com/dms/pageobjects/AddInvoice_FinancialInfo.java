@@ -166,7 +166,7 @@ public class AddInvoice_FinancialInfo {
 	}
 
 	public WebElement loanApplicationDatePicker() {
-		return PageUtil.findBy(By.id("datePicker_iconloanApplicationDate"));
+		return PageUtil.findBy(By.xpath("//img[@id='datePicker_iconloanApplicationDate']//ancestor::button"));
 	}
 
 	public WebElement clickLoanStageDropdown() {
@@ -176,25 +176,25 @@ public class AddInvoice_FinancialInfo {
 	public WebElement loanApprovalDateInput() {
 		return PageUtil.findBy(By.id("inputDateloanApprovalDate"));
 	}
-
+	
 	public WebElement loanApprovalDatePicker() {
-		return PageUtil.findBy(By.id("datePicker_iconloanApprovalDate"));
+		return PageUtil.findBy(By.xpath("//img[@id='datePicker_iconloanApprovalDate']//ancestor::button"));
 	}
 
 	public WebElement loanClosingDateInput() {
 		return PageUtil.findBy(By.id("inputDateloanClosingDate"));
 	}
-
+	
 	public WebElement loanClosingDatePicker() {
-		return PageUtil.findBy(By.id("datePicker_iconloanClosingDate"));
+		return PageUtil.findBy(By.xpath("//img[@id='datePicker_iconloanClosingDate']//ancestor::button"));
 	}
 
 	public WebElement loanRejectionDateInput() {
 		return PageUtil.findBy(By.id("inputDateloanRejectionDate"));
 	}
-
+	
 	public WebElement loanRejectionDatePicker() {
-		return PageUtil.findBy(By.id("datePicker_iconloanRejectionDate"));
+		return PageUtil.findBy(By.xpath("//img[@id='datePicker_iconloanRejectionDate']//ancestor::button"));
 	}
 
 	public WebElement loanRejectionReason() {
@@ -204,9 +204,9 @@ public class AddInvoice_FinancialInfo {
 	public WebElement loanDisbursalDateInput() {
 		return PageUtil.findBy(By.id("inputDateloanDisbursalDate"));
 	}
-
+	
 	public WebElement loanDisbursalDatePicker() {
-		return PageUtil.findBy(By.id("datePicker_iconloanDisbursalDate"));
+		return PageUtil.findBy(By.xpath("//img[@id='datePicker_iconloanDisbursalDate']//ancestor::button"));
 	}
 
 	public WebElement downPaymentMode() {
