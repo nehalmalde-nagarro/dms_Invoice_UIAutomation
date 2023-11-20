@@ -26,7 +26,7 @@ public class AddInvoiceStepDef {
 	// add
 	AddInvoice_InvoiceDetailsPOM addInvoicePOM = new AddInvoice_InvoiceDetailsPOM();
 	LoginPOM loginPOM = new LoginPOM();
-	AddInvoice_FinancialInfo financialInfo=new AddInvoice_FinancialInfo();
+	AddInvoice_FinancialInfo financialInfo = new AddInvoice_FinancialInfo();
 	SearchInvoice searchInvoicePOM = new SearchInvoice();
 	JavascriptExecutor js = (JavascriptExecutor) BrowserHandle.getDriver();
 
@@ -49,6 +49,7 @@ public class AddInvoiceStepDef {
 		CoreFunctions.setText(addInvoicePOM.searchByOrderNumber(), Text);
 
 	}
+
 	@When("User enters OrderId {string}")
 	public void user_enters_for_order_id(String orderId) {
 		Logs.logger.info(new Object() {
@@ -68,6 +69,7 @@ public class AddInvoiceStepDef {
 		CoreFunctions.setText(addInvoicePOM.searchByMobileNumber(), Text);
 
 	}
+
 	@When("User enters Mobile Number {string}")
 	public void user_enters_for_mobile_number(String mobileNo) {
 		Logs.logger.info(new Object() {
@@ -155,9 +157,9 @@ public class AddInvoiceStepDef {
 
 		System.out.println("FE  : " + text);
 		System.out.println("BE  :" + dataFromDB);
-		if(text.isEmpty())
+		if (text.isEmpty())
 			Assert.assertEquals(dataFromDB, null);
-			else
+		else
 			Assert.assertEquals(text, dataFromDB);
 		// Assert billingAddress_2
 		dataFromDB = Query.get_fields_From_ShOrderBook("BILL_ADDRESS2", "ORDER_NUM", orderId);
@@ -166,10 +168,10 @@ public class AddInvoiceStepDef {
 
 		System.out.println("FE  : " + text);
 		System.out.println("BE  :" + dataFromDB);
-		
-		if(text.isEmpty())
+
+		if (text.isEmpty())
 			Assert.assertEquals(dataFromDB, null);
-			else
+		else
 			Assert.assertEquals(text, dataFromDB);
 		// Assert billingAddress_3
 		dataFromDB = Query.get_fields_From_ShOrderBook("BILL_ADDRESS3", "ORDER_NUM", orderId);
@@ -177,10 +179,10 @@ public class AddInvoiceStepDef {
 		text = CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_3(), "value");
 		System.out.println("FE  : " + text);
 		System.out.println("BE  :" + dataFromDB);
-		if(text.isEmpty())
-		Assert.assertEquals(dataFromDB, null);
+		if (text.isEmpty())
+			Assert.assertEquals(dataFromDB, null);
 		else
-		Assert.assertEquals(text, dataFromDB);
+			Assert.assertEquals(text, dataFromDB);
 
 	}
 
@@ -304,35 +306,101 @@ public class AddInvoiceStepDef {
 		Assert.assertTrue(text != null);
 
 	}
-	
+
 	@When("user enters all required fields from {int}")
 	public void user_enters_all_required_fields(int rowNo) {
 		rowNo--;
 		String Text = testData.get(rowNo).get("BillAddress_1").toString();
-		
-		String billingAddress_1=CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_1(), "value");
-		if(billingAddress_1.isEmpty())
+
+		String billingAddress_1 = CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_1(), "value");
+		if (billingAddress_1.isEmpty())
 			CoreFunctions.setText(addInvoicePOM.billingAddress_1(), Text);
-		
-		 Text = testData.get(rowNo).get("BillAddress_2").toString();
-		String billingAddress_2=CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_2(), "value");
-		if(billingAddress_2.isEmpty())
+
+		Text = testData.get(rowNo).get("BillAddress_2").toString();
+		String billingAddress_2 = CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_2(), "value");
+		if (billingAddress_2.isEmpty())
 			CoreFunctions.setText(addInvoicePOM.billingAddress_2(), Text);
-		
-		 Text = testData.get(rowNo).get("BillAddress_3").toString();
-		String billingAddress_3=CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_3(), "value");
-	System.out.println(billingAddress_3);
-		if(billingAddress_3.isEmpty())
+
+		Text = testData.get(rowNo).get("BillAddress_3").toString();
+		String billingAddress_3 = CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_3(), "value");
+		System.out.println(billingAddress_3);
+		if (billingAddress_3.isEmpty())
 			CoreFunctions.setText(addInvoicePOM.billingAddress_3(), Text);
-		
-		String govOrg=CoreFunctions.getElementText(financialInfo.getDropdownValueForClear("govtOraganisationWOPAN"));
-		if(govOrg.equals("Select")) {
+
+		String govOrg = CoreFunctions.getElementText(financialInfo.getDropdownValueForClear("govtOraganisationWOPAN"));
+		if (govOrg.equals("Select")) {
 			CoreFunctions.click(addInvoicePOM.govOrg_W_O_PAN(), govOrg);
 			CoreFunctions.click(addInvoicePOM.options("Yes"), govOrg);
 		}
-			
-			
+
 	}
 	
 	
+	@When("User click on Search Order from {string}")
+	public void user_click_on_search_order_for_(String sheet) {
+		testData = CoreFunctions.test(sheet);
+		Logs.logger.info(new Object() {
+		}.getClass().getEnclosingMethod().getName());
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(addInvoicePOM.addInvoiceOrderNumber()));
+		CoreFunctions.click(addInvoicePOM.addInvoiceOrderNumber(), null);
+	}
+
+	@When("Invoice Details Tab for {string} scenario {int}")
+	public void invoice_tab(String sheet, int rowNo) throws InterruptedException {
+		testData = CoreFunctions.test(sheet);
+		Logs.logger.info(new Object() {
+		}.getClass().getEnclosingMethod().getName());
+		Assert.assertTrue(searchInvoicePOM.searchBy().isDisplayed());
+		CoreFunctions.moveToElement(loginPOM.spanButton("Add Invoice"));
+		CoreFunctions.click(loginPOM.spanButton("Add Invoice"), "Add Invoice");
+		CoreFunctions.click(addInvoicePOM.addInvoiceOrderNumber(), null);
+		rowNo--;
+		String Text = testData.get(rowNo).get("OrderId").toString();
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(addInvoicePOM.searchByOrderNumber()));
+		CoreFunctions.setText(addInvoicePOM.searchByOrderNumber(), Text);
+		CoreFunctions.moveToElement(loginPOM.spanButton("SEARCH"));
+		CoreFunctions.click(loginPOM.spanButton("SEARCH"), "SEARCH");
+		Text = testData.get(rowNo).get("OrderId").toString();
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(addInvoicePOM.chooseOrder(Text)));
+		CoreFunctions.click(addInvoicePOM.chooseOrder(Text), null);
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.spanButton("OK")));
+		CoreFunctions.moveToElement(loginPOM.spanButton("OK"));
+		CoreFunctions.click(loginPOM.spanButton("OK"), "OK");
+		Text = testData.get(rowNo).get("OrderId").toString();
+		CoreFunctions.setText(addInvoicePOM.workplace(), Text);
+		Text = testData.get(rowNo).get("OrderId").toString();
+		CoreFunctions.setText(addInvoicePOM.workplace(), Text);
+		Text = testData.get(rowNo).get("Aadhar Num").toString();
+		CoreFunctions.setText(addInvoicePOM.aadharNumber(), Text);
+		Text = testData.get(rowNo).get("Bill GSTN").toString();
+		CoreFunctions.clearText(addInvoicePOM.billGSTN());
+		CoreFunctions.setText(addInvoicePOM.billGSTN(), Text);
+		Text = testData.get(rowNo).get("BillAddress_1").toString();
+
+		String billingAddress_1 = CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_1(), "value");
+		if (billingAddress_1.isEmpty())
+			CoreFunctions.setText(addInvoicePOM.billingAddress_1(), Text);
+
+		Text = testData.get(rowNo).get("BillAddress_2").toString();
+		String billingAddress_2 = CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_2(), "value");
+		if (billingAddress_2.isEmpty())
+			CoreFunctions.setText(addInvoicePOM.billingAddress_2(), Text);
+
+		Text = testData.get(rowNo).get("BillAddress_3").toString();
+		String billingAddress_3 = CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_3(), "value");
+		System.out.println(billingAddress_3);
+		if (billingAddress_3.isEmpty())
+			CoreFunctions.setText(addInvoicePOM.billingAddress_3(), Text);
+
+		String govOrg = CoreFunctions.getElementText(financialInfo.getDropdownValueForClear("govtOraganisationWOPAN"));
+		if (govOrg.equals("Select")) {
+			CoreFunctions.click(addInvoicePOM.govOrg_W_O_PAN(), govOrg);
+			CoreFunctions.click(addInvoicePOM.options("Yes"), govOrg);
+		}
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.spanButton("NEXT")));
+		CoreFunctions.moveToElement(loginPOM.spanButton("NEXT"));
+		CoreFunctions.click(loginPOM.spanButton("NEXT"), "NEXT");
+		Assert.assertTrue(searchInvoicePOM.verifyByText("Vehicle Info"));
+
+	}
 }

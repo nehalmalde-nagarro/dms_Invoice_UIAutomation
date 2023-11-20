@@ -284,5 +284,41 @@ public class Query {
 //		List<String> count_CampName = ReadFromDB.getData(Database.COMMON_SUPERVISOR, query);
 //		return count_CampName;
 //	}
+	
+	public static String get_fields_From_GD_LOYALTY_ENROL(String selectCol, String conditionCol1, String conditionVal1,String conditionCol2, String conditionVal2)
+			throws Exception {
+		
+		
+		//select "CHANNEL"  from "MULDMS"."GD_LOYALTY_ENROL" where "REG_MOBILE" ='9425204904' and "CARD_TYPE" ='R' and "CARD_STATUS" not in ('C', 'S');
+		
+		
+		
+		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"GD_LOYALTY_ENROL\" where \"" + conditionCol1 + "\" ='"
+				+ conditionVal1 + "' AND \""+conditionCol2+"\" = '" + conditionVal2 + "' and \"CARD_STATUS\" not in ('C', 'S'));";
+ 
+		
+		
+		
+		
+		System.out.println(query);
+		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
+		return data;
+	}	
+	
+	public static String get_fields_From_GM_LOYALTY_MASTER(String selectCol, String conditionCol1, String conditionVal1,String conditionCol2, String conditionVal2,String conditionCol3, String conditionVal3)
+			throws Exception {
+		
+		
+		//select "CHANNEL"  from "MULDMS"."GD_LOYALTY_ENROL" where "REG_MOBILE" ='9425204904' and "CARD_TYPE" ='R' and "CARD_STATUS" not in ('C', 'S');
+		
+		
+		
+		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"GM_LOYALTY_MASTER\" WHERE \"" + conditionCol1 + "\" = '" + conditionVal1 + "' AND \"" + conditionCol2 + "\" = '" + conditionVal2 + "' AND \""+conditionCol3+"\" = '" + conditionVal3 + "'  AND \"START_DATE\" <= CURRENT_DATE AND (\"END_DATE\" >= CURRENT_DATE OR \"END_DATE\" IS NULL));";
+		
+		
+		System.out.println(query);
+		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
+		return data;
+	}	
 
 }

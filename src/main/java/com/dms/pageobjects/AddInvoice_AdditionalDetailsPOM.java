@@ -11,15 +11,15 @@ public class AddInvoice_AdditionalDetailsPOM {
 		return PageUtil.findBy(By.id("'formInput-'loyaltyRedemptionPoints"));
 	}
 	public WebElement loyaltyRedemptionAmount() {
-		return PageUtil.findBy(By.id("''formInput-'loyaltyRedemptionAmount"));
+		return PageUtil.findBy(By.id("'formInput-'loyaltyRedemptionAmount"));
 	}
 	public WebElement oldCarOfferNameDropdown() {
 		return PageUtil.findBy(By.id("oldCarOfferName"));
 	}
 
 //LOYALTY/ACQUISITION DETAILS
-	public WebElement loyaltyAcqDetailsBtn() {
-		return PageUtil.findBy(By.id("//div[contains(text(),'LOYALTY/ACQUISITION DETAILS')]"));
+	public WebElement popUpBtn(String txt) {
+		return PageUtil.findBy(By.xpath("//div[contains(text(),'"+txt+"')]"));
 	}
 	public WebElement makeDropdown() {
 		return PageUtil.findBy(By.id("make"));
@@ -78,6 +78,43 @@ public WebElement searchBtn() {
 		return PageUtil.findBy(By.xpath("//button[@class='btn btn-search']"));
 
 	}
+
+//Vin Search Popup
+
+public WebElement enterValue_vin() {
+	return PageUtil.findBy(By.id("'formInput-'vin-vinsearch"));
+
+}
+
+public WebElement enterValue_regNo() {
+	return PageUtil.findBy(By.id("'formInput-'regNo-vinsearch"));
+
+}
+public WebElement enterValue_model() {
+	return PageUtil.findBy(By.id("'formInput-'model-vinsearch"));
+
+}
+public WebElement enterValue_chassis() {
+	return PageUtil.findBy(By.id("'formInput-'chassisNum-vinsearch"));
+
+}
+public WebElement chooseVehicleOnVehicalDetailsTab(String txt) {
+	return PageUtil.findBy(By.xpath("//div[contains(text(),'"+txt+"')]"));
+
+}
+public WebElement VinSearchIcon() {
+	return PageUtil.findBy(By.cssSelector("img[alt='form-input-icon']"));
+
+}
+public WebElement vinSearchOkBtn() {
+	return PageUtil.findBy(By.xpath("//div[contains(@class,'vin-search-modal-container')]//button//span[contains(text(),'OK')]"));
+
+}
+//public WebElement enterValue_() {
+//	return PageUtil.findBy(By.id(""));
+//
+//}
+
 
 
 }
