@@ -1,6 +1,7 @@
 package com.dms.pageobjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
 import com.dms.utils.PageUtil;
@@ -18,9 +19,7 @@ public class AddInvoice_AdditionalDetailsPOM {
 	}
 
 //LOYALTY/ACQUISITION DETAILS
-	public WebElement popUpBtn(String txt) {
-		return PageUtil.findBy(By.xpath("//div[contains(text(),'"+txt+"')]"));
-	}
+	
 	public WebElement makeDropdown() {
 		return PageUtil.findBy(By.id("make"));
 	}
@@ -106,15 +105,32 @@ public WebElement VinSearchIcon() {
 	return PageUtil.findBy(By.cssSelector("img[alt='form-input-icon']"));
 
 }
+public WebElement VinSearchbtnDisabled() {
+	return PageUtil.findBy(By.xpath("//div[contains(text(),'VIN') and contains(@class,'disabled')]"));
+
+}
 public WebElement vinSearchOkBtn() {
 	return PageUtil.findBy(By.xpath("//div[contains(@class,'vin-search-modal-container')]//button//span[contains(text(),'OK')]"));
 
 }
-//public WebElement enterValue_() {
-//	return PageUtil.findBy(By.id(""));
-//
-//}
+public boolean isPopupBtnDisplayed(String txt) {
+	try {
+        WebElement element = PageUtil.findBy(By.xpath("//div[contains(text(),'"+txt+"')]"));
+        return true; // Element is found, so it is not absent
+    } catch (NoSuchElementException e) {
+        return false; // Element is not found, so it is absent
+    }
+}
 
+
+public WebElement popUpBtn(String txt) {
+	return PageUtil.findBy(By.xpath("//div[contains(text(),'"+txt+"')]"));
+}
+
+
+public WebElement chasisNoError() {
+	return PageUtil.findBy(By.id("chassisNum_error"));
+}
 
 
 }

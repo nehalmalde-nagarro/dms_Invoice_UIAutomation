@@ -335,15 +335,6 @@ public class AddInvoiceStepDef {
 
 	}
 	
-	
-	@When("User click on Search Order from {string}")
-	public void user_click_on_search_order_for_(String sheet) {
-		testData = CoreFunctions.test(sheet);
-		Logs.logger.info(new Object() {
-		}.getClass().getEnclosingMethod().getName());
-		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(addInvoicePOM.addInvoiceOrderNumber()));
-		CoreFunctions.click(addInvoicePOM.addInvoiceOrderNumber(), null);
-	}
 
 	@When("Invoice Details Tab for {string} scenario {int}")
 	public void invoice_tab(String sheet, int rowNo) throws InterruptedException {
