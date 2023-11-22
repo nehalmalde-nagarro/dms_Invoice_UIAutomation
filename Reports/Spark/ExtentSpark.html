@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">MSIL MICRM Automation Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Nov 17, 2023 02:13:06 pm</span></a>
+<a href="#"><span class="badge badge-primary">Nov 22, 2023 11:00:46 am</span></a>
 </li>
 </ul>
 </div>
@@ -71,25 +71,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Nov 17, 2023 02:13:06 pm</h3>
+<h3>Nov 22, 2023 11:00:46 am</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Nov 17, 2023 02:36:03 pm</h3>
+<h3>Nov 22, 2023 11:01:32 am</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Features Passed</p>
-<h3>3</h3>
+<h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Features Failed</p>
-<h3>2</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -105,12 +105,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='60%'>
-<b>3</b> features passed
+<div><small data-tooltip='0%'>
+<b>0</b> features passed
 </small>
 </div>
 <div>
-<small data-tooltip='40%'><b>2</b> features failed,
+<small data-tooltip='100%'><b>1</b> features failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -128,9 +128,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='78%'><b>25</b> scenarios passed</small></div>
+<div><small data-tooltip='0%'><b>0</b> scenarios passed</small></div>
 <div>
-<small data-tooltip='21%'><b>7</b> scenarios failed,
+<small data-tooltip='100%'><b>1</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -148,10 +148,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='84%'><b>398</b> steps passed</small></div>
+<div><small data-tooltip='11%'><b>4</b> steps passed</small></div>
 <div>
-<small data-tooltip='1%'><b>7</b> steps failed,
-<b>66</b> skipped, <b data-tooltip='%'>0</b> others
+<small data-tooltip='5%'><b>2</b> steps failed,
+<b>28</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -167,7 +167,7 @@
 </div></div>
 <script>
 var timeline = {
-"Add Invoice - Invoice Details Tab":334.394,"Dealer Information Functionality":19.879,"Add Invoice - Vehicle Details Tab":1021.526,"Login":95.941,"Search by Order or Invoice on Dashboard Page":340.284
+"Add Invoice - Vehicle Details Tab":44.687
 };
 </script>
 <div class="row">
@@ -177,44 +177,20 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@AddInvoice</td>
-<td>7</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-</tr>
-<tr>
 <td>@FinancialInfo</td>
 <td>0</td>
-<td>3</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
 <td>0%</td>
 </tr>
 <tr>
-<td>@Login</td>
-<td>6</td>
+<td>@finance</td>
+<td>0</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>100%</td>
-</tr>
-<tr>
-<td>@Search</td>
-<td>11</td>
-<td>4</td>
-<td>0</td>
-<td>0</td>
-<td>73.333%</td>
-</tr>
-<tr>
-<td>@VehicleDetails</td>
-<td>3</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
-<td>50%</td>
+<td>0%</td>
 </tr>
 </tbody>
 </table></div>
@@ -251,21 +227,21 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 3,
-failParent: 2,
+passParent: 0,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 25,
-failChild: 7,
+passChild: 0,
+failChild: 1,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 398,
-failGrandChild: 7,
+passGrandChild: 4,
+failGrandChild: 2,
 warningGrandChild: 0,
-skipGrandChild: 66,
+skipGrandChild: 28,
 infoGrandChild: 0,
 eventsCount: 5,
 };
@@ -279,7 +255,6 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
 <a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
@@ -288,31 +263,31 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@AddInvoice</a><a class="dropdown-item" href="#">@FinancialInfo</a><a class="dropdown-item" href="#">@Login</a><a class="dropdown-item" href="#">@Search</a><a class="dropdown-item" href="#">@VehicleDetails</a>
+<a class="dropdown-item" href="#">@FinancialInfo</a><a class="dropdown-item" href="#">@finance</a>
 </ul>
 </li>
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Add Invoice - Invoice Details Tab</p>
+            <p class="name">Add Invoice - Vehicle Details Tab</p>
             <p class="text-sm">
-              <span>2:13:08 pm</span> / <span>00:05:34:394</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>11:00:48 am</span> / <span>00:00:44:687</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Add Invoice - Invoice Details Tab</h5>
-<span class='badge badge-success'>11.17.2023 2:13:08 pm</span>
-<span class='badge badge-danger'>11.17.2023 2:18:42 pm</span>
-<span class='badge badge-default'>00:05:34:394</span>
+<h5 class="test-status text-fail">Add Invoice - Vehicle Details Tab</h5>
+<span class='badge badge-success'>11.22.2023 11:00:48 am</span>
+<span class='badge badge-danger'>11.22.2023 11:01:32 am</span>
+<span class='badge badge-default'>00:00:44:687</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -324,730 +299,14 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Validate Prefilled fields on Invoice Details tab</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>Validate Prefilled fields on Invoice Details tab</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Given User is on Home Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User clicks on "Add Invoice" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on Search Order</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters OrderId from scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "SEARCH" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User select from displayed orders for scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "OK" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify Prefilled fields for OrderId from scenario 1 on invoice Details tab</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="20"><span class="badge log pass-bg mr-2">Pass</span>Validate PopUp functionalities of search order Popup</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="21"><span class="badge log pass-bg mr-2">Pass</span>Validate PopUp functionalities of search order Popup</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Given User is on Home Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User clicks on "Add Invoice" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on Search Order</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters Mobile Number from scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "SEARCH" button on popup</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And Verify if "OK" button is disable</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify data on search by Mobile Number for scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "CLEAR" button on popup</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And Verify if "SEARCH" button is disable</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And Click on Close popup icon</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify if Popup closed</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="41"><span class="badge log pass-bg mr-2">Pass</span>Validate if no record found if invalid data input to search on popup</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="42"><span class="badge log pass-bg mr-2">Pass</span>Validate if no record found if invalid data input to search on popup</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Given User is on Home Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User clicks on "Add Invoice" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on Search Order</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters Mobile Number "1212121212"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters OrderId "SB000212121"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "SEARCH" button on popup</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify if "Nothing to display" text showing</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="58"><span class="badge log pass-bg mr-2">Pass</span>Validate back to listing button  functionality</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="com.dms.stepdefinitions.LoginStepDef.user_is_on_login_page()">
-                <span>Given User is on Login Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.dms.stepdefinitions.LoginStepDef.user_click_on_btn(java.lang.String)">
-                <span>And User clicks on "Dealer" button</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.dms.stepdefinitions.LoginStepDef.user_enters_and(java.lang.String,java.lang.String)">
-                <span>And User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.dms.stepdefinitions.LoginStepDef.user_click_on_button(java.lang.String)">
-                <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.dms.stepdefinitions.SearchAllInvoicesStepDef.user_logged_in_is_on_home_page()">
-                <span>Given User is on Home Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.dms.stepdefinitions.LoginStepDef.user_click_on_btn(java.lang.String)">
-                <span>When User clicks on "Add Invoice" button</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.dms.stepdefinitions.LoginStepDef.user_click_on_btn(java.lang.String)">
-                <span>And User clicks on "BACK TO LISTING" button</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.dms.stepdefinitions.LoginStepDef.user_click_on_btn_on_popup(java.lang.String)">
-                <span>And User clicks on "NO" button on popup</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.dms.stepdefinitions.SearchAllInvoicesStepDef.verify_user_is_on_Add_Invoice_page()">
-                <span>Then verify user is on Add Invoice page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.dms.stepdefinitions.LoginStepDef.user_click_on_btn(java.lang.String)">
-                <span>When User clicks on "BACK TO LISTING" button</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.dms.stepdefinitions.LoginStepDef.user_click_on_btn_on_popup(java.lang.String)">
-                <span>And User clicks on "YES" button on popup</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.dms.stepdefinitions.SearchAllInvoicesStepDef.user_logged_in_is_on_home_page()">
-                <span>Then Verify User is on Home Page</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="75"><span class="badge log pass-bg mr-2">Pass</span>Validate clear button functionality on Invoice details page</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="76"><span class="badge log pass-bg mr-2">Pass</span>Validate clear button functionality on Invoice details page</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Given User is on Home Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User clicks on "Add Invoice" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on Search Order</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters OrderId from scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "SEARCH" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User select from displayed orders for scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "OK" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "CLEAR" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then verify all the fields are empty on Invoice details page except Invoice Type and Selling Price For</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="94"><span class="badge log pass-bg mr-2">Pass</span>Validate B2B functionality on Invoice details page</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="95"><span class="badge log pass-bg mr-2">Pass</span>Validate B2B functionality on Invoice details page</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Given User is on Home Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User clicks on "Add Invoice" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on Search Order</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters OrderId from scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "SEARCH" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User select from displayed orders for scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "OK" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And if user selects B2B Customer as "Yes"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters "GSTUNREGISTERED" in Bill GSTN field</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then verify error message is displayed as "Enter GST Number for B2B Customer."</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And if user selects B2B Customer as "No"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters "ABC1001002003A" in Bill GSTN field</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then verify error message is displayed as "GST Number found for B2C Customer."</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="117"><span class="badge log pass-bg mr-2">Pass</span>Validate Next button functionality on Invoice details page</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="118"><span class="badge log pass-bg mr-2">Pass</span>Validate Next button functionality on Invoice details page</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Given User is on Home Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User clicks on "Add Invoice" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on Search Order</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters OrderId from scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "SEARCH" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User select from displayed orders for scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "OK" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Workspace from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Aadhar Number from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Bill GSTN field from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters all required fields from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "NEXT" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify user is navigated to "Vehicle Info"</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="140"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Dealer Information Functionality</p>
-            <p class="text-sm">
-              <span>2:18:42 pm</span> / <span>00:00:19:879</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Dealer Information Functionality</h5>
-<span class='badge badge-success'>11.17.2023 2:18:42 pm</span>
-<span class='badge badge-danger'>11.17.2023 2:19:02 pm</span>
-<span class='badge badge-default'>00:00:19:879</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=140</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div>
-<div class="accordion mt-4">
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="141"><span class="badge log pass-bg mr-2">Pass</span>Validate Dealer Information Functionality</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="com.dms.stepdefinitions.LoginStepDef.user_is_on_login_page()">
-                <span>Given User is on Login Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.dms.stepdefinitions.LoginStepDef.user_click_on_btn(java.lang.String)">
-                <span>When User clicks on "Dealer" button</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.dms.stepdefinitions.LoginStepDef.user_enters_and(java.lang.String,java.lang.String)">
-                <span>And User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.dms.stepdefinitions.LoginStepDef.user_click_on_button(java.lang.String)">
-                <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.dms.stepdefinitions.SearchAllInvoicesStepDef.user_logged_in_is_on_home_page()">
-                <span>Given User is on Home Page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.dms.stepdefinitions.DealerInformationStepDef.user_clicks_on_profile_icon()">
-                <span>When user clicks on Profile Icon</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.dms.stepdefinitions.DealerInformationStepDef.user_is_able_to_view_deaer_information()">
-                <span>Then user is able to view dealer information</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="fail" test-id="153"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Add Invoice - Vehicle Details Tab</p>
-            <p class="text-sm">
-              <span>2:19:02 pm</span> / <span>00:17:01:526</span>
-              <span class="badge fail-bg log float-right">Fail</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-fail">Add Invoice - Vehicle Details Tab</h5>
-<span class='badge badge-success'>11.17.2023 2:19:02 pm</span>
-<span class='badge badge-danger'>11.17.2023 2:36:03 pm</span>
-<span class='badge badge-default'>00:17:01:526</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=153</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div>
-<div class="accordion mt-4">
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="154"><span class="badge log fail-bg mr-2">Fail</span>Validate prefilled data on Financial Info page</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
+        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Validate the next button is enabled in Financial Info page and able to navigate to next screen when Payment Type is Cash</div>
       </div>
     </div>
         <div class="scenario_outline ">
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="155"><span class="badge log fail-bg mr-2">Fail</span>Validate prefilled data on Financial Info page</div>
-                    <div class="status-avatar float-right">
-                      <i class="fa fa-paperclip"></i>
-                    </div>
+                  <div class="node" id="3"><span class="badge log fail-bg mr-2">Fail</span>Validate the next button is enabled in Financial Info page and able to navigate to next screen when Payment Type is Cash</div>
                 </div>
               </div>
               <div class="card-body mt-3 ">
@@ -1071,495 +330,104 @@ eventsCount: 5,
       <div>
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step fail-bg">
                     <span>Given User is on Home Page</span>
       <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User clicks on "Add Invoice" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on Search Order</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters OrderId from scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "SEARCH" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User select from displayed orders for scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "OK" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Workspace from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Aadhar Number from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Bill GSTN field from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters all required fields from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "NEXT" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step fail-bg">
-                    <span>And user selects Owners Manual Preference for scenario 1</span>
-      <div>
-        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#ownerManualRef"}
-  (Session info: chrome=119.0.6045.124)
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.id: searchBy
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.8.1', revision: '8ebccac989'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c5acff34b9c916e66fbea27f9e6675c1, findElement {using=id, value=ownerManualRef}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.124, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61753}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61753/devtoo..., se:cdpVersion: 119.0.6045.124, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c5acff34b9c916e66fbea27f9e6675c1
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
 	at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
-	at com.dms.pageobjects.AddInvoice_VehicleDetailsPOM.clickownersManualPrefDropdown(AddInvoice_VehicleDetailsPOM.java:39)
-	at com.dms.stepdefinitions.VehicleDetailTabStepDef.user_selects_owners_manual_preference_as(VehicleDetailTabStepDef.java:86)
-	at ✽.user selects Owners Manual Preference for scenario 1(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/FinancialInfo.feature:23)
+	at com.dms.pageobjects.SearchInvoice.searchBy(SearchInvoice.java:17)
+	at com.dms.stepdefinitions.SearchAllInvoicesStepDef.user_logged_in_is_on_home_page(SearchAllInvoicesStepDef.java:28)
+	at ✽.User is on Home Page(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/FinancialInfo.feature:75)
 </textarea>
       
       </div>
                   </div>
                   <div class="step skip-bg">
-                    <span>And user selects Interested in Loyalty Card, Type of card, Reason for scenario 1</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And user clicks on Preferred SRV Dealer popup</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And user selects state for scenario 1</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And user selects city for scenario 1</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User clicks on "SEARCH" button on popup</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And selects the dealer for scenario 1 from searched results</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User clicks on "OK" button</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And user selects Extended Warranty for scenario 1</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User clicks on "NEXT" button</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then Verify Prefilled fields for OrderId from scenario 1 on Financial Info tab</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>com.dms.apphooks.ApplicationHooks.tearDown(io.cucumber.java.Scenario)</span>
-      <div>Validate_prefilled_data_on_Financial_Info_page
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='../FailedScreenShots/embedded1.png' src="../FailedScreenShots/embedded1.png">
-    
-    </div></div>
-</div>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="187"><span class="badge log fail-bg mr-2">Fail</span>Validate the Finance and Leasing payment Type dependent fields</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
-      </div>
-    </div>
-        <div class="scenario_outline ">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="188"><span class="badge log fail-bg mr-2">Fail</span>Validate the Finance and Leasing payment Type dependent fields</div>
-                    <div class="status-avatar float-right">
-                      <i class="fa fa-paperclip"></i>
-                    </div>
-                </div>
-              </div>
-              <div class="card-body mt-3 ">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Given User is on Home Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
                     <span>When User clicks on "Add Invoice" button</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>And User click on Search Order</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>And User enters OrderId from scenario 1</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>And User clicks on "SEARCH" button</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>And User select from displayed orders for scenario 1</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>And User clicks on "OK" button</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>And user enters Workspace from 1</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>And user enters Aadhar Number from 1</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>And user enters Bill GSTN field from 1</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>And user enters all required fields from 1</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>And User clicks on "NEXT" button</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>And user selects Owners Manual Preference for scenario 1</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>And user selects Interested in Loyalty Card, Type of card, Reason for scenario 1</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>And user clicks on Preferred SRV Dealer popup</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>And user selects state for scenario 1</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step fail-bg">
+                  <div class="step skip-bg">
                     <span>And user selects city for scenario 1</span>
-      <div>
-        <textarea disabled class="code-block">java.lang.NullPointerException: Cannot invoke "String.toString()" because the return value of "java.util.Map.get(Object)" is null
-	at com.dms.stepdefinitions.VehicleDetailTabStepDef.user_selects_city_as(VehicleDetailTabStepDef.java:142)
-	at ✽.user selects city for scenario 1(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/FinancialInfo.feature:56)
-</textarea>
-      
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User clicks on "SEARCH" button on popup</span>
       <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And selects the dealer for scenario 1 from searched results</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User clicks on "OK" button</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And user selects Extended Warranty for scenario 1</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User clicks on "NEXT" button</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User selects payment type as "Cash"</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then verify the fields Financier, Finance Amount, Branch and Finance Details are disabled</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>When User selects payment type as "Finance"</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then verify the fields Financier, Finance Amount, Branch and Finance Details are enabled</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>When User selects payment type as "Leasing"</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then verify the fields Financier, Finance Amount, Branch are enabled and Finance Details is disabled</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>com.dms.apphooks.ApplicationHooks.tearDown(io.cucumber.java.Scenario)</span>
-      <div>Validate_the_Finance_and_Leasing_payment_Type_dependent_fields
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='../FailedScreenShots/embedded2.png' src="../FailedScreenShots/embedded2.png">
-    
-    </div></div>
-</div>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="225"><span class="badge log fail-bg mr-2">Fail</span>Validate the next button is enabled in Financial Info page and able to navigate to next screen when Payment Type is Cash</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
-      </div>
-    </div>
-        <div class="scenario_outline ">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="226"><span class="badge log fail-bg mr-2">Fail</span>Validate the next button is enabled in Financial Info page and able to navigate to next screen when Payment Type is Cash</div>
-                    <div class="status-avatar float-right">
-                      <i class="fa fa-paperclip"></i>
-                    </div>
-                </div>
-              </div>
-              <div class="card-body mt-3 ">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Given User is on Home Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User clicks on "Add Invoice" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on Search Order</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters OrderId from scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "SEARCH" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User select from displayed orders for scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "OK" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Workspace from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Aadhar Number from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Bill GSTN field from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters all required fields from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "NEXT" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user selects Owners Manual Preference for scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user selects Interested in Loyalty Card, Type of card, Reason for scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user clicks on Preferred SRV Dealer popup</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user selects state for scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step fail-bg">
-                    <span>And user selects city for scenario 1</span>
-      <div>
-        <textarea disabled class="code-block">java.lang.NullPointerException: Cannot invoke "String.toString()" because the return value of "java.util.Map.get(Object)" is null
-	at com.dms.stepdefinitions.VehicleDetailTabStepDef.user_selects_city_as(VehicleDetailTabStepDef.java:142)
-	at ✽.user selects city for scenario 1(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/FinancialInfo.feature:90)
-</textarea>
-      
       </div>
                   </div>
                   <div class="step skip-bg">
@@ -1608,7 +476,7 @@ Session ID: c5acff34b9c916e66fbea27f9e6675c1
       </div>
                   </div>
                   <div class="step skip-bg">
-                    <span>And user selects MSGA Financier Name from scenario 1</span>
+                    <span>And user selects MSGA Financier Name and value from scenario 1</span>
       <div>Step skipped
       </div>
                   </div>
@@ -1622,289 +490,18 @@ Session ID: c5acff34b9c916e66fbea27f9e6675c1
       <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
-                    <span>com.dms.apphooks.ApplicationHooks.tearDown(io.cucumber.java.Scenario)</span>
-      <div>Validate_the_next_button_is_enabled_in_Financial_Info_page_and_able_to_navigate_to_next_screen_when_Payment_Type_is_Cash
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='../FailedScreenShots/embedded3.png' src="../FailedScreenShots/embedded3.png">
-    
-    </div></div>
-</div>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="479"><span class="badge log pass-bg mr-2">Pass</span>Validate prefilled data on Vehicles details page</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="480"><span class="badge log pass-bg mr-2">Pass</span>Validate prefilled data on Vehicles details page</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Given User is on Home Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User clicks on "Add Invoice" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on Search Order</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters OrderId from scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "SEARCH" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User select from displayed orders for scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "OK" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Workspace from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Aadhar Number from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Bill GSTN field from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters all required fields from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "NEXT" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify Prefilled fields for OrderId from scenario 1 on Vehicle Details tab</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="502"><span class="badge log pass-bg mr-2">Pass</span>Validate previous button functionality on Vehicles details page</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="503"><span class="badge log pass-bg mr-2">Pass</span>Validate previous button functionality on Vehicles details page</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Given User is on Home Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User clicks on "Add Invoice" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on Search Order</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters OrderId from scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "SEARCH" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User select from displayed orders for scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "OK" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Workspace from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Aadhar Number from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Bill GSTN field from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters all required fields from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "NEXT" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "PREV" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "YES" button on popup</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify user is navigated to "Order Details"</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="527"><span class="badge log fail-bg mr-2">Fail</span>Validate back to listing button  functionality</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
-      </div>
-    </div>
-        <div class="scenario_outline ">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="528"><span class="badge log fail-bg mr-2">Fail</span>Validate back to listing button  functionality</div>
-                    <div class="status-avatar float-right">
-                      <i class="fa fa-paperclip"></i>
-                    </div>
-                </div>
-              </div>
-              <div class="card-body mt-3 ">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
                   <div class="step fail-bg">
-                    <span>Given User is on Home Page</span>
+                    <span>com.dms.apphooks.ApplicationHooks.tearDown(io.cucumber.java.Scenario)</span>
       <div>
-        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#searchBy"}
-  (Session info: chrome=119.0.6045.124)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=119.0.6045.160)
 Build info: version: '4.8.1', revision: '8ebccac989'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4b433da3a87e6e21fed669efbf10a493, findElement {using=id, value=searchBy}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.124, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62801}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62801/devtoo..., se:cdpVersion: 119.0.6045.124, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 4b433da3a87e6e21fed669efbf10a493
+Command: [aed77dddf6113aa3db05021051bba216, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63750}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63750/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: aed77dddf6113aa3db05021051bba216
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -1917,1620 +514,12 @@ Session ID: 4b433da3a87e6e21fed669efbf10a493
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
-	at com.dms.pageobjects.SearchInvoice.searchBy(SearchInvoice.java:17)
-	at com.dms.stepdefinitions.SearchAllInvoicesStepDef.user_logged_in_is_on_home_page(SearchAllInvoicesStepDef.java:28)
-	at ✽.User is on Home Page(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/VehicleDetails.feature:52)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:598)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:318)
+	at com.dms.apphooks.ApplicationHooks.tearDown(ApplicationHooks.java:60)
 </textarea>
       
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>When User clicks on "Add Invoice" button</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User click on Search Order</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User enters OrderId from scenario 1</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User clicks on "SEARCH" button</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User select from displayed orders for scenario 1</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User clicks on "OK" button</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And user enters Workspace from 1</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And user enters Aadhar Number from 1</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And user enters Bill GSTN field from 1</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And user enters all required fields from 1</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User clicks on "NEXT" button</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User clicks on "BACK TO LISTING" button</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User clicks on "NO" button on popup</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then verify user is on Add Invoice page</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>When User clicks on "BACK TO LISTING" button</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User clicks on "YES" button on popup</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then Verify User is on Home Page</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>com.dms.apphooks.ApplicationHooks.tearDown(io.cucumber.java.Scenario)</span>
-      <div>Validate_back_to_listing_button__functionality
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='../FailedScreenShots/embedded5.png' src="../FailedScreenShots/embedded5.png">
-    
-    </div></div>
-</div>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="555"><span class="badge log fail-bg mr-2">Fail</span>Validate next button functionality on Vehicles details page</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
-      </div>
-    </div>
-        <div class="scenario_outline ">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="556"><span class="badge log fail-bg mr-2">Fail</span>Validate next button functionality on Vehicles details page</div>
-                    <div class="status-avatar float-right">
-                      <i class="fa fa-paperclip"></i>
-                    </div>
-                </div>
-              </div>
-              <div class="card-body mt-3 ">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Given User is on Home Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User clicks on "Add Invoice" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on Search Order</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters OrderId from scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "SEARCH" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User select from displayed orders for scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "OK" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Workspace from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Aadhar Number from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Bill GSTN field from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters all required fields from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "NEXT" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user selects Owners Manual Preference for scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user selects Interested in Loyalty Card, Type of card, Reason for scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user clicks on Preferred SRV Dealer popup</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user selects state for scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step fail-bg">
-                    <span>And user selects city for scenario 1</span>
-      <div>
-        <textarea disabled class="code-block">java.lang.NullPointerException: Cannot invoke "String.toString()" because the return value of "java.util.Map.get(Object)" is null
-	at com.dms.stepdefinitions.VehicleDetailTabStepDef.user_selects_city_as(VehicleDetailTabStepDef.java:142)
-	at ✽.user selects city for scenario 1(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/VehicleDetails.feature:92)
-</textarea>
-      
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User clicks on "SEARCH" button on popup</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And selects the dealer for scenario 1 from searched results</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User clicks on "OK" button</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And user selects Extended Warranty for scenario 1</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User clicks on "NEXT" button</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then Verify user is navigated to "Financial Info"</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>com.dms.apphooks.ApplicationHooks.tearDown(io.cucumber.java.Scenario)</span>
-      <div>Validate_next_button_functionality_on_Vehicles_details_page
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='../FailedScreenShots/embedded6.png' src="../FailedScreenShots/embedded6.png">
-    
-    </div></div>
-</div>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="588"><span class="badge log pass-bg mr-2">Pass</span>Validate Fasttag functionalities of Vehicle details tab</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="589"><span class="badge log pass-bg mr-2">Pass</span>Validate Fasttag functionalities of Vehicle details tab</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Given User is on Home Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User clicks on "Add Invoice" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on Search Order</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters OrderId from scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "SEARCH" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User select from displayed orders for scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "OK" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Workspace from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Aadhar Number from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Bill GSTN field from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters all required fields from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "NEXT" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on FastTag button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters Fast Tag ID from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify if "OK" button is disable</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User selects Fast Tag Bank for scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User selects Fast Tag Fitment Date "20-12-2023"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then User clicks on "OK" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on FastTag button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters Fast Tag ID from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "CLEAR" button on popup</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify the FastTag fields are cleared out</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And Click on Close popup icon</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify if Popup closed</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="622"><span class="badge log fail-bg mr-2">Fail</span>Validate Preferred SRV functionalities of Vehicle details tab</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
-      </div>
-    </div>
-        <div class="scenario_outline ">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="623"><span class="badge log fail-bg mr-2">Fail</span>Validate Preferred SRV functionalities of Vehicle details tab</div>
-                    <div class="status-avatar float-right">
-                      <i class="fa fa-paperclip"></i>
-                    </div>
-                </div>
-              </div>
-              <div class="card-body mt-3 ">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Given User is on Home Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User clicks on "Add Invoice" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on Search Order</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters OrderId from scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "SEARCH" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User select from displayed orders for scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "OK" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Workspace from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Aadhar Number from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Bill GSTN field from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters all required fields from 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "NEXT" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user clicks on Preferred SRV Dealer popup</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user selects state for scenario 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify if "OK" button is disable</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step fail-bg">
-                    <span>And user selects city for scenario 1</span>
-      <div>
-        <textarea disabled class="code-block">java.lang.NullPointerException: Cannot invoke "String.toString()" because the return value of "java.util.Map.get(Object)" is null
-	at com.dms.stepdefinitions.VehicleDetailTabStepDef.user_selects_city_as(VehicleDetailTabStepDef.java:142)
-	at ✽.user selects city for scenario 1(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/VehicleDetails.feature:150)
-</textarea>
-      
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User clicks on "SEARCH" button on popup</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And selects the dealer for scenario 1 from searched results</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User clicks on "OK" button</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And user clicks on Preferred SRV Dealer popup</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And user selects state for scenario 1</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And user selects city for scenario 1</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User clicks on "CLEAR" button on popup</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then Verify the Preferred SRV fields are cleared out</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And Click on Close popup icon</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then Verify if Popup closed</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>com.dms.apphooks.ApplicationHooks.tearDown(io.cucumber.java.Scenario)</span>
-      <div>Validate_Preferred_SRV_functionalities_of_Vehicle_details_tab
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='../FailedScreenShots/embedded7.png' src="../FailedScreenShots/embedded7.png">
-    
-    </div></div>
-</div>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="264"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Login</p>
-            <p class="text-sm">
-              <span>2:22:34 pm</span> / <span>00:01:35:941</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Login</h5>
-<span class='badge badge-success'>11.17.2023 2:22:34 pm</span>
-<span class='badge badge-danger'>11.17.2023 2:24:10 pm</span>
-<span class='badge badge-default'>00:01:35:941</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=264</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div>
-<div class="accordion mt-4">
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="265"><span class="badge log pass-bg mr-2">Pass</span>Login as a Dealer with Valid Credentials</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="266"><span class="badge log pass-bg mr-2">Pass</span>Login as a Dealer with Valid Credentials</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify if user Logs in sucessfully</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="276"><span class="badge log pass-bg mr-2">Pass</span>Login as a Dealer with InValid Credentials</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="277"><span class="badge log pass-bg mr-2">Pass</span>Login as a Dealer with InValid Credentials</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User enters "ccm_sales122" and "ccm_sales1212e"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify if user not Logs in sucessfully</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="287"><span class="badge log pass-bg mr-2">Pass</span>Login as a Dealer with InValid Credentials username length less than 6 digits</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="288"><span class="badge log pass-bg mr-2">Pass</span>Login as a Dealer with InValid Credentials username length less than 6 digits</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User enters "ccm" and "ccm_sales1212e"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify if we get error for invalid username</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And Verify if login button is disable</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="299"><span class="badge log pass-bg mr-2">Pass</span>Login as a Dealer with InValid Credentials username length less than 6 digits</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User enters "" and "ccm_sales121"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify if we get error for invalid username</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And Verify if login button is disable</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="310"><span class="badge log pass-bg mr-2">Pass</span>Login as a Dealer with InValid Credentials password length less than 6 digits</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="311"><span class="badge log pass-bg mr-2">Pass</span>Login as a Dealer with InValid Credentials password length less than 6 digits</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User enters "ccmksm_sales" and "ccm"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify if we get error for invalid password</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And Verify if login button is disable</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="322"><span class="badge log pass-bg mr-2">Pass</span>Login as a Dealer with InValid Credentials password length less than 6 digits</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User enters "grn_Sales" and ""</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify if we get error for invalid password</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And Verify if login button is disable</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="fail" test-id="333"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Search by Order or Invoice on Dashboard Page</p>
-            <p class="text-sm">
-              <span>2:24:10 pm</span> / <span>00:05:40:284</span>
-              <span class="badge fail-bg log float-right">Fail</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-fail">Search by Order or Invoice on Dashboard Page</h5>
-<span class='badge badge-success'>11.17.2023 2:24:10 pm</span>
-<span class='badge badge-danger'>11.17.2023 2:29:51 pm</span>
-<span class='badge badge-default'>00:05:40:284</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=333</span>
-<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
-<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
-</div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div>
-<div class="accordion mt-4">
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="334"><span class="badge log pass-bg mr-2">Pass</span>Validate if dealer is able to view all order deatils on click on search button</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="335"><span class="badge log pass-bg mr-2">Pass</span>Validate if dealer is able to view all order deatils on click on search button</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Given User is on Home Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When user search by "ORDER"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user clicks on search button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then verify user is able to view all Customer details for search by order</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="348"><span class="badge log pass-bg mr-2">Pass</span>Validate if dealer is able filter search by order based on Order ID</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="349"><span class="badge log pass-bg mr-2">Pass</span>Validate if dealer is able filter search by order based on Order ID</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Given User is on Home Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When user search by "ORDER"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Order Id "SOB15000006"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user clicks on search button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then verify user is able to view Customer details by order based on "SOB15000006"</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="363"><span class="badge log pass-bg mr-2">Pass</span>Validate if dealer is able filter search by order based on Phone number</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="364"><span class="badge log pass-bg mr-2">Pass</span>Validate if dealer is able filter search by order based on Phone number</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Given User is on Home Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When user search by "ORDER"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Phone Number "9711457760"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When user clicks on search button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then verify user is able to view Customer details by order based on phone number "9711457760"</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="378"><span class="badge log pass-bg mr-2">Pass</span>Validate if dealer is able filter search by order based on dates</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="379"><span class="badge log pass-bg mr-2">Pass</span>Validate if dealer is able filter search by order based on dates</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Given User is on Home Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When user search by "ORDER"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user selects From "20-06-2023"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user selects To "21-09-2023"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When user clicks on search button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then verify user is able to view Customer details by order based on "20-06-2023" and "21-09-2023"</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="394"><span class="badge log fail-bg mr-2">Fail</span>Validate if dealer is able filter search by order based on various Valid params</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
-      </div>
-    </div>
-        <div class="scenario_outline ">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="395"><span class="badge log fail-bg mr-2">Fail</span>Validate if dealer is able filter search by order based on various Valid params</div>
-                    <div class="status-avatar float-right">
-                      <i class="fa fa-paperclip"></i>
-                    </div>
-                </div>
-              </div>
-              <div class="card-body mt-3 ">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Given User is on Home Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When user search by "ORDER"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Order Id "SOB15000006"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Phone Number "9643785691"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user selects From "20-06-2023"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user selects To "21-09-2023"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user clicks on search button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step fail-bg">
-                    <span>Then Verify user is able to view Customer details by order based on "SOB15000006" "20-06-2023" "21-09-2023" "9643785691"</span>
-      <div>
-        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//td[contains(text(),'SOB15000006')]/following-sibling::td[4]"}
-  (Session info: chrome=119.0.6045.124)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.8.1', revision: '8ebccac989'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [551bea16767915e25920962a7926d37c, findElement {using=xpath, value=//td[contains(text(),'SOB15000006')]/following-sibling::td[4]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.124, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62417}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62417/devtoo..., se:cdpVersion: 119.0.6045.124, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 551bea16767915e25920962a7926d37c
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
-	at com.dms.pageobjects.SearchInvoice.searchResultsOrderInvoiceDate(SearchInvoice.java:89)
-	at com.dms.stepdefinitions.SearchAllInvoicesStepDef.userDetailsBasedOnMultpleParam(SearchAllInvoicesStepDef.java:226)
-	at ✽.Verify user is able to view Customer details by order based on "SOB15000006" "20-06-2023" "21-09-2023" "9643785691"(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/SearchAllInvoices.feature:62)
-</textarea>
-      
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>com.dms.apphooks.ApplicationHooks.tearDown(io.cucumber.java.Scenario)</span>
-      <div>Validate_if_dealer_is_able_filter_search_by_order_based_on_various_Valid_params
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='../FailedScreenShots/embedded4.png' src="../FailedScreenShots/embedded4.png">
-    
-    </div></div>
-</div>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="412"><span class="badge log pass-bg mr-2">Pass</span>Validate if dealer is able filter search by order based on various invalid params</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="413"><span class="badge log pass-bg mr-2">Pass</span>Validate if dealer is able filter search by order based on various invalid params</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Given User is on Home Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When user search by "ORDER"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Order Id "SOB23000621"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Phone Number "83404232026"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user selects From "20-06-2023"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user selects To "21-09-2023"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user clicks on search button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify if "No Records Found." text showing</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="430"><span class="badge log pass-bg mr-2">Pass</span>Verify if clear icon clear search text box for order search by</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="431"><span class="badge log pass-bg mr-2">Pass</span>Verify if clear icon clear search text box for order search by</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Given User is on Home Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When user search by "ORDER"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Order Id "SOB15000006"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Phone Number "83404232026"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user selects From "20-06-2023"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user selects To "21-09-2023"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user clicks on clear button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then verify if fields are clear out for search by order</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="448"><span class="badge log pass-bg mr-2">Pass</span>Validate search button not activated if Phone Number is not of 10 digit for search by order</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="449"><span class="badge log pass-bg mr-2">Pass</span>Validate search button not activated if Phone Number is not of 10 digit for search by order</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Given User is on Home Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When user search by "ORDER"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Phone Number "839283"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When user clicks on search button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then verify if search button is disable</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="463"><span class="badge log pass-bg mr-2">Pass</span>Verify if click on Generate Invoice Add invoice</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="464"><span class="badge log pass-bg mr-2">Pass</span>Verify if click on Generate Invoice Add invoice</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given User is on Login Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User clicks on "Dealer" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User enters "grn_sale" and "Welcome@1234"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And User click on "LOGIN" button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Given User is on Home Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When user search by "ORDER"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user enters Order Id "SOB15000006"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user clicks on search button</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And user clicks on Generate Invoice for "SOB15000006"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then verify user is on Add Invoice page</span>
-      <div>
       </div>
                   </div>
               </div>
@@ -3553,118 +542,22 @@ Session ID: 551bea16767915e25920962a7926d37c
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">5</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>7</span>
-</span>
-<p class="name">@AddInvoice</p>
-<p class="duration text-sm">7 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@AddInvoice</h4>
-<span status="pass" class='badge log pass-bg'>7 passed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:13:08 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='3'>Validate Prefilled fields on Invoice Details tab</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Invoice Details Tab.Validate Prefilled fields on Invoice Details tab</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:13:59 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='21'>Validate PopUp functionalities of search order Popup</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Invoice Details Tab.Validate PopUp functionalities of search order Popup</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:15:33 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='42'>Validate if no record found if invalid data input to search on popup</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Invoice Details Tab.Validate if no record found if invalid data input to search on popup</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:15:57 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='58'>Validate back to listing button functionality</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Invoice Details Tab.Validate back to listing button functionality</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:16:30 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='76'>Validate clear button functionality on Invoice details page</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Invoice Details Tab.Validate clear button functionality on Invoice details page</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:17:09 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='95'>Validate B2B functionality on Invoice details page</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Invoice Details Tab.Validate B2B functionality on Invoice details page</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:18:00 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='118'>Validate Next button functionality on Invoice details page</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Invoice Details Tab.Validate Next button functionality on Invoice details page</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log badge-danger'>3</span>
+<span class='badge log badge-danger'>1</span>
 </span>
 <p class="name">@FinancialInfo</p>
-<p class="duration text-sm">3 tests</p>
+<p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
 <h4>@FinancialInfo</h4>
-<span status="fail" class='badge log badge-danger'>3 failed</span>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -3677,29 +570,9 @@ Session ID: 551bea16767915e25920962a7926d37c
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>14:19:02 pm</td>
+<td>11:00:48 am</td>
 <td>
-<a href="#" class="linked" test-id='153' id='155'>Validate prefilled data on Financial Info page</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate prefilled data on Financial Info page</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>14:20:44 pm</td>
-<td>
-<a href="#" class="linked" test-id='153' id='188'>Validate the Finance and Leasing payment Type dependent fields</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate the Finance and Leasing payment Type dependent fields</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>14:21:38 pm</td>
-<td>
-<a href="#" class="linked" test-id='153' id='226'>Validate the next button is enabled in Financial Info page and able to navigate to next screen when Payment Type is Cash</a>
+<a href="#" class="linked" test-id='1' id='3'>Validate the next button is enabled in Financial Info page and able to navigate to next screen when Payment Type is Cash</a>
 <div class="">
 <span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate the next button is enabled in Financial Info page and able to navigate to next screen when Payment Type is Cash</span>
 </div>
@@ -3712,15 +585,15 @@ Session ID: 551bea16767915e25920962a7926d37c
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>6</span>
+<span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">@Login</p>
-<p class="duration text-sm">6 tests</p>
+<p class="name">@finance</p>
+<p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@Login</h4>
-<span status="pass" class='badge log pass-bg'>6 passed</span>
+<h4>@finance</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -3731,329 +604,13 @@ Session ID: 551bea16767915e25920962a7926d37c
 </tr>
 </thead>
 <tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:22:34 pm</td>
-<td>
-<a href="#" class="linked" test-id='264' id='266'>Login as a Dealer with Valid Credentials</a>
-<div class="">
-<span class="badge badge-default">Login.Login as a Dealer with Valid Credentials</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:22:54 pm</td>
-<td>
-<a href="#" class="linked" test-id='264' id='277'>Login as a Dealer with InValid Credentials</a>
-<div class="">
-<span class="badge badge-default">Login.Login as a Dealer with InValid Credentials</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:23:12 pm</td>
-<td>
-<a href="#" class="linked" test-id='264' id='288'>Login as a Dealer with InValid Credentials username length less than 6 digits</a>
-<div class="">
-<span class="badge badge-default">Login.Login as a Dealer with InValid Credentials username length less than 6 digits</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:23:26 pm</td>
-<td>
-<a href="#" class="linked" test-id='264' id='299'>Login as a Dealer with InValid Credentials username length less than 6 digits</a>
-<div class="">
-<span class="badge badge-default">Login.Login as a Dealer with InValid Credentials username length less than 6 digits</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:23:42 pm</td>
-<td>
-<a href="#" class="linked" test-id='264' id='311'>Login as a Dealer with InValid Credentials password length less than 6 digits</a>
-<div class="">
-<span class="badge badge-default">Login.Login as a Dealer with InValid Credentials password length less than 6 digits</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:23:57 pm</td>
-<td>
-<a href="#" class="linked" test-id='264' id='322'>Login as a Dealer with InValid Credentials password length less than 6 digits</a>
-<div class="">
-<span class="badge badge-default">Login.Login as a Dealer with InValid Credentials password length less than 6 digits</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log pass-bg'>11</span>
-<span class='badge log badge-danger'>4</span>
-</span>
-<p class="name">@Search</p>
-<p class="duration text-sm">15 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@Search</h4>
-<span status="pass" class='badge log pass-bg'>11 passed</span>
-<span status="fail" class='badge log badge-danger'>4 failed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:24:10 pm</td>
-<td>
-<a href="#" class="linked" test-id='333' id='335'>Validate if dealer is able to view all order deatils on click on search button</a>
-<div class="">
-<span class="badge badge-default">Search by Order or Invoice on Dashboard Page.Validate if dealer is able to view all order deatils on click on search button</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:24:31 pm</td>
-<td>
-<a href="#" class="linked" test-id='333' id='349'>Validate if dealer is able filter search by order based on Order ID</a>
-<div class="">
-<span class="badge badge-default">Search by Order or Invoice on Dashboard Page.Validate if dealer is able filter search by order based on Order ID</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:24:51 pm</td>
-<td>
-<a href="#" class="linked" test-id='333' id='364'>Validate if dealer is able filter search by order based on Phone number</a>
-<div class="">
-<span class="badge badge-default">Search by Order or Invoice on Dashboard Page.Validate if dealer is able filter search by order based on Phone number</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:25:46 pm</td>
-<td>
-<a href="#" class="linked" test-id='333' id='379'>Validate if dealer is able filter search by order based on dates</a>
-<div class="">
-<span class="badge badge-default">Search by Order or Invoice on Dashboard Page.Validate if dealer is able filter search by order based on dates</span>
-</div>
-</td>
-</tr>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>14:26:20 pm</td>
+<td>11:00:48 am</td>
 <td>
-<a href="#" class="linked" test-id='333' id='395'>Validate if dealer is able filter search by order based on various Valid params</a>
+<a href="#" class="linked" test-id='1' id='3'>Validate the next button is enabled in Financial Info page and able to navigate to next screen when Payment Type is Cash</a>
 <div class="">
-<span class="badge badge-default">Search by Order or Invoice on Dashboard Page.Validate if dealer is able filter search by order based on various Valid params</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:28:00 pm</td>
-<td>
-<a href="#" class="linked" test-id='333' id='413'>Validate if dealer is able filter search by order based on various invalid params</a>
-<div class="">
-<span class="badge badge-default">Search by Order or Invoice on Dashboard Page.Validate if dealer is able filter search by order based on various invalid params</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:28:33 pm</td>
-<td>
-<a href="#" class="linked" test-id='333' id='431'>Verify if clear icon clear search text box for order search by</a>
-<div class="">
-<span class="badge badge-default">Search by Order or Invoice on Dashboard Page.Verify if clear icon clear search text box for order search by</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:29:09 pm</td>
-<td>
-<a href="#" class="linked" test-id='333' id='449'>Validate search button not activated if Phone Number is not of 10 digit for search by order</a>
-<div class="">
-<span class="badge badge-default">Search by Order or Invoice on Dashboard Page.Validate search button not activated if Phone Number is not of 10 digit for search by order</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:29:28 pm</td>
-<td>
-<a href="#" class="linked" test-id='333' id='464'>Verify if click on Generate Invoice Add invoice</a>
-<div class="">
-<span class="badge badge-default">Search by Order or Invoice on Dashboard Page.Verify if click on Generate Invoice Add invoice</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:29:51 pm</td>
-<td>
-<a href="#" class="linked" test-id='153' id='480'>Validate prefilled data on Vehicles details page</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate prefilled data on Vehicles details page</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:30:36 pm</td>
-<td>
-<a href="#" class="linked" test-id='153' id='503'>Validate previous button functionality on Vehicles details page</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate previous button functionality on Vehicles details page</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>14:31:19 pm</td>
-<td>
-<a href="#" class="linked" test-id='153' id='528'>Validate back to listing button functionality</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate back to listing button functionality</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>14:32:33 pm</td>
-<td>
-<a href="#" class="linked" test-id='153' id='556'>Validate next button functionality on Vehicles details page</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate next button functionality on Vehicles details page</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:33:23 pm</td>
-<td>
-<a href="#" class="linked" test-id='153' id='589'>Validate Fasttag functionalities of Vehicle details tab</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate Fasttag functionalities of Vehicle details tab</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>14:35:21 pm</td>
-<td>
-<a href="#" class="linked" test-id='153' id='623'>Validate Preferred SRV functionalities of Vehicle details tab</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate Preferred SRV functionalities of Vehicle details tab</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log pass-bg'>3</span>
-<span class='badge log badge-danger'>3</span>
-</span>
-<p class="name">@VehicleDetails</p>
-<p class="duration text-sm">6 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@VehicleDetails</h4>
-<span status="pass" class='badge log pass-bg'>3 passed</span>
-<span status="fail" class='badge log badge-danger'>3 failed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:29:51 pm</td>
-<td>
-<a href="#" class="linked" test-id='153' id='480'>Validate prefilled data on Vehicles details page</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate prefilled data on Vehicles details page</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:30:36 pm</td>
-<td>
-<a href="#" class="linked" test-id='153' id='503'>Validate previous button functionality on Vehicles details page</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate previous button functionality on Vehicles details page</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>14:31:19 pm</td>
-<td>
-<a href="#" class="linked" test-id='153' id='528'>Validate back to listing button functionality</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate back to listing button functionality</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>14:32:33 pm</td>
-<td>
-<a href="#" class="linked" test-id='153' id='556'>Validate next button functionality on Vehicles details page</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate next button functionality on Vehicles details page</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:33:23 pm</td>
-<td>
-<a href="#" class="linked" test-id='153' id='589'>Validate Fasttag functionalities of Vehicle details tab</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate Fasttag functionalities of Vehicle details tab</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>14:35:21 pm</td>
-<td>
-<a href="#" class="linked" test-id='153' id='623'>Validate Preferred SRV functionalities of Vehicle details tab</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate Preferred SRV functionalities of Vehicle details tab</span>
+<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate the next button is enabled in Financial Info page and able to navigate to next screen when Payment Type is Cash</span>
 </div>
 </td>
 </tr>
@@ -4080,15 +637,15 @@ Session ID: 551bea16767915e25920962a7926d37c
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log badge-danger'>4</span>
+<span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">java.lang.NullPointerException</p>
-<p class="duration text-sm">4 tests</p>
+<p class="name">org.openqa.selenium.NoSuchWindowException</p>
+<p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>java.lang.NullPointerException</h4>
-<span status="fail" class='badge log badge-danger'>4 failed</span>
+<h4>org.openqa.selenium.NoSuchWindowException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -4101,41 +658,11 @@ Session ID: 551bea16767915e25920962a7926d37c
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>14:21:32 pm</td>
+<td>11:01:27 am</td>
 <td>
-<a href="#" class="linked" test-id='153' id='211'>And user selects city for scenario 1</a>
+<a href="#" class="linked" test-id='1' id='39'>com.dms.apphooks.ApplicationHooks.tearDown(io.cucumber.java.Scenario)</a>
 <div class="">
-<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate the Finance and Leasing payment Type dependent fields.And user selects city for scenario 1</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>14:22:29 pm</td>
-<td>
-<a href="#" class="linked" test-id='153' id='249'>And user selects city for scenario 1</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate the next button is enabled in Financial Info page and able to navigate to next screen when Payment Type is Cash.And user selects city for scenario 1</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>14:33:18 pm</td>
-<td>
-<a href="#" class="linked" test-id='153' id='579'>And user selects city for scenario 1</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate next button functionality on Vehicles details page.And user selects city for scenario 1</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>14:35:58 pm</td>
-<td>
-<a href="#" class="linked" test-id='153' id='645'>And user selects city for scenario 1</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate Preferred SRV functionalities of Vehicle details tab.And user selects city for scenario 1</span>
+<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate the next button is enabled in Financial Info page and able to navigate to next screen when Payment Type is Cash.com.dms.apphooks.ApplicationHooks.tearDown(io.cucumber.java.Scenario)</span>
 </div>
 </td>
 </tr>
@@ -4146,15 +673,15 @@ Session ID: 551bea16767915e25920962a7926d37c
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log badge-danger'>3</span>
+<span class='badge log badge-danger'>1</span>
 </span>
 <p class="name">org.openqa.selenium.NoSuchElementException</p>
-<p class="duration text-sm">3 tests</p>
+<p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
 <h4>org.openqa.selenium.NoSuchElementException</h4>
-<span status="fail" class='badge log badge-danger'>3 failed</span>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -4167,31 +694,11 @@ Session ID: 551bea16767915e25920962a7926d37c
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>14:19:39 pm</td>
+<td>11:00:58 am</td>
 <td>
-<a href="#" class="linked" test-id='153' id='174'>And user selects Owners Manual Preference for scenario 1</a>
+<a href="#" class="linked" test-id='1' id='10'>Given User is on Home Page</a>
 <div class="">
-<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate prefilled data on Financial Info page.And user selects Owners Manual Preference for scenario 1</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>14:26:48 pm</td>
-<td>
-<a href="#" class="linked" test-id='333' id='409'>Then Verify user is able to view Customer details by order based on "SOB15000006" "20-06-2023" "21-09-2023" "9643785691"</a>
-<div class="">
-<span class="badge badge-default">Search by Order or Invoice on Dashboard Page.Validate if dealer is able filter search by order based on various Valid params.Then Verify user is able to view Customer details by order based on "SOB15000006" "20-06-2023" "21-09-2023" "9643785691"</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>14:31:27 pm</td>
-<td>
-<a href="#" class="linked" test-id='153' id='535'>Given User is on Home Page</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate back to listing button functionality.Given User is on Home Page</span>
+<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate the next button is enabled in Financial Info page and able to navigate to next screen when Payment Type is Cash.Given User is on Home Page</span>
 </div>
 </td>
 </tr>

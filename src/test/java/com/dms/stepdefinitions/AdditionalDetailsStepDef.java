@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
@@ -15,6 +16,7 @@ import com.dms.pageobjects.AddInvoice_FinancialInfo;
 import com.dms.pageobjects.LoginPOM;
 import com.dms.pageobjects.SearchInvoice;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -78,7 +80,7 @@ public class AdditionalDetailsStepDef {
 		BrowserHandle.wait.until(
 				ExpectedConditions.elementToBeClickable(additionalDetailsPOM.chooseVehicleOnVehicalDetailsTab(text)));
 		CoreFunctions.click(additionalDetailsPOM.chooseVehicleOnVehicalDetailsTab(text), null);
-		CoreFunctions.click(additionalDetailsPOM.vinSearchOkBtn(), "OK");
+		CoreFunctions.click(additionalDetailsPOM.vinSearchBtn("OK"), "OK");
 		CoreFunctions.click(additionalDetailsPOM.policyTypeDropdown(), text);
 		text = AddInvoiceStepDef.testData.get(rowNo).get("PolicyType").toString();
 		CoreFunctions.click(financialInfoPOM.chooseFromDropdown(text), text);
@@ -90,6 +92,29 @@ public class AdditionalDetailsStepDef {
 		text = AddInvoiceStepDef.testData.get(rowNo).get("Relation").toString();
 		CoreFunctions.click(financialInfoPOM.chooseFromDropdown(text), text);
 		CoreFunctions.click(loginPOM.spanButton("OK"), "OK");
+
+	}
+	
+	@When("User select vehcile details for VIN from scenario {int}")
+	public void user_selectVin(int rowNo) throws InterruptedException {
+		rowNo--;
+		String text="";
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.popUpBtn("VIN")));
+		CoreFunctions.click(additionalDetailsPOM.VinSearchIcon(), null);
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.enterValue_vin()));
+		 text = AddInvoiceStepDef.testData.get(rowNo).get("Vin").toString();
+		CoreFunctions.setText(additionalDetailsPOM.enterValue_vin(), text);
+		CoreFunctions.moveToElement(loginPOM.spanButton("SEARCH"));
+		CoreFunctions.click(loginPOM.spanButton("SEARCH"), "SEARCH");
+		BrowserHandle.wait.until(
+				ExpectedConditions.elementToBeClickable(additionalDetailsPOM.chooseVehicleOnVehicalDetailsTab(text)));
+		CoreFunctions.click(additionalDetailsPOM.chooseVehicleOnVehicalDetailsTab(text), null);
+		
+
+	}
+	@When("User click {string} button on vin search popup")
+	public void user_select_vehicle_detais(String txt) {
+		CoreFunctions.click(additionalDetailsPOM.vinSearchBtn(txt), txt);
 
 	}
 
@@ -125,6 +150,44 @@ public class AdditionalDetailsStepDef {
 		CoreFunctions.click(financialInfoPOM.chooseFromDropdown(option), null);
 
 	}
+	@When("Select Policy Type as {string}")
+	public void select_policyType_as(String option) {
+		CoreFunctions.click(additionalDetailsPOM.policyTypeDropdown(), null);
+		CoreFunctions.click(financialInfoPOM.chooseFromDropdown(option), null);
+
+	}
+	@And("User enter policy no from {int}")
+	public void user_enter_policy_no(int rowNo) {
+		testData = CoreFunctions.test("InvoiceData");
+
+		BrowserHandle.wait.until(
+				ExpectedConditions.elementToBeClickable(additionalDetailsPOM.policyNo()));
+		
+		rowNo--;
+		String text = AddInvoiceStepDef.testData.get(rowNo).get("PolicyNo").toString();
+		CoreFunctions.setText(additionalDetailsPOM.policyNo(), text);
+		
+	}
+	@Then("Verify Policy company name and customer name for policy no from {int}")
+	public void verify_policy_company_name(int rowNo) throws Exception {
+		rowNo--;
+		String text = AddInvoiceStepDef.testData.get(rowNo).get("PolicyNo").toString();
+
+		String dataFromBE=Query.get_fields_From_NI_NEW_MINUS("MINS_INS_COMP", "MINS_POLICY_NO", text);
+	    String dataFromFE= CoreFunctions.getElementAttribute(additionalDetailsPOM.companyName(),"value");
+	     Assert.assertEquals(CoreFunctions.trim(dataFromFE), CoreFunctions.trim(dataFromBE));
+	    
+		 dataFromBE=Query.get_fields_From_NI_NEW_MINUS("MINS_CUST_NAME", "MINS_POLICY_NO", text);
+	     dataFromFE= CoreFunctions.getElementAttribute(additionalDetailsPOM.oldCarCustomerMiName(),"value");
+	     Assert.assertEquals(CoreFunctions.trim(dataFromFE), CoreFunctions.trim(dataFromBE));
+	}
+	
+	@Then("Verify if {string} error msg is displayed")
+	public void verify_error_Sms(String txt) {
+		BrowserHandle.wait.until(
+				ExpectedConditions.visibilityOf(additionalDetailsPOM.errorMsg(txt)));
+		Assert.assertTrue(additionalDetailsPOM.errorMsg(txt).isDisplayed());
+	}
 
 	@Then("Verify if Vin button is disabled")
 	public void Verify_if_vin_btn_disabled() {
@@ -133,8 +196,11 @@ public class AdditionalDetailsStepDef {
 		Assert.assertTrue(additionalDetailsPOM.VinSearchbtnDisabled().isDisplayed());
 	}
 	@Then("Verify error message if text box values are null")
-	public void Text_box_value_Are_null() {
-		CoreFunctions.clearText(additionalDetailsPOM.chassisNum());
+	public void Text_box_value_Are_null() throws InterruptedException {
+		additionalDetailsPOM.chassisNum().sendKeys((Keys.chord(Keys.CONTROL,"a",Keys.DELETE)));
+		Thread.sleep(1000);
+		CoreFunctions.click(additionalDetailsPOM.engineNo(), null);
+		Thread.sleep(1000);
 		Assert.assertTrue(additionalDetailsPOM.chasisNoError().isDisplayed());
 		
 	}
@@ -155,5 +221,95 @@ public class AdditionalDetailsStepDef {
 System.out.println(additionalDetailsPOM.chassisNum().getAttribute("disabled"));
 Assert.assertEquals(additionalDetailsPOM.chassisNum().getAttribute("disabled"), "true");
 
+	}
+	@And("User selects only the {string} from other offers")
+	public void User_selects_only_the_MSSFOffer_from_other_offers(String offerName)
+	{
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.otherOfferNameDropdown()));
+		CoreFunctions.click(additionalDetailsPOM.otherOfferNameDropdown(), "Other Offers");
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.chooseFromDropdown(offerName)));
+		CoreFunctions.click(financialInfoPOM.chooseFromDropdown(offerName), offerName);
+	}
+	
+	@Then("Verify MSSF Offer pop up button is displayed and MDS Offer pop up button is not displayed")
+	public void Verify_MSSF_Offer_pop_up_button_is_displayed_and_MDS_Offer_pop_up_button_is_not_displayed()
+	{
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.mssfOfferButton()));
+		Assert.assertTrue(additionalDetailsPOM.mssfOfferButton().isDisplayed());
+		Assert.assertFalse(additionalDetailsPOM.mdsOfferButton().isDisplayed());
+	}
+	
+	
+	@Then("Verify MSSF Offer pop up button is not displayed and MDS Offer pop up button is displayed")
+	public void Verify_MSSF_Offer_pop_up_button_is_not_displayed_and_MDS_Offer_pop_up_button_is_displayed()
+	{
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.mdsOfferButton()));
+		Assert.assertFalse(additionalDetailsPOM.mssfOfferButton().isDisplayed());
+		Assert.assertTrue(additionalDetailsPOM.mdsOfferButton().isDisplayed());
+	}
+	
+	@And("User selects both {string} and {string} from other offers")
+	public void User_selects_only_the_MSSFOffer_from_other_offers(String offerName1, String offerName2)
+	{
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.otherOfferNameDropdown()));
+		CoreFunctions.click(additionalDetailsPOM.otherOfferNameDropdown(), "Other Offers");
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.chooseFromDropdown(offerName1)));
+		CoreFunctions.click(financialInfoPOM.chooseFromDropdown(offerName1), offerName1);
+		
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.chooseFromDropdown(offerName2)));
+		CoreFunctions.click(financialInfoPOM.chooseFromDropdown(offerName2), offerName2);
+	}
+	
+	@Then("Verify both MSSF Offer pop up button and MDS Offer pop up button are displayed")
+	public void Verify_both_MSSF_Offer_pop_up_button_and_MDS_Offer_pop_up_button_are_displayed()
+	{
+		
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.mdsOfferButton()));
+		Assert.assertTrue(additionalDetailsPOM.mssfOfferButton().isDisplayed());
+		Assert.assertTrue(additionalDetailsPOM.mdsOfferButton().isDisplayed());
+	}
+	@Then("Validate AutoFilled data on popup for VIN for scenario {int}")
+	public void Validate_prefiled_detials(int rowNo) throws Exception {
+		rowNo--;
+		String vin = AddInvoiceStepDef.testData.get(rowNo).get("Vin").toString();
+		
+	    String dataFromFE=CoreFunctions.getElementAttribute(additionalDetailsPOM.vin(), "value");
+	    Assert.assertEquals(dataFromFE,vin);
+		
+		
+		//Assert Chasis
+		String dataFromBE=Query.get_fields_From_POC_MSIL_GM_VIN("CHASSIS", "VIN_NUMBER", vin);
+	     dataFromFE=CoreFunctions.getElementAttribute(additionalDetailsPOM.chassisNum(), "value");
+	    Assert.assertEquals(dataFromBE, dataFromFE);
+	    
+	    //Assert reg num
+	     dataFromBE=Query.get_fields_From_POC_MSIL_GM_VIN("ENGINE_NUMBER", "VIN_NUMBER", vin);
+	     dataFromFE=CoreFunctions.getElementAttribute(additionalDetailsPOM.engineNo(), "value");
+	    Assert.assertEquals(dataFromBE, dataFromFE);
+	    
+	    //Assert model cd
+	     String text=Query.get_fields_From_POC_MSIL_GM_VIN("ENGI_VEHM_PMODEL_CODE", "VIN_NUMBER", vin);
+	     text=Query.get_fields_From_GM_VAR("MODEL_CD", "VARIANT_CD", text);
+         dataFromBE=Query.get_fields_From_GM_MOD("MODEL_CD", "MODEL_CD", text);
+	     dataFromFE=CoreFunctions.getElementAttribute(additionalDetailsPOM.model(), "value");
+	     Assert.assertEquals(dataFromBE, dataFromFE);
+	     
+	     //Asser Varint desc
+	      text=Query.get_fields_From_POC_MSIL_GM_VIN("ENGI_VEHM_PMODEL_CODE", "VIN_NUMBER", vin);
+	      dataFromBE=Query.get_fields_From_GM_VAR("VARIANT_DESC", "VARIANT_CD", text);
+		  dataFromFE=CoreFunctions.getElementAttribute(additionalDetailsPOM.vairant(), "value");
+
+
+		  
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+	    
+	    
+	    
 	}
 }

@@ -77,6 +77,20 @@ public class FinancialInfoStepDef {
 	    
 	    //
 	    textFromFE=CoreFunctions.getElementAttribute(financialInfoPOM.GST(), "value");
+	    
+	    String stateInGM_CIN = Query.search_for_gmcin_for_stateCD("STATE_CD", "ORDER_NUM", orderId);
+	    String stateInAM_DEALER_LOC = Query.get_fields_From_AM_DEALER_LOC("STATE_CD");
+	    
+	    
+	    if(stateInAM_DEALER_LOC.equals(stateInGM_CIN))
+	    {
+	    	Assert.assertEquals(textFromFE, "CGST");
+	    }
+	    else
+	    {
+	    	Assert.assertEquals(textFromFE, "IGST");
+	    }
+	    
 	    textFromFE=CoreFunctions.getElementAttribute(financialInfoPOM.billingNature(), "value");
 	 
 	}
@@ -139,13 +153,16 @@ public class FinancialInfoStepDef {
 	    public void User_selects_the_MSGA_finance_flag() {
 	    	CoreFunctions.click(financialInfoPOM.msgaFinanceFlag(), null);
 	    }
-	    @When("user selects MSGA Financier Name from scenario {int}")
+	    @When("user selects MSGA Financier Name and value from scenario {int}")
 	    public void User_selects_msga_financer_for_scenario(int rowNo) {
 	    	rowNo--;
 		    String msgafinancer=testData.get(rowNo).get("MSGAFinancierName").toString();
 	    	CoreFunctions.click(financialInfoPOM.clickMSGAFiancierDropdown(), null);
 		    CoreFunctions.click(financialInfoPOM.chooseFinancierDropdown(msgafinancer), msgafinancer);
-
+            
+		    String msgsFianncerValue=testData.get(rowNo).get("MSGAFinancierValue").toString();
+		    CoreFunctions.setText(financialInfoPOM.msgaFinanceValue(), msgsFianncerValue);
+		    
 	    }
 	    @When("user clicks on Receipt Details")
 	    public void user_clicks_on_Receipt_Details() {
@@ -335,6 +352,11 @@ public class FinancialInfoStepDef {
 			Assert.assertTrue(disbursalDate.isEmpty());
 			
 		}
+		@Then("Verify receipt details should be cleared")
+	    public void Verify_receipt_details_should_be_cleared()
+	    {
+	    	Assert.assertFalse(financialInfoPOM.chooseFirstReceiptDetails().isSelected());
+	    }
 	    
 	    
 	    

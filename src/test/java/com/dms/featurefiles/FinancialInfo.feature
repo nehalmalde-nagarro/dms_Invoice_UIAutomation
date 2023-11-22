@@ -70,6 +70,7 @@ Feature: Add Invoice - Vehicle Details Tab
       | rowNumber |
       |         1 |
 
+@finance
   Scenario Outline: Validate the next button is enabled in Financial Info page and able to navigate to next screen when Payment Type is Cash
     Given User is on Home Page
     When User clicks on "Add Invoice" button
@@ -97,7 +98,7 @@ Feature: Add Invoice - Vehicle Details Tab
     And User selects tax rate for scenario <rowNumber>
     And User selects TDS Amount for scenario <rowNumber>
     And User selects the MSGA finance flag
-    And user selects MSGA Financier Name from scenario <rowNumber>
+    And user selects MSGA Financier Name and value from scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
 
@@ -105,7 +106,7 @@ Feature: Add Invoice - Vehicle Details Tab
       | rowNumber |
       |         1 |
 
-  Scenario Outline: Validate Receipt Details in Financial Info page
+ Scenario Outline: Validate Receipt Details in Financial Info page
     Given User is on Home Page
     When User clicks on "Add Invoice" button
     And User click on Search Order
@@ -132,12 +133,13 @@ Feature: Add Invoice - Vehicle Details Tab
     And user selects the receipt
     And User clicks on "OK" button
     And user clicks on Receipt Details
-    And User clicks on "CLEAR" button
+    And user selects the receipt
+    And User clicks on "CLEAR" button on popup
     Then Verify receipt details should be cleared
     
-    Examples: 
+    Examples:
       | rowNumber |
-      |         1 |
+      |         5 |
 
 Scenario Outline: Validate the next button is enabled in Financial Info page and able to navigate to next screen when Payment Type is Finance and Loan status is Approved
     Given User is on Home Page

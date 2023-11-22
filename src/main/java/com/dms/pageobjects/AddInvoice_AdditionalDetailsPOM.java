@@ -109,8 +109,8 @@ public WebElement VinSearchbtnDisabled() {
 	return PageUtil.findBy(By.xpath("//div[contains(text(),'VIN') and contains(@class,'disabled')]"));
 
 }
-public WebElement vinSearchOkBtn() {
-	return PageUtil.findBy(By.xpath("//div[contains(@class,'vin-search-modal-container')]//button//span[contains(text(),'OK')]"));
+public WebElement vinSearchBtn(String txt) {
+	return PageUtil.findBy(By.xpath("//div[contains(@class,'vin-search-modal-container')]//button//span[contains(text(),'"+txt+"')]"));
 
 }
 public boolean isPopupBtnDisplayed(String txt) {
@@ -122,7 +122,17 @@ public boolean isPopupBtnDisplayed(String txt) {
     }
 }
 
+public WebElement otherOfferNameDropdown() {
+	return PageUtil.findBy(By.id("otherOfferName"));
+}
 
+public WebElement mssfOfferButton() {
+	return PageUtil.findBy(By.xpath("//div[text()='MSSF OFFER']//ancestor::app-modal-button"));
+}
+
+public WebElement mdsOfferButton() {
+	return PageUtil.findBy(By.xpath("//div[text()='MDS OFFER']//ancestor::app-modal-button"));
+}
 public WebElement popUpBtn(String txt) {
 	return PageUtil.findBy(By.xpath("//div[contains(text(),'"+txt+"')]"));
 }
@@ -131,6 +141,11 @@ public WebElement popUpBtn(String txt) {
 public WebElement chasisNoError() {
 	return PageUtil.findBy(By.id("chassisNum_error"));
 }
+public WebElement errorMsg(String txt) {
+	return PageUtil.findBy(By.xpath("//mat-error[contains(text(),'"+txt+"')]"));
+}
+
+
 
 
 }

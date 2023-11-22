@@ -9,7 +9,7 @@
       <class name="com.dms.runner.TestRunner">
         <methods>
           <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="21 8 9 10 28 29 31"/>
+          <include name="runScenario" invocation-numbers="0"/>
           <include name="tearDownClass"/>
         </methods>
       </class> <!-- com.dms.runner.TestRunner -->

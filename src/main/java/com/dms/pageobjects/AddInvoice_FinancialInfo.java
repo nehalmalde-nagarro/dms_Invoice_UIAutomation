@@ -136,9 +136,6 @@ public class AddInvoice_FinancialInfo {
 		return PageUtil.findBy(By.id("GST"));
 	}
 
-	public WebElement chooseFirstReceiptDetails() {
-		return PageUtil.findBy(By.xpath("//tbody//tr[1]//td[1]//input"));
-	}
 
 	public WebElement clickBillingNatureDropdown() {
 		return PageUtil.findBy(By.id("billingNature"));
@@ -149,7 +146,7 @@ public class AddInvoice_FinancialInfo {
 	}
 
 	public WebElement ReceiptDetailsPopUpButton() {
-		return PageUtil.findBy(By.xpath("//app-modal-button//div[text()='Receipt Details']"));
+		return PageUtil.findBy(By.xpath("//div[text()='Receipt Details']/ancestor::app-modal-button"));
 	}
 
 	// Financial Details Pop Up
@@ -244,6 +241,10 @@ public class AddInvoice_FinancialInfo {
 
 	public WebElement billingNature() {
 		return PageUtil.findBy(By.xpath("//mat-select[@id='billingNature']//div//span/span"));
+	}
+	
+	public WebElement chooseFirstReceiptDetails() {
+		return PageUtil.findBy(By.xpath("//tbody//tr[1]//td[1]//input/ancestor::mat-checkbox"));
 	}
 
 }

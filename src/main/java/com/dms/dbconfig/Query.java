@@ -199,6 +199,16 @@ public class Query {
 		return data;
 	}
 	
+	public static String get_fields_From_GM_VIN(String selectCol, String conditionCol, String conditionVal)
+			throws Exception {
+		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"GM_VIN\" where \"" + conditionCol + "\" ='"
+				+ conditionVal + "');";
+ 
+		System.out.println(query);
+		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
+		return data;
+	}
+	
 	public static String get_fields_From_GM_ECLR(String selectCol, String conditionCol, String conditionVal)
 			throws Exception {
 		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"GM_ECLR\" where \"" + conditionCol + "\" ='"
@@ -233,6 +243,25 @@ public class Query {
 			throws Exception {
 		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"SM_SPRICE_FOR\" where \"" + conditionCol + "\" ='"
 				+ conditionVal + "');";
+ 
+		System.out.println(query);
+		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
+		return data;
+	}
+	public static String get_fields_From_NI_NEW_MINUS(String selectCol, String conditionCol, String conditionVal)
+			throws Exception {
+		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"NI_NEW_MINS\" where \"" + conditionCol + "\" ='"
+				+ conditionVal + "' limit 1);";
+ 
+		System.out.println(query);
+		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
+		return data;
+	}
+	
+	public static String get_fields_From_POC_MSIL_GM_VIN(String selectCol, String conditionCol, String conditionVal)
+			throws Exception {
+		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"POC_MSIL_GM_VIN\" where \"" + conditionCol + "\" ='"
+				+ conditionVal + "' limit 1);";
  
 		System.out.println(query);
 		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
@@ -316,6 +345,33 @@ public class Query {
 		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"GM_LOYALTY_MASTER\" WHERE \"" + conditionCol1 + "\" = '" + conditionVal1 + "' AND \"" + conditionCol2 + "\" = '" + conditionVal2 + "' AND \""+conditionCol3+"\" = '" + conditionVal3 + "'  AND \"START_DATE\" <= CURRENT_DATE AND (\"END_DATE\" >= CURRENT_DATE OR \"END_DATE\" IS NULL));";
 		
 		
+		System.out.println(query);
+		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
+		return data;
+	}	
+	public static String search_for_gmcin_for_stateCD(String selectCol, String conditionCol1, String conditionVal1)
+			throws Exception {
+		String query="( select cin.\""+selectCol+"\" from \"MULDMS\".\"SH_ORDBOOK\" sh "
+		  +"  join \"MULDMS\".\"GM_CIN\" cin on sh.\"ORDER_PARTY_CD\" = cin.\"CUST_CD\" "
+		   +" where "
+			+conditionCol1+"\" = '"+conditionVal1+"'"
+			+"and LOC_CD\" = '"+LOC_CD+"'"
+			+"and DEALER_MAP_CD\" = "+dealer_Code+" )";
+ 
+		System.out.println(query);
+		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
+		return data;
+	}	
+	
+	public static String get_fields_From_AM_DEALER_LOC(String selectCol)
+			throws Exception {
+		
+		
+		//query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"AM_DEALER_LOC\" where \"" + conditionCol + "\" ='"
+	//			+ conditionVal + "' and \"DEALER_MAP_CD\"=" + dealer_Code + ");";
+		
+		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"SH_ORDBOOK\" where \"LOC_CD\" ='"+ LOC_CD + "' and \"DEALER_MAP_CD\"="
+				+ dealer_Code + ");";
 		System.out.println(query);
 		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
 		return data;
