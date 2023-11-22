@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Cucumber UI with TestNG Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Nov 22 11:00:46 IST 2023</td>
+<td>Started on:</td><td>Wed Nov 22 15:21:49 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>46 seconds (46665 ms)</td>
+<tr><td>Total time:</td><td>75 seconds (75627 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -122,8 +122,8 @@ function toggleAllBoxes() {
 	at io.cucumber.testng.AbstractTestNGCucumberTests.tearDownClass(AbstractTestNGCucumberTests.java:57)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	... 69 more
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1629032994", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1629032994'><pre>com.google.gson.JsonIOException: Failed making field &apos;java.lang.Throwable#detailMessage&apos; accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.
+... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace7040976", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace7040976'><pre>com.google.gson.JsonIOException: Failed making field &apos;java.lang.Throwable#detailMessage&apos; accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.
 	at com.google.gson.internal.reflect.ReflectionHelper.makeAccessible(ReflectionHelper.java:38)
 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.getBoundFields(ReflectiveTypeAdapterFactory.java:286)
 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.create(ReflectiveTypeAdapterFactory.java:130)
@@ -205,44 +205,17 @@ Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field p
 <td>0</td>
 <td>com.dms.runner.TestRunner@1ff4931d</td></tr>
 </table><p>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate the next button is enabled in Financial Info page and able to navigate to next screen when Payment Type is Cash", "Add Invoice - Vehicle Details Tab"</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.id: searchBy
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
-	at com.dms.pageobjects.SearchInvoice.searchBy(SearchInvoice.java:17)
-	at com.dms.stepdefinitions.SearchAllInvoicesStepDef.user_logged_in_is_on_home_page(SearchAllInvoicesStepDef.java:28)
-	at ✽.User is on Home Page(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/FinancialInfo.feature:75)
-</pre></div><a href='#' onClick='toggleBox("stack-trace841090268", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace841090268'><pre>org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.id: searchBy
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
-	at com.dms.pageobjects.SearchInvoice.searchBy(SearchInvoice.java:17)
-	at com.dms.stepdefinitions.SearchAllInvoicesStepDef.user_logged_in_is_on_home_page(SearchAllInvoicesStepDef.java:28)
-	at ✽.User is on Home Page(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/FinancialInfo.feature:75)
-</pre></div></td>
-<td>45</td>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validation for VIN search popup", "Addtional Details Tab of Add Invoice"</td>
+<td></td>
+<td>74</td>
 <td>com.dms.runner.TestRunner@1ff4931d</td></tr>
 </table><p>
 </body>

@@ -1,68 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-22T11:00:46 IST" name="Suite" finished-at="2023-11-22T11:01:33 IST" duration-ms="46665">
+  <suite started-at="2023-11-22T15:21:49 IST" name="Suite" finished-at="2023-11-22T15:23:05 IST" duration-ms="75627">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-11-22T11:00:46 IST" name="Cucumber UI with TestNG Test" finished-at="2023-11-22T11:01:33 IST" duration-ms="46665">
+    <test started-at="2023-11-22T15:21:49 IST" name="Cucumber UI with TestNG Test" finished-at="2023-11-22T15:23:05 IST" duration-ms="75627">
       <class name="com.dms.runner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-22T11:00:46 IST" name="setUpClass" finished-at="2023-11-22T11:00:47 IST" duration-ms="1030" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-22T15:21:49 IST" name="setUpClass" finished-at="2023-11-22T15:21:50 IST" duration-ms="929" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@6d874695]]>
+                <![CDATA[org.testng.TestRunner@5b715ea]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-22T11:00:47 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-22T11:01:32 IST" duration-ms="45025" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-22T15:21:50 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-22T15:23:04 IST" duration-ms="74307" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Validate the next button is enabled in Financial Info page and able to navigate to next screen when Payment Type is Cash"]]>
+                <![CDATA["Validation for VIN search popup"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Add Invoice - Vehicle Details Tab"]]>
+                <![CDATA["Addtional Details Tab of Add Invoice"]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[Unable to find element with locator By.id: searchBy
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.8.1', revision: '8ebccac989'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: driver.version: RemoteWebDriver]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.id: searchBy
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.8.1', revision: '8ebccac989'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: driver.version: RemoteWebDriver
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
-at com.dms.pageobjects.SearchInvoice.searchBy(SearchInvoice.java:17)
-at com.dms.stepdefinitions.SearchAllInvoicesStepDef.user_logged_in_is_on_home_page(SearchAllInvoicesStepDef.java:28)
-at ✽.User is on Home Page(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/FinancialInfo.feature:75)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-22T11:01:32 IST" name="tearDownClass" finished-at="2023-11-22T11:01:33 IST" duration-ms="555" status="FAIL">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-22T15:23:04 IST" name="tearDownClass" finished-at="2023-11-22T15:23:05 IST" duration-ms="340" status="FAIL">
           <exception class="com.google.gson.JsonIOException">
             <message>
               <![CDATA[Failed making field 'java.lang.Throwable#detailMessage' accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.]]>

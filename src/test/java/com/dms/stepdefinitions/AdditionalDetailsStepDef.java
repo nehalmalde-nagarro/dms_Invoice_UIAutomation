@@ -94,24 +94,96 @@ public class AdditionalDetailsStepDef {
 		CoreFunctions.click(loginPOM.spanButton("OK"), "OK");
 
 	}
+	@When("User click on Vin button for vin search")
+	public void click_on_vin_btn() {
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.popUpBtn("VIN")));
+		CoreFunctions.click(additionalDetailsPOM.VinSearchIcon(), null);
+	}
 	
-	@When("User select vehcile details for VIN from scenario {int}")
+	@Then("Verify {string} error popup")
+	public void verfy_toast_sms(String txt) {
+		String text=CoreFunctions.getElementText(additionalDetailsPOM.errorToastMsg());
+	    Assert.assertEquals(txt, text);
+//	    CoreFunctions.click(additionalDetailsPOM.closeRrrorToastMsg(), text);
+	}
+	
+	@When("User search by VIN on vin search popup from scenario {int}")
 	public void user_selectVin(int rowNo) throws InterruptedException {
 		rowNo--;
 		String text="";
-		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.popUpBtn("VIN")));
-		CoreFunctions.click(additionalDetailsPOM.VinSearchIcon(), null);
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.enterValue_vin()));
 		 text = AddInvoiceStepDef.testData.get(rowNo).get("Vin").toString();
 		CoreFunctions.setText(additionalDetailsPOM.enterValue_vin(), text);
-		CoreFunctions.moveToElement(loginPOM.spanButton("SEARCH"));
-		CoreFunctions.click(loginPOM.spanButton("SEARCH"), "SEARCH");
+//		CoreFunctions.moveToElement(loginPOM.spanButton("SEARCH"));
+//		CoreFunctions.click(loginPOM.spanButton("SEARCH"), "SEARCH");
+//		BrowserHandle.wait.until(
+//				ExpectedConditions.elementToBeClickable(additionalDetailsPOM.chooseVehicleOnVehicalDetailsTab(text)));
+//		CoreFunctions.click(additionalDetailsPOM.chooseVehicleOnVehicalDetailsTab(text), null);
+		}
+	
+	@When("User search by Reg Num on vin search popup from scenario {int}")
+	public void user_selectReg(int rowNo) throws InterruptedException {
+		rowNo--;
+		String text="";
+//		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.popUpBtn("VIN")));
+//		CoreFunctions.click(additionalDetailsPOM.VinSearchIcon(), null);
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.enterValue_regNo()));
+		 text = AddInvoiceStepDef.testData.get(rowNo).get("RegNum").toString();
+		CoreFunctions.setText(additionalDetailsPOM.enterValue_regNo(), text);
+		}
+//	@When("User search by Model and chassis on vin search popup from scenario {int}")
+//	public void user_selectModelChassis(int rowNo) throws InterruptedException {
+//		rowNo--;
+//		String text="";
+////		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.popUpBtn("VIN")));
+////		CoreFunctions.click(additionalDetailsPOM.VinSearchIcon(), null);
+//		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.enterValue_model()));
+//		text = AddInvoiceStepDef.testData.get(rowNo).get("Model").toString();
+//		CoreFunctions.setText(additionalDetailsPOM.enterValue_model(), text);
+//		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.enterValue_chassis()));
+//		text = AddInvoiceStepDef.testData.get(rowNo).get("Chassis").toString();
+//		CoreFunctions.setText(additionalDetailsPOM.enterValue_chassis(), text);
+//		}
+	@When("User search by Model on vin search popup from scenario {int}")
+	public void user_selectModel(int rowNo) throws InterruptedException {
+		rowNo--;
+		String text="";
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.enterValue_model()));
+		text = AddInvoiceStepDef.testData.get(rowNo).get("Model").toString();
+		CoreFunctions.setText(additionalDetailsPOM.enterValue_model(), text);
+		}
+	
+	@When("User search by Chassis on vin search popup from scenario {int}")
+	public void user_selectChassis(int rowNo) throws InterruptedException {
+		rowNo--;
+		String text="";
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.enterValue_chassis()));
+		text = AddInvoiceStepDef.testData.get(rowNo).get("Chassis").toString();
+		CoreFunctions.setText(additionalDetailsPOM.enterValue_chassis(), text);
+		}
+	
+	@When("user choose vehicle details on vin search popup for scenario {int}")
+	public void user_choose_vehicle_Details(int rowNo) {
+		rowNo--;
+		
+		String text = AddInvoiceStepDef.testData.get(rowNo).get("Vin").toString();
+
 		BrowserHandle.wait.until(
 				ExpectedConditions.elementToBeClickable(additionalDetailsPOM.chooseVehicleOnVehicalDetailsTab(text)));
 		CoreFunctions.click(additionalDetailsPOM.chooseVehicleOnVehicalDetailsTab(text), null);
 		
-
 	}
+	@When("Verify if respective vehicle details able to search on vin search popup for scenario {int}")
+	public void verify_respective_Detail(int rowNo) {
+		rowNo--;
+		
+		String text = AddInvoiceStepDef.testData.get(rowNo).get("Vin").toString();
+
+		BrowserHandle.wait.until(
+				ExpectedConditions.elementToBeClickable(additionalDetailsPOM.chooseVehicleOnVehicalDetailsTab(text)));
+		Assert.assertTrue(additionalDetailsPOM.chooseVehicleOnVehicalDetailsTab(text).isDisplayed());
+	}
+	
 	@When("User click {string} button on vin search popup")
 	public void user_select_vehicle_detais(String txt) {
 		CoreFunctions.click(additionalDetailsPOM.vinSearchBtn(txt), txt);

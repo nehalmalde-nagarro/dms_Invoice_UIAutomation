@@ -145,6 +145,14 @@ public WebElement errorMsg(String txt) {
 	return PageUtil.findBy(By.xpath("//mat-error[contains(text(),'"+txt+"')]"));
 }
 
+public WebElement errorToastMsg() {
+	return PageUtil.findBy(By.xpath("//app-notifier/div/div/span"));
+}
+public WebElement closeRrrorToastMsg() {
+	return PageUtil.findBy(By.xpath("xpath=//mat-icon[contains(.,'close')]"));
+}
+
+
 
 
 

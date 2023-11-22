@@ -168,7 +168,7 @@ Feature: Addtional Details Tab of Add Invoice
       | rowNumber |
       |         4 |
 
-@run
+
   Scenario Outline: Validation for Loyalty Bonus Benefits popup
     Given User is on Home Page
     When User clicks on "Add Invoice" button
@@ -219,7 +219,10 @@ Feature: Addtional Details Tab of Add Invoice
     Then Verify if "Wrong policy number" error msg is displayed
     And User clicks on "CLEAR" button on popup
     And Select make as "Maruti"
-    And User select vehcile details for VIN from scenario <rowNumber>
+    And User click on Vin button for vin search
+    And User search by VIN on vin search popup from scenario <rowNumber>
+    And User click "SEARCH" button on vin search popup
+    And user choose vehicle details on vin search popup for scenario <rowNumber>
     And User click "OK" button on vin search popup
     And Validate AutoFilled data on popup for VIN for scenario <rowNumber>
     
@@ -227,6 +230,7 @@ Feature: Addtional Details Tab of Add Invoice
       | rowNumber | invalidDataRowNumber |
       |         4 |                    6 |
       
+      @run
       Scenario Outline: Validation for VIN search popup
     Given User is on Home Page
     When User clicks on "Add Invoice" button
@@ -263,7 +267,32 @@ Feature: Addtional Details Tab of Add Invoice
     Then Verify "LOYALTY/ACQUISITION DETAILS" pop up button is displayed
     And Click on "LOYALTY/ACQUISITION DETAILS" tab on Additional Details
     And Select make as "Maruti"
-    And User select vehcile details for VIN from scenario <rowNumber>
+    And User click on Vin button for vin search
+    And User search by VIN on vin search popup from scenario <rowNumber>
+    And User click "SEARCH" button on vin search popup
+    Then Verify if respective vehicle details able to search on vin search popup for scenario <rowNumber>
+    And User click "CLEAR" button on vin search popup
+    And User search by Reg Num on vin search popup from scenario <rowNumber>
+    And User click "SEARCH" button on vin search popup
+    Then Verify if respective vehicle details able to search on vin search popup for scenario <rowNumber>
+    And User click "CLEAR" button on vin search popup
+    And User search by Model on vin search popup from scenario <rowNumber>
+    And User search by Chassis on vin search popup from scenario <rowNumber>
+    And User click "SEARCH" button on vin search popup
+    Then Verify if respective vehicle details able to search on vin search popup for scenario <rowNumber>
+    And User click "CLEAR" button on vin search popup
+    And User search by VIN on vin search popup from scenario <invalidDataRowNumber>
+    And User click "SEARCH" button on vin search popup
+    Then Verify "No record found" error popup
+    And User click "CLEAR" button on vin search popup
+    Then Verify if "OK" button is disable
+    And User search by Model on vin search popup from scenario <rowNumber>
+    And User click "SEARCH" button on vin search popup
+    Then Verify "Invalid input parameters. Please provide valid vin, regNo, or both model and chassis." error popup
+    And User click "CLEAR" button on vin search popup
+    And User search by Chassis on vin search popup from scenario <rowNumber>
+    And User click "SEARCH" button on vin search popup
+    Then Verify "Invalid input parameters. Please provide valid vin, regNo, or both model and chassis." error popup
     
  Examples: 
       | rowNumber | invalidDataRowNumber |

@@ -159,7 +159,9 @@ public class FinancialInfoStepDef {
 		    String msgafinancer=testData.get(rowNo).get("MSGAFinancierName").toString();
 	    	CoreFunctions.click(financialInfoPOM.clickMSGAFiancierDropdown(), null);
 		    CoreFunctions.click(financialInfoPOM.chooseFinancierDropdown(msgafinancer), msgafinancer);
-            
+			
+		    BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.msgaFinanceValue()));
+
 		    String msgsFianncerValue=testData.get(rowNo).get("MSGAFinancierValue").toString();
 		    CoreFunctions.setText(financialInfoPOM.msgaFinanceValue(), msgsFianncerValue);
 		    
