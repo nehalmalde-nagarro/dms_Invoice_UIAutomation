@@ -93,6 +93,9 @@ public class FinancialInfoStepDef {
 	    
 	    textFromFE=CoreFunctions.getElementAttribute(financialInfoPOM.billingNature(), "value");
 	 
+	    int invoiceAmountCalc = Integer.parseInt(sellingPrice)+Integer.parseInt(TDSAmt)-Integer.parseInt(interestAmt)+Integer.parseInt(chargeAmt);
+	    String invoiceAMountFE = CoreFunctions.getElementAttribute(financialInfoPOM.invoiceAmount(), "value");
+	    Assert.assertEquals(invoiceAmountCalc, Integer.parseInt(invoiceAMountFE));	
 	}
 	
 	@And("User selects payment type as {string}")
@@ -159,7 +162,13 @@ public class FinancialInfoStepDef {
 		    String msgafinancer=testData.get(rowNo).get("MSGAFinancierName").toString();
 	    	CoreFunctions.click(financialInfoPOM.clickMSGAFiancierDropdown(), null);
 		    CoreFunctions.click(financialInfoPOM.chooseFinancierDropdown(msgafinancer), msgafinancer);
-			
+			while(CoreFunctions.getElementText(financialInfoPOM.clickMSGAFiancierDropdown()).isEmpty())
+			{
+//				CoreFunctions.click(financialInfoPOM.clickMSGAFiancierDropdown(), null);
+			    CoreFunctions.click(financialInfoPOM.chooseFinancierDropdown(msgafinancer), msgafinancer);
+					
+			}
+		    
 		    BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.msgaFinanceValue()));
 
 		    String msgsFianncerValue=testData.get(rowNo).get("MSGAFinancierValue").toString();

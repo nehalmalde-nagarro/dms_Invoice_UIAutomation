@@ -376,5 +376,24 @@ public class Query {
 		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
 		return data;
 	}	
+	
+	public static String fetch_loyalty_exchange_benefits(String orderId) throws Exception {
+		String text=get_fields_From_ShOrderBook("CUST_CD", "ORDER_NUM", orderId);
+		String mobileNo=get_fields_From_GM_CIN("MOBILE_PHONE", "CUST_CD", text);
+		query="(\r\n"
+				+ "SELECT \"MULDMS\".\"GD_LOYALTY_ENROL\".\"CARD_NUM\" "
+				+ "FROM \"MULDMS\".\"GD_LOYALTY_ENROL\" JOIN \"MULDMS\".\"AM_LIST_RANGE\"\r\n"
+				+ "ON \"MULDMS\".\"GD_LOYALTY_ENROL\".\"CARD_TYPE\" =\"MULDMS\".\"AM_LIST_RANGE\".\"LIST_CODE\"\r\n"
+				+ "AND \"MULDMS\".\"AM_LIST_RANGE\".\"LIST_GRP_CODE\" =\"MULDMS\".\"GD_LOYALTY_ENROL\".\"CHANNEL\"\r\n"
+				+ "WHERE \"MULDMS\".\"GD_LOYALTY_ENROL\".\"REG_MOBILE\" in\r\n"
+				+ "(SELECT \"REG_MOBILE\"  FROM \"MULDMS\".\"GD_LOYALTY_ENROL\"\r\n"
+				+ "WHERE \"REG_MOBILE\" in ('"+mobileNo+"'))\r\n"
+				+ "AND \"MULDMS\".\"GD_LOYALTY_ENROL\".\"CARD_STATUS\"  in ('P')\r\n"
+				+ "AND \"MULDMS\".\"AM_LIST_RANGE\".\"PRINCIPAL_MAP_CD\" =1\r\n"
+				+ "AND \"MULDMS\".\"AM_LIST_RANGE\".\"LIST_NAME\" ='CARD_TYPE';)";
+		System.out.println(query);
+		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
+		return data;
+	}
 
 }

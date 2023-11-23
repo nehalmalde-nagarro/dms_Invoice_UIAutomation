@@ -51,6 +51,17 @@ public class AdditionalDetailsStepDef {
 				"Button '" + btn + "' should not be displayed");
 
 	}
+	@When("Verify required field error for {string} is not displayed")
+	public void verify_required_field_not_displted(String btn) {
+		Assert.assertFalse(additionalDetailsPOM.isRequiresDisplayed(btn),
+				"Button '" + btn + "' should not be displayed");
+	}
+
+	@When("Verify required field error for {string} is displayed")
+	public void verify_required_field_displted(String btn) {
+		Assert.assertTrue(additionalDetailsPOM.isRequiresDisplayed(btn),
+				"Button '" + btn + "' should not be displayed");
+	}
 
 	@Then("Verify {string} is displayed")
 	public void Verify_string_displayed(String text) {
@@ -189,6 +200,11 @@ public class AdditionalDetailsStepDef {
 		CoreFunctions.click(additionalDetailsPOM.vinSearchBtn(txt), txt);
 
 	}
+	@When("User click {string} button on loyalty card popup")
+	public void user_select_loyal_Cards(String txt) {
+		CoreFunctions.click(additionalDetailsPOM.loyaltyCard(txt), txt);
+
+	}
 
 	@Then("Verify Prefilled fields for OrderId from scenario {int} on Additional Benefits tab")
 	public void Verify_Prefilled_fields_for_OrderId_from_scenario_on_Additional_Benefits_tab(int rowNo)
@@ -294,13 +310,30 @@ System.out.println(additionalDetailsPOM.chassisNum().getAttribute("disabled"));
 Assert.assertEquals(additionalDetailsPOM.chassisNum().getAttribute("disabled"), "true");
 
 	}
+	@And("User click on other offer dropdown")
+	public void user_click_other_offer() {
+
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.otherOfferNameDropdown()));
+		CoreFunctions.click(additionalDetailsPOM.otherOfferNameDropdown(), "Other Offers");
+		
+	}
 	@And("User selects only the {string} from other offers")
 	public void User_selects_only_the_MSSFOffer_from_other_offers(String offerName)
 	{
-		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.otherOfferNameDropdown()));
-		CoreFunctions.click(additionalDetailsPOM.otherOfferNameDropdown(), "Other Offers");
+//		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.otherOfferNameDropdown()));
+//		CoreFunctions.click(additionalDetailsPOM.otherOfferNameDropdown(), "Other Offers");
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.chooseFromDropdown(offerName)));
 		CoreFunctions.click(financialInfoPOM.chooseFromDropdown(offerName), offerName);
+//		CoreFunctions.click(additionalDetailsPOM.otherOfferNameDropdown(), "Other Offers");
+	}
+	@And("User diselect the {string} from other offers")
+	public void User_diselect_only_the_MSSFOffer_from_other_offers(String offerName)
+	{
+//		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.otherOfferNameDropdown()));
+//		CoreFunctions.click(additionalDetailsPOM.otherOfferNameDropdown(), "Other Offers");
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.chooseFromDropdown(offerName)));
+		CoreFunctions.click(financialInfoPOM.chooseFromDropdown(offerName), offerName);
+//		CoreFunctions.click(additionalDetailsPOM.otherOfferNameDropdown(), "Other Offers");
 	}
 	
 	@Then("Verify MSSF Offer pop up button is displayed and MDS Offer pop up button is not displayed")
@@ -323,11 +356,10 @@ Assert.assertEquals(additionalDetailsPOM.chassisNum().getAttribute("disabled"), 
 	@And("User selects both {string} and {string} from other offers")
 	public void User_selects_only_the_MSSFOffer_from_other_offers(String offerName1, String offerName2)
 	{
-		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.otherOfferNameDropdown()));
-		CoreFunctions.click(additionalDetailsPOM.otherOfferNameDropdown(), "Other Offers");
+//		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.otherOfferNameDropdown()));
+//		CoreFunctions.click(additionalDetailsPOM.otherOfferNameDropdown(), "Other Offers");
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.chooseFromDropdown(offerName1)));
 		CoreFunctions.click(financialInfoPOM.chooseFromDropdown(offerName1), offerName1);
-		
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.chooseFromDropdown(offerName2)));
 		CoreFunctions.click(financialInfoPOM.chooseFromDropdown(offerName2), offerName2);
 	}
@@ -371,17 +403,16 @@ Assert.assertEquals(additionalDetailsPOM.chassisNum().getAttribute("disabled"), 
 	      dataFromBE=Query.get_fields_From_GM_VAR("VARIANT_DESC", "VARIANT_CD", text);
 		  dataFromFE=CoreFunctions.getElementAttribute(additionalDetailsPOM.vairant(), "value");
 
-
-		  
-	     
-	     
-	     
-	     
-	     
-	     
-	     
-	    
-	    
-	    
 	}
+	@When("User choose Loyalty Card for scenario {int}")
+	public void user_choose_loyalty_card(int rowNo) throws Exception {
+
+		rowNo--;
+		String Text = testData.get(rowNo).get("OrderId").toString();
+		String loyaltyCardNum=Query.fetch_loyalty_exchange_benefits(Text);
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.chooseCardFromPopup(loyaltyCardNum)));
+		CoreFunctions.click(additionalDetailsPOM.chooseCardFromPopup(loyaltyCardNum), loyaltyCardNum);
+		
+	}
+	
 }

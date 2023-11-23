@@ -18,6 +18,9 @@ public class AddInvoice_AdditionalDetailsPOM {
 		return PageUtil.findBy(By.id("oldCarOfferName"));
 	}
 
+//	public WebElement oldCarOfferNameDropdown() {
+//		return PageUtil.findBy(By.xpath("//mat-panel-title[contains(text(),'Old Car Offers')]//ancestor::mat-expansion-panel-header//following-sibling::div//mat-select[contains(@id,'oldCarOfferName')]"));
+//	}
 //LOYALTY/ACQUISITION DETAILS
 	
 	public WebElement makeDropdown() {
@@ -113,9 +116,22 @@ public WebElement vinSearchBtn(String txt) {
 	return PageUtil.findBy(By.xpath("//div[contains(@class,'vin-search-modal-container')]//button//span[contains(text(),'"+txt+"')]"));
 
 }
+public WebElement loyaltyCard(String txt) {
+	return PageUtil.findBy(By.xpath("//div[contains(@class,'loyalty-exchange-modal-container')]//button//span[contains(text(),'"+txt+"')]"));
+
+}
 public boolean isPopupBtnDisplayed(String txt) {
 	try {
         WebElement element = PageUtil.findBy(By.xpath("//div[contains(text(),'"+txt+"')]"));
+        return true; // Element is found, so it is not absent
+    } catch (NoSuchElementException e) {
+        return false; // Element is not found, so it is absent
+    }
+}
+
+public boolean isRequiresDisplayed(String txt) {
+	try {
+        WebElement element = PageUtil.findBy(By.xpath("//div[contains(text(),'"+txt+"')]//..//..//mat-error"));
         return true; // Element is found, so it is not absent
     } catch (NoSuchElementException e) {
         return false; // Element is not found, so it is absent
@@ -136,6 +152,10 @@ public WebElement mdsOfferButton() {
 public WebElement popUpBtn(String txt) {
 	return PageUtil.findBy(By.xpath("//div[contains(text(),'"+txt+"')]"));
 }
+public WebElement chooseCardFromPopup(String txt) {
+	return PageUtil.findBy(By.xpath("//div[contains(text(),'"+txt+"')]"));
+}
+
 
 
 public WebElement chasisNoError() {

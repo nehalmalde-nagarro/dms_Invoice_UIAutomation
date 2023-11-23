@@ -310,29 +310,43 @@ public class AddInvoiceStepDef {
 	@When("user enters all required fields from {int}")
 	public void user_enters_all_required_fields(int rowNo) {
 		rowNo--;
-		String Text = testData.get(rowNo).get("BillAddress_1").toString();
+		String bill_address_1 = testData.get(rowNo).get("BillAddress_1").toString();
 
 		String billingAddress_1 = CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_1(), "value");
 		if (billingAddress_1.isEmpty())
-			CoreFunctions.setText(addInvoicePOM.billingAddress_1(), Text);
+			CoreFunctions.setText(addInvoicePOM.billingAddress_1(), bill_address_1);
 
-		Text = testData.get(rowNo).get("BillAddress_2").toString();
+		String bill_address_2 = testData.get(rowNo).get("BillAddress_2").toString();
 		String billingAddress_2 = CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_2(), "value");
 		if (billingAddress_2.isEmpty())
-			CoreFunctions.setText(addInvoicePOM.billingAddress_2(), Text);
+			CoreFunctions.setText(addInvoicePOM.billingAddress_2(), bill_address_2);
 
-		Text = testData.get(rowNo).get("BillAddress_3").toString();
+		String bill_address_3 = testData.get(rowNo).get("BillAddress_3").toString();
 		String billingAddress_3 = CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_3(), "value");
 		System.out.println(billingAddress_3);
 		if (billingAddress_3.isEmpty())
-			CoreFunctions.setText(addInvoicePOM.billingAddress_3(), Text);
+			CoreFunctions.setText(addInvoicePOM.billingAddress_3(), bill_address_3);
 
 		String govOrg = CoreFunctions.getElementText(financialInfo.getDropdownValueForClear("govtOraganisationWOPAN"));
 		if (govOrg.equals("Select")) {
 			CoreFunctions.click(addInvoicePOM.govOrg_W_O_PAN(), govOrg);
 			CoreFunctions.click(addInvoicePOM.options("Yes"), govOrg);
 		}
+		
+		while(CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_1(), "value").isEmpty())
+			CoreFunctions.setText(addInvoicePOM.billingAddress_1(), bill_address_1);
 
+		while(CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_2(), "value").isEmpty())
+			CoreFunctions.setText(addInvoicePOM.billingAddress_2(), bill_address_2);
+
+		while(CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_2(), "value").isEmpty())
+			CoreFunctions.setText(addInvoicePOM.billingAddress_3(), bill_address_3);
+		
+		while(CoreFunctions.getElementText(financialInfo.getDropdownValueForClear("govtOraganisationWOPAN")).equals("Select"))
+				{
+			CoreFunctions.click(addInvoicePOM.govOrg_W_O_PAN(), govOrg);
+			CoreFunctions.click(addInvoicePOM.options("Yes"), govOrg);
+				}
 	}
 	
 
