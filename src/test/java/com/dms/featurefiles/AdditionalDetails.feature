@@ -345,6 +345,14 @@ Feature: Addtional Details Tab of Add Invoice
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup   
     Then Verify required field error for "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" is not displayed
+    Then Verify Loyalty Exchnage Benefit value
+    And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
+    And User click "CLEAR" button on loyalty card popup   
+    Then Verify if "OK" button is disable
+    And Click on Close popup icon
+    Then Verify required field error for "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" is displayed
+    Then Verify if "NEXT" button is disable
+    
     Examples: 
       | rowNumber | invalidDataRowNumber |
       |         7 |                    6 |

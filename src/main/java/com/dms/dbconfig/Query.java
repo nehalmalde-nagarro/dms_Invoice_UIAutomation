@@ -390,7 +390,47 @@ public class Query {
 				+ "WHERE \"REG_MOBILE\" in ('"+mobileNo+"'))\r\n"
 				+ "AND \"MULDMS\".\"GD_LOYALTY_ENROL\".\"CARD_STATUS\"  in ('P')\r\n"
 				+ "AND \"MULDMS\".\"AM_LIST_RANGE\".\"PRINCIPAL_MAP_CD\" =1\r\n"
-				+ "AND \"MULDMS\".\"AM_LIST_RANGE\".\"LIST_NAME\" ='CARD_TYPE';)";
+				+ "AND \"MULDMS\".\"AM_LIST_RANGE\".\"LIST_NAME\" ='CARD_TYPE')";
+		System.out.println(query);
+		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
+		return data;
+	}
+	
+	public static String get_entire_order_count()
+			throws Exception {
+		String query="( select count(*) from \"MULDMS\".\"SH_ORDBOOK\" sh "
+		  +"  join \"MULDMS\".\"GM_CIN\" cin on sh.\"CUST_CD\" = cin.\"CUST_CD\" "
+		   +" where "
+			+"  \"ORDER_STATUS\" = '"+ORDER_STATUS+"'"
+			+" and \"PARENT_GROUP\" = '"+PARENT_GROUP+"' "
+			+" and \"LOC_CD\" = '"+LOC_CD+"'"
+			+" and \"DEALER_MAP_CD\" = "+dealer_Code+" )";
+ 
+		System.out.println(query);
+		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
+		return data;
+	}
+	
+	
+	public static String get_order_count_based_on_dates(String fromDate, String toDate)
+			throws Exception {
+//		String query="(select count(*) from \"MULDMS\".\"SH_ORDBOOK\" sh "
+//		  +"  join \"MULDMS\".\"GM_CIN\" cin on sh.\"CUST_CD\" = cin.\"CUST_CD\" "
+//		   +" where "
+//			
+//			+"and ORDER_STATUS\" = '"+ORDER_STATUS+"'"
+//			+"and PARENT_GROUP\" = "+PARENT_GROUP+" "
+//			+"and LOC_CD\" = '"+LOC_CD+"'"
+//			+"and DEALER_MAP_CD\" = "+dealer_Code+" "
+//			+conditionCol1+"\" >= '"+conditionVal1+" 00:00:00'"
+//			+conditionCol2+"\" <= '"+conditionVal2+" 24:00:00'')";
+		
+String query="(\r\n"
+		+ "select count(*) from \"MULDMS\".\"SH_ORDBOOK\" sh join \"MULDMS\".\"GM_CIN\" cin on sh.\"CUST_CD\"= cin.\"CUST_CD\"  where \"DEALER_MAP_CD\"=12356 and \"LOC_CD\"='GRN' and\r\n"
+		+ "\"PARENT_GROUP\"='PREM' and \"ORDER_STATUS\"='A' and \"COMP_FA\"='PREM' "
+		+ "and \"ORDER_DATE\">='"+fromDate+" 00:00:00' and \"ORDER_DATE\"<='"+toDate+" 24:00:00'\r\n"
+		+ ")";
+ 
 		System.out.println(query);
 		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
 		return data;

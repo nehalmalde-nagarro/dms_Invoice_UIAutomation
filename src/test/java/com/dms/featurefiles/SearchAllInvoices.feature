@@ -8,15 +8,25 @@ Feature: Search by Order or Invoice on Dashboard Page
     And User click on "LOGIN" button
 
   # Then verify user profile
-  #Scenario Outline: Validate if dealer is able to view all order deatils on click on search button
-    #Given User is on Home Page
-    #When user search by "<SearchParam>"
-    #And user clicks on search button
-    #Then verify user is able to view all Customer details for search by order
-#
-    #Examples: 
-      #| SearchParam |
-      #| ORDER       |
+  Scenario Outline: Validate if dealer is able to view all order deatils on click on search button
+    Given User is on Home Page
+    When user search by "<SearchParam>"
+    And user clicks on search button
+    Then verify user is able to view all Customer details for search by order
+
+    Examples: 
+      | SearchParam |
+      | ORDER       |
+      
+   Scenario Outline: Validate if dealer is able to view all order deatils on click on search button
+    Given User is on Home Page
+    When user search by "<SearchParam>"
+    And user clicks on search button
+    Then verify count of total count of records
+
+    Examples: 
+      | SearchParam |
+      | ORDER       |
 #
   #Scenario Outline: Validate if dealer is able filter search by order based on Order ID
     #Given User is on Home Page
@@ -40,17 +50,18 @@ Feature: Search by Order or Invoice on Dashboard Page
       #| PhoneNumber | SearchParam |
       #|  9711457760 | ORDER       |
 #
-  #Scenario Outline: Validate if dealer is able filter search by order based on dates
-  #Given User is on Home Page
-  #When user search by "<SearchParam>"
-  #And user selects From "<fromdate>"
-  #And user selects To "<todate>"
-  #When user clicks on search button
-  #Then verify user is able to view Customer details by order based on "<fromdate>" and "<todate>"
-  #
-  #Examples:
-  #| fromdate   | todate     | SearchParam |
-  #| 20-06-2023 | 21-09-2023 | ORDER       |
+   @searchCount
+  Scenario Outline: Validate if dealer is able filter search by order based on dates
+  Given User is on Home Page
+  When user search by "<SearchParam>"
+  And user selects From "<fromdate>"
+  And user selects To "<todate>"
+  When user clicks on search button
+  Then verify user is able to view Customer details by order based on "<fromdate>" and "<todate>"
+  
+  Examples:
+  | fromdate   | todate     | SearchParam |
+  | 05-11-2023 | 19-11-2023 | ORDER       |
   #Scenario Outline: Validate if dealer is able filter search by order based on various Valid params
     #Given User is on Home Page
     #When user search by "<SearchParam>"
@@ -189,3 +200,5 @@ Feature: Search by Order or Invoice on Dashboard Page
     Examples: 
       | SearchParam | PhoneNumber |
       | INVOICE     |      839283 |
+      
+      

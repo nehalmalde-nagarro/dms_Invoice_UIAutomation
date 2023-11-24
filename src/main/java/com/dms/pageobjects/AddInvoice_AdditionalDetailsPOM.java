@@ -17,6 +17,9 @@ public class AddInvoice_AdditionalDetailsPOM {
 	public WebElement oldCarOfferNameDropdown() {
 		return PageUtil.findBy(By.id("oldCarOfferName"));
 	}
+	public WebElement loyaltyExchangeBenefit() {
+		return PageUtil.findBy(By.id("'formInput-'loyalityExchangeBenefit"));
+	}
 
 //	public WebElement oldCarOfferNameDropdown() {
 //		return PageUtil.findBy(By.xpath("//mat-panel-title[contains(text(),'Old Car Offers')]//ancestor::mat-expansion-panel-header//following-sibling::div//mat-select[contains(@id,'oldCarOfferName')]"));
@@ -120,6 +123,9 @@ public WebElement loyaltyCard(String txt) {
 	return PageUtil.findBy(By.xpath("//div[contains(@class,'loyalty-exchange-modal-container')]//button//span[contains(text(),'"+txt+"')]"));
 
 }
+public WebElement loyalExchnageBenefit(String txt) {
+	return PageUtil.findBy(By.xpath("//div[contains(text(),'33056261911')]//..//div[4]"));
+}
 public boolean isPopupBtnDisplayed(String txt) {
 	try {
         WebElement element = PageUtil.findBy(By.xpath("//div[contains(text(),'"+txt+"')]"));
@@ -128,6 +134,7 @@ public boolean isPopupBtnDisplayed(String txt) {
         return false; // Element is not found, so it is absent
     }
 }
+
 
 public boolean isRequiresDisplayed(String txt) {
 	try {

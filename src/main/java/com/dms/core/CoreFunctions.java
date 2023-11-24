@@ -64,7 +64,6 @@ public class CoreFunctions {
 		}
 		return outputDateStr;
 	}
-	
 	public static String trim(String input) {
 		String str=input.replaceAll("\\s+", " ");
 		return str;
@@ -74,6 +73,22 @@ public class CoreFunctions {
 		String outputDateStr = new String();
 		SimpleDateFormat inputDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		SimpleDateFormat outputDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		try {
+			Date date = inputDateFormat.parse(dateFromBE);
+			outputDateStr = outputDateFormat.format(date);
+			System.out.println("Formatted Date: " + outputDateStr);
+
+		} catch (ParseException e) {
+			System.err.println("Date parsing error: " + e.getMessage());
+		}
+		return outputDateStr;
+	}
+	
+	public static String date_mmddyyyy_FormatterwithoutTime(String dateFromBE)
+	{
+		String outputDateStr = new String();
+		SimpleDateFormat inputDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		SimpleDateFormat outputDateFormat = new SimpleDateFormat("MM/dd/yyyy");
 		try {
 			Date date = inputDateFormat.parse(dateFromBE);
 			outputDateStr = outputDateFormat.format(date);

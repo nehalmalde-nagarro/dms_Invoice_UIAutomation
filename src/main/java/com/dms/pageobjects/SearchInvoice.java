@@ -16,6 +16,10 @@ public class SearchInvoice {
 	public WebElement searchBy() {
 		return PageUtil.findBy(By.id("searchBy"));
 	}
+	
+	public WebElement totalRecords() {
+		return PageUtil.findBy(By.xpath("//mat-label//span[2]"));
+	}
 
 	public WebElement dropDownValue(String param) {
 		return PageUtil.findBy(By.xpath("//mat-option//span[contains(text(),'" + param + "')]"));

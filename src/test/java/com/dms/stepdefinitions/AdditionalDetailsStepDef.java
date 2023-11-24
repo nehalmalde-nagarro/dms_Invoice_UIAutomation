@@ -24,6 +24,7 @@ public class AdditionalDetailsStepDef {
 	public static List<Map<String, String>> testData = new ArrayList<>();
 	LoginPOM loginPOM = new LoginPOM();
 	SearchInvoice searchInvoicePOM = new SearchInvoice();
+	String exchangeBenefit="";
 
 	AddInvoice_AdditionalDetailsPOM additionalDetailsPOM = new AddInvoice_AdditionalDetailsPOM();
 	AddInvoice_FinancialInfo financialInfoPOM = new AddInvoice_FinancialInfo();
@@ -66,6 +67,11 @@ public class AdditionalDetailsStepDef {
 	@Then("Verify {string} is displayed")
 	public void Verify_string_displayed(String text) {
 		Assert.assertTrue(searchInvoicePOM.verifyByText(text));
+	}
+	@Then("Verify Loyalty Exchnage Benefit value")
+	public void verify_loyalty_exchnage() {
+		String text=CoreFunctions.getElementAttribute(additionalDetailsPOM.loyaltyExchangeBenefit(),"value");
+		Assert.assertEquals(text, exchangeBenefit);
 	}
 
 	@When("Click on {string} tab on Additional Details")
@@ -406,13 +412,16 @@ Assert.assertEquals(additionalDetailsPOM.chassisNum().getAttribute("disabled"), 
 	}
 	@When("User choose Loyalty Card for scenario {int}")
 	public void user_choose_loyalty_card(int rowNo) throws Exception {
+		testData = CoreFunctions.test("InvoiceData");
 
 		rowNo--;
 		String Text = testData.get(rowNo).get("OrderId").toString();
 		String loyaltyCardNum=Query.fetch_loyalty_exchange_benefits(Text);
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.chooseCardFromPopup(loyaltyCardNum)));
 		CoreFunctions.click(additionalDetailsPOM.chooseCardFromPopup(loyaltyCardNum), loyaltyCardNum);
-		
+		exchangeBenefit=CoreFunctions.getElementText(additionalDetailsPOM.loyalExchnageBenefit(loyaltyCardNum));
+	
 	}
+	
 	
 }

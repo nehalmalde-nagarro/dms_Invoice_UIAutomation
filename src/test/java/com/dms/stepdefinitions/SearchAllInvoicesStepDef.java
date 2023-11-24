@@ -133,20 +133,21 @@ public class SearchAllInvoicesStepDef {
 		Thread.sleep(1000);
 		try {
 			CoreFunctions.selectDate(BrowserHandle.getDriver(), toDate);
-			Thread.sleep(10000);
+//			Thread.sleep(10000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 
 	}
 
 	@Then("verify user is able to view Customer details by order based on {string} and {string}")
-	public void verify_user_is_able_to_view_customer_details_by_order_id_based_on_and(String fromDate, String toDate) {
+	public void verify_user_is_able_to_view_customer_details_by_order_id_based_on_and(String fromDate, String toDate) throws Exception {
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName());
+		Assert.assertEquals(searchInvoice.totalRecords().getText() ,Query.get_order_count_based_on_dates(CoreFunctions.date_mmddyyyy_FormatterwithoutTime(fromDate),CoreFunctions.date_mmddyyyy_FormatterwithoutTime(toDate)));
 
 	}
 
@@ -318,6 +319,10 @@ public class SearchAllInvoicesStepDef {
 		}
 		
 
+	}
+	@Then("verify count of total count of records")
+	public void verify_count() throws Exception {
+		Assert.assertEquals(searchInvoice.totalRecords().getText(), Query.get_entire_order_count());
 	}
 
 	@Then("verify user is on Add Invoice page")
