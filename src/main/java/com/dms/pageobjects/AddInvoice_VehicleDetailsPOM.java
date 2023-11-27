@@ -74,6 +74,9 @@ public class AddInvoice_VehicleDetailsPOM {
 	public WebElement clickCCPSalepopup() {
 		return PageUtil.findBy(By.xpath("//div[contains(text(),'CCP Sale')]"));
 	}
+	public WebElement IsCCPSaleActive() {
+		return PageUtil.findBy(By.xpath("//div[contains(text(),'CCP Sale')]/parent::div[@class='modal-btn active']"));
+	}
 	public List<WebElement> codeColumnList () {
 		return PageUtil.findBys(By.xpath("//div[contains(@class,'table-with-data')]//div[contains(@class,'row-data')]//div[2]"));
 	}

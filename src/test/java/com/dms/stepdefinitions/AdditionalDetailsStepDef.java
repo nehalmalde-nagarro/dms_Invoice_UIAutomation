@@ -1,5 +1,10 @@
 package com.dms.stepdefinitions;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -324,13 +329,14 @@ Assert.assertEquals(additionalDetailsPOM.chassisNum().getAttribute("disabled"), 
 		
 	}
 	@And("User selects only the {string} from other offers")
-	public void User_selects_only_the_MSSFOffer_from_other_offers(String offerName)
+	public void User_selects_only_the_MSSFOffer_from_other_offers(String offerName) throws InterruptedException, AWTException
 	{
-//		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.otherOfferNameDropdown()));
-//		CoreFunctions.click(additionalDetailsPOM.otherOfferNameDropdown(), "Other Offers");
-		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.chooseFromDropdown(offerName)));
+	    BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.chooseFromDropdown(offerName)));
 		CoreFunctions.click(financialInfoPOM.chooseFromDropdown(offerName), offerName);
-//		CoreFunctions.click(additionalDetailsPOM.otherOfferNameDropdown(), "Other Offers");
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_TAB);
+		robot.keyRelease(KeyEvent.VK_TAB);
+		Thread.sleep(2000);
 	}
 	@And("User diselect the {string} from other offers")
 	public void User_diselect_only_the_MSSFOffer_from_other_offers(String offerName)

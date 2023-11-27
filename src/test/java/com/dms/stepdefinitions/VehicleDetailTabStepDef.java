@@ -11,13 +11,19 @@ import org.testng.Assert;
 import com.dms.browserInstance.BrowserHandle;
 import com.dms.core.CoreFunctions;
 import com.dms.dbconfig.Query;
+import com.dms.pageobjects.AddInvoice_AdditionalDetailsPOM;
 import com.dms.pageobjects.AddInvoice_FinancialInfo;
 import com.dms.pageobjects.AddInvoice_VehicleDetailsPOM;
+import com.dms.pageobjects.LoginPOM;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class VehicleDetailTabStepDef {
+	LoginPOM loginPOM = new LoginPOM();
+	AddInvoice_AdditionalDetailsPOM additionalDetailsPOM = new AddInvoice_AdditionalDetailsPOM();
+
+
 
 	AddInvoice_VehicleDetailsPOM vehicleDetailsPOM=new AddInvoice_VehicleDetailsPOM();
 	public static List<Map<String, String>> testData = new ArrayList<>();
@@ -238,5 +244,28 @@ public void user_Click_ccp_sale() throws InterruptedException {
 		Assert.assertEquals(financialInfoPOM.getDropdownValueForClear("dealerCity").getText(),"Select");	
 
 	}
+	@Then("Verify if ccp benefit is selected")
+	public void verify_ccp_benefit() {
+	Assert.assertTrue(vehicleDetailsPOM.IsCCPSaleActive().isDisplayed());
+	}
+	@Then("Verify if benefit is already selected or select benefit from {int}")
+	public void verify_if_benefit_already_selected(int rowNo) {
+	System.out.println(loginPOM.spanButtonIsDisable("OK").getAttribute("disabled"));
+rowNo--;
+System.out.println(loginPOM.spanButtonIsDisable("OK").getAttribute("disabled"));
+//if(loginPOM.spanButtonIsDisable("OK").getAttribute("disabled").equalsIgnoreCase("true")) {
+//	 String text = AddInvoiceStepDef.testData.get(rowNo).get("CCPPackageCode").toString();
+//     CoreFunctions.click(additionalDetailsPOM.chooseCardFromPopup(text), text);
+//}
+
+if(!loginPOM.spanButton("OK").isEnabled()){
+	 String text = AddInvoiceStepDef.testData.get(rowNo).get("CCPPackageCode").toString();
+    CoreFunctions.click(additionalDetailsPOM.chooseCardFromPopup(text), text);
+}
+
+	
+		
+	}
+	
 
 }

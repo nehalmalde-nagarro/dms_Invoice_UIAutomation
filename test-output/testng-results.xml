@@ -2,60 +2,60 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-27T11:30:28 IST" name="Suite" finished-at="2023-11-27T11:34:16 IST" duration-ms="227940">
+  <suite started-at="2023-11-27T14:48:23 IST" name="Suite" finished-at="2023-11-27T14:50:18 IST" duration-ms="115173">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@23348b5d]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-11-27T11:30:28 IST" name="Cucumber UI with TestNG Test" finished-at="2023-11-27T11:34:16 IST" duration-ms="227940">
+    <test started-at="2023-11-27T14:48:23 IST" name="Cucumber UI with TestNG Test" finished-at="2023-11-27T14:50:18 IST" duration-ms="115173">
       <class name="com.dms.runner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.dms.runner.TestRunner@23348b5d]" started-at="2023-11-27T11:30:28 IST" name="setUpClass" finished-at="2023-11-27T11:30:29 IST" duration-ms="804" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-27T14:48:23 IST" name="setUpClass" finished-at="2023-11-27T14:48:23 IST" duration-ms="525" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@30eb55c9]]>
+                <![CDATA[org.testng.TestRunner@a99c42c]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@23348b5d]" started-at="2023-11-27T11:30:29 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-27T11:34:15 IST" duration-ms="226259" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-27T14:48:23 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-27T14:50:18 IST" duration-ms="114245" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Validate the MSSF Other offer"]]>
+                <![CDATA["Validate CCP Sale with Extendend Warranty with gold"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Addtional Details Tab of Add Invoice"]]>
+                <![CDATA["Add Invoice - Vehicle Details Tab"]]>
               </value>
             </param>
           </params>
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[contains(@class,'row-data') and not(contains(@class,'heading'))]"}
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(),'Extended Warranty Gold')]"}
   (Session info: chrome=119.0.6045.160)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.8.1', revision: '8ebccac989'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [70717ed4e9a34eae7ffccad525322a20, findElement {using=xpath, value=//div[contains(@class,'row-data') and not(contains(@class,'heading'))]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55536}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55536/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 70717ed4e9a34eae7ffccad525322a20]]>
+Command: [c9a82b78e8ba0b865c0c9cbb96767cd4, findElement {using=xpath, value=//span[contains(text(),'Extended Warranty Gold')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52479}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52479/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c9a82b78e8ba0b865c0c9cbb96767cd4]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[contains(@class,'row-data') and not(contains(@class,'heading'))]"}
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(),'Extended Warranty Gold')]"}
   (Session info: chrome=119.0.6045.160)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.8.1', revision: '8ebccac989'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [70717ed4e9a34eae7ffccad525322a20, findElement {using=xpath, value=//div[contains(@class,'row-data') and not(contains(@class,'heading'))]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55536}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55536/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 70717ed4e9a34eae7ffccad525322a20
+Command: [c9a82b78e8ba0b865c0c9cbb96767cd4, findElement {using=xpath, value=//span[contains(text(),'Extended Warranty Gold')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52479}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52479/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c9a82b78e8ba0b865c0c9cbb96767cd4
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -73,16 +73,16 @@ at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:6
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
 at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
-at com.dms.pageobjects.AddInvoice_AdditionalDetailsPOM.firstOptionFromPopup(AddInvoice_AdditionalDetailsPOM.java:193)
-at com.dms.stepdefinitions.AdditionalDetailsStepDef.choose_Mssf_offfer_from_popup(AdditionalDetailsStepDef.java:427)
-at ✽.Choose Mssf offer from popup(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/AdditionalDetails.feature:389)
+at com.dms.pageobjects.AddInvoice_VehicleDetailsPOM.chooseExtendedWarranty(AddInvoice_VehicleDetailsPOM.java:145)
+at com.dms.stepdefinitions.VehicleDetailTabStepDef.user_selects_extended_warranty_as(VehicleDetailTabStepDef.java:179)
+at ✽.user selects Extended Warranty for scenario 4(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/VehicleDetails.feature:246)
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.dms.runner.TestRunner@23348b5d]" started-at="2023-11-27T11:34:15 IST" name="tearDownClass" finished-at="2023-11-27T11:34:16 IST" duration-ms="805" status="FAIL">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-27T14:50:18 IST" name="tearDownClass" finished-at="2023-11-27T14:50:18 IST" duration-ms="366" status="FAIL">
           <exception class="com.google.gson.JsonIOException">
             <message>
               <![CDATA[Failed making field 'java.lang.Throwable#detailMessage' accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.]]>

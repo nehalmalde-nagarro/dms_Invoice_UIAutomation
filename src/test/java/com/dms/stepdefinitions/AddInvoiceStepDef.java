@@ -339,7 +339,7 @@ public class AddInvoiceStepDef {
 		while(CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_2(), "value").isEmpty())
 			CoreFunctions.setText(addInvoicePOM.billingAddress_2(), bill_address_2);
 
-		while(CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_2(), "value").isEmpty())
+		while(CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_3(), "value").isEmpty())
 			CoreFunctions.setText(addInvoicePOM.billingAddress_3(), bill_address_3);
 		
 		while(CoreFunctions.getElementText(financialInfo.getDropdownValueForClear("govtOraganisationWOPAN")).equals("Select"))
