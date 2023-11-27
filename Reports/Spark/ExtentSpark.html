@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">MSIL MICRM Automation Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Nov 27, 2023 02:48:23 pm</span></a>
+<a href="#"><span class="badge badge-primary">Nov 27, 2023 03:27:15 pm</span></a>
 </li>
 </ul>
 </div>
@@ -71,13 +71,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Nov 27, 2023 02:48:23 pm</h3>
+<h3>Nov 27, 2023 03:27:15 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Nov 27, 2023 02:50:18 pm</h3>
+<h3>Nov 27, 2023 03:28:12 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -148,10 +148,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='77%'><b>17</b> steps passed</small></div>
+<div><small data-tooltip='85%'><b>18</b> steps passed</small></div>
 <div>
 <small data-tooltip='4%'><b>1</b> steps failed,
-<b>4</b> skipped, <b data-tooltip='%'>0</b> others
+<b>2</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -167,7 +167,7 @@
 </div></div>
 <script>
 var timeline = {
-"Add Invoice - Vehicle Details Tab":114.078
+"Add Invoice - Vehicle Details Tab":55.392
 };
 </script>
 <div class="row">
@@ -177,7 +177,7 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@ccp</td>
+<td>@VehicleDetails</td>
 <td>0</td>
 <td>1</td>
 <td>0</td>
@@ -185,7 +185,7 @@ var timeline = {
 <td>0%</td>
 </tr>
 <tr>
-<td>@VehicleDetails</td>
+<td>@ccp</td>
 <td>0</td>
 <td>1</td>
 <td>0</td>
@@ -238,10 +238,10 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 17,
+passGrandChild: 18,
 failGrandChild: 1,
 warningGrandChild: 0,
-skipGrandChild: 4,
+skipGrandChild: 2,
 infoGrandChild: 0,
 eventsCount: 5,
 };
@@ -263,7 +263,7 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@ccp</a><a class="dropdown-item" href="#">@VehicleDetails</a>
+<a class="dropdown-item" href="#">@VehicleDetails</a><a class="dropdown-item" href="#">@ccp</a>
 </ul>
 </li>
 </ul>
@@ -276,7 +276,7 @@ eventsCount: 5,
           <div class="test-detail">
             <p class="name">Add Invoice - Vehicle Details Tab</p>
             <p class="text-sm">
-              <span>2:48:23 pm</span> / <span>00:01:54:078</span>
+              <span>3:27:17 pm</span> / <span>00:00:55:392</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -285,9 +285,9 @@ eventsCount: 5,
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-fail">Add Invoice - Vehicle Details Tab</h5>
-<span class='badge badge-success'>11.27.2023 2:48:23 pm</span>
-<span class='badge badge-danger'>11.27.2023 2:50:18 pm</span>
-<span class='badge badge-default'>00:01:54:078</span>
+<span class='badge badge-success'>11.27.2023 3:27:17 pm</span>
+<span class='badge badge-danger'>11.27.2023 3:28:12 pm</span>
+<span class='badge badge-default'>00:00:55:392</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -299,7 +299,7 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Validate CCP Sale with Extendend Warranty with gold</div>
+        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Validate CCP Sale with out Extendend Warranty</div>
           <div class="status-avatar float-right mr-4">
             <i class="fa fa-paperclip"></i>
           </div>
@@ -309,7 +309,7 @@ eventsCount: 5,
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="3"><span class="badge log fail-bg mr-2">Fail</span>Validate CCP Sale with Extendend Warranty with gold</div>
+                  <div class="node" id="3"><span class="badge log fail-bg mr-2">Fail</span>Validate CCP Sale with out Extendend Warranty</div>
                     <div class="status-avatar float-right">
                       <i class="fa fa-paperclip"></i>
                     </div>
@@ -396,50 +396,19 @@ eventsCount: 5,
       <div>
       </div>
                   </div>
-                  <div class="step fail-bg">
-                    <span>And user selects Extended Warranty for scenario 4</span>
+                  <div class="step pass-bg">
+                    <span>And User clicks on CCP Sale popup</span>
       <div>
-        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(),'Extended Warranty Gold')]"}
-  (Session info: chrome=119.0.6045.160)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.8.1', revision: '8ebccac989'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c9a82b78e8ba0b865c0c9cbb96767cd4, findElement {using=xpath, value=//span[contains(text(),'Extended Warranty Gold')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52479}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52479/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c9a82b78e8ba0b865c0c9cbb96767cd4
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
-	at com.dms.pageobjects.AddInvoice_VehicleDetailsPOM.chooseExtendedWarranty(AddInvoice_VehicleDetailsPOM.java:145)
-	at com.dms.stepdefinitions.VehicleDetailTabStepDef.user_selects_extended_warranty_as(VehicleDetailTabStepDef.java:179)
-	at ✽.user selects Extended Warranty for scenario 4(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/VehicleDetails.feature:246)
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>And Verify if benefit is already selected or select benefit from 4</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.NullPointerException: Cannot invoke "String.equalsIgnoreCase(String)" because the return value of "org.openqa.selenium.WebElement.getAttribute(String)" is null
+	at com.dms.stepdefinitions.VehicleDetailTabStepDef.verify_if_benefit_already_selected(VehicleDetailTabStepDef.java:265)
+	at ✽.Verify if benefit is already selected or select benefit from 4(file:///C:/Users/sprakash01/ProjectFiles/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/VehicleDetails.feature:223)
 </textarea>
       
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User clicks on CCP Sale popup</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And Verify if benefit is already selected or select benefit from 4</span>
-      <div>Step skipped
       </div>
                   </div>
                   <div class="step skip-bg">
@@ -454,7 +423,7 @@ Session ID: c9a82b78e8ba0b865c0c9cbb96767cd4
                   </div>
                   <div class="step pass-bg">
                     <span>com.dms.apphooks.ApplicationHooks.tearDown(io.cucumber.java.Scenario)</span>
-      <div>Validate_CCP_Sale_with_Extendend_Warranty_with_gold
+      <div>Validate_CCP_Sale_with_out_Extendend_Warranty
           <div class="row mb-3"><div class="col-md-3">
 <img data-featherlight='../FailedScreenShots/embedded1.png' src="../FailedScreenShots/embedded1.png">
     
@@ -492,42 +461,6 @@ Session ID: c9a82b78e8ba0b865c0c9cbb96767cd4
 <span class="meta">
 <span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">@ccp</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@ccp</h4>
-<span status="fail" class='badge log badge-danger'>1 failed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>14:48:23 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='3'>Validate CCP Sale with Extendend Warranty with gold</a>
-<div class="">
-<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate CCP Sale with Extendend Warranty with gold</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log badge-danger'>1</span>
-</span>
 <p class="name">@VehicleDetails</p>
 <p class="duration text-sm">1 tests</p>
 </div>
@@ -547,11 +480,47 @@ Session ID: c9a82b78e8ba0b865c0c9cbb96767cd4
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>14:48:23 pm</td>
+<td>15:27:17 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='3'>Validate CCP Sale with Extendend Warranty with gold</a>
+<a href="#" class="linked" test-id='1' id='3'>Validate CCP Sale with out Extendend Warranty</a>
 <div class="">
-<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate CCP Sale with Extendend Warranty with gold</span>
+<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate CCP Sale with out Extendend Warranty</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@ccp</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@ccp</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>15:27:17 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>Validate CCP Sale with out Extendend Warranty</a>
+<div class="">
+<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate CCP Sale with out Extendend Warranty</span>
 </div>
 </td>
 </tr>
@@ -580,12 +549,12 @@ Session ID: c9a82b78e8ba0b865c0c9cbb96767cd4
 <span class="meta">
 <span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">org.openqa.selenium.NoSuchElementException</p>
+<p class="name">java.lang.NullPointerException</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>org.openqa.selenium.NoSuchElementException</h4>
+<h4>java.lang.NullPointerException</h4>
 <span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -599,11 +568,11 @@ Session ID: c9a82b78e8ba0b865c0c9cbb96767cd4
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>14:49:11 pm</td>
+<td>15:28:01 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='22'>And user selects Extended Warranty for scenario 4</a>
+<a href="#" class="linked" test-id='1' id='23'>And Verify if benefit is already selected or select benefit from 4</a>
 <div class="">
-<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate CCP Sale with Extendend Warranty with gold.And user selects Extended Warranty for scenario 4</span>
+<span class="badge badge-default">Add Invoice - Vehicle Details Tab.Validate CCP Sale with out Extendend Warranty.And Verify if benefit is already selected or select benefit from 4</span>
 </div>
 </td>
 </tr>

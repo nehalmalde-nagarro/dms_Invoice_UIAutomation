@@ -170,10 +170,11 @@ public void user_Click_ccp_sale() throws InterruptedException {
 	}
 
 	@When("user selects Extended Warranty for scenario {int}")
-	public void user_selects_extended_warranty_as(int rowNo) {
+	public void user_selects_extended_warranty_as(int rowNo) throws InterruptedException {
 		rowNo--;
 		testData=CoreFunctions.test("InvoiceData");
 		String extendedWarrantyValue = testData.get(rowNo).get("ExtendedWarranty").toString();
+		Thread.sleep(3000);
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.selectExtendedWarrantyDropdown()));
 		CoreFunctions.click(vehicleDetailsPOM.selectExtendedWarrantyDropdown(),"Clicking on Extended Warranty dropdown");
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.chooseExtendedWarranty(extendedWarrantyValue)));
@@ -249,19 +250,23 @@ public void user_Click_ccp_sale() throws InterruptedException {
 	Assert.assertTrue(vehicleDetailsPOM.IsCCPSaleActive().isDisplayed());
 	}
 	@Then("Verify if benefit is already selected or select benefit from {int}")
-	public void verify_if_benefit_already_selected(int rowNo) {
-	System.out.println(loginPOM.spanButtonIsDisable("OK").getAttribute("disabled"));
-rowNo--;
-System.out.println(loginPOM.spanButtonIsDisable("OK").getAttribute("disabled"));
-//if(loginPOM.spanButtonIsDisable("OK").getAttribute("disabled").equalsIgnoreCase("true")) {
-//	 String text = AddInvoiceStepDef.testData.get(rowNo).get("CCPPackageCode").toString();
-//     CoreFunctions.click(additionalDetailsPOM.chooseCardFromPopup(text), text);
-//}
+	public void verify_if_benefit_already_selected(int rowNo) throws InterruptedException {
+	
+		rowNo--;
+		Thread.sleep(5000);
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.popupButton("CLEAR")));
+		
+		System.out.println(loginPOM.spanButtonIsDisable("OK").getAttribute("disabled"));
+		//if(loginPOM.spanButtonIsDisable("OK").getAttribute("disabled").equalsIgnoreCase("true")) {
+		//	 String text = AddInvoiceStepDef.testData.get(rowNo).get("CCPPackageCode").toString();
+		//     CoreFunctions.click(additionalDetailsPOM.chooseCardFromPopup(text), text);
+		//}
 
-if(!loginPOM.spanButton("OK").isEnabled()){
-	 String text = AddInvoiceStepDef.testData.get(rowNo).get("CCPPackageCode").toString();
-    CoreFunctions.click(additionalDetailsPOM.chooseCardFromPopup(text), text);
-}
+		if(loginPOM.spanButtonIsDisable("OK").getAttribute("disabled").equalsIgnoreCase("true")){
+			System.out.println("Inside CPP if");
+			String text = AddInvoiceStepDef.testData.get(rowNo).get("CCPPackageCodeWithoutEW").toString();
+			CoreFunctions.click(additionalDetailsPOM.chooseCardFromPopup(text), text);
+		}
 
 	
 		
