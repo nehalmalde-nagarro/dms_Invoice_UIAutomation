@@ -185,7 +185,7 @@ Feature: Add Invoice - Vehicle Details Tab
       | rowNumber |
       |         4 |
       
-        @ccp
+    @ccp
    Scenario Outline: Validate CCP Sale with out Extendend Warranty
     Given User is on Home Page
     When User clicks on "Add Invoice" button

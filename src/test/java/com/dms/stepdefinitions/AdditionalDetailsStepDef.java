@@ -422,6 +422,9 @@ Assert.assertEquals(additionalDetailsPOM.chassisNum().getAttribute("disabled"), 
 		exchangeBenefit=CoreFunctions.getElementText(additionalDetailsPOM.loyalExchnageBenefit(loyaltyCardNum));
 	
 	}
-	
+	@When("Choose Mssf offer from popup")
+	public void choose_Mssf_offfer_from_popup() {
+		CoreFunctions.click(additionalDetailsPOM.firstOptionFromPopup(), "choose first option on popup");
+	}
 	
 }

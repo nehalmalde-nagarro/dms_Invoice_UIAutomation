@@ -179,7 +179,20 @@ public WebElement closeRrrorToastMsg() {
 	return PageUtil.findBy(By.xpath("xpath=//mat-icon[contains(.,'close')]"));
 }
 
+public WebElement ewCashDiscountInput() {
+	return PageUtil.findBy(By.id("'formInput-'ewCashDiscount"));
+}
+public WebElement additionalDiscount1() {
+	return PageUtil.findBy(By.id("'formInput-'ADIS1"));
+}
+public WebElement additionalDiscount2() {
+	return PageUtil.findBy(By.id("'formInput-'ADIS2"));
+}
 
+public WebElement firstOptionFromPopup() {
+	return PageUtil.findBy(By.xpath("//div[contains(@class,'row-data') and not(contains(@class,'heading'))]"));
+}
+ 
 
 
 

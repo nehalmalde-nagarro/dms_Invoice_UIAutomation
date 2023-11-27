@@ -104,7 +104,7 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.dms.runner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Validate CCP Sale with out Extendend Warranty&quot;, &quot;Add Invoice - Vehicle Details Tab&quot;)">runScenario("Validate CCP Sale with out Extendend Warranty", "Add Invoice - Vehicle Details Tab")</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.dms.runner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Validate the MSSF Other offer&quot;, &quot;Addtional Details Tab of Add Invoice&quot;)">runScenario("Validate the MSSF Other offer", "Addtional Details Tab of Add Invoice")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
@@ -127,19 +127,19 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Validate CCP Sale with out Extendend Warranty&quot;, &quot;Add Invoice - Vehicle Details Tab&quot;)">
-                  </a> <!-- runScenario("Validate CCP Sale with out Extendend Warranty", "Add Invoice - Vehicle Details Tab") -->
+                  <a name="runScenario(&quot;Validate the MSSF Other offer&quot;, &quot;Addtional Details Tab of Add Invoice&quot;)">
+                  </a> <!-- runScenario("Validate the MSSF Other offer", "Addtional Details Tab of Add Invoice") -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Validate CCP Sale with out Extendend Warranty", "Add Invoice - Vehicle Details Tab")</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#searchBy&quot;}
+                  <span class="parameters">("Validate the MSSF Other offer", "Addtional Details Tab of Add Invoice")</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(@class,&apos;row-data&apos;) and not(contains(@class,&apos;heading&apos;))]&quot;}
   (Session info: chrome=119.0.6045.160)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [930093df36672b3121326266e959afdb, findElement {using=id, value=searchBy}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59853}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59853/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 930093df36672b3121326266e959afdb
+Command: [70717ed4e9a34eae7ffccad525322a20, findElement {using=xpath, value=//div[contains(@class,&apos;row-data&apos;) and not(contains(@class,&apos;heading&apos;))]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55536}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55536/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 70717ed4e9a34eae7ffccad525322a20
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
@@ -152,9 +152,9 @@ Session ID: 930093df36672b3121326266e959afdb
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
 	at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
-	at com.dms.pageobjects.SearchInvoice.searchBy(SearchInvoice.java:17)
-	at com.dms.stepdefinitions.SearchAllInvoicesStepDef.user_logged_in_is_on_home_page(SearchAllInvoicesStepDef.java:28)
-	at ✽.User is on Home Page(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/VehicleDetails.feature:190)
+	at com.dms.pageobjects.AddInvoice_AdditionalDetailsPOM.firstOptionFromPopup(AddInvoice_AdditionalDetailsPOM.java:193)
+	at com.dms.stepdefinitions.AdditionalDetailsStepDef.choose_Mssf_offfer_from_popup(AdditionalDetailsStepDef.java:427)
+	at ✽.Choose Mssf offer from popup(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/AdditionalDetails.feature:389)
 ... Removed 5 stack frames
 </div> <!-- stack-trace -->
                   <em>
@@ -230,12 +230,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'com.dms.runner.TestRunner')
-data.setCell(0, 3, 78652);
+data.setCell(0, 3, 226259);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 3 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -263,20 +263,20 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.dms.runner.TestRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@7ac058a0)</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@30eb55c9)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">runScenario("Validate CCP Sale with out Extendend Warranty", "Add Invoice - Vehicle Details Tab")</span>
-                <span class="method-start">551 ms</span>
+                <span class="method-name">runScenario("Validate the MSSF Other offer", "Addtional Details Tab of Add Invoice")</span>
+                <span class="method-start">820 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">79208 ms</span>
+                <span class="method-start">227095 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
