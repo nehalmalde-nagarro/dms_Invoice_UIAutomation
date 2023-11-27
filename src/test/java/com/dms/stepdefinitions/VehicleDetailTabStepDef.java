@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
@@ -124,6 +125,14 @@ public class VehicleDetailTabStepDef {
 		CoreFunctions.click(vehicleDetailsPOM.clickPrefSrvDealerpopup(),"Clicking on Preferred SRV");
 
 	}
+	
+@When("User clicks on CCP Sale popup")
+public void user_Click_ccp_sale() throws InterruptedException {
+	CoreFunctions.moveToElement(vehicleDetailsPOM.selectExtendedWarrantyDropdown());
+	BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.clickCCPSalepopup()));
+	CoreFunctions.click(vehicleDetailsPOM.clickCCPSalepopup(),"Clicking on Preferred SRV");
+
+}
 
 	@When("user selects state for scenario {int}")
 	public void user_selects_state_as(int rowNo) {
@@ -200,6 +209,20 @@ public class VehicleDetailTabStepDef {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	@Then("Verify CCP Sale popup list")
+	public void ccp_list_verify() throws Exception {
+		
+		List<WebElement> codeList=vehicleDetailsPOM.codeColumnList();
+		List<WebElement> codeDescList=vehicleDetailsPOM.codeDescColumnList();
+
+		for(int i=0;i<codeList.size();i++) {
+			String codeDesc=Query.get_fields_From_AM_List("LIST_DESC", "LIST_CODE", codeList.get(i).getText());
+		    Assert.assertEquals(CoreFunctions.trim(codeDesc), CoreFunctions.trim(codeDescList.get(i).getText()));
+		}
+		
+		
 	}
 
 	@Then("Verify the FastTag fields are cleared out")

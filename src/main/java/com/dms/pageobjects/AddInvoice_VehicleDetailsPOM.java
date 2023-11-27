@@ -1,5 +1,7 @@
 package com.dms.pageobjects;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -72,7 +74,14 @@ public class AddInvoice_VehicleDetailsPOM {
 	public WebElement clickCCPSalepopup() {
 		return PageUtil.findBy(By.xpath("//div[contains(text(),'CCP Sale')]"));
 	}
+	public List<WebElement> codeColumnList () {
+		return PageUtil.findBys(By.xpath("//div[contains(@class,'table-with-data')]//div[contains(@class,'row-data')]//div[2]"));
+	}
+	public List<WebElement> codeDescColumnList () {
+		return PageUtil.findBys(By.xpath("//div[contains(@class,'table-with-data')]//div[contains(@class,'row-data')]//div[3]"));
+	}
 
+	
 	//FastTag popup
 	public WebElement fastTagId() {
 		return PageUtil.findBy(By.id("'formInput-'fastTagId"));

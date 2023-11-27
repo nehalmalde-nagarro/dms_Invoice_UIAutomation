@@ -162,3 +162,48 @@ Feature: Add Invoice - Vehicle Details Tab
     Examples: 
       | rowNumber |
       |         1 |
+      
+      
+   Scenario Outline: Validate CCP Sale with out Extendend Warranty
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And user enters Workspace from <rowNumber>
+    And user enters Aadhar Number from <rowNumber>
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    And User clicks on CCP Sale popup
+    And User clicks on "OK" button
+    Then Verify required field error for "CCP Sale" is not displayed
+    
+    Examples: 
+      | rowNumber |
+      |         4 |
+      
+        @ccp
+   Scenario Outline: Validate CCP Sale with out Extendend Warranty
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And user enters Workspace from <rowNumber>
+    And user enters Aadhar Number from <rowNumber>
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    And User clicks on CCP Sale popup
+    Then Verify CCP Sale popup list
+    
+    Examples: 
+      | rowNumber |
+      |         4 |
+      
+      

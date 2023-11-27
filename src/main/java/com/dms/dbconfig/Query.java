@@ -365,13 +365,16 @@ public class Query {
 	
 	public static String get_fields_From_AM_DEALER_LOC(String selectCol)
 			throws Exception {
-		
-		
-		//query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"AM_DEALER_LOC\" where \"" + conditionCol + "\" ='"
-	//			+ conditionVal + "' and \"DEALER_MAP_CD\"=" + dealer_Code + ");";
-		
 		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"SH_ORDBOOK\" where \"LOC_CD\" ='"+ LOC_CD + "' and \"DEALER_MAP_CD\"="
 				+ dealer_Code + ");";
+		System.out.println(query);
+		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
+		return data;
+	}	
+	
+	public static String get_fields_From_AM_List(String selectCol,String conditionCol,String conditionVal)
+			throws Exception {
+		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"AM_LIST\" where \""+conditionCol+"\" ='"+ conditionVal + "' and \"LIST_CODE\" ='E0009');";
 		System.out.println(query);
 		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
 		return data;
