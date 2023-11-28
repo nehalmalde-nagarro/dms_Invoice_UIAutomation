@@ -205,6 +205,7 @@ Feature: Add Invoice - Vehicle Details Tab
     Examples: 
       | rowNumber |
       |         4 |
+      
     @ccp   
    Scenario Outline: Validate CCP Sale with out Extendend Warranty
     Given User is on Home Page
@@ -229,7 +230,7 @@ Feature: Add Invoice - Vehicle Details Tab
       | rowNumber |
       |         4 |
       
-     
+     @ccp
      Scenario Outline: Validate CCP Sale with Extendend Warranty with gold
     Given User is on Home Page
     When User clicks on "Add Invoice" button

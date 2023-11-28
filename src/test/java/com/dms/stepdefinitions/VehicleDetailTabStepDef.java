@@ -254,21 +254,17 @@ public void user_Click_ccp_sale() throws InterruptedException {
 	
 		rowNo--;
 		Thread.sleep(5000);
-		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.popupButton("CLEAR")));
 		
 		System.out.println(loginPOM.spanButtonIsDisable("OK").getAttribute("disabled"));
-		//if(loginPOM.spanButtonIsDisable("OK").getAttribute("disabled").equalsIgnoreCase("true")) {
-		//	 String text = AddInvoiceStepDef.testData.get(rowNo).get("CCPPackageCode").toString();
-		//     CoreFunctions.click(additionalDetailsPOM.chooseCardFromPopup(text), text);
-		//}
-
+		
+		if(loginPOM.spanButtonIsDisable("OK").getAttribute("disabled")!=(null)) {
 		if(loginPOM.spanButtonIsDisable("OK").getAttribute("disabled").equalsIgnoreCase("true")){
 			System.out.println("Inside CPP if");
-			String text = AddInvoiceStepDef.testData.get(rowNo).get("CCPPackageCodeWithoutEW").toString();
+			String text = AddInvoiceStepDef.testData.get(rowNo).get("CCPPackageCodeWithEW").toString();
 			CoreFunctions.click(additionalDetailsPOM.chooseCardFromPopup(text), text);
 		}
 
-	
+		}
 		
 	}
 	

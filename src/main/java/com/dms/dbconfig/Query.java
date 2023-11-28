@@ -381,8 +381,7 @@ public class Query {
 	}	
 	
 	public static String fetch_loyalty_exchange_benefits(String orderId) throws Exception {
-		String text=get_fields_From_ShOrderBook("CUST_CD", "ORDER_NUM", orderId);
-		String mobileNo=get_fields_From_GM_CIN("MOBILE_PHONE", "CUST_CD", text);
+		String mobileNo=get_fields_From_ShOrderBook("MOBILE", "ORDER_NUM", orderId);
 		query="(\r\n"
 				+ "SELECT \"MULDMS\".\"GD_LOYALTY_ENROL\".\"CARD_NUM\" "
 				+ "FROM \"MULDMS\".\"GD_LOYALTY_ENROL\" JOIN \"MULDMS\".\"AM_LIST_RANGE\"\r\n"

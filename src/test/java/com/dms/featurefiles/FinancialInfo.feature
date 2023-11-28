@@ -70,7 +70,7 @@ Feature: Add Invoice - Vehicle Details Tab
       | rowNumber |
       |         1 |
 
-@finance
+
   Scenario Outline: Validate the next button is enabled in Financial Info page and able to navigate to next screen when Payment Type is Cash
     Given User is on Home Page
     When User clicks on "Add Invoice" button
@@ -141,6 +141,7 @@ Feature: Add Invoice - Vehicle Details Tab
       | rowNumber |
       |         5 |
 
+@finance
 Scenario Outline: Validate the next button is enabled in Financial Info page and able to navigate to next screen when Payment Type is Finance and Loan status is Approved
     Given User is on Home Page
     When User clicks on "Add Invoice" button
@@ -187,7 +188,7 @@ Scenario Outline: Validate the next button is enabled in Financial Info page and
  
     Examples:
       | rowNumber |
-      |         2 |
+      |         4 |
  
  
 Scenario Outline: Validate the next button is enabled in Financial Info page and able to navigate to next screen when Payment Type is Finance and Loan Status as Rejected

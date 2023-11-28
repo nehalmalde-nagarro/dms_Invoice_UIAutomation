@@ -1,54 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-27T15:27:15 IST" name="Suite" finished-at="2023-11-27T15:28:13 IST" duration-ms="57888">
+  <suite started-at="2023-11-28T17:25:09 IST" name="Suite" finished-at="2023-11-28T17:26:52 IST" duration-ms="103054">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@673fdbce]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-11-27T15:27:15 IST" name="Cucumber UI with TestNG Test" finished-at="2023-11-27T15:28:13 IST" duration-ms="57888">
+    <test started-at="2023-11-28T17:25:09 IST" name="Cucumber UI with TestNG Test" finished-at="2023-11-28T17:26:52 IST" duration-ms="103054">
       <class name="com.dms.runner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.dms.runner.TestRunner@673fdbce]" started-at="2023-11-27T15:27:15 IST" name="setUpClass" finished-at="2023-11-27T15:27:16 IST" duration-ms="1578" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-28T17:25:09 IST" name="setUpClass" finished-at="2023-11-28T17:25:10 IST" duration-ms="853" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@1450ffa3]]>
+                <![CDATA[org.testng.TestRunner@1b53e6fc]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@673fdbce]" started-at="2023-11-27T15:27:16 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-27T15:28:12 IST" duration-ms="55869" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-28T17:25:10 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-28T17:26:52 IST" duration-ms="101843" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Validate CCP Sale with out Extendend Warranty"]]>
+                <![CDATA["Business Scenario 1 :  B2B - IGST - Individual - CCP - Extended Warranty -   Exchange"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Add Invoice - Vehicle Details Tab"]]>
+                <![CDATA["Business Scenario"]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "String.equalsIgnoreCase(String)" because the return value of "org.openqa.selenium.WebElement.getAttribute(String)" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "String.equalsIgnoreCase(String)" because the return value of "org.openqa.selenium.WebElement.getAttribute(String)" is null
-at com.dms.stepdefinitions.VehicleDetailTabStepDef.verify_if_benefit_already_selected(VehicleDetailTabStepDef.java:265)
-at ✽.Verify if benefit is already selected or select benefit from 4(file:///C:/Users/sprakash01/ProjectFiles/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/VehicleDetails.feature:223)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.dms.runner.TestRunner@673fdbce]" started-at="2023-11-27T15:28:12 IST" name="tearDownClass" finished-at="2023-11-27T15:28:13 IST" duration-ms="369" status="FAIL">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-28T17:26:52 IST" name="tearDownClass" finished-at="2023-11-28T17:26:52 IST" duration-ms="308" status="FAIL">
           <exception class="com.google.gson.JsonIOException">
             <message>
               <![CDATA[Failed making field 'java.lang.Throwable#detailMessage' accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.]]>
@@ -125,7 +114,7 @@ at org.testng.TestNG.run(TestNG.java:1060)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String java.lang.Throwable.detailMessage accessible: module java.base does not "opens java.lang" to unnamed module @3327bd23
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String java.lang.Throwable.detailMessage accessible: module java.base does not "opens java.lang" to unnamed module @64cee07
 at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:354)
 at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297)
 at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:178)

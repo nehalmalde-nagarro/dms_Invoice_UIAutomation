@@ -63,6 +63,9 @@ public class AddInvoice_FinancialInfo {
 		return PageUtil.findBys(By.xpath("//div[@class='modal-btn-container disabled']//div[text()='Receipt Details']"));
 	}
 	
+	public WebElement searchDropDropDownValue() {
+		return PageUtil.findBy(By.xpath("//input[@aria-label='dropdown search']"));
+	}
 	
 	public WebElement chooseFinancierDropdown(String financerValue) {
 		return PageUtil.findBy(By.xpath("//mat-option//span[text()='" + financerValue + "']"));

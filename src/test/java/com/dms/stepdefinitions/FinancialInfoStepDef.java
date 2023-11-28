@@ -216,14 +216,16 @@ public class FinancialInfoStepDef {
 //	    User selects Financier for scenario <rowNumber>
 //	    And User selects Finance Amount for scenario <rowNumber>
 	    @When("User selects Financier for scenario {int}")
-	    public void User_selects_financer_for_scenario(int rowNo) {
+	    public void User_selects_financer_for_scenario(int rowNo) throws InterruptedException {
 	    	testData=CoreFunctions.test("InvoiceData");
 	    	rowNo--;
 		    String financier=testData.get(rowNo).get("Financier").toString();
 		    BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.clickFinancerDropdown()));
 			CoreFunctions.click(financialInfoPOM.clickFinancerDropdown(), "Clicking on Financier dropdown");
+			CoreFunctions.setText(financialInfoPOM.searchDropDropDownValue(), financier);
+			Thread.sleep(2000);
 			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.chooseFinancierDropdown(financier)));
-	    	CoreFunctions.click(financialInfoPOM.chooseFinancierDropdown(financier), "ChosingFinancier");
+	    	CoreFunctions.click(financialInfoPOM.chooseFromDropdown(financier), "ChosingFinancier");
 
 	    }
 	    @When("User selects Finance Amount for scenario {int}")
@@ -369,7 +371,36 @@ public class FinancialInfoStepDef {
 	    	Assert.assertFalse(financialInfoPOM.chooseFirstReceiptDetails().isSelected());
 	    }
 	    
-	    
+	    @When("User selects all required fields on financial info for scenario {int}")
+	    public void user_select_all_required_filed_on_financial(int rowNo) throws Exception {
+	    	
+	    	String paymentType= CoreFunctions.getElementText(financialInfoPOM.getDropdownSelectedValue("paymentType"));
+	    	
+	    	
+	    	if(paymentType.equalsIgnoreCase("finance") || paymentType.equalsIgnoreCase("Leasing")) {
+	    		User_selects_financer_for_scenario(rowNo);
+	    		User_selects_financer_Amount_for_scenario(rowNo);
+	    		user_clicks_on_financial_details();
+	    		user_selects_loan_type_for_scenario(rowNo);
+	    		user_selects_loan_status_for_scenario(rowNo);
+	    		user_selects_loan_application_date_for_scenario(rowNo);
+	    		user_selects_loan_approval_date_for_scenario( rowNo);
+	    		user_selects_loan_closing_date_for_scenario( rowNo);
+	    		user_selects_loan_disbursal_date_for_scenario(rowNo);
+	    		user_selects_down_payment_mode_for_scenario(rowNo);
+	    		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.spanButton("OK")));
+	    		CoreFunctions.moveToElement(loginPOM.spanButton("OK"));
+	    		CoreFunctions.click(loginPOM.spanButton("OK"), "OK");
+	    	}
+	    	
+	    	User_selects_tax_rate_for_scenario(rowNo);
+	    	User_selects_tdsAmount_for_scenario(rowNo);
+	    	User_selects_tcs_flag_for_Scenario(rowNo);
+	    	
+	    	
+	    	
+	    	
+	    }
 	    
 	 
 	}

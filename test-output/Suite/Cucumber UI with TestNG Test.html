@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Cucumber UI with TestNG Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Nov 27 15:27:15 IST 2023</td>
+<td>Started on:</td><td>Tue Nov 28 17:25:09 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>57 seconds (57888 ms)</td>
+<tr><td>Total time:</td><td>103 seconds (103054 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -122,8 +122,8 @@ function toggleAllBoxes() {
 	at io.cucumber.testng.AbstractTestNGCucumberTests.tearDownClass(AbstractTestNGCucumberTests.java:57)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	... 69 more
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace226866073", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace226866073'><pre>com.google.gson.JsonIOException: Failed making field &apos;java.lang.Throwable#detailMessage&apos; accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.
+... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1852790850", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1852790850'><pre>com.google.gson.JsonIOException: Failed making field &apos;java.lang.Throwable#detailMessage&apos; accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.
 	at com.google.gson.internal.reflect.ReflectionHelper.makeAccessible(ReflectionHelper.java:38)
 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.getBoundFields(ReflectiveTypeAdapterFactory.java:286)
 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.create(ReflectiveTypeAdapterFactory.java:130)
@@ -194,7 +194,7 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String java.lang.Throwable.detailMessage accessible: module java.base does not &quot;opens java.lang&quot; to unnamed module @3327bd23
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String java.lang.Throwable.detailMessage accessible: module java.base does not &quot;opens java.lang&quot; to unnamed module @64cee07
 	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:354)
 	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297)
 	at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:178)
@@ -203,27 +203,20 @@ Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field p
 	... 69 more
 </pre></div></td>
 <td>0</td>
-<td>com.dms.runner.TestRunner@673fdbce</td></tr>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
 </table><p>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate CCP Sale with out Extendend Warranty", "Add Invoice - Vehicle Details Tab"</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;String.equalsIgnoreCase(String)&quot; because the return value of &quot;org.openqa.selenium.WebElement.getAttribute(String)&quot; is null
-	at com.dms.stepdefinitions.VehicleDetailTabStepDef.verify_if_benefit_already_selected(VehicleDetailTabStepDef.java:265)
-	at ✽.Verify if benefit is already selected or select benefit from 4(file:///C:/Users/sprakash01/ProjectFiles/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/VehicleDetails.feature:223)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1604326431", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1604326431'><pre>java.lang.NullPointerException: Cannot invoke &quot;String.equalsIgnoreCase(String)&quot; because the return value of &quot;org.openqa.selenium.WebElement.getAttribute(String)&quot; is null
-	at com.dms.stepdefinitions.VehicleDetailTabStepDef.verify_if_benefit_already_selected(VehicleDetailTabStepDef.java:265)
-	at ✽.Verify if benefit is already selected or select benefit from 4(file:///C:/Users/sprakash01/ProjectFiles/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/VehicleDetails.feature:223)
-</pre></div></td>
-<td>55</td>
-<td>com.dms.runner.TestRunner@673fdbce</td></tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Business Scenario 1 :  B2B - IGST - Individual - CCP - Extended Warranty -   Exchange", "Business Scenario"</td>
+<td></td>
+<td>101</td>
+<td>com.dms.runner.TestRunner@1ff4931d</td></tr>
 </table><p>
 </body>
 </html>
