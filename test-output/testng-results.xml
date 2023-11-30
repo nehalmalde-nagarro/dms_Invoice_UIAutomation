@@ -2,30 +2,30 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-28T17:25:09 IST" name="Suite" finished-at="2023-11-28T17:26:52 IST" duration-ms="103054">
+  <suite started-at="2023-11-29T15:41:54 IST" name="Suite" finished-at="2023-11-29T15:43:37 IST" duration-ms="103141">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1e66f1f5]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-11-28T17:25:09 IST" name="Cucumber UI with TestNG Test" finished-at="2023-11-28T17:26:52 IST" duration-ms="103054">
+    <test started-at="2023-11-29T15:41:54 IST" name="Cucumber UI with TestNG Test" finished-at="2023-11-29T15:43:37 IST" duration-ms="103141">
       <class name="com.dms.runner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-28T17:25:09 IST" name="setUpClass" finished-at="2023-11-28T17:25:10 IST" duration-ms="853" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.dms.runner.TestRunner@1e66f1f5]" started-at="2023-11-29T15:41:54 IST" name="setUpClass" finished-at="2023-11-29T15:41:55 IST" duration-ms="1075" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@1b53e6fc]]>
+                <![CDATA[org.testng.TestRunner@55e4dd68]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-28T17:25:10 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-28T17:26:52 IST" duration-ms="101843" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1e66f1f5]" started-at="2023-11-29T15:41:55 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-29T15:43:36 IST" duration-ms="101623" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Business Scenario 1 :  B2B - IGST - Individual - CCP - Extended Warranty -   Exchange"]]>
+                <![CDATA["Business Scenario 11 :  B2C - IGST - Individual - CCP - Extended Warranty -  Scrapage"]]>
               </value>
             </param>
             <param index="1">
@@ -37,7 +37,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.dms.runner.TestRunner@1ff4931d]" started-at="2023-11-28T17:26:52 IST" name="tearDownClass" finished-at="2023-11-28T17:26:52 IST" duration-ms="308" status="FAIL">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.dms.runner.TestRunner@1e66f1f5]" started-at="2023-11-29T15:43:36 IST" name="tearDownClass" finished-at="2023-11-29T15:43:37 IST" duration-ms="389" status="FAIL">
           <exception class="com.google.gson.JsonIOException">
             <message>
               <![CDATA[Failed making field 'java.lang.Throwable#detailMessage' accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.]]>
@@ -114,7 +114,7 @@ at org.testng.TestNG.run(TestNG.java:1060)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String java.lang.Throwable.detailMessage accessible: module java.base does not "opens java.lang" to unnamed module @64cee07
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String java.lang.Throwable.detailMessage accessible: module java.base does not "opens java.lang" to unnamed module @6c629d6e
 at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:354)
 at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297)
 at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:178)

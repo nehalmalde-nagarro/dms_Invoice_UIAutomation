@@ -38,6 +38,9 @@ public class AddInvoice_ChargeDetailsPOM {
 			return PageUtil.findBys(By.xpath("//div[contains(@class,'tblchargeDetail')]//tbody//tr"));
 		}
 		
+		public WebElement ChargeDetailsPage() {
+			return PageUtil.findBy(By.xpath("//mat-panel-title[contains(text(),'Charge Details')]"));
+		}
 		
 		
 		public List<WebElement> allRowsChargeName() {

@@ -375,7 +375,8 @@ public class FinancialInfoStepDef {
 	    public void user_select_all_required_filed_on_financial(int rowNo) throws Exception {
 	    	
 	    	String paymentType= CoreFunctions.getElementText(financialInfoPOM.getDropdownSelectedValue("paymentType"));
-	    	
+//		    String paymentType=testData.get(rowNo-1).get("PaymentType").toString();
+
 	    	
 	    	if(paymentType.equalsIgnoreCase("finance") || paymentType.equalsIgnoreCase("Leasing")) {
 	    		User_selects_financer_for_scenario(rowNo);

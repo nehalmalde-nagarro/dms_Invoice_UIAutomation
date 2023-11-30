@@ -284,7 +284,7 @@ public class AddInvoiceStepDef {
 
 	@Then("Verify user is navigated to {string}")
 	public void verify_user_is_navigated_to(String text) {
-		Assert.assertTrue(searchInvoicePOM.verifyByText(text));
+		Assert.assertTrue(searchInvoicePOM.infoTitle(text).isDisplayed());
 	}
 
 	@Then("verify all the fields are empty on Invoice details page except Invoice Type and Selling Price For")

@@ -13,6 +13,10 @@ public class SearchInvoice {
 		return PageUtil.findBy(By.id("mat-select-value-1"));
 	}
 
+	public WebElement infoTitle(String txt) {
+		return PageUtil.findBy(By.xpath("//mat-panel-title[contains(text(),'"+txt+"')]"));
+
+	}
 	public WebElement searchBy() {
 		return PageUtil.findBy(By.id("searchBy"));
 	}
