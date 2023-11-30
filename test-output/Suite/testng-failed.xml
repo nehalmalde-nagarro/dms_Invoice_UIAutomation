@@ -10,7 +10,7 @@
         <methods>
           <include name="setUpClass"/>
           <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="11"/>
+          <include name="runScenario" invocation-numbers="0 1"/>
         </methods>
       </class> <!-- com.dms.runner.TestRunner -->
     </classes>

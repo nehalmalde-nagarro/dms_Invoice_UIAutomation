@@ -34,7 +34,8 @@ public class FinancialInfoStepDef {
 	    String interestAmt=Query.get_fields_From_ShOrderBook("INTEREST_AMT", "ORDER_NUM", orderId);
 	    String chargeAmt=Query.get_fields_From_ShOrderBook("CHARGE_AMT", "ORDER_NUM", orderId);
 	    String TDSAmt=Query.get_fields_From_ShOrderBook("TDS_AMT","ORDER_NUM", orderId);
-	    
+	    String saleType = Query.get_fields_From_ShOrderBook("SALES_TYPE","ORDER_NUM", orderId);
+
 	    //Assert Boking amount
 		String textFromFE=CoreFunctions.getElementAttribute(financialInfoPOM.bookingAmount(), "value");
 		textFromBE=Query.get_fields_From_ShOrderBook("BOOKING_AMT","ORDER_NUM", orderId);
@@ -46,10 +47,12 @@ public class FinancialInfoStepDef {
 	    Assert.assertEquals(textFromFE, textFromBE);
 	    
 	    //AssertSellingAmount
-		textFromFE=CoreFunctions.getElementAttribute(financialInfoPOM.sellingAmount(), "value");
+	    textFromFE=CoreFunctions.getElementAttribute(financialInfoPOM.sellingAmount(), "value");
 		data=Query.get_fields_From_STAllot("VIN", "ORDER_NUM", orderId);
+		String variant = Query.get_fields_From_SD_GRN("VARIANT_CD", "VIN", data);
 		data = Query.get_fields_From_SD_GRN("ECOLOR_CD", "VIN", data);
-		String sellingPrice=Query.get_fields_From_SM_PRICE_FOR("SELL_PRICE_L", "COLOR_IND", data);
+		//String sellingPrice=Query.get_fields_From_SM_PRICE_FOR("SELL_PRICE_L", "COLOR_IND", data);
+		String sellingPrice=Query.get_fields_From_SM_PRICE_FOR_with_mutiple_conditions("SELL_PRICE_L", "COLOR_IND", data, "VARIANT_CD",variant, "SALES_TYPE", saleType);
 		Assert.assertEquals(textFromFE, sellingPrice);
 		
 		textFromFE=CoreFunctions.getElementAttribute(financialInfoPOM.invoiceAmount(), "value");

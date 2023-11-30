@@ -248,6 +248,15 @@ public class Query {
 		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
 		return data;
 	}
+	public static String get_fields_From_SM_PRICE_FOR_with_mutiple_conditions(String selectCol, String conditionCol1, String conditionVal1,String conditionCol2, String conditionVal2,String conditionCol3, String conditionVal3)
+			throws Exception {
+		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"SM_SPRICE_FOR\" where \"" + conditionCol1 + "\" ='"
+				+ conditionVal1 + "' AND \""+conditionCol2+"\" = '" + conditionVal2 + "' AND \""+conditionCol3+"\" = '" + conditionVal3+ "'";
+ 
+		System.out.println(query);
+		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
+		return data;
+	}
 	public static String get_fields_From_NI_NEW_MINUS(String selectCol, String conditionCol, String conditionVal)
 			throws Exception {
 		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"NI_NEW_MINS\" where \"" + conditionCol + "\" ='"

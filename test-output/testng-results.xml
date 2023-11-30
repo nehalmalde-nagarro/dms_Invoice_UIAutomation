@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="0" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-29T15:41:54 IST" name="Suite" finished-at="2023-11-29T15:43:37 IST" duration-ms="103141">
+  <suite started-at="2023-11-30T19:29:57 IST" name="Suite" finished-at="2023-11-30T19:32:24 IST" duration-ms="146978">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1e66f1f5]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-11-29T15:41:54 IST" name="Cucumber UI with TestNG Test" finished-at="2023-11-29T15:43:37 IST" duration-ms="103141">
+    <test started-at="2023-11-30T19:29:57 IST" name="Cucumber UI with TestNG Test" finished-at="2023-11-30T19:32:24 IST" duration-ms="146978">
       <class name="com.dms.runner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.dms.runner.TestRunner@1e66f1f5]" started-at="2023-11-29T15:41:54 IST" name="setUpClass" finished-at="2023-11-29T15:41:55 IST" duration-ms="1075" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.dms.runner.TestRunner@1e66f1f5]" started-at="2023-11-30T19:29:57 IST" name="setUpClass" finished-at="2023-11-30T19:29:58 IST" duration-ms="921" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@55e4dd68]]>
+                <![CDATA[org.testng.TestRunner@537451d5]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1e66f1f5]" started-at="2023-11-29T15:41:55 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-29T15:43:36 IST" duration-ms="101623" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1e66f1f5]" started-at="2023-11-30T19:29:58 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-30T19:32:15 IST" duration-ms="136559" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Business Scenario 11 :  B2C - IGST - Individual - CCP - Extended Warranty -  Scrapage"]]>
+                <![CDATA["Business Scenario 15 :  B2B - CGST - Individual - CCP - Extended Warranty -   Exchange"]]>
               </value>
             </param>
             <param index="1">
@@ -34,10 +34,116 @@
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[contains(text(),'CCP Sale')]/parent::div[@class='modal-btn active']"}
+  (Session info: chrome=119.0.6045.160)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9ebbd58a5c36d4475145d9048da74a08, findElement {using=xpath, value=//div[contains(text(),'CCP Sale')]/parent::div[@class='modal-btn active']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64669}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64669/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9ebbd58a5c36d4475145d9048da74a08]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[contains(text(),'CCP Sale')]/parent::div[@class='modal-btn active']"}
+  (Session info: chrome=119.0.6045.160)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9ebbd58a5c36d4475145d9048da74a08, findElement {using=xpath, value=//div[contains(text(),'CCP Sale')]/parent::div[@class='modal-btn active']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64669}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64669/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9ebbd58a5c36d4475145d9048da74a08
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
+at com.dms.pageobjects.AddInvoice_VehicleDetailsPOM.IsCCPSaleActive(AddInvoice_VehicleDetailsPOM.java:78)
+at com.dms.stepdefinitions.VehicleDetailTabStepDef.verify_ccp_benefit(VehicleDetailTabStepDef.java:250)
+at ✽.Verify if ccp benefit is selected(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/BusinessScenarios.feature:648)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.dms.runner.TestRunner@1e66f1f5]" started-at="2023-11-29T15:43:36 IST" name="tearDownClass" finished-at="2023-11-29T15:43:37 IST" duration-ms="389" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1e66f1f5]" started-at="2023-11-30T19:32:15 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-11-30T19:32:24 IST" duration-ms="9131" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Business Scenario 16 :  B2B - CGST - Individual  - Extended Warranty - CCP NoPack - Exchange  - Leasing"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Business Scenario"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchWindowException">
+            <message>
+              <![CDATA[no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=119.0.6045.160)
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [fc5e45fe3b2d98f46a887bdcc60bd6b3, findElement {using=xpath, value=//button//span[contains(text(),'Dealer')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64809}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64809/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: fc5e45fe3b2d98f46a887bdcc60bd6b3]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=119.0.6045.160)
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [fc5e45fe3b2d98f46a887bdcc60bd6b3, findElement {using=xpath, value=//button//span[contains(text(),'Dealer')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64809}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64809/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: fc5e45fe3b2d98f46a887bdcc60bd6b3
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
+at com.dms.pageobjects.LoginPOM.spanButton(LoginPOM.java:57)
+at com.dms.stepdefinitions.LoginStepDef.user_click_on_btn(LoginStepDef.java:68)
+at ✽.User clicks on "Dealer" button(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/BusinessScenarios.feature:6)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.dms.runner.TestRunner@1e66f1f5]" started-at="2023-11-30T19:32:24 IST" name="tearDownClass" finished-at="2023-11-30T19:32:24 IST" duration-ms="318" status="FAIL">
           <exception class="com.google.gson.JsonIOException">
             <message>
               <![CDATA[Failed making field 'java.lang.Throwable#detailMessage' accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.]]>
@@ -114,7 +220,7 @@ at org.testng.TestNG.run(TestNG.java:1060)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String java.lang.Throwable.detailMessage accessible: module java.base does not "opens java.lang" to unnamed module @6c629d6e
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String java.lang.Throwable.detailMessage accessible: module java.base does not "opens java.lang" to unnamed module @51016012
 at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:354)
 at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297)
 at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:178)
