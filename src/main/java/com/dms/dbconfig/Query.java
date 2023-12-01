@@ -212,13 +212,12 @@ public class Query {
 	public static String get_fields_From_GM_ECLR(String selectCol, String conditionCol, String conditionVal)
 			throws Exception {
 		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"GM_ECLR\" where \"" + conditionCol + "\" ='"
-				+ conditionVal + "');";
+				+ conditionVal + "'AND \"PRINCIPAL_MAP_CD\" = " + principal_map_cd + ");";
  
 		System.out.println(query);
 		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
 		return data;
 	}
-	
 	public static String get_fields_From_SD_GRN(String selectCol, String conditionCol, String conditionVal)
 			throws Exception {
 		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"SD_GRN\" where \"" + conditionCol + "\" ='"

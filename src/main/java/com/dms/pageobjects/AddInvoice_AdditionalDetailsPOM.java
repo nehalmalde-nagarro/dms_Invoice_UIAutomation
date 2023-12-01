@@ -124,7 +124,7 @@ public WebElement loyaltyCard(String txt) {
 
 }
 public WebElement loyalExchnageBenefit(String txt) {
-	return PageUtil.findBy(By.xpath("//div[contains(text(),'33056261911')]//..//div[4]"));
+	return PageUtil.findBy(By.xpath("//div[contains(text(),'"+txt+"')]//..//div[4]"));
 }
 public boolean isPopupBtnDisplayed(String txt) {
 	try {
