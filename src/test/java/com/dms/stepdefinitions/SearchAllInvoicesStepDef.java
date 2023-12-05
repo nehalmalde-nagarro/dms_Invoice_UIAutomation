@@ -1,6 +1,8 @@
 package com.dms.stepdefinitions;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,6 +21,7 @@ import io.cucumber.java.en.When;
 public class SearchAllInvoicesStepDef {
 
 	SearchInvoice searchInvoice = new SearchInvoice();
+	public static List<Map<String, String>> testData = new ArrayList<>();
 
 	@Then("Verify User is on Home Page")
 	@Given("User is on Home Page")
@@ -40,6 +43,18 @@ public class SearchAllInvoicesStepDef {
 
 	@When("user enters Order Id {string}")
 	public void user_enters_order_id(String orderId) {
+		Logs.logger.info(new Object() {
+		}.getClass().getEnclosingMethod().getName() + orderId);
+
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(searchInvoice.orderId()));
+		CoreFunctions.setText(searchInvoice.orderId(), orderId);
+	}
+	@When("user enters Order Id for scenario {int}")
+	public void user_enters_order_ids(int rowNo) throws InterruptedException {
+		rowNo--;
+		testData=CoreFunctions.test("InvoiceData");
+		String orderId = testData.get(rowNo).get("OrderId").toString();
+		Thread.sleep(3000);
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName() + orderId);
 
@@ -74,6 +89,26 @@ public class SearchAllInvoicesStepDef {
 
 	@Then("verify user is able to view Customer details by order based on {string}")
 	public void verify_user_is_able_to_view_customer_details_by_order_based_on(String orderId) throws Exception {
+		
+		Logs.logger.info(new Object() {
+		}.getClass().getEnclosingMethod().getName());
+		String custCode = Query.get_fields_From_ShOrderBook("CUST_CD","ORDER_NUM",orderId);
+		String custName = Query.get_fields_From_GM_CIN("FULL_NAME","CUST_CD",custCode);
+		String phoneNumber = Query.get_fields_From_GM_CIN("MOBILE_PHONE","CUST_CD",custCode);
+		String orderDateBE = CoreFunctions.dateFormatterwithTime(Query.get_fields_From_ShOrderBook("ORDER_DATE","ORDER_NUM",orderId));
+		String orderDateFE =CoreFunctions.getElementText(searchInvoice.searchResultsOrderInvoiceDate(orderId));
+		System.out.println(orderDateBE+" -------------------- "+orderDateFE);
+		Assert.assertEquals(custCode, searchInvoice.searchResultsCustomerID(orderId).getText());
+		Assert.assertEquals(CoreFunctions.trim(custName), CoreFunctions.trim(searchInvoice.searchResultsCustomerName(orderId).getText()));
+		Assert.assertEquals(phoneNumber, searchInvoice.searchResultsPhoneNumber(orderId).getText());
+		Assert.assertEquals(orderDateBE,orderDateFE );
+	}
+	@Then("verify user is able to view Customer details by order based on scenario {int}")
+	public void verify_user_is_able_to_view_customer_details_by_order_based_on(int rowNo) throws Exception {
+		rowNo--;
+		testData=CoreFunctions.test("InvoiceData");
+		String orderId = testData.get(rowNo).get("OrderId").toString();
+
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName());
 		String custCode = Query.get_fields_From_ShOrderBook("CUST_CD","ORDER_NUM",orderId);

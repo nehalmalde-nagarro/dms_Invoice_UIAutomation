@@ -396,11 +396,19 @@ public class FinancialInfoStepDef {
 	    		CoreFunctions.moveToElement(loginPOM.spanButton("OK"));
 	    		CoreFunctions.click(loginPOM.spanButton("OK"), "OK");
 	    	}
+//	    	System.out.println(CoreFunctions.getElementAttribute(financialInfoPOM.clicktaxrateDropdown(),"aria-disabled"));
+//	    	if((CoreFunctions.getElementAttribute(financialInfoPOM.clicktaxrateDropdown(),"aria-disabled").equalsIgnoreCase("true")));
+//	    	{
+//	    		System.out.println("Hiii");
+//	    	}
 	    	
-	    	User_selects_tax_rate_for_scenario(rowNo);
+	    		
+	    		if(financialInfoPOM.getDropdownSelectedValue("TCSFlag").equals("Yes")) {
+		    		User_selects_tax_rate_for_scenario(rowNo);
+
 	    	User_selects_tdsAmount_for_scenario(rowNo);
 	    	User_selects_tcs_flag_for_Scenario(rowNo);
-	    	
+	    		}
 	    	
 	    	
 	    	

@@ -4,9 +4,9 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(features = { "src/test/java/com/dms/featurefiles/" }, glue = { "com.dms.stepdefinitions",
-		"com.dms.apphooks" }, plugin = { "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" },
-			tags="@BS27",
-		dryRun = false
+		"com.dms.apphooks" }, plugin = {
+				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" },
+		tags = "@BS87", dryRun = false
 
 )
 

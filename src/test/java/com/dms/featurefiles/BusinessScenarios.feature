@@ -1408,7 +1408,7 @@ Feature: BS
       |        22 |
 
   @BS34
-  Scenario Outline: BS 34 :  B2B - CGST - CSD - CCP - Extended Warranty -   Loyalty Acquistion  
+  Scenario Outline: BS 34 :  B2B - CGST - CSD - CCP - Extended Warranty -   Loyalty Acquistion
     Given User is on Home Page
     When User clicks on "Add Invoice" button
     And User click on Search Order
@@ -1449,9 +1449,8 @@ Feature: BS
     Examples: 
       | rowNumber |
       |        22 |
-      
-      
-       @BS35
+
+  @BS35
   Scenario Outline: BS 35 :  B2B - IGST - CSD
     Given User is on Home Page
     When User clicks on "Add Invoice" button
@@ -1483,7 +1482,7 @@ Feature: BS
 
     Examples: 
       | rowNumber |
-      |         24 |
+      |        24 |
 
   @BS36
   Scenario Outline: BS 36 :  B2B - IGST - CSD - CCP - Extended Warranty -   Exchange
@@ -1526,8 +1525,7 @@ Feature: BS
     #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
-      |         24 |
-
+      |        24 |
 
   @BS37
   Scenario Outline: BS 37 :  B2B - IGST - CSD  - Extended Warranty - CCP NoPack - Exchange  - Leasing
@@ -1571,7 +1569,7 @@ Feature: BS
     #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
-      |         25 |
+      |        25 |
 
   @BS38
   Scenario Outline: BS 38 :  B2B - IGST - CSD - CCP -  Exchange  - Finance
@@ -1654,9 +1652,8 @@ Feature: BS
 
     Examples: 
       | rowNumber |
-      |         24 |
-      
-      
+      |        24 |
+
   @BS40
   Scenario Outline: BS 40 :  B2B - IGST - CSD - CCP - Extended Warranty -  Scrapage
     Given User is on Home Page
@@ -1700,7 +1697,7 @@ Feature: BS
       |        24 |
 
   @BS41
-  Scenario Outline: BS 41 :  B2B - IGST - CSD - CCP - Extended Warranty -   Loyalty Acquistion  
+  Scenario Outline: BS 41 :  B2B - IGST - CSD - CCP - Extended Warranty -   Loyalty Acquistion
     Given User is on Home Page
     When User clicks on "Add Invoice" button
     And User click on Search Order
@@ -1741,8 +1738,8 @@ Feature: BS
     Examples: 
       | rowNumber |
       |        24 |
-      
-       @BS42
+
+  @BS42
   Scenario Outline: BS 42 :  B2C - CGST - CSD
     Given User is on Home Page
     When User clicks on "Add Invoice" button
@@ -2029,8 +2026,8 @@ Feature: BS
     Examples: 
       | rowNumber |
       |        26 |
-      
-          @BS49
+
+  @BS49
   Scenario Outline: BS 49 :  B2C - IGST - CSD
     Given User is on Home Page
     When User clicks on "Add Invoice" button
@@ -2317,9 +2314,1205 @@ Feature: BS
     Examples: 
       | rowNumber |
       |        28 |
+
+  @BS56
+  Scenario Outline: BS 56 :  B2C - IGST - CPC
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "No"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
+    Examples: 
+      | rowNumber |
+      |        30 |
+
+  @BS57
+  Scenario Outline: BS 57 :  B2C - IGST - CPC - CCP - Extended Warranty -  Exchange
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "No"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Exchange" from old car offers
+    And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
+    And User choose Loyalty Card for scenario <rowNumber>
+    And User click "OK" button on loyalty card popup
+
+    #And User clicks on "NEXT" button
+    #Then Verify user is navigated to "Charge Details"
+    Examples: 
+      | rowNumber |
+      |        30 |
+
+  @BS58
+  Scenario Outline: BS 58 :  B2C - IGST - CCP  - Extended Warranty -ccp No Pckg -  Exchange  - Leasing
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "No"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    When User selects payment type as "Leasing"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Exchange" from old car offers
+    And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
+    And User choose Loyalty Card for scenario <rowNumber>
+    And User click "OK" button on loyalty card popup
+
+    #And User clicks on "NEXT" button
+    #Then Verify user is navigated to "Charge Details"
+    Examples: 
+      | rowNumber |
+      |        31 |
+
+  @BS59
+  Scenario Outline: BS 59:  B2C - IGST - CPC - CCP -  Exchange  - Finance
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "No"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    When User selects payment type as "Finance"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Exchange" from old car offers
+    And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
+    And User choose Loyalty Card for scenario <rowNumber>
+    And User click "OK" button on loyalty card popup
+
+    #And User clicks on "NEXT" button
+    #Then Verify user is navigated to "Charge Details"
+    Examples: 
+      | rowNumber |
+      |        30 |
+
+  @BS60
+  Scenario Outline: BS 60 :  B2C - IGST - CPC - Extended Warranty - ccp-- Cash
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "No"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    When User selects payment type as "Cash"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
+    Examples: 
+      | rowNumber |
+      |        30 |
+
+  @BS61
+  Scenario Outline: BS 61 :  B2C - IGST - CPC - CCP - Extended Warranty -  Scrapage
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "No"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Scrappage" from old car offers
+    And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+
+    #And User clicks on "OK" button
+    #And User clicks on "NEXT" button
+    #Then Verify user is navigated to "Charge Details"
+    Examples: 
+      | rowNumber |
+      |        30 |
+
+  @BS62
+  Scenario Outline: BS 62 :  B2C - IGST - CPC - CCP - Extended Warranty -   Loyalty Bonus Benefits
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "No"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Loyalty/Acquisition Bonus" from old car offers
+    And Click on "LOYALTY/ACQUISITION DETAILS" tab on Additional Details
+    And user filled all details on Loyalty Bonus Benefits popup based on Vin Search for scenario <rowNumber>
+    And User clicks on "OK" button
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
+    Examples: 
+      | rowNumber |
+      |        30 |
+
+  @BS63
+  Scenario Outline: BS 63 :  B2B - IGST - CPC
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "Yes"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
+    Examples: 
+      | rowNumber |
+      |        32 |
+
+  @BS64
+  Scenario Outline: BS 64 :  B2B - IGST - CPC - CCP - Extended Warranty -   Exchange
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "Yes"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Exchange" from old car offers
+    And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
+    And User choose Loyalty Card for scenario <rowNumber>
+    And User click "OK" button on loyalty card popup
+
+    #And User clicks on "NEXT" button
+    #Then Verify user is navigated to "Charge Details"
+    Examples: 
+      | rowNumber |
+      |        32 |
+
+  @BS65
+  Scenario Outline: BS 65 :  B2B - IGST - CPC  - Extended Warranty - CCP NoPack - Exchange  - Leasing
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "Yes"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    When User selects payment type as "Leasing"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Exchange" from old car offers
+    And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
+    And User choose Loyalty Card for scenario <rowNumber>
+    And User click "OK" button on loyalty card popup
+
+    #And User clicks on "NEXT" button
+    #Then Verify user is navigated to "Charge Details"
+    Examples: 
+      | rowNumber |
+      |        33 |
+
+  @BS66
+  Scenario Outline: BS 66 :  B2B - IGST - CPC - CCP -  Exchange  - Finance
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "Yes"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    When User selects payment type as "Finance"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Exchange" from old car offers
+    And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
+    And User choose Loyalty Card for scenario <rowNumber>
+    And User click "OK" button on loyalty card popup
+
+    #And User clicks on "NEXT" button
+    #Then Verify user is navigated to "Charge Details"
+    Examples: 
+      | rowNumber |
+      |        32 |
+
+  @BS67
+  Scenario Outline: BS 67 :  B2B - IGST - CPC - Extended Warranty - ccp-  Cash
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "Yes"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    When User selects payment type as "Cash"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
+    Examples: 
+      | rowNumber |
+      |        32 |
+
+  @BS68
+  Scenario Outline: BS 68 :  B2B - IGST - CPC - CCP - Extended Warranty -  Scrapage
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "Yes"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Scrappage" from old car offers
+    And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+
+    #And User clicks on "OK" button
+    #And User clicks on "NEXT" button
+    #Then Verify user is navigated to "Charge Details"
+    Examples: 
+      | rowNumber |
+      |        32 |
+
+  @BS69
+  Scenario Outline: BS 69 :  B2B - IGST - CPC - CCP - Extended Warranty -   Loyalty Acquistion
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "Yes"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Loyalty/Acquisition Bonus" from old car offers
+    And Click on "LOYALTY/ACQUISITION DETAILS" tab on Additional Details
+    And user filled all details on Loyalty Bonus Benefits popup based on Vin Search for scenario <rowNumber>
+    And User clicks on "OK" button
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
+    Examples: 
+      | rowNumber |
+      |        32 |
+
+  @BS70
+  Scenario Outline: BS 70 :  B2C - CGST - CPC
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "No"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
+    Examples: 
+      | rowNumber |
+      |        34 |
+
+  @BS71
+  Scenario Outline: BS 71 :  B2C - CGST - CPC - CCP - Extended Warranty -  Exchange
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "No"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Exchange" from old car offers
+    And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
+    And User choose Loyalty Card for scenario <rowNumber>
+    And User click "OK" button on loyalty card popup
+
+    #And User clicks on "NEXT" button
+    #Then Verify user is navigated to "Charge Details"
+    Examples: 
+      | rowNumber |
+      |        34 |
+
+  @BS72
+  Scenario Outline: BS 72 :  B2C - CGST - CPC  - Extended Warranty -ccp No Pckg -  Exchange  - Leasing
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "No"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    When User selects payment type as "Leasing"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Exchange" from old car offers
+    And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
+    And User choose Loyalty Card for scenario <rowNumber>
+    And User click "OK" button on loyalty card popup
+
+    #And User clicks on "NEXT" button
+    #Then Verify user is navigated to "Charge Details"
+    Examples: 
+      | rowNumber |
+      |        35 |
+
+  @BS73
+  Scenario Outline: BS 73:  B2C - CGST - CPC - CCP -  Exchange  - Finance
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "No"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    When User selects payment type as "Finance"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Exchange" from old car offers
+    And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
+    And User choose Loyalty Card for scenario <rowNumber>
+    And User click "OK" button on loyalty card popup
+
+    #And User clicks on "NEXT" button
+    #Then Verify user is navigated to "Charge Details"
+    Examples: 
+      | rowNumber |
+      |        34 |
+
+  @BS74
+  Scenario Outline: BS 74 :  B2C - CGST - CPC - Extended Warranty - ccp-- Cash
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "No"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    When User selects payment type as "Cash"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
+    Examples: 
+      | rowNumber |
+      |        34 |
+
+  @BS75
+  Scenario Outline: BS 75 :  B2C - CGST - CPC - CCP - Extended Warranty -  Scrapage
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "No"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Scrappage" from old car offers
+    And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+
+    #And User clicks on "OK" button
+    #And User clicks on "NEXT" button
+    #Then Verify user is navigated to "Charge Details"
+    Examples: 
+      | rowNumber |
+      |        34 |
+
+  @BS76
+  Scenario Outline: BS 76 :  B2C - CGST - CPC - CCP - Extended Warranty -   Loyalty Bonus Benefits
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "No"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Loyalty/Acquisition Bonus" from old car offers
+    And Click on "LOYALTY/ACQUISITION DETAILS" tab on Additional Details
+    And user filled all details on Loyalty Bonus Benefits popup based on Vin Search for scenario <rowNumber>
+    And User clicks on "OK" button
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
+    Examples: 
+      | rowNumber |
+      |        34 |
+
+  @BS77
+  Scenario Outline: BS 77 :  B2B - CGST - CPC
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "Yes"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
+    Examples: 
+      | rowNumber |
+      |        36 |
+
+  @BS78
+  Scenario Outline: BS 78 :  B2B - CGST - CPC - CCP - Extended Warranty -   Exchange
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "Yes"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Exchange" from old car offers
+    And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
+    And User choose Loyalty Card for scenario <rowNumber>
+    And User click "OK" button on loyalty card popup
+
+    #And User clicks on "NEXT" button
+    #Then Verify user is navigated to "Charge Details"
+    Examples: 
+      | rowNumber |
+      |        36 |
+
+  @BS79
+  Scenario Outline: BS 79 :  B2B - CGST - CPC  - Extended Warranty - CCP NoPack - Exchange  - Leasing
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "Yes"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    When User selects payment type as "Leasing"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Exchange" from old car offers
+    And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
+    And User choose Loyalty Card for scenario <rowNumber>
+    And User click "OK" button on loyalty card popup
+
+    #And User clicks on "NEXT" button
+    #Then Verify user is navigated to "Charge Details"
+    Examples: 
+      | rowNumber |
+      |        37 |
+
+  @BS80
+  Scenario Outline: BS 80 :  B2B - CGST - CPC - CCP -  Exchange  - Finance
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "Yes"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    When User selects payment type as "Finance"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Exchange" from old car offers
+    And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
+    And User choose Loyalty Card for scenario <rowNumber>
+    And User click "OK" button on loyalty card popup
+
+    #And User clicks on "NEXT" button
+    #Then Verify user is navigated to "Charge Details"
+    Examples: 
+      | rowNumber |
+      |        36 |
+
+  @BS81
+  Scenario Outline: BS 81 :  B2B - CGST - CPC - Extended Warranty - ccp -  Cash
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "Yes"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    When User selects payment type as "Cash"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
+    Examples: 
+      | rowNumber |
+      |        36 |
+
+  @BS82
+  Scenario Outline: BS 82 :  B2B - CGST - CSD - CPC - Extended Warranty -  Scrapage
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "Yes"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Scrappage" from old car offers
+    And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+
+    #And User clicks on "OK" button
+    #And User clicks on "NEXT" button
+    #Then Verify user is navigated to "Charge Details"
+    Examples: 
+      | rowNumber |
+      |        36 |
+
+  @BS83
+  Scenario Outline: BS 83 :  B2B - CGST - CPC - CCP - Extended Warranty -   Loyalty Acquistion
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "Yes"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Loyalty/Acquisition Bonus" from old car offers
+    And Click on "LOYALTY/ACQUISITION DETAILS" tab on Additional Details
+    And user filled all details on Loyalty Bonus Benefits popup based on Vin Search for scenario <rowNumber>
+    And User clicks on "OK" button
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
+    Examples: 
+      | rowNumber |
+      |        36 |
+
+  @BS84
+  Scenario Outline: BS 84: Validate the count of orders dispalyed on UI and backend (ST_ALLOT)
+    Given User is on Home Page
+    When user search by "<SearchParam>"
+    And user clicks on search button
+    Then verify count of total count of records
+
+    Examples: 
+      | SearchParam |
+      | ORDER       |
+
+  @BS85
+  Scenario Outline: BS 85: Validate the latest orders should come 1st in search by order page
+    Given User is on Home Page
+    When user search by "<SearchParam>"
+    And user clicks on search button
+    Then verify user is able to view all Customer details for search by order
+
+    Examples: 
+      | SearchParam |
+      | ORDER       |
+
+  @BS86
+  Scenario Outline: BS 86: Validate if dealer is able filter search by order based on Order ID
+    Given User is on Home Page
+    When user search by "<SearchParam>"
+    And user enters Order Id for scenario <rowNo>
+    And user clicks on search button
+    Then verify user is able to view Customer details by order based on scenario <rowNo>
+
+    Examples: 
+      | rowNo | SearchParam |
+      |    38 | ORDER       |
+      |    39 | ORDER       |
+      |    40 | ORDER       |
       
-      
-      
-      
-      
-      
+      @BS87
+    Scenario Outline: BS 87 :  For cancel and booked status Order should not display on UI
+    Given User is on Home Page
+    When user search by "<SearchParam>"
+   And user enters Order Id for scenario <rowNo>
+    And user clicks on search button
+    Then Verify if "No Records Found." text showing
+      Examples: 
+      | rowNo | SearchParam |
+      |    41 | ORDER       |
+      |    42 | ORDER       |

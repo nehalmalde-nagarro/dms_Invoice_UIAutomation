@@ -18,7 +18,7 @@ Feature: Search by Order or Invoice on Dashboard Page
       | SearchParam |
       | ORDER       |
       
-   Scenario Outline: Validate if dealer is able to view all order deatils on click on search button
+   Scenario Outline: Validate count of all order deatils on click on search button
     Given User is on Home Page
     When user search by "<SearchParam>"
     And user clicks on search button
