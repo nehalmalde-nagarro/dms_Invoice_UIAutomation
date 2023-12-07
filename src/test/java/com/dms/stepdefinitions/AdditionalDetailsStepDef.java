@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.core.Core;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
@@ -433,4 +434,48 @@ Assert.assertEquals(additionalDetailsPOM.chassisNum().getAttribute("disabled"), 
 		CoreFunctions.click(additionalDetailsPOM.firstOptionFromPopup(), "choose first option on popup");
 	}
 	
+	@When("Enter reg Num for {string} for scenario {int}")
+	public void enterRegNum(String option,int rowNo ) {
+		testData = CoreFunctions.test("InvoiceData");
+
+		rowNo--;
+		String Text="";
+		if(option.equalsIgnoreCase("Exchange")) {
+			System.out.println("inside if");
+			Text = testData.get(rowNo).get("RegNumExchnage").toString();
+		}
+		else if(option.equalsIgnoreCase("Scrappage")) {
+			System.out.println("inside else");
+			System.out.println(rowNo);
+			 Text = testData.get(rowNo).get("RegNumScrapge").toString();
+		}
+		
+		System.out.println(Text);
+        CoreFunctions.setText(additionalDetailsPOM.enterRegNum(), Text);
+
+	}
+	@When("User choose old vehicle for {string} for scenario {int}")
+	public void userChosse(String option,int rowNo) {
+		rowNo--;
+		String Text="";
+		if(option.equalsIgnoreCase("Exchange")) {
+			Text = testData.get(rowNo).get("RegNumExchnage").toString();
+		}
+		else if(option.equalsIgnoreCase("Scrappage")) {
+			 Text = testData.get(rowNo).get("RegNumScrapge").toString();
+		}
+		CoreFunctions.click(additionalDetailsPOM.chooseVehicleOnVehicalDetailsTab(Text), Text);
+	}
+	
+	@When("Choose Relation for scenario {int}")
+	public void choose_Relation(int rowNo) {
+		
+		rowNo--;
+		CoreFunctions.click(additionalDetailsPOM.relationDropdownOnOldVehileDetials(), "relation");
+		String text = AddInvoiceStepDef.testData.get(rowNo).get("Relation").toString();
+		CoreFunctions.click(financialInfoPOM.chooseFromDropdown(text), text);
+		
+	}
+	
 }
+

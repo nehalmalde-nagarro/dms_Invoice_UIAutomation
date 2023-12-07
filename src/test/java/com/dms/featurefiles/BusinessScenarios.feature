@@ -77,9 +77,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+    And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |         8 |
@@ -288,10 +294,13 @@ Feature: BS
     Then Verify user is navigated to "Loyalty"
     And User selects the "Scrappage" from old car offers
     And Click on "OLD VEHICLE DETAILS" tab on Additional Details
-
-    #And User clicks on "OK" button
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
+    And Enter reg Num for "Scrappage" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Scrappage" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |         8 |
@@ -332,9 +341,16 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
+
     Examples: 
       | rowNumber |
       |        11 |
@@ -376,9 +392,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        12 |
@@ -419,9 +441,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        13 |
@@ -500,10 +528,13 @@ Feature: BS
     Then Verify user is navigated to "Loyalty"
     And User selects the "Scrappage" from old car offers
     And Click on "OLD VEHICLE DETAILS" tab on Additional Details
-
-    #And User clicks on "OK" button
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
+    And Enter reg Num for "Scrappage" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Scrappage" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        11 |
@@ -654,9 +685,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        14 |
@@ -698,9 +735,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        15 |
@@ -741,9 +784,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        14 |
@@ -822,10 +871,13 @@ Feature: BS
     Then Verify user is navigated to "Loyalty"
     And User selects the "Scrappage" from old car offers
     And Click on "OLD VEHICLE DETAILS" tab on Additional Details
-
-    #And User clicks on "OK" button
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
+    And Enter reg Num for "Scrappage" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Scrappage" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        14 |
@@ -942,9 +994,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        16 |
@@ -987,8 +1045,15 @@ Feature: BS
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
+    And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
     Examples: 
       | rowNumber |
       |        17 |
@@ -1029,9 +1094,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        18 |
@@ -1110,10 +1181,14 @@ Feature: BS
     Then Verify user is navigated to "Loyalty"
     And User selects the "Scrappage" from old car offers
     And Click on "OLD VEHICLE DETAILS" tab on Additional Details
-
-    #And User clicks on "OK" button
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Scrappage" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Scrappage" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        16 |
@@ -1231,9 +1306,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        22 |
@@ -1275,9 +1356,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        23 |
@@ -1318,9 +1405,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        22 |
@@ -1399,10 +1492,13 @@ Feature: BS
     Then Verify user is navigated to "Loyalty"
     And User selects the "Scrappage" from old car offers
     And Click on "OLD VEHICLE DETAILS" tab on Additional Details
-
-    #And User clicks on "OK" button
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
+    And Enter reg Num for "Scrappage" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Scrappage" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        22 |
@@ -1520,9 +1616,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        24 |
@@ -1565,8 +1667,15 @@ Feature: BS
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
+     And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
     Examples: 
       | rowNumber |
       |        25 |
@@ -1607,9 +1716,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        24 |
@@ -1688,10 +1803,13 @@ Feature: BS
     Then Verify user is navigated to "Loyalty"
     And User selects the "Scrappage" from old car offers
     And Click on "OLD VEHICLE DETAILS" tab on Additional Details
-
-    #And User clicks on "OK" button
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
+    And Enter reg Num for "Scrappage" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Scrappage" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        24 |
@@ -1808,9 +1926,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        26 |
@@ -1852,9 +1976,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        27 |
@@ -1895,9 +2025,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        26 |
@@ -1975,11 +2111,14 @@ Feature: BS
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
     And User selects the "Scrappage" from old car offers
-    And Click on "OLD VEHICLE DETAILS" tab on Additional Details
-
-    #And User clicks on "OK" button
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
+   And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Scrappage" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Scrappage" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        26 |
@@ -2096,9 +2235,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        28 |
@@ -2140,9 +2285,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        29 |
@@ -2183,9 +2334,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        28 |
@@ -2263,11 +2420,14 @@ Feature: BS
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
     And User selects the "Scrappage" from old car offers
-    And Click on "OLD VEHICLE DETAILS" tab on Additional Details
-
-    #And User clicks on "OK" button
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
+     And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Scrappage" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Scrappage" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        28 |
@@ -2384,9 +2544,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        30 |
@@ -2428,9 +2594,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        31 |
@@ -2471,9 +2643,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        30 |
@@ -2552,10 +2730,14 @@ Feature: BS
     Then Verify user is navigated to "Loyalty"
     And User selects the "Scrappage" from old car offers
     And Click on "OLD VEHICLE DETAILS" tab on Additional Details
-
-    #And User clicks on "OK" button
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Scrappage" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Scrappage" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        30 |
@@ -2673,9 +2855,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        32 |
@@ -2717,9 +2905,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        33 |
@@ -2760,9 +2954,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        32 |
@@ -2841,10 +3041,14 @@ Feature: BS
     Then Verify user is navigated to "Loyalty"
     And User selects the "Scrappage" from old car offers
     And Click on "OLD VEHICLE DETAILS" tab on Additional Details
-
-    #And User clicks on "OK" button
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Scrappage" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Scrappage" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        32 |
@@ -2961,9 +3165,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        34 |
@@ -3005,9 +3215,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        35 |
@@ -3048,9 +3264,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        34 |
@@ -3129,10 +3351,13 @@ Feature: BS
     Then Verify user is navigated to "Loyalty"
     And User selects the "Scrappage" from old car offers
     And Click on "OLD VEHICLE DETAILS" tab on Additional Details
-
-    #And User clicks on "OK" button
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
+    And Enter reg Num for "Scrappage" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Scrappage" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        34 |
@@ -3250,9 +3475,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        36 |
@@ -3294,9 +3525,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        37 |
@@ -3337,9 +3574,15 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        36 |
@@ -3418,10 +3661,14 @@ Feature: BS
     Then Verify user is navigated to "Loyalty"
     And User selects the "Scrappage" from old car offers
     And Click on "OLD VEHICLE DETAILS" tab on Additional Details
-
-    #And User clicks on "OK" button
-    #And User clicks on "NEXT" button
-    #Then Verify user is navigated to "Charge Details"
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Scrappage" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Scrappage" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
     Examples: 
       | rowNumber |
       |        36 |
@@ -3516,3 +3763,625 @@ Feature: BS
       | rowNo | SearchParam |
       |    41 | ORDER       |
       |    42 | ORDER       |
+      
+       @BS88
+  Scenario Outline: BS 88 :  B2B - IGST - BSF
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "Yes"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
+    Examples: 
+      | rowNumber |
+      |        43 |
+
+  @BS89
+  Scenario Outline: BS 89 :  B2B - IGST - BSF - CCP - Extended Warranty -   Exchange
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "Yes"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Exchange" from old car offers
+    And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
+    And User choose Loyalty Card for scenario <rowNumber>
+    And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
+    Examples: 
+      | rowNumber |
+      |        43 |
+
+  @BS90
+  Scenario Outline: BS 90 :  B2B - IGST - BSF  - Extended Warranty - CCP NoPack - Exchange  - Leasing
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "Yes"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    When User selects payment type as "Leasing"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Exchange" from old car offers
+    And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
+    And User choose Loyalty Card for scenario <rowNumber>
+    And User click "OK" button on loyalty card popup
+
+     And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
+    Examples: 
+      | rowNumber |
+      |        44 |
+
+  @BS91
+  Scenario Outline: BS 91 :  B2B - IGST - BSF - CCP -  Exchange  - Finance
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "Yes"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    When User selects payment type as "Finance"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Exchange" from old car offers
+    And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
+    And User choose Loyalty Card for scenario <rowNumber>
+    And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
+    Examples: 
+      | rowNumber |
+      |        43 |
+
+  @BS92
+  Scenario Outline: BS 92 :  B2B - IGST - BSF - Extended Warranty - ccp-  Cash
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "Yes"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    When User selects payment type as "Cash"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
+    Examples: 
+      | rowNumber |
+      |        43 |
+
+  @BS93
+  Scenario Outline: BS 93 :  B2B - IGST - BSF - CCP - Extended Warranty -  Scrapage
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "Yes"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Scrappage" from old car offers
+    And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Scrappage" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Scrappage" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+    Examples: 
+      | rowNumber |
+      |        43 |
+
+  @BS94
+  Scenario Outline: BS 94 :  B2B - IGST - BSF - CCP - Extended Warranty -   Loyalty Acquistion
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "Yes"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Loyalty/Acquisition Bonus" from old car offers
+    And Click on "LOYALTY/ACQUISITION DETAILS" tab on Additional Details
+    And user filled all details on Loyalty Bonus Benefits popup based on Vin Search for scenario <rowNumber>
+    And User clicks on "OK" button
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
+    Examples: 
+      | rowNumber |
+      |        43 |
+      
+       @BS95
+  Scenario Outline: BS 95 :  B2C - IGST - BSF
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "No"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
+    Examples: 
+      | rowNumber |
+      |        45 |
+
+  @BS96
+  Scenario Outline: BS 96 :  B2C - IGST - BSF - CCP - Extended Warranty -  Exchange
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "No"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Exchange" from old car offers
+    And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
+    And User choose Loyalty Card for scenario <rowNumber>
+    And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
+    Examples: 
+      | rowNumber |
+      |        45 |
+
+  @BS97
+  Scenario Outline: BS 97 :  B2C - IGST - BSF  - Extended Warranty -ccp No Pckg -  Exchange  - Leasing
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "No"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    When User selects payment type as "Leasing"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Exchange" from old car offers
+    And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
+    And User choose Loyalty Card for scenario <rowNumber>
+    And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
+    Examples: 
+      | rowNumber |
+      |        46 |
+
+  @BS98
+  Scenario Outline: BS 98:  B2C - IGST - BSF - CCP -  Exchange  - Finance
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "No"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    When User selects payment type as "Finance"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Exchange" from old car offers
+    And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
+    And User choose Loyalty Card for scenario <rowNumber>
+    And User click "OK" button on loyalty card popup
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
+    Examples: 
+      | rowNumber |
+      |      45   |
+
+  @BS99
+  Scenario Outline: BS 99 :  B2C - IGST - BSF - Extended Warranty - ccp-- Cash
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "No"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    When User selects payment type as "Cash"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
+    Examples: 
+      | rowNumber |
+      |        45 |
+
+  @BS100
+  Scenario Outline: BS 100 :  B2C - IGST - BSF - CCP - Extended Warranty -  Scrapage
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "No"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Scrappage" from old car offers
+    And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+ And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Scrappage" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Scrappage" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+    Examples: 
+      | rowNumber |
+      |        45 |
+
+  @BS101
+  Scenario Outline: BS 101 :  B2C - IGST - BSF - CCP - Extended Warranty -   Loyalty Bonus Benefits
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "No"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Loyalty/Acquisition Bonus" from old car offers
+    And Click on "LOYALTY/ACQUISITION DETAILS" tab on Additional Details
+    And user filled all details on Loyalty Bonus Benefits popup based on Vin Search for scenario <rowNumber>
+    And User clicks on "OK" button
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
+    Examples: 
+      | rowNumber |
+      |        45 |
+      

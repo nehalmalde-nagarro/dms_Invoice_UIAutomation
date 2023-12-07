@@ -301,9 +301,9 @@ Feature: Addtional Details Tab of Add Invoice
     Examples: 
       | rowNumber | invalidDataRowNumber |
       |         4 |                    6 |
-      
-      @run
-     Scenario Outline: Loyalty Exchange / Additional Car Benefits validation of old car offer
+
+  @run
+  Scenario Outline: Loyalty Exchange / Additional Car Benefits validation of old car offer
     Given User is on Home Page
     When User clicks on "Add Invoice" button
     And User click on Search Order
@@ -339,21 +339,22 @@ Feature: Addtional Details Tab of Add Invoice
     Then Verify "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" pop up button is displayed
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
-    And User click "OK" button on loyalty card popup   
+    And User click "OK" button on loyalty card popup
     Then Verify required field error for "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" is not displayed
     Then Verify Loyalty Exchnage Benefit value
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
-    And User click "CLEAR" button on loyalty card popup   
+    And User click "CLEAR" button on loyalty card popup
     Then Verify if "OK" button is disable
     And Click on Close popup icon
     Then Verify required field error for "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" is displayed
     Then Verify if "NEXT" button is disable
-    
+
     Examples: 
       | rowNumber | invalidDataRowNumber |
       |         7 |                    6 |
-      @mssf
-   Scenario Outline: Validate the MSSF Other offer 
+
+  @mssf
+  Scenario Outline: Validate the MSSF Other offer
     Given User is on Home Page
     When User clicks on "Add Invoice" button
     And User click on Search Order
@@ -386,12 +387,10 @@ Feature: Addtional Details Tab of Add Invoice
     And User selects only the "MSSF Offer" from other offers
     Then Verify "MSSF OFFER" pop up button is displayed
     And Click on "MSSF OFFER" tab on Additional Details
-    And Choose Mssf offer from popup 
+    And Choose Mssf offer from popup
     And User clicks on "OK" button on popup
     Then Verify required field error for "MSSF OFFER" is displayed
-    
-    
-    
+
     #Then Verify "MDS OFFER" pop up button is not displayed
     #And User diselect the "MSSF Offer" from other offers
     #When User selects only the "MDS Offer" from other offers
@@ -401,8 +400,99 @@ Feature: Addtional Details Tab of Add Invoice
     #When User selects both "MSSF Offer" and "MDS Offer" from other offers
     #Then Verify "MDS OFFER" pop up button is displayed
     #Then Verify "MSSF OFFER" pop up button is displayed
+    Examples: 
+      | rowNumber |
+      |         4 |
+
+  Scenario Outline: Exchnage fulll scenario
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "Yes"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Exchange" from old car offers
+    And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
+    And User choose Loyalty Card for scenario <rowNumber>
+    And User click "OK" button on loyalty card popup
+    And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
 
     Examples: 
       | rowNumber |
-      |         4 |  
-      
+      |         8 |
+
+  Scenario Outline: Old vehcile details full
+    Given User is on Home Page
+    When User clicks on "Add Invoice" button
+    And User click on Search Order
+    And User enters OrderId from scenario <rowNumber>
+    And User clicks on "SEARCH" button
+    And User select from displayed orders for scenario <rowNumber>
+    And User clicks on "OK" button
+    And if user selects B2B Customer as "Yes"
+    And user enters Bill GSTN field from <rowNumber>
+    And user enters all required fields from <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Vehicle Info"
+    And user selects Owners Manual Preference for scenario <rowNumber>
+    And user selects Interested in Loyalty Card, Type of card, Reason for scenario <rowNumber>
+    And user clicks on Preferred SRV Dealer popup
+    And user selects state for scenario <rowNumber>
+    And user selects city for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And selects the dealer for scenario <rowNumber> from searched results
+    And User clicks on "OK" button
+    And user selects Extended Warranty for scenario <rowNumber>
+    And User clicks on CCP Sale popup
+    And Verify if benefit is already selected or select benefit from <rowNumber>
+    And User clicks on "OK" button
+    Then Verify if ccp benefit is selected
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Financial Info"
+    And User selects all required fields on financial info for scenario <rowNumber>
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Loyalty"
+    And User selects the "Scrappage" from old car offers
+    And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Scrappage" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Scrappage" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User clicks on "NEXT" button
+    Then Verify user is navigated to "Charge Details"
+
+    Examples: 
+      | rowNumber |
+      |         8 |

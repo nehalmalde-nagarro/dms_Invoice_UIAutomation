@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Cucumber UI with TestNG Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>103/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Dec 05 15:24:30 IST 2023</td>
+<td>Started on:</td><td>Wed Dec 06 20:53:17 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>45 seconds (45323 ms)</td>
+<tr><td>Total time:</td><td>10598 seconds (10598532 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -122,8 +122,8 @@ function toggleAllBoxes() {
 	at io.cucumber.testng.AbstractTestNGCucumberTests.tearDownClass(AbstractTestNGCucumberTests.java:57)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	... 69 more
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1828787392", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1828787392'><pre>com.google.gson.JsonIOException: Failed making field &apos;java.lang.Throwable#detailMessage&apos; accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.
+... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1736881361", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1736881361'><pre>com.google.gson.JsonIOException: Failed making field &apos;java.lang.Throwable#detailMessage&apos; accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.
 	at com.google.gson.internal.reflect.ReflectionHelper.makeAccessible(ReflectionHelper.java:38)
 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.getBoundFields(ReflectiveTypeAdapterFactory.java:286)
 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.create(ReflectiveTypeAdapterFactory.java:130)
@@ -205,6 +205,132 @@ Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field p
 <td>0</td>
 <td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
 </table><p>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 74 :  B2C - CGST - CPC - Extended Warranty - ccp-- Cash", "BS"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//mat-option//span[text()=&apos;Cash&apos;]&quot;}
+  (Session info: chrome=119.0.6045.200)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6633bcb959f62259b7ec34bf00d1499a, findElement {using=xpath, value=//mat-option//span[text()=&apos;Cash&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.200, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59907}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59907/devtoo..., se:cdpVersion: 119.0.6045.200, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6633bcb959f62259b7ec34bf00d1499a
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
+	at com.dms.pageobjects.AddInvoice_FinancialInfo.choosePaymentTypeDropdown(AddInvoice_FinancialInfo.java:38)
+	at com.dms.stepdefinitions.FinancialInfoStepDef.User_selects_payment_type_as(FinancialInfoStepDef.java:108)
+	at ✽.User selects payment type as &quot;Cash&quot;(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/BusinessScenarios.feature:3309)
+... Removed 5 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2060324453", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2060324453'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//mat-option//span[text()=&apos;Cash&apos;]&quot;}
+  (Session info: chrome=119.0.6045.200)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6633bcb959f62259b7ec34bf00d1499a, findElement {using=xpath, value=//mat-option//span[text()=&apos;Cash&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.200, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59907}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59907/devtoo..., se:cdpVersion: 119.0.6045.200, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6633bcb959f62259b7ec34bf00d1499a
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
+	at com.dms.pageobjects.AddInvoice_FinancialInfo.choosePaymentTypeDropdown(AddInvoice_FinancialInfo.java:38)
+	at com.dms.stepdefinitions.FinancialInfoStepDef.User_selects_payment_type_as(FinancialInfoStepDef.java:108)
+	at ✽.User selects payment type as &quot;Cash&quot;(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/BusinessScenarios.feature:3309)
+</pre></div></td>
+<td>137</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 41 :  B2B - IGST - CSD - CCP - Extended Warranty -   Loyalty Acquistion", "BS"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//mat-option//span[text()=&apos;Yes&apos;]&quot;}
+  (Session info: chrome=119.0.6045.200)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d6e7e510a866ebdc21ec0ecf5a3f3b44, findElement {using=xpath, value=//mat-option//span[text()=&apos;Yes&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.200, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58068}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58068/devtoo..., se:cdpVersion: 119.0.6045.200, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d6e7e510a866ebdc21ec0ecf5a3f3b44
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
+	at com.dms.pageobjects.AddInvoice_InvoiceDetailsPOM.options(AddInvoice_InvoiceDetailsPOM.java:186)
+	at com.dms.stepdefinitions.AddInvoiceStepDef.if_user_selects_b2b_customer_as(AddInvoiceStepDef.java:231)
+	at ✽.if user selects B2B Customer as &quot;Yes&quot;(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/BusinessScenarios.feature:1826)
+... Removed 5 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace478189372", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace478189372'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//mat-option//span[text()=&apos;Yes&apos;]&quot;}
+  (Session info: chrome=119.0.6045.200)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d6e7e510a866ebdc21ec0ecf5a3f3b44, findElement {using=xpath, value=//mat-option//span[text()=&apos;Yes&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.200, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58068}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58068/devtoo..., se:cdpVersion: 119.0.6045.200, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d6e7e510a866ebdc21ec0ecf5a3f3b44
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
+	at com.dms.pageobjects.AddInvoice_InvoiceDetailsPOM.options(AddInvoice_InvoiceDetailsPOM.java:186)
+	at com.dms.stepdefinitions.AddInvoiceStepDef.if_user_selects_b2b_customer_as(AddInvoiceStepDef.java:231)
+	at ✽.if user selects B2B Customer as &quot;Yes&quot;(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/BusinessScenarios.feature:1826)
+</pre></div></td>
+<td>96</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -213,14 +339,519 @@ Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field p
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 87 :  For cancel and booked status Order should not display on UI", "BS"</td>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 101 :  B2C - IGST - BSF - CCP - Extended Warranty -   Loyalty Bonus Benefits", "BS"</td>
 <td></td>
-<td>20</td>
+<td>109</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 1 :  B2B - IGST - Individual - CCP - Extended Warranty -   Exchange", "BS"</td>
+<td></td>
+<td>120</td>
 <td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
 <tr>
 <td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 87 :  For cancel and booked status Order should not display on UI", "BS"</td>
 <td></td>
+<td>19</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 28 :  B2B - CGST - CSD", "BS"</td>
+<td></td>
+<td>71</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 96 :  B2C - IGST - BSF - CCP - Extended Warranty -  Exchange", "BS"</td>
+<td></td>
+<td>106</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 6 :  B2B - IGST - Individual - CCP - Extended Warranty -  Scrapage", "BS"</td>
+<td></td>
+<td>111</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 68 :  B2B - IGST - CPC - CCP - Extended Warranty -  Scrapage", "BS"</td>
+<td></td>
+<td>119</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 55 :  B2C - IGST - CSD - CCP - Extended Warranty -   Loyalty Bonus Benefits", "BS"</td>
+<td></td>
+<td>124</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 67 :  B2B - IGST - CPC - Extended Warranty - ccp-  Cash", "BS"</td>
+<td></td>
+<td>92</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 20 :  B2B - CGST - Individual - CCP - Extended Warranty -   Loyalty Bonus Benefits", "BS"</td>
+<td></td>
+<td>121</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 44 :  B2C - CGST - CSD  - Extended Warranty -ccp No Pckg -  Exchange  - Leasing", "BS"</td>
+<td></td>
+<td>120</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 95 :  B2C - IGST - BSF", "BS"</td>
+<td></td>
+<td>84</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 97 :  B2C - IGST - BSF  - Extended Warranty -ccp No Pckg -  Exchange  - Leasing", "BS"</td>
+<td></td>
+<td>110</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 82 :  B2B - CGST - CSD - CPC - Extended Warranty -  Scrapage", "BS"</td>
+<td></td>
+<td>107</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 53 :  B2C - IGST - CSD - Extended Warranty - ccp-- Cash", "BS"</td>
+<td></td>
+<td>91</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 64 :  B2B - IGST - CPC - CCP - Extended Warranty -   Exchange", "BS"</td>
+<td></td>
+<td>119</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 87 :  For cancel and booked status Order should not display on UI", "BS"</td>
+<td></td>
+<td>18</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 15 :  B2B - CGST - Individual - CCP - Extended Warranty -   Exchange", "BS"</td>
+<td></td>
+<td>116</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 13 :  B2C - IGST - Individual", "BS"</td>
+<td></td>
+<td>83</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 39 :  B2B - IGST - CSD - Extended Warranty - ccp-  Cash", "BS"</td>
+<td></td>
+<td>91</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 56 :  B2C - IGST - CPC", "BS"</td>
+<td></td>
+<td>92</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 0 :  B2B - IGST - Individual", "BS"</td>
+<td></td>
+<td>102</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 69 :  B2B - IGST - CPC - CCP - Extended Warranty -   Loyalty Acquistion", "BS"</td>
+<td></td>
+<td>120</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 100 :  B2C - IGST - BSF - CCP - Extended Warranty -  Scrapage", "BS"</td>
+<td></td>
+<td>111</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 4 :  B2B - IGST - Individual - CCP -  Exchange  - Finance", "BS"</td>
+<td></td>
+<td>106</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 84: Validate the count of orders dispalyed on UI and backend (ST_ALLOT)", "BS"</td>
+<td></td>
+<td>38</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 52:  B2C - IGST - CSD - CCP -  Exchange  - Finance", "BS"</td>
+<td></td>
+<td>110</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 75 :  B2C - CGST - CPC - CCP - Extended Warranty -  Scrapage", "BS"</td>
+<td></td>
+<td>103</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 8 :  B2C - IGST - Individual  - Extended Warranty -ccp No Pckg -  Exchange  - Leasing", "BS"</td>
+<td></td>
+<td>119</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 86: Validate if dealer is able filter search by order based on Order ID", "BS"</td>
+<td></td>
 <td>23</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 54 :  B2C - IGST - CSD - CCP - Extended Warranty -  Scrapage", "BS"</td>
+<td></td>
+<td>111</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 11 :  B2C - IGST - Individual - CCP - Extended Warranty -  Scrapage", "BS"</td>
+<td></td>
+<td>111</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 19 :  B2B - CGST - Individual - CCP - Extended Warranty -  Scrapage", "BS"</td>
+<td></td>
+<td>111</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 12 :  B2C - IGST - Individual - CCP - Extended Warranty -   Loyalty Bonus Benefits", "BS"</td>
+<td></td>
+<td>121</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 5 :  B2B - IGST - Individual - Extended Warranty - ccp-  Cash", "BS"</td>
+<td></td>
+<td>91</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 72 :  B2C - CGST - CPC  - Extended Warranty -ccp No Pckg -  Exchange  - Leasing", "BS"</td>
+<td></td>
+<td>111</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 7 :  B2C - IGST - Individual - CCP - Extended Warranty -  Exchange", "BS"</td>
+<td></td>
+<td>117</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 47 :  B2C - CGST - CSD - CCP - Extended Warranty -  Scrapage", "BS"</td>
+<td></td>
+<td>92</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 57 :  B2C - IGST - CPC - CCP - Extended Warranty -  Exchange", "BS"</td>
+<td></td>
+<td>117</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 93 :  B2B - IGST - BSF - CCP - Extended Warranty -  Scrapage", "BS"</td>
+<td></td>
+<td>102</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 43 :  B2C - CGST - CSD - CCP - Extended Warranty -  Exchange", "BS"</td>
+<td></td>
+<td>100</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 76 :  B2C - CGST - CPC - CCP - Extended Warranty -   Loyalty Bonus Benefits", "BS"</td>
+<td></td>
+<td>112</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 85: Validate the latest orders should come 1st in search by order page", "BS"</td>
+<td></td>
+<td>16</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 48 :  B2C - CGST - CSD - CCP - Extended Warranty -   Loyalty Bonus Benefits", "BS"</td>
+<td></td>
+<td>103</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 32 :  B2B - CGST - CSD - Extended Warranty - ccp -  Cash", "BS"</td>
+<td></td>
+<td>91</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 90 :  B2B - IGST - BSF  - Extended Warranty - CCP NoPack - Exchange  - Leasing", "BS"</td>
+<td></td>
+<td>109</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 59:  B2C - IGST - CPC - CCP -  Exchange  - Finance", "BS"</td>
+<td></td>
+<td>116</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 99 :  B2C - IGST - BSF - Extended Warranty - ccp-- Cash", "BS"</td>
+<td></td>
+<td>86</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 27 :  B2C - CGST - Individual - CCP - Extended Warranty -   Loyalty Bonus Benefits", "BS"</td>
+<td></td>
+<td>122</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 34 :  B2B - CGST - CSD - CCP - Extended Warranty -   Loyalty Acquistion", "BS"</td>
+<td></td>
+<td>106</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 38 :  B2B - IGST - CSD - CCP -  Exchange  - Finance", "BS"</td>
+<td></td>
+<td>116</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 40 :  B2B - IGST - CSD - CCP - Extended Warranty -  Scrapage", "BS"</td>
+<td></td>
+<td>107</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 60 :  B2C - IGST - CPC - Extended Warranty - ccp-- Cash", "BS"</td>
+<td></td>
+<td>92</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 73:  B2C - CGST - CPC - CCP -  Exchange  - Finance", "BS"</td>
+<td></td>
+<td>108</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 21 :  B2C - CGST - Individual", "BS"</td>
+<td></td>
+<td>91</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 49 :  B2C - IGST - CSD", "BS"</td>
+<td></td>
+<td>84</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 51 :  B2C - IGST - CSD  - Extended Warranty -ccp No Pckg -  Exchange  - Leasing", "BS"</td>
+<td></td>
+<td>116</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 50 :  B2C - IGST - CSD - CCP - Extended Warranty -  Exchange", "BS"</td>
+<td></td>
+<td>113</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 9 :  B2C - IGST - Individual - CCP -  Exchange  - Finance", "BS"</td>
+<td></td>
+<td>115</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 77 :  B2B - CGST - CPC", "BS"</td>
+<td></td>
+<td>80</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 10 :  B2C - IGST - Individual - Extended Warranty - ccp-- Cash", "BS"</td>
+<td></td>
+<td>91</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 37 :  B2B - IGST - CSD  - Extended Warranty - CCP NoPack - Exchange  - Leasing", "BS"</td>
+<td></td>
+<td>114</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 30 :  B2B - CGST - CSD  - Extended Warranty - CCP NoPack - Exchange  - Leasing", "BS"</td>
+<td></td>
+<td>120</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 46 :  B2C - CGST - CSD - Extended Warranty - ccp-- Cash", "BS"</td>
+<td></td>
+<td>89</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 79 :  B2B - CGST - CPC  - Extended Warranty - CCP NoPack - Exchange  - Leasing", "BS"</td>
+<td></td>
+<td>109</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 45:  B2C - CGST - CSD - CCP -  Exchange  - Finance", "BS"</td>
+<td></td>
+<td>114</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 86: Validate if dealer is able filter search by order based on Order ID", "BS"</td>
+<td></td>
+<td>22</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 71 :  B2C - CGST - CPC - CCP - Extended Warranty -  Exchange", "BS"</td>
+<td></td>
+<td>113</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 94 :  B2B - IGST - BSF - CCP - Extended Warranty -   Loyalty Acquistion", "BS"</td>
+<td></td>
+<td>111</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 61 :  B2C - IGST - CPC - CCP - Extended Warranty -  Scrapage", "BS"</td>
+<td></td>
+<td>117</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 18 :  B2B - CGST - Individual - Extended Warranty - ccp -  Cash", "BS"</td>
+<td></td>
+<td>91</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 66 :  B2B - IGST - CPC - CCP -  Exchange  - Finance", "BS"</td>
+<td></td>
+<td>118</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 58 :  B2C - IGST - CCP  - Extended Warranty -ccp No Pckg -  Exchange  - Leasing", "BS"</td>
+<td></td>
+<td>120</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 17 :  B2B - CGST - Individual - CCP -  Exchange  - Finance", "BS"</td>
+<td></td>
+<td>117</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 31 :  B2B - CGST - CSD - CCP -  Exchange  - Finance", "BS"</td>
+<td></td>
+<td>117</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 70 :  B2C - CGST - CPC", "BS"</td>
+<td></td>
+<td>86</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 80 :  B2B - CGST - CPC - CCP -  Exchange  - Finance", "BS"</td>
+<td></td>
+<td>107</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 81 :  B2B - CGST - CPC - Extended Warranty - ccp -  Cash", "BS"</td>
+<td></td>
+<td>86</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 26 :  B2C - CGST - Individual - CCP - Extended Warranty -  Scrapage", "BS"</td>
+<td></td>
+<td>117</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 33 :  B2B - CGST - CSD - CCP - Extended Warranty -  Scrapage", "BS"</td>
+<td></td>
+<td>96</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 63 :  B2B - IGST - CPC", "BS"</td>
+<td></td>
+<td>88</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 98:  B2C - IGST - BSF - CCP -  Exchange  - Finance", "BS"</td>
+<td></td>
+<td>106</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 89 :  B2B - IGST - BSF - CCP - Extended Warranty -   Exchange", "BS"</td>
+<td></td>
+<td>107</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 78 :  B2B - CGST - CPC - CCP - Extended Warranty -   Exchange", "BS"</td>
+<td></td>
+<td>108</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 2 :  B2B - IGST - Individual - CCP - Extended Warranty -   Loyalty Bonus Benefits", "BS"</td>
+<td></td>
+<td>131</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 29 :  B2B - CGST - CSD - CCP - Extended Warranty -   Exchange", "BS"</td>
+<td></td>
+<td>102</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 16 :  B2B - CGST - Individual  - Extended Warranty - CCP NoPack - Exchange  - Leasing", "BS"</td>
+<td></td>
+<td>119</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 83 :  B2B - CGST - CPC - CCP - Extended Warranty -   Loyalty Acquistion", "BS"</td>
+<td></td>
+<td>112</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 25 :  B2C - CGST - Individual - Extended Warranty - ccp-- Cash", "BS"</td>
+<td></td>
+<td>91</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 86: Validate if dealer is able filter search by order based on Order ID", "BS"</td>
+<td></td>
+<td>23</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 42 :  B2C - CGST - CSD", "BS"</td>
+<td></td>
+<td>71</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 24:  B2C - CGST - Individual - CCP -  Exchange  - Finance", "BS"</td>
+<td></td>
+<td>116</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 35 :  B2B - IGST - CSD", "BS"</td>
+<td></td>
+<td>87</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 22 :  B2C - CGST - Individual - CCP - Extended Warranty -  Exchange", "BS"</td>
+<td></td>
+<td>119</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 88 :  B2B - IGST - BSF", "BS"</td>
+<td></td>
+<td>79</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 91 :  B2B - IGST - BSF - CCP -  Exchange  - Finance", "BS"</td>
+<td></td>
+<td>106</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 62 :  B2C - IGST - CPC - CCP - Extended Warranty -   Loyalty Bonus Benefits", "BS"</td>
+<td></td>
+<td>122</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 36 :  B2B - IGST - CSD - CCP - Extended Warranty -   Exchange", "BS"</td>
+<td></td>
+<td>119</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 65 :  B2B - IGST - CPC  - Extended Warranty - CCP NoPack - Exchange  - Leasing", "BS"</td>
+<td></td>
+<td>121</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 23 :  B2C - CGST - Individual  - Extended Warranty -ccp No Pckg -  Exchange  - Leasing", "BS"</td>
+<td></td>
+<td>120</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 14 :  B2B - CGST - Individual", "BS"</td>
+<td></td>
+<td>87</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 3 :  B2B - IGST - Individual  - Extended Warranty - CCP NoPack - Exchange  - Leasing", "BS"</td>
+<td></td>
+<td>110</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 92 :  B2B - IGST - BSF - Extended Warranty - ccp-  Cash", "BS"</td>
+<td></td>
+<td>93</td>
 <td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
 </table><p>
 </body>

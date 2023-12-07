@@ -33,6 +33,10 @@ public class AddInvoice_AdditionalDetailsPOM {
 	public WebElement regNum() {
 		return PageUtil.findBy(By.id("'formInput-'regNo"));
 	}
+
+	public WebElement enterRegNum() {
+		return PageUtil.findBy(By.xpath("//input[@placeholder='Enter Registration Number']"));
+	}
 	public WebElement policyTypeDropdown() {
 		return PageUtil.findBy(By.id("policyType"));
 	}
@@ -61,6 +65,9 @@ public class AddInvoice_AdditionalDetailsPOM {
 	}
 	public WebElement relationDropdown() {
 		return PageUtil.findBy(By.id("relation"));
+	}
+	public WebElement relationDropdownOnOldVehileDetials() {
+		return PageUtil.findBy(By.xpath("//mat-label[contains(text(),'RELATIONSHIP')]//parent::label//parent::div//mat-select//div"));
 	}
        public WebElement oldCarCustomerMiName() {
 		return PageUtil.findBy(By.id("'formInput-'oldCarCustomerMiName"));

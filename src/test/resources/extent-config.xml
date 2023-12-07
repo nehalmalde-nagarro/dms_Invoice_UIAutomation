@@ -23,10 +23,10 @@
         <enableOfflineMode>false</enableOfflineMode>
         
 		<!-- title of the document -->
-		<documentTitle>Extent</documentTitle>
+		<documentTitle>Extent Report</documentTitle>
 		<!-- report name - displayed at top-nav -->
 
-		<reportName>MSIL MICRM Automation Report</reportName>
+		<reportName>MSIL DMC POC Automation Test Suite Report</reportName>
 		<!-- location of charts in the test view -->
 
 		<!-- top, bottom -->
