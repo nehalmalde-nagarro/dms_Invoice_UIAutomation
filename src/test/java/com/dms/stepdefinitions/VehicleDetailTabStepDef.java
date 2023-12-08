@@ -22,8 +22,10 @@ import io.cucumber.java.en.When;
 public class VehicleDetailTabStepDef {
 	LoginPOM loginPOM = new LoginPOM();
 	AddInvoice_AdditionalDetailsPOM additionalDetailsPOM = new AddInvoice_AdditionalDetailsPOM();
-
-
+    public static String ccpCode="";
+    public static String ccpDesc="";
+    public static String ccpTotal="";
+  
 
 	AddInvoice_VehicleDetailsPOM vehicleDetailsPOM=new AddInvoice_VehicleDetailsPOM();
 	public static List<Map<String, String>> testData = new ArrayList<>();
@@ -263,8 +265,14 @@ public void user_Click_ccp_sale() throws InterruptedException {
 			String text = AddInvoiceStepDef.testData.get(rowNo).get("CCPPackageCodeWithEW").toString();
 			CoreFunctions.click(additionalDetailsPOM.chooseCardFromPopup(text), text);
 		}
-
 		}
+		
+		ccpCode=CoreFunctions.trim(CoreFunctions.getElementText(vehicleDetailsPOM.selectedCCPCode()));
+		ccpDesc=CoreFunctions.trim(CoreFunctions.getElementText(vehicleDetailsPOM.selectedCCPDesc()));
+        ccpTotal=CoreFunctions.trim(CoreFunctions.getElementText(vehicleDetailsPOM.ccpTotal()));
+//         System.out.println("ccpCode"+ccpCode+"ccpDesc"+ccpDesc+"ccpTotal"+ccpTotal);
+
+		
 		
 	}
 	

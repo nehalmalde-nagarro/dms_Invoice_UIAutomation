@@ -24,6 +24,8 @@ public class FinancialInfoStepDef {
 	public static List<Map<String, String>> testData = new ArrayList<>();
 	AddInvoice_FinancialInfo financialInfoPOM = new AddInvoice_FinancialInfo();
 	LoginPOM loginPOM = new LoginPOM();
+	public static String Recevied_Amt="";
+	public static String GST_Type="";
 
 	@Then("Verify Prefilled fields for OrderId from scenario {int} on Financial Info tab")
 	public void Verify_Prefilled_fields_for_OrderId_from_scenario_on_Financial_Info_tab(int rowNo) throws Exception {
@@ -43,8 +45,8 @@ public class FinancialInfoStepDef {
 		
 		//Assert Recevied Amount
 		textFromFE=CoreFunctions.getElementAttribute(financialInfoPOM.recievedAmount(), "value");
-	    textFromBE=Query.get_fields_From_ShOrderBook("RECD_AMT","ORDER_NUM", orderId);
-	    Assert.assertEquals(textFromFE, textFromBE);
+	    Recevied_Amt=Query.get_fields_From_ShOrderBook("RECD_AMT","ORDER_NUM", orderId);
+	    Assert.assertEquals(textFromFE, Recevied_Amt);
 	    
 	    //AssertSellingAmount
 	    textFromFE=CoreFunctions.getElementAttribute(financialInfoPOM.sellingAmount(), "value");
@@ -87,10 +89,13 @@ public class FinancialInfoStepDef {
 	    
 	    if(stateInAM_DEALER_LOC.equals(stateInGM_CIN))
 	    {
+	    	GST_Type="CGST";
+	    	
 	    	Assert.assertEquals(textFromFE, "CGST");
 	    }
 	    else
 	    {
+	    	GST_Type="IGST";
 	    	Assert.assertEquals(textFromFE, "IGST");
 	    }
 	    

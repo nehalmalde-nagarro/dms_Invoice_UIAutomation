@@ -21,6 +21,17 @@ public class AddInvoice_VehicleDetailsPOM {
 	public WebElement vehicleID() {
 		return PageUtil.findBy(By.id("'formInput-'vehicleId"));
 	}
+	
+	public WebElement selectedCCPCode() {
+		return PageUtil.findBy(By.xpath("//div[contains(@class,'selected')]/div[2]"));
+	}
+	public WebElement selectedCCPDesc() {
+		return PageUtil.findBy(By.xpath("//div[contains(@class,'selected')]/div[3]"));
+	}
+	public WebElement ccpTotal() {
+		return PageUtil.findBy(By.xpath("//div[contains(@class,'total-wrapper')]/div/div[6]/strong"));
+	}
+	
 
 	public WebElement chassisNum() {
 		return PageUtil.findBy(By.id("'formInput-'chassisNumber"));

@@ -66,6 +66,8 @@ public class LoginStepDef {
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName() + " " + btn);
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.spanButton(btn)));
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.spanButton(btn)));
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.spanButton(btn)));
 		CoreFunctions.moveToElement(loginPOM.spanButton(btn));
 		CoreFunctions.click(loginPOM.spanButton(btn), btn);
 	}
