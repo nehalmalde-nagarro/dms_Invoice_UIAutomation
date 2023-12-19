@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>C:\Users\tanugupta02\git\dms_Invoice_UIAutomation\testng.xml</span>
+                    <span>C:\Users\sprakash01\ProjectFiles\dms_Invoice_UIAutomation\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -104,7 +104,7 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.dms.runner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;BS 0 :  B2B - IGST - Individual&quot;, &quot;BS&quot;)">runScenario("BS 0 :  B2B - IGST - Individual", "BS")</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.dms.runner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;BS 1 :  B2B - IGST - Individual - CCP - Extended Warranty -   Exchange&quot;, &quot;BS&quot;)">runScenario("BS 1 :  B2B - IGST - Individual - CCP - Extended Warranty -   Exchange", "BS")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
@@ -127,35 +127,14 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;BS 0 :  B2B - IGST - Individual&quot;, &quot;BS&quot;)">
-                  </a> <!-- runScenario("BS 0 :  B2B - IGST - Individual", "BS") -->
+                  <a name="runScenario(&quot;BS 1 :  B2B - IGST - Individual - CCP - Extended Warranty -   Exchange&quot;, &quot;BS&quot;)">
+                  </a> <!-- runScenario("BS 1 :  B2B - IGST - Individual - CCP - Extended Warranty -   Exchange", "BS") -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("BS 0 :  B2B - IGST - Individual", "BS")</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[contains(text(),&apos;Individual&apos;)]&quot;}
-  (Session info: chrome=120.0.6099.71)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4d606f8850e4b01ed79599dc82fecef7, findElement {using=xpath, value=//span[contains(text(),&apos;Individual&apos;)]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.71, chrome: {chromedriverVersion: 120.0.6099.71 (9729082fe617..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62748}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62748/devtoo..., se:cdpVersion: 120.0.6099.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 4d606f8850e4b01ed79599dc82fecef7
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
-	at com.dms.pageobjects.AddInvoice_VehicleDetailsPOM.choosefastTagBank(AddInvoice_VehicleDetailsPOM.java:108)
-	at com.dms.stepdefinitions.VehicleDetailTabStepDef.user_selects_fast_tag_bank_as(VehicleDetailTabStepDef.java:233)
-	at ✽.User selects Fast Tag Bank for scenario 8(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/BusinessScenarios.feature:34)
-... Removed 5 stack frames
+                  <span class="parameters">("BS 1 :  B2B - IGST - Individual - CCP - Extended Warranty -   Exchange", "BS")</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [1000] but found [0]
+	at com.dms.stepdefinitions.ChargeDetailsStepDef.validation_on_charge_Detail_page(ChargeDetailsStepDef.java:120)
+	at ✽.Validation on Charge details page(file:///C:/Users/sprakash01/ProjectFiles/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/BusinessScenarios.feature:99)
+... Removed 6 stack frames
 </div> <!-- stack-trace -->
                   <em>
 (Runs Cucumber Scenarios)                  </em>
@@ -166,7 +145,7 @@ Session ID: 4d606f8850e4b01ed79599dc82fecef7
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\tanugupta02\git\dms_Invoice_UIAutomation\testng.xml</span>
+            <span class="header-content">C:\Users\sprakash01\ProjectFiles\dms_Invoice_UIAutomation\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -230,7 +209,7 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'com.dms.runner.TestRunner')
-data.setCell(0, 3, 137035);
+data.setCell(0, 3, 154064);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -263,20 +242,20 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.dms.runner.TestRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@2dbcee03)</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@52b4da7c)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">runScenario("BS 0 :  B2B - IGST - Individual", "BS")</span>
-                <span class="method-start">1636 ms</span>
+                <span class="method-name">runScenario("BS 1 :  B2B - IGST - Individual - CCP - Extended Warranty -   Exchange", "BS")</span>
+                <span class="method-start">2494 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">138680 ms</span>
+                <span class="method-start">156561 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

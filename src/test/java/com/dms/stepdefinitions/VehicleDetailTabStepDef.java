@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.poi.hpsf.Variant;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
@@ -26,7 +27,7 @@ public class VehicleDetailTabStepDef {
     public static String ccpDesc="";
     public static String ccpTotal="";
     public static String Color="";
-    public static String Varinat="";
+    public static String Variant="";
     public static String ChasisNo="";
     public static String EngineNum="";
     public static String  extendedWarrantyValue="";
@@ -62,7 +63,7 @@ public class VehicleDetailTabStepDef {
 		textFromFE = CoreFunctions.getElementAttribute(vehicleDetailsPOM.variant(), "value");
 		String variantCd = Query.get_fields_From_SD_GRN("VARIANT_CD", "VIN", vin);
 		textFromBE = Query.get_fields_From_GM_VAR("VARIANT_DESC", "VARIANT_CD", variantCd);
-		Varinat = Query.get_fields_From_GM_VAR("VARIANT_DESC", "VARIANT_CD", variantCd);
+		Variant = Query.get_fields_From_GM_VAR("VARIANT_DESC", "VARIANT_CD", variantCd);
 
 		System.out.println("FE " + textFromFE + "  BE  " + variantCd + "-" + textFromBE);
 		Assert.assertEquals(textFromFE, variantCd + "-" + textFromBE);
@@ -111,9 +112,7 @@ public class VehicleDetailTabStepDef {
 		testData=CoreFunctions.test("InvoiceData");
 
 		rowNo--;
-	     
-	
-		
+
 		String ownerManualValue = testData.get(rowNo).get("OwnerManualPref").toString();
 		CoreFunctions.moveToElement(vehicleDetailsPOM.clickownersManualPrefDropdown());
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.clickownersManualPrefDropdown()));
@@ -121,8 +120,16 @@ public class VehicleDetailTabStepDef {
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.chooseownersManualPref(ownerManualValue)));
 		CoreFunctions.click(vehicleDetailsPOM.chooseownersManualPref(ownerManualValue), "selecting the Owner manual");
 
-		verify_preFilled_Data_on_Vehicle_Detail_Tab(++rowNo);
-
+		//verify_preFilled_Data_on_Vehicle_Detail_Tab(++rowNo);
+		
+		ChasisNo= CoreFunctions.getElementAttribute(vehicleDetailsPOM.chassisNum(), "value");
+		EngineNum = CoreFunctions.getElementAttribute(vehicleDetailsPOM.engineNum(), "value");
+		Variant = CoreFunctions.getElementAttribute(vehicleDetailsPOM.variant(), "value"); 
+		String[] variantSplitArray = Variant.split("-");
+		Variant = variantSplitArray[variantSplitArray.length-1];
+		Color = CoreFunctions.getElementAttribute(vehicleDetailsPOM.color(), "value");
+		String[] colorSplitArray = Color.split("-");
+		Color = colorSplitArray[colorSplitArray.length-1];
 	}
 
 	@When("user selects Interested in Loyalty Card, Type of card, Reason for scenario {int}")

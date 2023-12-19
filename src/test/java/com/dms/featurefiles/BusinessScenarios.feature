@@ -139,6 +139,7 @@ Feature: BS
     And Click on "LOYALTY/ACQUISITION DETAILS" tab on Additional Details
     And user filled all details on Loyalty Bonus Benefits popup based on Vin Search for scenario <rowNumber>
     And User clicks on "OK" button
+    And User enters and select other offers for scenario <rowNumber>
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
@@ -184,6 +185,7 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+    And User enters and select other offers for scenario <rowNumber>
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
@@ -228,6 +230,7 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+    And User enters and select other offers for scenario <rowNumber>
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
@@ -269,6 +272,7 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User selects the "No Offer" from old car offers
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
@@ -316,6 +320,7 @@ Feature: BS
     And User choose old vehicle for "Scrappage" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
@@ -366,6 +371,7 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
@@ -417,6 +423,7 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
@@ -467,6 +474,7 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
@@ -508,6 +516,8 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User selects the "No Offer" from old car offers
+    And User enters and select other offers for scenario <rowNumber>
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
@@ -555,6 +565,8 @@ Feature: BS
     And User choose old vehicle for "Scrappage" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -598,6 +610,8 @@ Feature: BS
     And Click on "LOYALTY/ACQUISITION DETAILS" tab on Additional Details
     And user filled all details on Loyalty Bonus Benefits popup based on Vin Search for scenario <rowNumber>
     And User clicks on "OK" button
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -631,6 +645,8 @@ Feature: BS
     Then Verify user is navigated to "Financial Info"
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -665,6 +681,8 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -714,6 +732,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -764,6 +784,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -813,6 +835,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -853,6 +877,8 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -899,6 +925,8 @@ Feature: BS
     And User choose old vehicle for "Scrappage" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -942,6 +970,8 @@ Feature: BS
     And Click on "LOYALTY/ACQUISITION DETAILS" tab on Additional Details
     And user filled all details on Loyalty Bonus Benefits popup based on Vin Search for scenario <rowNumber>
     And User clicks on "OK" button
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -975,6 +1005,8 @@ Feature: BS
     Then Verify user is navigated to "Financial Info"
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -1024,6 +1056,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -1074,6 +1108,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -1123,6 +1159,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -1163,6 +1201,8 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -1210,6 +1250,8 @@ Feature: BS
     And User choose old vehicle for "Scrappage" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -1253,6 +1295,8 @@ Feature: BS
     And Click on "LOYALTY/ACQUISITION DETAILS" tab on Additional Details
     And user filled all details on Loyalty Bonus Benefits popup based on Vin Search for scenario <rowNumber>
     And User clicks on "OK" button
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -1287,6 +1331,8 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -1336,6 +1382,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -1386,6 +1434,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -1435,6 +1485,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -1475,6 +1527,8 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -1521,6 +1575,8 @@ Feature: BS
     And User choose old vehicle for "Scrappage" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -1564,6 +1620,8 @@ Feature: BS
     And Click on "LOYALTY/ACQUISITION DETAILS" tab on Additional Details
     And user filled all details on Loyalty Bonus Benefits popup based on Vin Search for scenario <rowNumber>
     And User clicks on "OK" button
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -1598,6 +1656,8 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -1647,6 +1707,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -1697,6 +1759,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -1746,6 +1810,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -1786,6 +1852,8 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -1832,6 +1900,8 @@ Feature: BS
     And User choose old vehicle for "Scrappage" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -1875,6 +1945,8 @@ Feature: BS
     And Click on "LOYALTY/ACQUISITION DETAILS" tab on Additional Details
     And user filled all details on Loyalty Bonus Benefits popup based on Vin Search for scenario <rowNumber>
     And User clicks on "OK" button
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -1908,6 +1980,8 @@ Feature: BS
     Then Verify user is navigated to "Financial Info"
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -1957,6 +2031,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -2007,6 +2083,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -2056,6 +2134,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -2096,6 +2176,8 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -2142,6 +2224,8 @@ Feature: BS
     And User choose old vehicle for "Scrappage" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -2185,6 +2269,8 @@ Feature: BS
     And Click on "LOYALTY/ACQUISITION DETAILS" tab on Additional Details
     And user filled all details on Loyalty Bonus Benefits popup based on Vin Search for scenario <rowNumber>
     And User clicks on "OK" button
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -2218,6 +2304,8 @@ Feature: BS
     Then Verify user is navigated to "Financial Info"
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -2267,6 +2355,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -2317,6 +2407,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -2366,6 +2458,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -2406,6 +2500,8 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -2452,6 +2548,8 @@ Feature: BS
     And User choose old vehicle for "Scrappage" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -2495,6 +2593,8 @@ Feature: BS
     And Click on "LOYALTY/ACQUISITION DETAILS" tab on Additional Details
     And user filled all details on Loyalty Bonus Benefits popup based on Vin Search for scenario <rowNumber>
     And User clicks on "OK" button
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -2528,6 +2628,8 @@ Feature: BS
     Then Verify user is navigated to "Financial Info"
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -2577,6 +2679,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -2627,6 +2731,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -2676,6 +2782,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -2716,6 +2824,8 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -2763,6 +2873,8 @@ Feature: BS
     And User choose old vehicle for "Scrappage" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -2806,6 +2918,8 @@ Feature: BS
     And Click on "LOYALTY/ACQUISITION DETAILS" tab on Additional Details
     And user filled all details on Loyalty Bonus Benefits popup based on Vin Search for scenario <rowNumber>
     And User clicks on "OK" button
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -2840,6 +2954,8 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -2889,6 +3005,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -2939,6 +3057,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -2988,6 +3108,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -3028,6 +3150,8 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -3075,6 +3199,8 @@ Feature: BS
     And User choose old vehicle for "Scrappage" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -3118,6 +3244,8 @@ Feature: BS
     And Click on "LOYALTY/ACQUISITION DETAILS" tab on Additional Details
     And user filled all details on Loyalty Bonus Benefits popup based on Vin Search for scenario <rowNumber>
     And User clicks on "OK" button
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -3151,8 +3279,8 @@ Feature: BS
     Then Verify user is navigated to "Financial Info"
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
-    And User enters and select other offers for scenario <rowNumber>
-    And User enters all required fields on Addtional tab    
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab  
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
     Then Validation on Charge details page
@@ -3204,6 +3332,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -3254,6 +3384,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -3303,6 +3435,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -3343,6 +3477,8 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -3389,6 +3525,8 @@ Feature: BS
     And User choose old vehicle for "Scrappage" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -3432,6 +3570,8 @@ Feature: BS
     And Click on "LOYALTY/ACQUISITION DETAILS" tab on Additional Details
     And user filled all details on Loyalty Bonus Benefits popup based on Vin Search for scenario <rowNumber>
     And User clicks on "OK" button
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -3466,6 +3606,8 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -3515,6 +3657,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -3565,6 +3709,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -3614,6 +3760,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -3654,6 +3802,8 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -3701,6 +3851,8 @@ Feature: BS
     And User choose old vehicle for "Scrappage" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -3744,6 +3896,8 @@ Feature: BS
     And Click on "LOYALTY/ACQUISITION DETAILS" tab on Additional Details
     And user filled all details on Loyalty Bonus Benefits popup based on Vin Search for scenario <rowNumber>
     And User clicks on "OK" button
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -3827,6 +3981,8 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -3876,6 +4032,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -3926,6 +4084,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -3975,6 +4135,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -4015,6 +4177,8 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -4061,6 +4225,8 @@ Feature: BS
     And User choose old vehicle for "Scrappage" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -4104,6 +4270,8 @@ Feature: BS
     And Click on "LOYALTY/ACQUISITION DETAILS" tab on Additional Details
     And user filled all details on Loyalty Bonus Benefits popup based on Vin Search for scenario <rowNumber>
     And User clicks on "OK" button
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -4137,6 +4305,8 @@ Feature: BS
     Then Verify user is navigated to "Financial Info"
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -4186,6 +4356,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -4236,6 +4408,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -4285,6 +4459,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -4325,6 +4501,8 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -4372,6 +4550,8 @@ Feature: BS
     And User choose old vehicle for "Scrappage" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -4415,6 +4595,8 @@ Feature: BS
     And Click on "LOYALTY/ACQUISITION DETAILS" tab on Additional Details
     And user filled all details on Loyalty Bonus Benefits popup based on Vin Search for scenario <rowNumber>
     And User clicks on "OK" button
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -4449,6 +4631,8 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -4498,6 +4682,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -4548,6 +4734,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -4597,6 +4785,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -4637,6 +4827,8 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -4684,6 +4876,8 @@ Feature: BS
     And User choose old vehicle for "Scrappage" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -4727,6 +4921,8 @@ Feature: BS
     And Click on "LOYALTY/ACQUISITION DETAILS" tab on Additional Details
     And user filled all details on Loyalty Bonus Benefits popup based on Vin Search for scenario <rowNumber>
     And User clicks on "OK" button
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
     And Validation on Charge details page
@@ -4761,6 +4957,8 @@ Feature: BS
     Then Verify user is navigated to "Financial Info"
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -4810,6 +5008,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -4860,6 +5060,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -4909,6 +5111,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -4949,6 +5153,8 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -4995,6 +5201,8 @@ Feature: BS
     And User choose old vehicle for "Scrappage" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -5038,6 +5246,8 @@ Feature: BS
     And Click on "LOYALTY/ACQUISITION DETAILS" tab on Additional Details
     And user filled all details on Loyalty Bonus Benefits popup based on Vin Search for scenario <rowNumber>
     And User clicks on "OK" button
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -5071,6 +5281,8 @@ Feature: BS
     Then Verify user is navigated to "Financial Info"
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -5120,6 +5332,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -5170,6 +5384,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -5219,6 +5435,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -5259,6 +5477,8 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -5306,6 +5526,8 @@ Feature: BS
     And User choose old vehicle for "Scrappage" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -5349,6 +5571,8 @@ Feature: BS
     And Click on "LOYALTY/ACQUISITION DETAILS" tab on Additional Details
     And user filled all details on Loyalty Bonus Benefits popup based on Vin Search for scenario <rowNumber>
     And User clicks on "OK" button
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -5383,6 +5607,8 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
     Then Validation on Charge details page
@@ -5433,6 +5659,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
     Then Validation on Charge details page
@@ -5484,6 +5712,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
     Then Validation on Charge details page
@@ -5534,6 +5764,8 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
     Then Validation on Charge details page
@@ -5575,6 +5807,8 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
+    And User selects the "No Offer" from old car offers
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
     Then Validation on Charge details page
@@ -5622,6 +5856,8 @@ Feature: BS
     And User choose old vehicle for "Scrappage" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
 
@@ -5666,6 +5902,8 @@ Feature: BS
     And user filled all details on Loyalty Bonus Benefits popup based on Vin Search for scenario <rowNumber>
     And User clicks on "OK" button
     #And User Select other offers
+    And User enters and select other offers for scenario <rowNumber>
+    And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
     Then Validation on Charge details page

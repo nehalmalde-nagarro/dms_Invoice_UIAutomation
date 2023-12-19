@@ -59,13 +59,13 @@ public class ChargeDetailsStepDef {
 	}
 
 	@Then("Validation on Charge details page")
-	public void validation_on_charge_Detail_page() {
+	public void validation_on_charge_Detail_page() throws InterruptedException {
 //		BrowserHandle.wait.until(ExpectedConditions.textToBePresentInElement(chargeDetailsPOM.sellingPrice(), FinancialInfoStepDef.SellingPriceFor));
 		BrowserHandle.wait.until(ExpectedConditions.textToBePresentInElement(chargeDetailsPOM.chassisNum(),VehicleDetailTabStepDef.ChasisNo));
 		BrowserHandle.wait.until(ExpectedConditions.textToBePresentInElement(chargeDetailsPOM.engineNum(),VehicleDetailTabStepDef.EngineNum));
 		BrowserHandle.wait.until(ExpectedConditions.textToBePresentInElement(chargeDetailsPOM.color(),VehicleDetailTabStepDef.Color));
-		BrowserHandle.wait.until(ExpectedConditions.textToBePresentInElement(chargeDetailsPOM.variant(), VehicleDetailTabStepDef.Varinat));
-
+		BrowserHandle.wait.until(ExpectedConditions.textToBePresentInElement(chargeDetailsPOM.variant(), VehicleDetailTabStepDef.Variant));
+		Thread.sleep(2000);
 		String SP=CoreFunctions.getElementText(chargeDetailsPOM.sellingPrice());
 	    String cleanedStr = SP.replaceAll("[^\\d.]", "");
         // Split the string by the decimal point
@@ -79,7 +79,7 @@ public class ChargeDetailsStepDef {
 		BrowserHandle.wait.until(ExpectedConditions.visibilityOf(chargeDetailsPOM.engineNum()));
 		Assert.assertEquals(CoreFunctions.getElementText(chargeDetailsPOM.engineNum()), VehicleDetailTabStepDef.EngineNum);
 		Assert.assertEquals(CoreFunctions.getElementText(chargeDetailsPOM.color()), VehicleDetailTabStepDef.Color);
-		Assert.assertEquals(CoreFunctions.getElementText(chargeDetailsPOM.variant()), VehicleDetailTabStepDef.Varinat);
+		Assert.assertEquals(CoreFunctions.getElementText(chargeDetailsPOM.variant()), VehicleDetailTabStepDef.Variant);
 
 		
 		
