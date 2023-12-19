@@ -232,7 +232,17 @@ public class Query {
 	public static String get_fields_From_STAllot(String selectCol, String conditionCol, String conditionVal) throws Exception {
 //		query = "(SELECT \"" + column + "\" FROM \"MULDMS\".\"ST_ALLOT\" where \"ORDER_NUM\" ='" + orderNum
 //				+ "' and \"DEALER_MAP_CD\"=" + dealer_Code + ");";
-		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"ST_ALLOT\" where \""+conditionCol+"\" ='" + conditionVal + "' );";
+		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"ST_ALLOT\" where \""+conditionCol+"\" ='" + conditionVal +
+				"'  and \"DEALER_MAP_CD\" ="+dealer_Code+" );";
+		System.out.println(query);
+		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
+		return data;
+	}
+	public static String get_fields_From_STAllotBaseOnAllotNo(String selectCol, String conditionCol, String conditionVal,String allotNo) throws Exception {
+//		query = "(SELECT \"" + column + "\" FROM \"MULDMS\".\"ST_ALLOT\" where \"ORDER_NUM\" ='" + orderNum
+//				+ "' and \"DEALER_MAP_CD\"=" + dealer_Code + ");";
+		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"ST_ALLOT\" where \""+conditionCol+"\" ='" + conditionVal +
+				"'  and \"DEALER_MAP_CD\" ="+dealer_Code+"   and \"ALLOT_NUM\" ='"+allotNo+"' );";
 		System.out.println(query);
 		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
 		return data;
@@ -250,7 +260,7 @@ public class Query {
 	public static String get_fields_From_SM_PRICE_FOR_with_mutiple_conditions(String selectCol, String conditionCol1, String conditionVal1,String conditionCol2, String conditionVal2,String conditionCol3, String conditionVal3)
 			throws Exception {
 		query = "(SELECT \"" + selectCol + "\" FROM \"MULDMS\".\"SM_SPRICE_FOR\" where \"" + conditionCol1 + "\" ='"
-				+ conditionVal1 + "' AND \""+conditionCol2+"\" = '" + conditionVal2 + "' AND \""+conditionCol3+"\" = '" + conditionVal3+ "'";
+				+ conditionVal1 + "' AND \""+conditionCol2+"\" = '" + conditionVal2 + "' AND \""+conditionCol3+"\" = '" + conditionVal3+ "')";
  
 		System.out.println(query);
 		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
@@ -360,11 +370,11 @@ public class Query {
 	public static String search_for_gmcin_for_stateCD(String selectCol, String conditionCol1, String conditionVal1)
 			throws Exception {
 		String query="( select cin.\""+selectCol+"\" from \"MULDMS\".\"SH_ORDBOOK\" sh "
-		  +"  join \"MULDMS\".\"GM_CIN\" cin on sh.\"ORDER_PARTY_CD\" = cin.\"CUST_CD\" "
-		   +" where "
+		  +"  join \"MULDMS\".\"GM_CIN\" cin on sh.\"CUST_CD\" = cin.\"CUST_CD\" "
+		   +" where sh.\""
 			+conditionCol1+"\" = '"+conditionVal1+"'"
-			+"and LOC_CD\" = '"+LOC_CD+"'"
-			+"and DEALER_MAP_CD\" = "+dealer_Code+" )";
+			+"and \"LOC_CD\" = '"+LOC_CD+"'"
+			+"and \"DEALER_MAP_CD\" = "+dealer_Code+" )";
  
 		System.out.println(query);
 		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);

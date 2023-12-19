@@ -35,7 +35,26 @@ public class CoreFunctions {
 		String output = prop.getProperty(str);
 		return output;
 	}
+	   public static int convertStringToInt(String str) {
+	        // Remove commas and decimal places
+	        String cleanedStr = str.replaceAll("[^\\d.]", "");
+
+	        // Split the string by the decimal point
+	        String[] parts = cleanedStr.split("\\.");
+
+	        // Take only the integer part (before the decimal point)
+	        return Integer.parseInt(parts[0]);
+	    }
 	
+	public static String percent(String num,String per) {
+		 int n=Integer.parseInt(num);
+		 int p= Integer.parseInt(per);
+		 
+		 int perOfNo=(n*p)/100;
+		 
+		 return String.valueOf(perOfNo);
+		
+	}
 	public static List<Map<String, String>> test(String sheetName)
     {
      List<Map<String, String>> testData = new ArrayList<>();

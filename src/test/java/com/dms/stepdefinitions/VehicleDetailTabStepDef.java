@@ -25,6 +25,15 @@ public class VehicleDetailTabStepDef {
     public static String ccpCode="";
     public static String ccpDesc="";
     public static String ccpTotal="";
+    public static String Color="";
+    public static String Varinat="";
+    public static String ChasisNo="";
+    public static String EngineNum="";
+    public static String  extendedWarrantyValue="";
+
+    
+
+
   
 
 	AddInvoice_VehicleDetailsPOM vehicleDetailsPOM=new AddInvoice_VehicleDetailsPOM();
@@ -38,7 +47,9 @@ public class VehicleDetailTabStepDef {
 		testData=CoreFunctions.test("InvoiceData");
 		rowNo--;
 		String orderId = testData.get(rowNo).get("OrderId").toString();
-		String vin = Query.get_fields_From_STAllot("VIN", "ORDER_NUM", orderId);
+		String allotNo = Query.get_fields_From_STAllot("ALLOT_NUM", "ORDER_NUM", orderId);
+
+		String vin = Query.get_fields_From_STAllotBaseOnAllotNo("VIN", "ORDER_NUM", orderId,allotNo);
 
 		// Assert Model
 		textFromFE = CoreFunctions.getElementAttribute(vehicleDetailsPOM.model(), "value");
@@ -51,6 +62,8 @@ public class VehicleDetailTabStepDef {
 		textFromFE = CoreFunctions.getElementAttribute(vehicleDetailsPOM.variant(), "value");
 		String variantCd = Query.get_fields_From_SD_GRN("VARIANT_CD", "VIN", vin);
 		textFromBE = Query.get_fields_From_GM_VAR("VARIANT_DESC", "VARIANT_CD", variantCd);
+		Varinat = Query.get_fields_From_GM_VAR("VARIANT_DESC", "VARIANT_CD", variantCd);
+
 		System.out.println("FE " + textFromFE + "  BE  " + variantCd + "-" + textFromBE);
 		Assert.assertEquals(textFromFE, variantCd + "-" + textFromBE);
 
@@ -62,6 +75,8 @@ public class VehicleDetailTabStepDef {
 		// Assert Chassis No
 		textFromFE = CoreFunctions.getElementAttribute(vehicleDetailsPOM.chassisNum(), "value");
 		textFromBE = Query.get_fields_From_SD_GRN("CHASSIS_NUM", "VIN", vin);
+		ChasisNo = Query.get_fields_From_SD_GRN("CHASSIS_NUM", "VIN", vin);
+
 		System.out.println("FE " + textFromFE + "  BE  " + textFromBE);
 		Assert.assertEquals(textFromBE, textFromFE);
 
@@ -69,12 +84,16 @@ public class VehicleDetailTabStepDef {
 		textFromFE = CoreFunctions.getElementAttribute(vehicleDetailsPOM.color(), "value");
 		String colorCd = Query.get_fields_From_SD_GRN("ECOLOR_CD", "VIN", vin);
 		textFromBE = Query.get_fields_From_GM_ECLR("ECOLOR_DESC", "ECOLOR_CD", colorCd);
+		Color = Query.get_fields_From_GM_ECLR("ECOLOR_DESC", "ECOLOR_CD", colorCd);
+
 		System.out.println("FE " + textFromFE + "  BE  " + textFromBE);
 		Assert.assertEquals(textFromFE, colorCd + "-" + textFromBE);
 
 		// Assert Engine no
 		textFromFE = CoreFunctions.getElementAttribute(vehicleDetailsPOM.engineNum(), "value");
 		textFromBE = Query.get_fields_From_SD_GRN("ENGINE_NUM", "VIN", vin);
+		EngineNum = Query.get_fields_From_SD_GRN("ENGINE_NUM", "VIN", vin);
+
 		System.out.println("FE " + textFromFE + "  BE  " + textFromBE);
 		Assert.assertEquals(textFromBE, textFromFE);
 
@@ -88,15 +107,21 @@ public class VehicleDetailTabStepDef {
 
 	
 	@When("user selects Owners Manual Preference for scenario {int}")
-	public void user_selects_owners_manual_preference_as(int rowNo) throws InterruptedException {
+	public void user_selects_owners_manual_preference_as(int rowNo) throws Exception {
 		testData=CoreFunctions.test("InvoiceData");
+
 		rowNo--;
+	     
+	
+		
 		String ownerManualValue = testData.get(rowNo).get("OwnerManualPref").toString();
 		CoreFunctions.moveToElement(vehicleDetailsPOM.clickownersManualPrefDropdown());
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.clickownersManualPrefDropdown()));
 		CoreFunctions.click(vehicleDetailsPOM.clickownersManualPrefDropdown(), "Clicking on Owner Pref");
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.chooseownersManualPref(ownerManualValue)));
 		CoreFunctions.click(vehicleDetailsPOM.chooseownersManualPref(ownerManualValue), "selecting the Owner manual");
+
+		verify_preFilled_Data_on_Vehicle_Detail_Tab(++rowNo);
 
 	}
 
@@ -175,7 +200,7 @@ public void user_Click_ccp_sale() throws InterruptedException {
 	public void user_selects_extended_warranty_as(int rowNo) throws InterruptedException {
 		rowNo--;
 		testData=CoreFunctions.test("InvoiceData");
-		String extendedWarrantyValue = testData.get(rowNo).get("ExtendedWarranty").toString();
+		extendedWarrantyValue = testData.get(rowNo).get("ExtendedWarranty").toString();
 		Thread.sleep(3000);
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.selectExtendedWarrantyDropdown()));
 		CoreFunctions.click(vehicleDetailsPOM.selectExtendedWarrantyDropdown(),"Clicking on Extended Warranty dropdown");

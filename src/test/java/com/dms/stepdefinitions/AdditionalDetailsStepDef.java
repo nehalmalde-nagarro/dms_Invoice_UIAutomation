@@ -3,13 +3,11 @@ package com.dms.stepdefinitions;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.logging.log4j.core.Core;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
@@ -30,19 +28,38 @@ public class AdditionalDetailsStepDef {
 	public static List<Map<String, String>> testData = new ArrayList<>();
 	LoginPOM loginPOM = new LoginPOM();
 	SearchInvoice searchInvoicePOM = new SearchInvoice();
-	String exchangeBenefit="";
+	public static String exchangeBenefitAmt="";
+	public static String  AD1="";
+	public static String  AD2="";
+	public static String MSSFOfferAmt="";
+	public static String SchemeOfferAmt="";
+	public static String Scrappage="";
+	JavascriptExecutor js = (JavascriptExecutor) BrowserHandle.getDriver();
+
+
+
 
 	AddInvoice_AdditionalDetailsPOM additionalDetailsPOM = new AddInvoice_AdditionalDetailsPOM();
 	AddInvoice_FinancialInfo financialInfoPOM = new AddInvoice_FinancialInfo();
 
 	@When("User selects the {string} from old car offers")
 	public void user_select_old_Car_offer(String option) {
+		
+		if(option.equalsIgnoreCase("No Offer")) {
+			BrowserHandle.wait
+			.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.oldCarOfferNameDropdown()));
+	CoreFunctions.click(additionalDetailsPOM.oldCarOfferNameDropdown(), "Select");
+	BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.chooseFromDropdown("Select")));
+	CoreFunctions.click(financialInfoPOM.chooseFromDropdown("Select"), "Select");
+
+		}
+		else {
 		BrowserHandle.wait
 				.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.oldCarOfferNameDropdown()));
 		CoreFunctions.click(additionalDetailsPOM.oldCarOfferNameDropdown(), option);
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.chooseFromDropdown(option)));
 		CoreFunctions.click(financialInfoPOM.chooseFromDropdown(option), option);
-
+		}
 	}
 
 	@When("Verify {string} pop up button is displayed")
@@ -69,6 +86,18 @@ public class AdditionalDetailsStepDef {
 		Assert.assertTrue(additionalDetailsPOM.isRequiresDisplayed(btn),
 				"Button '" + btn + "' should not be displayed");
 	}
+	@And("User enters all required fields on Addtional tab")
+	public void user_Enter_fields_onAdditonal_Tab() throws InterruptedException {
+		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+
+		if(additionalDetailsPOM.isRequiresDisplayed("SCHEMES")) {
+			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.popUpBtn("SCHEMES")));
+			CoreFunctions.click(additionalDetailsPOM.popUpBtn("SCHEMES"), "SCHEMES");
+			SchemeOfferAmt=CoreFunctions.getElementText(additionalDetailsPOM.chooseFirstRowForScheme());
+			CoreFunctions.click(additionalDetailsPOM.chooseFirstRowForScheme(), "Scheme choose");
+			 CoreFunctions.click(loginPOM.popupButton("OK"),"OK");
+		}
+	}
 
 	@Then("Verify {string} is displayed")
 	public void Verify_string_displayed(String text) {
@@ -77,7 +106,7 @@ public class AdditionalDetailsStepDef {
 	@Then("Verify Loyalty Exchnage Benefit value")
 	public void verify_loyalty_exchnage() {
 		String text=CoreFunctions.getElementAttribute(additionalDetailsPOM.loyaltyExchangeBenefit(),"value");
-		Assert.assertEquals(text, exchangeBenefit);
+		Assert.assertEquals(text, exchangeBenefitAmt);
 	}
 
 	@When("Click on {string} tab on Additional Details")
@@ -426,7 +455,7 @@ Assert.assertEquals(additionalDetailsPOM.chassisNum().getAttribute("disabled"), 
 		String loyaltyCardNum=Query.fetch_loyalty_exchange_benefits(Text);
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.chooseCardFromPopup(loyaltyCardNum)));
 		CoreFunctions.click(additionalDetailsPOM.chooseCardFromPopup(loyaltyCardNum), loyaltyCardNum);
-		exchangeBenefit=CoreFunctions.getElementText(additionalDetailsPOM.loyalExchnageBenefit(loyaltyCardNum));
+		exchangeBenefitAmt=CoreFunctions.getElementText(additionalDetailsPOM.loyalExchnageBenefit(loyaltyCardNum));
 	
 	}
 	@When("Choose Mssf offer from popup")
@@ -463,6 +492,7 @@ Assert.assertEquals(additionalDetailsPOM.chassisNum().getAttribute("disabled"), 
 		}
 		else if(option.equalsIgnoreCase("Scrappage")) {
 			 Text = testData.get(rowNo).get("RegNumScrapge").toString();
+			 Scrappage="0";
 		}
 		CoreFunctions.click(additionalDetailsPOM.chooseVehicleOnVehicalDetailsTab(Text), Text);
 	}
@@ -475,6 +505,40 @@ Assert.assertEquals(additionalDetailsPOM.chassisNum().getAttribute("disabled"), 
 		String text = AddInvoiceStepDef.testData.get(rowNo).get("Relation").toString();
 		CoreFunctions.click(financialInfoPOM.chooseFromDropdown(text), text);
 		
+	}
+	@When("User enters and select other offers for scenario {int}")
+	public void user_enter_select_offer(int rowNo) throws AWTException, InterruptedException {
+        rowNo--;
+		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+
+        CoreFunctions.moveToElement(additionalDetailsPOM.popUpBtn("SCHEMES"));
+        
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.otherOfferNameDropdown()));
+		CoreFunctions.click(additionalDetailsPOM.otherOfferNameDropdown(), "Other Offers");
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.chooseFromDropdown("MSSF Offer")));
+		CoreFunctions.click(financialInfoPOM.chooseFromDropdown("MSSF Offer"), "MSSF Offer");
+		CoreFunctions.click(financialInfoPOM.chooseFromDropdown("Additional Discount 1"), "Additional Discount 1");
+		CoreFunctions.click(financialInfoPOM.chooseFromDropdown("Additional Discount 2"), "Additional Discount 2");
+        Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_TAB);
+		robot.keyRelease(KeyEvent.VK_TAB);
+		Thread.sleep(2000);
+
+		CoreFunctions.click(additionalDetailsPOM.popUpBtn("MSSF OFFER"), "MSSF Offer");
+	    
+		MSSFOfferAmt=CoreFunctions.getElementText(additionalDetailsPOM.chooseFirstRowforMSSFOffer());
+		
+		CoreFunctions.click(additionalDetailsPOM.chooseFirstRowforMSSFOffer(), exchangeBenefitAmt);
+		CoreFunctions.click(loginPOM.popupButton("OK"),"OK");
+		
+		CoreFunctions.clearText(additionalDetailsPOM.additionalDiscount1());
+		CoreFunctions.clearText(additionalDetailsPOM.additionalDiscount2());
+		AD1=AddInvoiceStepDef.testData.get(rowNo).get("AD1").toString();
+		AD2=AddInvoiceStepDef.testData.get(rowNo).get("AD2").toString();
+		
+		CoreFunctions.setText(additionalDetailsPOM.additionalDiscount1(), AD1);
+		CoreFunctions.setText(additionalDetailsPOM.additionalDiscount2(),AD2);
+
 	}
 	
 }

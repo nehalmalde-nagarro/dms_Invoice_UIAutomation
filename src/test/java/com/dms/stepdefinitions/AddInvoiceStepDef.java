@@ -408,4 +408,30 @@ public class AddInvoiceStepDef {
 		Assert.assertTrue(searchInvoicePOM.verifyByText("Vehicle Info"));
 
 	}
+	@When("User edit billing address")
+	public void user_Edit_billing() {
+		String billingAddress_2 = CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_2(), "value");
+		if (billingAddress_2.isEmpty())
+			CoreFunctions.setText(addInvoicePOM.billingAddress_2(), "ChandiChowk");
+		else {
+			CoreFunctions.clearText(addInvoicePOM.billingAddress_2());
+			CoreFunctions.setText(addInvoicePOM.billingAddress_2(), "ChandiChowk");
+	
+		}
+
+		
+	
+	}
+	@Then("Verify billing Address after edit for scenario {int}")
+	public void verify_Billing(int rowNo) throws Exception {
+		rowNo--;
+		String orderId = testData.get(rowNo).get("OrderId").toString();
+
+		String dataFromDB = Query.get_fields_From_ShOrderBook("BILL_ADDRESS2", "ORDER_NUM", orderId);
+//		text = CoreFunctions.waitUntilAttrAvailable(addInvoicePOM.billingAddress_2(), 20, "value");
+	String 	text = CoreFunctions.getElementAttribute(addInvoicePOM.billingAddress_2(), "value");
+	Assert.assertEquals(dataFromDB, text);
+
+		
+	}
 }

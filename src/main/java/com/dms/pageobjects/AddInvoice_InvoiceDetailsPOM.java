@@ -11,6 +11,9 @@ import org.openqa.selenium.WebElement;
 import com.dms.utils.PageUtil;
 
 public class AddInvoice_InvoiceDetailsPOM {
+	public WebElement billingAddress2() {
+		return PageUtil.findBy(By.xpath("//mat-label[text()='BILLING ADDRESS 2 ']//parent::div//p"));
+	}
 
 	public WebElement closePopIcon() {
 		return PageUtil.findBy(By.xpath("//img[@alt='modal close']"));

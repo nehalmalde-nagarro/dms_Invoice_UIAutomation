@@ -17,19 +17,19 @@ public class AddInvoice_ChargeDetailsPOM {
 	
 	//Charge Details
 		public WebElement sellingPrice() {
-			return PageUtil.findBy(By.id("//mat-label[text()='SELLING PRICE:']//following-sibling::label"));
+			return PageUtil.findBy(By.xpath("//mat-label[text()='SELLING PRICE:']//following-sibling::label"));
 		}
 		public WebElement chassisNum() {
-			return PageUtil.findBy(By.id("//mat-label[text()='CHASSIS NO:']//following-sibling::label"));
+			return PageUtil.findBy(By.xpath("//mat-label[text()='CHASSIS NO:']//following-sibling::label"));
 		}
 		public WebElement engineNum() {
-			return PageUtil.findBy(By.id("//mat-label[text()='ENGINE NO:']//following-sibling::label"));
+			return PageUtil.findBy(By.xpath("//mat-label[text()='ENGINE NO:']//following-sibling::label"));
 		}
 		public WebElement color() {
-			return PageUtil.findBy(By.id("//mat-label[text()='COLOR:']//following-sibling::label"));
+			return PageUtil.findBy(By.xpath("//mat-label[text()='COLOR:']//following-sibling::label"));
 		}
 		public WebElement variant() {
-			return PageUtil.findBy(By.id("//mat-label[text()='VARIANT:']//following-sibling::label"));
+			return PageUtil.findBy(By.xpath("//mat-label[text()='VARIANT:']//following-sibling::label"));
 		}
 		
 		
@@ -42,6 +42,9 @@ public class AddInvoice_ChargeDetailsPOM {
 			return PageUtil.findBy(By.xpath("//mat-panel-title[contains(text(),'Charge Details')]"));
 		}
 		
+		public WebElement totalAmt() {
+			return PageUtil.findBy(By.xpath("//input[contains(@formcontrolname,'chargeAmountTotal')]"));
+		}
 		
 		public List<WebElement> allRowsChargeName() {
 			return PageUtil.findBys(By.xpath("//div[contains(@class,'tblchargeDetail')]//tbody//tr//td[2]//input"));

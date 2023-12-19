@@ -170,7 +170,13 @@ public WebElement chooseCardFromPopup(String txt) {
 	return PageUtil.findBy(By.xpath("//div[contains(text(),'"+txt+"')]"));
 }
 
+public WebElement chooseFirstRowForScheme() {
+	return PageUtil.findBy(By.xpath("//div[contains(@class,'table-with-data ng-star-inserted')]/div/div[9]"));
+}
 
+public WebElement chooseFirstRowforMSSFOffer() {
+	return PageUtil.findBy(By.xpath("//div[contains(@class,'table-with-data ng-star-inserted')]/div/div[3]"));
+}
 
 public WebElement chasisNoError() {
 	return PageUtil.findBy(By.id("chassisNum_error"));
