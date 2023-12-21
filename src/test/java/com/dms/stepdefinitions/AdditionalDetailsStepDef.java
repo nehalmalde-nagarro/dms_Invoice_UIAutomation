@@ -35,7 +35,7 @@ public class AdditionalDetailsStepDef {
 	public static String MSSFOfferAmt="";
 	public static String SchemeOfferAmt="";
 	public static String Scrappage="";
-	public static String exchnageLoyalty="";
+	public static String exchnageLoyalty="0";
 	JavascriptExecutor js = (JavascriptExecutor) BrowserHandle.getDriver();
 
 
@@ -72,6 +72,8 @@ public class AdditionalDetailsStepDef {
 	public  void user_enters_exchnage_loyalty(int rowNo) {
 		rowNo--;
 		if(AddInvoiceStepDef.testData.get(rowNo).get("ExchangeLoyalty")!=null) {
+			System.out.println(AddInvoiceStepDef.testData.get(rowNo).get("ExchangeLoyalty").toString());
+
 		exchnageLoyalty=AddInvoiceStepDef.testData.get(rowNo).get("ExchangeLoyalty").toString();
 		CoreFunctions.clearText(additionalDetailsPOM.exchangeLoyaltyBonus());
 		CoreFunctions.setText(additionalDetailsPOM.exchangeLoyaltyBonus(), exchnageLoyalty);
@@ -81,7 +83,8 @@ public class AdditionalDetailsStepDef {
 			exchnageLoyalty=CoreFunctions.getElementAttribute(additionalDetailsPOM.exchangeLoyaltyBonus(), "value");
 		}
 		
-		
+		System.out.println(exchnageLoyalty);
+
 
 	}
 	

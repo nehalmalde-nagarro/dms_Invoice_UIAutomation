@@ -3,7 +3,7 @@
 <suite name="Suite">
 	<listeners>
 		<listener class-name="com.dms.listerners.MyListeners" />
-	</listeners>
+	</listeners>	
   <test thread-count="5" name="Cucumber UI with TestNG Test">
     <classes>
       <class name="com.dms.runner.TestRunner"/>

@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-21T11:39:21 IST" name="Suite" finished-at="2023-12-21T11:41:20 IST" duration-ms="119038">
+  <suite started-at="2023-12-21T12:37:22 IST" name="Suite" finished-at="2023-12-21T12:40:16 IST" duration-ms="173981">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1e66f1f5]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-12-21T11:39:21 IST" name="Cucumber UI with TestNG Test" finished-at="2023-12-21T11:41:20 IST" duration-ms="119038">
+    <test started-at="2023-12-21T12:37:22 IST" name="Cucumber UI with TestNG Test" finished-at="2023-12-21T12:40:16 IST" duration-ms="173981">
       <class name="com.dms.runner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.dms.runner.TestRunner@1e66f1f5]" started-at="2023-12-21T11:39:21 IST" name="setUpClass" finished-at="2023-12-21T11:39:22 IST" duration-ms="689" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.dms.runner.TestRunner@1e66f1f5]" started-at="2023-12-21T12:37:22 IST" name="setUpClass" finished-at="2023-12-21T12:37:23 IST" duration-ms="670" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@69f35d31]]>
+                <![CDATA[org.testng.TestRunner@218e188e]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1e66f1f5]" started-at="2023-12-21T11:39:22 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-21T11:41:20 IST" duration-ms="117991" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1e66f1f5]" started-at="2023-12-21T12:37:23 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-12-21T12:40:16 IST" duration-ms="173021" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["BS 5 :  B2B - IGST - Individual - Extended Warranty - ccp-  Cash"]]>
+                <![CDATA["BS 7 :  B2C - IGST - Individual - CCP - Extended Warranty -  Exchange"]]>
               </value>
             </param>
             <param index="1">
@@ -34,10 +34,26 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [132.0] but found [133.0]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [132.0] but found [133.0]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+at org.testng.Assert.assertEquals(Assert.java:131)
+at org.testng.Assert.assertEquals(Assert.java:782)
+at com.dms.stepdefinitions.ChargeDetailsStepDef.validation_on_charge_Detail_page(ChargeDetailsStepDef.java:179)
+at ✽.Validation on Charge details page(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/BusinessScenarios.feature:399)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.dms.runner.TestRunner@1e66f1f5]" started-at="2023-12-21T11:41:20 IST" name="tearDownClass" finished-at="2023-12-21T11:41:20 IST" duration-ms="317" status="FAIL">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.dms.runner.TestRunner@1e66f1f5]" started-at="2023-12-21T12:40:16 IST" name="tearDownClass" finished-at="2023-12-21T12:40:16 IST" duration-ms="253" status="FAIL">
           <exception class="com.google.gson.JsonIOException">
             <message>
               <![CDATA[Failed making field 'java.lang.Throwable#detailMessage' accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.]]>

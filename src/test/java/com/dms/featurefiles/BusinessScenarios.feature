@@ -391,6 +391,7 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters Exchange Loyalty bonus for scenario <rowNumber>
     And User enters and select other offers for scenario <rowNumber>
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
@@ -444,6 +445,7 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
+    And User enters Exchange Loyalty bonus for scenario <rowNumber>
     And User enters and select other offers for scenario <rowNumber>
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
