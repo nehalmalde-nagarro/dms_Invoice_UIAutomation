@@ -9,6 +9,7 @@ import java.util.Map;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
@@ -531,10 +532,14 @@ Assert.assertEquals(additionalDetailsPOM.chassisNum().getAttribute("disabled"), 
 	@When("User enters and select other offers for scenario {int}")
 	public void user_enter_select_offer(int rowNo) throws AWTException, InterruptedException {
         rowNo--;
-		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+//		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
 
         CoreFunctions.moveToElement(additionalDetailsPOM.otherOfferNameDropdown());
-		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+//		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+
+       new Actions(BrowserHandle.getDriver()).sendKeys(Keys.ARROW_DOWN).build().perform();
+       CoreFunctions.moveToElement(additionalDetailsPOM.otherOfferNameDropdown());
+
 
 		Thread.sleep(3000);
         

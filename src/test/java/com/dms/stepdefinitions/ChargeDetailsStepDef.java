@@ -1,5 +1,7 @@
 package com.dms.stepdefinitions;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -138,7 +140,8 @@ for(String key:chargeDetailsData.keySet()) {
 //				AV -= CoreFunctions
 //						.convertStringToDouble(chargeDetailsPOM.getChargeAmountForProvidedChargeName(charges));
 				System.out.println("Assert AD1 input" + AdditionalDetailsStepDef.AD1 + " form Charge details UI "
-						+chargeDetailsData.get(charges));				
+						+chargeDetailsData.get(charges));	
+				Assert.assertEquals(CoreFunctions.convertStringToDouble(AdditionalDetailsStepDef.AD1 ), chargeDetailsData.get(charges));
 				AV -= chargeDetailsData.get(charges);
 
 				System.out.println(" AV After Subtract DIS1" + AV);
@@ -146,6 +149,7 @@ for(String key:chargeDetailsData.keySet()) {
 			else if (CoreFunctions.trim(charges).toLowerCase().contains("Discount 2".toLowerCase())) {
 				System.out.println("Assert AD2 input" + CoreFunctions.convertStringToDouble(AdditionalDetailsStepDef.AD2) + " form Charge details UI "
 						+ chargeDetailsData.get(charges));
+				Assert.assertEquals( CoreFunctions.convertStringToDouble(AdditionalDetailsStepDef.AD2), chargeDetailsData.get(charges));
 				AV -= chargeDetailsData.get(charges);
 				System.out.println(" AV After Subtract DIS2" + AV);
 			}
@@ -165,12 +169,14 @@ for(String key:chargeDetailsData.keySet()) {
 	        else if (CoreFunctions.trim(charges).toLowerCase().contains("MSSF".toLowerCase())) {
 				System.out.println("Assert MSSF input" + CoreFunctions.convertStringToDouble(AdditionalDetailsStepDef.MSSFOfferAmt)
 						+ " form Charge details UI " + chargeDetailsData.get(charges));
+				Assert.assertEquals(CoreFunctions.convertStringToDouble(AdditionalDetailsStepDef.MSSFOfferAmt), chargeDetailsData.get(charges));
 				AV -= chargeDetailsData.get(charges);
 				System.out.println(" AV After Subtract MSSSF" + AV);
 			}
 			else if (CoreFunctions.trim(charges).toLowerCase().contains("Exchange".toLowerCase())) {
 				System.out.println("Assert Exchange " + CoreFunctions.convertStringToDouble(AdditionalDetailsStepDef.exchnageLoyalty)
 						+ " form Charge details UI " + chargeDetailsData.get(charges));
+				Assert.assertEquals( CoreFunctions.convertStringToDouble(AdditionalDetailsStepDef.exchnageLoyalty), chargeDetailsData.get(charges));
 				AV -= chargeDetailsData.get(charges);
 				System.out.println(" AV After Exchnage " + AV);
 
@@ -178,6 +184,7 @@ for(String key:chargeDetailsData.keySet()) {
 			else if (CoreFunctions.trim(charges).toLowerCase().contains("Scrappage".toLowerCase())) {
 				System.out.println("Assert Scrappge " + AdditionalDetailsStepDef.Scrappage + " form Charge details UI "
 						+ chargeDetailsData.get(charges));
+				Assert.assertEquals(CoreFunctions.convertStringToDouble(AdditionalDetailsStepDef.Scrappage ),chargeDetailsData.get(charges));
 				AV -= chargeDetailsData.get(charges);
 				System.out.println(" AV After scrappage " + AV);
 			}
@@ -209,25 +216,29 @@ for(String key:chargeDetailsData.keySet()) {
 				  double percentage=chargeDetailsDataValue.get(charges);
 			      calculatedIGST =CoreFunctions.percent(AV, percentage);
 			      System.out.println("Charge Name is " + CoreFunctions.trim(charges) +  "Assert GST from ui "+ chargeDetailsData.get(charges)+" From Calculatio "+calculatedIGST);
+			      Assert.assertEquals(calculatedIGST, chargeDetailsData.get(charges));
 			  
 			  } 
 				 if(CoreFunctions.trim(charges).toLowerCase().contains("CGST".toLowerCase())) {
 					  double percentage=chargeDetailsDataValue.get(charges);
 				      calculatedCGST =CoreFunctions.percent(AV, percentage);
 				      System.out.println("Charge Name is " + CoreFunctions.trim(charges) +  "Assert GST from ui "+ chargeDetailsData.get(charges)+" From Calculatio "+calculatedIGST);
-				  
+				      Assert.assertEquals(calculatedCGST, chargeDetailsData.get(charges));
+
 				  } 
 				 if(CoreFunctions.trim(charges).toLowerCase().contains("SGST".toLowerCase())) {
 					  double percentage=chargeDetailsDataValue.get(charges);
 				      calculatedSGST =CoreFunctions.percent(AV, percentage);
 				      System.out.println("Charge Name is " + CoreFunctions.trim(charges) +  "Assert GST from ui "+ chargeDetailsData.get(charges)+" From Calculatio "+calculatedIGST);
-				  
+				      Assert.assertEquals(calculatedSGST, chargeDetailsData.get(charges));
+
 				  } 
 			  }
 		    else if(CoreFunctions.trim(charges).toLowerCase().contains("CCP".toLowerCase())) {
     		if (!VehicleDetailTabStepDef.ccpTotal.equals("")) {
 		    System.out.println("Asser CCP from UI "+chargeDetailsData.get(charges)+"From vehicle details vari   "+VehicleDetailTabStepDef.ccpTotal);
-    		ccpAmtFromUI=chargeDetailsData.get(charges);
+    		Assert.assertEquals(CoreFunctions.convertStringToDouble(VehicleDetailTabStepDef.ccpTotal), chargeDetailsData.get(charges));
+		    ccpAmtFromUI=chargeDetailsData.get(charges);
     		}
     		
 		}
@@ -246,9 +257,10 @@ for(String key:chargeDetailsData.keySet()) {
 	 calculatedTaxCollection = Math.round(calculatedTaxCollection * 100);
 	 calculatedTaxCollection = calculatedTaxCollection/100;
 	 System.out.println("Assert tax collection from UI "+taxCollectionAmtfromUI+"  From calulation "+ calculatedTaxCollection);
+	assertEquals(taxCollectionAmtfromUI, calculatedTaxCollection);
 	 total=extendedWarrantyValueFromUI+AV+calculatedTaxCollection+calculatedCGST+calculatedIGST+calculatedSGST+calulatedCess+ccpAmtFromUI;
-	System.out.println("Assert total from UI is "+ CoreFunctions.convertStringToInt( CoreFunctions.getElementAttribute(chargeDetailsPOM.totalAmount(),"value"))+" From caliclation "+ (int)(total));
-
+	System.out.println("Assert total from UI is "+CoreFunctions.getElementAttribute(chargeDetailsPOM.totalAmount(),"value")+" From caliclation "+ Math.round(total));
+Assert.assertEquals(CoreFunctions.convertStringToInt( CoreFunctions.getElementAttribute(chargeDetailsPOM.totalAmount(),"value")),(int)  Math.round(total));
 	 
 	}
 	
