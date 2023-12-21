@@ -20,7 +20,8 @@ public class AddInvoice_AdditionalDetailsPOM {
 	public WebElement loyaltyExchangeBenefit() {
 		return PageUtil.findBy(By.id("'formInput-'loyalityExchangeBenefit"));
 	}
-
+	
+	
 //	public WebElement oldCarOfferNameDropdown() {
 //		return PageUtil.findBy(By.xpath("//mat-panel-title[contains(text(),'Old Car Offers')]//ancestor::mat-expansion-panel-header//following-sibling::div//mat-select[contains(@id,'oldCarOfferName')]"));
 //	}
@@ -74,6 +75,9 @@ public class AddInvoice_AdditionalDetailsPOM {
 	}
 	public WebElement oldCarCustomerName() {
 		return PageUtil.findBy(By.id("'formInput-'oldCarCustomerName"));
+	}
+	public WebElement exchangeLoyaltyBonus() {
+		return PageUtil.findBy(By.id("'formInput-'exchangeAmount"));
 	}
 	public WebElement loyaltyExcAddCarBenefits() {
 		return PageUtil.findBy(By.xpath("//div[contains(text(),'LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS')]"));
@@ -154,6 +158,10 @@ public boolean isRequiresDisplayed(String txt) {
 
 public WebElement otherOfferNameDropdown() {
 	return PageUtil.findBy(By.id("otherOfferName"));
+}
+
+public WebElement closeDropDown() {
+	return PageUtil.findBy(By.xpath("//mat-select-trigger[contains(text(),'selected')]"));
 }
 
 public WebElement mssfOfferButton() {

@@ -18,6 +18,10 @@ public class AddInvoice_VehicleDetailsPOM {
 		return PageUtil.findBy(By.id("'formInput-'varient"));
 	}
 
+	public WebElement  inputBankSearch() {
+		return PageUtil.findBy(By.xpath("//input[@placeholder='Search']"));
+	}
+
 	public WebElement vehicleID() {
 		return PageUtil.findBy(By.id("'formInput-'vehicleId"));
 	}

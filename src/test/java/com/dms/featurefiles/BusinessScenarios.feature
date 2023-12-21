@@ -29,7 +29,7 @@ Feature: BS
     And User clicks on "SEARCH" button on popup
     And selects the dealer for scenario <rowNumber> from searched results
     And User clicks on "OK" button
-      And User clicks on FastTag button
+    And User clicks on FastTag button
     And User enters Fast Tag ID from <rowNumber>
     When User selects Fast Tag Bank for scenario <rowNumber>
     And User selects Fast Tag Fitment Date "20-12-2023"
@@ -91,7 +91,8 @@ Feature: BS
     And User clicks on "SEARCH" button on popup
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
-    And User clicks on "OK" button on popup    
+    And User clicks on "OK" button on popup
+    And User enters Exchange Loyalty bonus for scenario <rowNumber>
     And User enters and select other offers for scenario <rowNumber>
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
@@ -143,6 +144,7 @@ Feature: BS
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
+    Then Validation on Charge details page
 
     Examples: 
       | rowNumber |
@@ -185,10 +187,18 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+    And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User enters Exchange Loyalty bonus for scenario <rowNumber>
     And User enters and select other offers for scenario <rowNumber>
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
+    Then Validation on Charge details page
 
     Examples: 
       | rowNumber |
@@ -230,10 +240,18 @@ Feature: BS
     And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
     And User choose Loyalty Card for scenario <rowNumber>
     And User click "OK" button on loyalty card popup
+     And Click on "OLD VEHICLE DETAILS" tab on Additional Details
+    And Enter reg Num for "Exchange" for scenario <rowNumber>
+    And User clicks on "SEARCH" button on popup
+    And User choose old vehicle for "Exchange" for scenario <rowNumber>
+    And Choose Relation for scenario <rowNumber>
+    And User clicks on "OK" button on popup
+    And User enters Exchange Loyalty bonus for scenario <rowNumber>
     And User enters and select other offers for scenario <rowNumber>
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
+    Then Validation on Charge details page
 
     Examples: 
       | rowNumber |
@@ -276,6 +294,7 @@ Feature: BS
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
+    Then Validation on Charge details page
 
     Examples: 
       | rowNumber |
@@ -324,6 +343,7 @@ Feature: BS
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
+    Then Validation on Charge details page
 
     Examples: 
       | rowNumber |
@@ -375,6 +395,7 @@ Feature: BS
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
+    Then Validation on Charge details page
 
     Examples: 
       | rowNumber |
@@ -427,6 +448,7 @@ Feature: BS
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
+    Then Validation on Charge details page
 
     Examples: 
       | rowNumber |
@@ -478,6 +500,7 @@ Feature: BS
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
+    Then Validation on Charge details page
 
     Examples: 
       | rowNumber |
@@ -2355,7 +2378,7 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
-    And User enters and select other offers for scenario <rowNumber>
+    #And User enters and select other offers for scenario <rowNumber>
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
@@ -2407,7 +2430,7 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
-    And User enters and select other offers for scenario <rowNumber>
+    #And User enters and select other offers for scenario <rowNumber>
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
@@ -2458,7 +2481,7 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
-    And User enters and select other offers for scenario <rowNumber>
+    #And User enters and select other offers for scenario <rowNumber>
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
@@ -2500,7 +2523,7 @@ Feature: BS
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
-    And User enters and select other offers for scenario <rowNumber>
+    #And User enters and select other offers for scenario <rowNumber>
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
@@ -2548,7 +2571,7 @@ Feature: BS
     And User choose old vehicle for "Scrappage" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
-    And User enters and select other offers for scenario <rowNumber>
+    #And User enters and select other offers for scenario <rowNumber>
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
@@ -2593,7 +2616,7 @@ Feature: BS
     And Click on "LOYALTY/ACQUISITION DETAILS" tab on Additional Details
     And user filled all details on Loyalty Bonus Benefits popup based on Vin Search for scenario <rowNumber>
     And User clicks on "OK" button
-    And User enters and select other offers for scenario <rowNumber>
+    #And User enters and select other offers for scenario <rowNumber>
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
@@ -2731,7 +2754,7 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
-    And User enters and select other offers for scenario <rowNumber>
+    #And User enters and select other offers for scenario <rowNumber>
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
@@ -2782,7 +2805,7 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
-    And User enters and select other offers for scenario <rowNumber>
+    #And User enters and select other offers for scenario <rowNumber>
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"

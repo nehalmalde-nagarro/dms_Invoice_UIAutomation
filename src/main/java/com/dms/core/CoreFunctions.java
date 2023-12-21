@@ -35,7 +35,7 @@ public class CoreFunctions {
 		String output = prop.getProperty(str);
 		return output;
 	}
-	   public static int convertStringToInt(String str) {
+	   public static double formatAndConvertStringToDouble(String str) {
 	        // Remove commas and decimal places
 	        String cleanedStr = str.replaceAll("[^\\d.]", "");
 
@@ -43,7 +43,15 @@ public class CoreFunctions {
 	        String[] parts = cleanedStr.split("\\.");
 
 	        // Take only the integer part (before the decimal point)
-	        return Integer.parseInt(parts[0]);
+	        return Double.parseDouble(parts[0]);
+	    }
+	   public static double convertStringToDouble(String str) {
+	    
+	        return Double.parseDouble(str);
+	    }
+	   public static int convertStringToInt(String str) {
+		    
+	        return Integer.parseInt(str);
 	    }
 	
 	public static String percent(String num,String per) {
@@ -53,6 +61,14 @@ public class CoreFunctions {
 		 int perOfNo=(n*p)/100;
 		 
 		 return String.valueOf(perOfNo);
+		
+	}
+	public static Double percent(Double num,Double per) {
+		
+		 
+		 double perOfNo=(num*per)/100;
+		 
+		 return perOfNo;
 		
 	}
 	public static List<Map<String, String>> test(String sheetName)

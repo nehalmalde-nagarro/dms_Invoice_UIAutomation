@@ -34,6 +34,7 @@ public class AdditionalDetailsStepDef {
 	public static String MSSFOfferAmt="";
 	public static String SchemeOfferAmt="";
 	public static String Scrappage="";
+	public static String exchnageLoyalty="";
 	JavascriptExecutor js = (JavascriptExecutor) BrowserHandle.getDriver();
 
 
@@ -59,9 +60,30 @@ public class AdditionalDetailsStepDef {
 		CoreFunctions.click(additionalDetailsPOM.oldCarOfferNameDropdown(), option);
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.chooseFromDropdown(option)));
 		CoreFunctions.click(financialInfoPOM.chooseFromDropdown(option), option);
+		
 		}
+		
+		
 	}
 
+	
+	@When("User enters Exchange Loyalty bonus for scenario {int}")
+	public  void user_enters_exchnage_loyalty(int rowNo) {
+		rowNo--;
+		if(AddInvoiceStepDef.testData.get(rowNo).get("ExchangeLoyalty")!=null) {
+		exchnageLoyalty=AddInvoiceStepDef.testData.get(rowNo).get("ExchangeLoyalty").toString();
+		CoreFunctions.clearText(additionalDetailsPOM.exchangeLoyaltyBonus());
+		CoreFunctions.setText(additionalDetailsPOM.exchangeLoyaltyBonus(), exchnageLoyalty);
+		}
+		else 
+		{
+			exchnageLoyalty=CoreFunctions.getElementAttribute(additionalDetailsPOM.exchangeLoyaltyBonus(), "value");
+		}
+		
+		
+
+	}
+	
 	@When("Verify {string} pop up button is displayed")
 	public void verify_popup_button_dispalyed(String btn) {
 		BrowserHandle.wait.until(ExpectedConditions.visibilityOf(additionalDetailsPOM.popUpBtn(btn)));
@@ -511,7 +533,10 @@ Assert.assertEquals(additionalDetailsPOM.chassisNum().getAttribute("disabled"), 
         rowNo--;
 		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
 
-        CoreFunctions.moveToElement(additionalDetailsPOM.popUpBtn("SCHEMES"));
+        CoreFunctions.moveToElement(additionalDetailsPOM.otherOfferNameDropdown());
+		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+
+		Thread.sleep(3000);
         
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.otherOfferNameDropdown()));
 		CoreFunctions.click(additionalDetailsPOM.otherOfferNameDropdown(), "Other Offers");
@@ -519,11 +544,16 @@ Assert.assertEquals(additionalDetailsPOM.chassisNum().getAttribute("disabled"), 
 		CoreFunctions.click(financialInfoPOM.chooseFromDropdown("MSSF Offer"), "MSSF Offer");
 		CoreFunctions.click(financialInfoPOM.chooseFromDropdown("Additional Discount 1"), "Additional Discount 1");
 		CoreFunctions.click(financialInfoPOM.chooseFromDropdown("Additional Discount 2"), "Additional Discount 2");
-        Robot robot = new Robot();
+		Thread.sleep(2000);
+
+		Robot robot = new Robot();
 		robot.keyPress(KeyEvent.VK_TAB);
 		robot.keyRelease(KeyEvent.VK_TAB);
 		Thread.sleep(2000);
 
+//		CoreFunctions.click(additionalDetailsPOM.closeDropDown(), "close dropDown");
+
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.popUpBtn("MSSF OFFER")));
 		CoreFunctions.click(additionalDetailsPOM.popUpBtn("MSSF OFFER"), "MSSF Offer");
 	    
 		MSSFOfferAmt=CoreFunctions.getElementText(additionalDetailsPOM.chooseFirstRowforMSSFOffer());

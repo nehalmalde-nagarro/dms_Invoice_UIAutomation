@@ -113,13 +113,15 @@ public class VehicleDetailTabStepDef {
 
 		rowNo--;
 
+		if(financialInfoPOM.getDropdownSelectedValue("ownerManualRef")==null) {
+		
 		String ownerManualValue = testData.get(rowNo).get("OwnerManualPref").toString();
 		CoreFunctions.moveToElement(vehicleDetailsPOM.clickownersManualPrefDropdown());
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.clickownersManualPrefDropdown()));
 		CoreFunctions.click(vehicleDetailsPOM.clickownersManualPrefDropdown(), "Clicking on Owner Pref");
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.chooseownersManualPref(ownerManualValue)));
 		CoreFunctions.click(vehicleDetailsPOM.chooseownersManualPref(ownerManualValue), "selecting the Owner manual");
-
+		}
 		//verify_preFilled_Data_on_Vehicle_Detail_Tab(++rowNo);
 		
 		ChasisNo= CoreFunctions.getElementAttribute(vehicleDetailsPOM.chassisNum(), "value");
@@ -175,9 +177,11 @@ public void user_Click_ccp_sale() throws InterruptedException {
 }
 
 	@When("user selects state for scenario {int}")
-	public void user_selects_state_as(int rowNo) {
+	public void user_selects_state_as(int rowNo) throws InterruptedException {
 		rowNo--;
 		testData=CoreFunctions.test("InvoiceData");
+		Thread.sleep(2000);
+
 		String stateValue = testData.get(rowNo).get("State").toString();
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.selectStateDropdown()));
 		CoreFunctions.click(vehicleDetailsPOM.selectStateDropdown(),"Clicking on Select State dropdown");
@@ -186,8 +190,10 @@ public void user_Click_ccp_sale() throws InterruptedException {
 	}
 
 	@When("user selects city for scenario {int}")
-	public void user_selects_city_as(int rowNo) {
+	public void user_selects_city_as(int rowNo) throws InterruptedException {
 		rowNo--;
+		Thread.sleep(2000);
+
 		String cityValue = testData.get(rowNo).get("City").toString();
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.selectCityDropdown()));
 		CoreFunctions.click(vehicleDetailsPOM.selectCityDropdown(),"Clicking on Select City dropdown");
@@ -237,6 +243,10 @@ public void user_Click_ccp_sale() throws InterruptedException {
 		String fastTagBank = testData.get(rowNo).get("FastTagBank").toString();
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.fastTagBank()));
 		CoreFunctions.click(vehicleDetailsPOM.fastTagBank(),"Clicking on FastTag Bank dropdown");
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.inputBankSearch()));
+		CoreFunctions.setText(vehicleDetailsPOM.inputBankSearch(),fastTagBank);
+
+//		CoreFunctions.click(vehicleDetailsPOM.fastTagBank(),"Clicking on FastTag Bank dropdown");
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.choosefastTagBank(fastTagBank)));
 		CoreFunctions.click(vehicleDetailsPOM.choosefastTagBank(fastTagBank),"Selecting FastTag Bank");
 	}
