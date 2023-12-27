@@ -2,6 +2,8 @@ package com.dms.stepdefinitions;
 
 import static org.testng.Assert.assertEquals;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -76,10 +78,13 @@ public class ChargeDetailsStepDef {
 		String SP = CoreFunctions.getElementText(chargeDetailsPOM.sellingPrice());
 		String cleanedStr = SP.replaceAll("[^\\d.]", "");
 		// Split the string by the decimal point
-		String[] parts = cleanedStr.split("\\.");
+//		String[] parts = cleanedStr.split("\\.");
 
+		System.out.println("***************************");
+		System.out.println(cleanedStr);
+		System.out.println(FinancialInfoStepDef.SellingPriceFor);
 		BrowserHandle.wait.until(ExpectedConditions.visibilityOf(chargeDetailsPOM.sellingPrice()));
-		Assert.assertEquals(parts[0], FinancialInfoStepDef.SellingPriceFor);
+		Assert.assertEquals(Math.round(CoreFunctions.convertStringToDouble(cleanedStr) ),Math.round( CoreFunctions.convertStringToDouble(FinancialInfoStepDef.SellingPriceFor)));
 		BrowserHandle.wait.until(ExpectedConditions.visibilityOf(chargeDetailsPOM.chassisNum()));
 		Assert.assertEquals(CoreFunctions.getElementText(chargeDetailsPOM.chassisNum()), VehicleDetailTabStepDef.ChasisNo);
 		BrowserHandle.wait.until(ExpectedConditions.visibilityOf(chargeDetailsPOM.engineNum()));
@@ -112,6 +117,8 @@ public class ChargeDetailsStepDef {
 		double taxCollectionAmtfromUI=0;
 		double ccpAmtFromUI=0;
 		double extendedWarrantyValueFromUI=0;
+		
+		System.out.println("AV is  :  "+ AV);
 		  
 		  HashMap<String, Double> chargeDetailsData=new HashMap<String, Double>();
 for (String charge : chargesName) {
@@ -199,8 +206,14 @@ for(String key:chargeDetailsData.keySet()) {
 			  if (CoreFunctions.trim(charges).toLowerCase().contains("Cess".toLowerCase())) {
 				  double percentage=chargeDetailsDataValue.get(charges);
 			       calulatedCess=CoreFunctions.percent(AV, percentage);
+			       DecimalFormat df = new DecimalFormat("#.##");
+			       df.setRoundingMode(RoundingMode.DOWN);
+			       System.out.println(calulatedCess);
+			       System.out.println(df.format(calulatedCess));
+			       calulatedCess= CoreFunctions.convertStringToDouble(df.format(calulatedCess));
+			       System.out.println(calulatedCess);
 			      System.out.println("Assert Cess from ui "+chargeDetailsData.get(charges)+" From Calculatio "+calulatedCess);
-			      
+			      Assert.assertEquals(chargeDetailsData.get(charges), calulatedCess);
 			  }
 			  else if (CoreFunctions.trim(charges).toLowerCase().contains("Tax Collection".toLowerCase())) {
 					System.out.println("charges  " + charges);
@@ -214,32 +227,33 @@ for(String key:chargeDetailsData.keySet()) {
 			  else if (CoreFunctions.trim(charges).toLowerCase().contains("GST".toLowerCase())) {
      		 if(CoreFunctions.trim(charges).toLowerCase().contains("IGST".toLowerCase())) {
 				  double percentage=chargeDetailsDataValue.get(charges);
-			      calculatedIGST =CoreFunctions.percent(AV, percentage);
+			      calculatedIGST = (CoreFunctions.percent(AV, percentage));
 			      System.out.println("Charge Name is " + CoreFunctions.trim(charges) +  "Assert GST from ui "+ chargeDetailsData.get(charges)+" From Calculatio "+calculatedIGST);
 			      Assert.assertEquals(calculatedIGST, chargeDetailsData.get(charges));
 			  
 			  } 
 				 if(CoreFunctions.trim(charges).toLowerCase().contains("CGST".toLowerCase())) {
 					  double percentage=chargeDetailsDataValue.get(charges);
-				      calculatedCGST =CoreFunctions.percent(AV, percentage);
+				      calculatedCGST = CoreFunctions.roundOff(CoreFunctions.percent(AV, percentage));
 				      System.out.println("Charge Name is " + CoreFunctions.trim(charges) +  "Assert GST from ui "+ chargeDetailsData.get(charges)+" From Calculatio "+calculatedIGST);
-				      Assert.assertEquals(calculatedCGST, chargeDetailsData.get(charges));
+				      Assert.assertEquals(calculatedCGST,chargeDetailsData.get(charges));
 
 				  } 
 				 if(CoreFunctions.trim(charges).toLowerCase().contains("SGST".toLowerCase())) {
 					  double percentage=chargeDetailsDataValue.get(charges);
-				      calculatedSGST =CoreFunctions.percent(AV, percentage);
+				      calculatedSGST = CoreFunctions.roundOff(CoreFunctions.percent(AV, percentage));
 				      System.out.println("Charge Name is " + CoreFunctions.trim(charges) +  "Assert GST from ui "+ chargeDetailsData.get(charges)+" From Calculatio "+calculatedIGST);
 				      Assert.assertEquals(calculatedSGST, chargeDetailsData.get(charges));
 
 				  } 
 			  }
 		    else if(CoreFunctions.trim(charges).toLowerCase().contains("CCP".toLowerCase())) {
-    		if (!VehicleDetailTabStepDef.ccpTotal.equals("")) {
 		    System.out.println("Asser CCP from UI "+chargeDetailsData.get(charges)+"From vehicle details vari   "+VehicleDetailTabStepDef.ccpTotal);
-    		Assert.assertEquals(CoreFunctions.convertStringToDouble(VehicleDetailTabStepDef.ccpTotal), chargeDetailsData.get(charges));
-		    ccpAmtFromUI=chargeDetailsData.get(charges);
-    		}
+    		if(!VehicleDetailTabStepDef.ccpTotal.equals("0"))
+		    Assert.assertEquals(CoreFunctions.convertStringToDouble(VehicleDetailTabStepDef.ccpTotal), chargeDetailsData.get(charges));
+		    System.out.println("ccp : "+chargeDetailsData.get(charges));
+    		ccpAmtFromUI=chargeDetailsData.get(charges);
+    		
     		
 		}
     	else if(CoreFunctions.trim(charges).toLowerCase().contains("Extended ".toLowerCase())) {
@@ -253,15 +267,16 @@ for(String key:chargeDetailsData.keySet()) {
 		
 		System.out.println("extendedWarrantyValueFromUI "+extendedWarrantyValueFromUI+"ccpAmtFromUI "+ccpAmtFromUI+   "Av "+AV+ "CSST "+calculatedCGST +" IGST "+ calculatedIGST+"SGST "+calculatedSGST+" Cess  "+calulatedCess);
 		System.out.println("Total is "+ (extendedWarrantyValueFromUI+ccpAmtFromUI+AV+calculatedCGST+calculatedIGST+calculatedSGST+calulatedCess )+" Percentage value is "+percentageOfTaxCollection);
-	 calculatedTaxCollection=CoreFunctions.percent((extendedWarrantyValueFromUI+ccpAmtFromUI+AV+calculatedCGST+calculatedIGST+calculatedSGST+calulatedCess),percentageOfTaxCollection);
-	 calculatedTaxCollection = Math.round(calculatedTaxCollection * 100);
-	 calculatedTaxCollection = calculatedTaxCollection/100;
+	 calculatedTaxCollection= CoreFunctions.taxCollectionRoundOff(CoreFunctions.percent((extendedWarrantyValueFromUI+ccpAmtFromUI+AV+calculatedCGST+calculatedIGST+calculatedSGST+calulatedCess),percentageOfTaxCollection));
 	 System.out.println("Assert tax collection from UI "+taxCollectionAmtfromUI+"  From calulation "+ calculatedTaxCollection);
 	assertEquals(taxCollectionAmtfromUI, calculatedTaxCollection);
 	 total=extendedWarrantyValueFromUI+AV+calculatedTaxCollection+calculatedCGST+calculatedIGST+calculatedSGST+calulatedCess+ccpAmtFromUI;
 	System.out.println("Assert total from UI is "+CoreFunctions.getElementAttribute(chargeDetailsPOM.totalAmount(),"value")+" From caliclation "+ Math.round(total));
 Assert.assertEquals(CoreFunctions.convertStringToInt( CoreFunctions.getElementAttribute(chargeDetailsPOM.totalAmount(),"value")),(int)  Math.round(total));
 	 
+  
+
+
 	}
 	
 	

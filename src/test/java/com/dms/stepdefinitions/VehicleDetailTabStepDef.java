@@ -12,6 +12,7 @@ import org.testng.Assert;
 import com.dms.browserInstance.BrowserHandle;
 import com.dms.core.CoreFunctions;
 import com.dms.dbconfig.Query;
+import com.dms.logs.Logs;
 import com.dms.pageobjects.AddInvoice_AdditionalDetailsPOM;
 import com.dms.pageobjects.AddInvoice_FinancialInfo;
 import com.dms.pageobjects.AddInvoice_VehicleDetailsPOM;
@@ -25,7 +26,7 @@ public class VehicleDetailTabStepDef {
 	AddInvoice_AdditionalDetailsPOM additionalDetailsPOM = new AddInvoice_AdditionalDetailsPOM();
     public static String ccpCode="";
     public static String ccpDesc="";
-    public static String ccpTotal="";
+    public static String ccpTotal="0";
     public static String Color="";
     public static String Variant="";
     public static String ChasisNo="";
@@ -107,6 +108,27 @@ public class VehicleDetailTabStepDef {
 	}
 
 	
+	@When("User clicks on {string} button of Vehicle Details tab")
+	public void user_click_on_btn(String btn) throws InterruptedException {
+		CoreFunctions.moveToElement(vehicleDetailsPOM.selectExtendedWarrantyDropdown());
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.clickCCPSalepopup()));
+		CoreFunctions.click(vehicleDetailsPOM.clickCCPSalepopup(),"Clicking on Preferred SRV");
+		CoreFunctions.click(loginPOM.spanButton(btn), btn);
+
+		CoreFunctions.click(loginPOM.spanButton("OK"), "OK");
+
+		
+		
+		
+		Logs.logger.info(new Object() {
+		}.getClass().getEnclosingMethod().getName() + " " + btn);
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.spanButton(btn)));
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.spanButton(btn)));
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.spanButton(btn)));
+		CoreFunctions.moveToElement(loginPOM.spanButton(btn));
+		CoreFunctions.click(loginPOM.spanButton(btn), btn);
+	}
+	
 	@When("user selects Owners Manual Preference for scenario {int}")
 	public void user_selects_owners_manual_preference_as(int rowNo) throws Exception {
 		testData=CoreFunctions.test("InvoiceData");
@@ -172,7 +194,7 @@ public class VehicleDetailTabStepDef {
 public void user_Click_ccp_sale() throws InterruptedException {
 	CoreFunctions.moveToElement(vehicleDetailsPOM.selectExtendedWarrantyDropdown());
 	BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.clickCCPSalepopup()));
-	CoreFunctions.click(vehicleDetailsPOM.clickCCPSalepopup(),"Clicking on Preferred SRV");
+	CoreFunctions.click(vehicleDetailsPOM.clickCCPSalepopup(),"Clicking on ccp");
 
 }
 

@@ -104,7 +104,7 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.dms.runner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;BS 7 :  B2C - IGST - Individual - CCP - Extended Warranty -  Exchange&quot;, &quot;BS&quot;)">runScenario("BS 7 :  B2C - IGST - Individual - CCP - Extended Warranty -  Exchange", "BS")</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.dms.runner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;BS 14 :  B2B - CGST - Individual&quot;, &quot;BS&quot;)">runScenario("BS 14 :  B2B - CGST - Individual", "BS")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
@@ -127,14 +127,14 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;BS 7 :  B2C - IGST - Individual - CCP - Extended Warranty -  Exchange&quot;, &quot;BS&quot;)">
-                  </a> <!-- runScenario("BS 7 :  B2C - IGST - Individual - CCP - Extended Warranty -  Exchange", "BS") -->
+                  <a name="runScenario(&quot;BS 14 :  B2B - CGST - Individual&quot;, &quot;BS&quot;)">
+                  </a> <!-- runScenario("BS 14 :  B2B - CGST - Individual", "BS") -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("BS 7 :  B2C - IGST - Individual - CCP - Extended Warranty -  Exchange", "BS")</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [132.0] but found [133.0]
-	at com.dms.stepdefinitions.ChargeDetailsStepDef.validation_on_charge_Detail_page(ChargeDetailsStepDef.java:179)
-	at ✽.Validation on Charge details page(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/BusinessScenarios.feature:399)
-... Removed 5 stack frames
+                  <span class="parameters">("BS 14 :  B2B - CGST - Individual", "BS")</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [0.66] but found [0.55]
+	at com.dms.stepdefinitions.ChargeDetailsStepDef.validation_on_charge_Detail_page(ChargeDetailsStepDef.java:272)
+	at ✽.Validation on Charge details page(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/BusinessScenarios.feature:722)
+... Removed 4 stack frames
 </div> <!-- stack-trace -->
                   <em>
 (Runs Cucumber Scenarios)                  </em>
@@ -209,12 +209,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'com.dms.runner.TestRunner')
-data.setCell(0, 3, 173021);
+data.setCell(0, 3, 243077);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 4 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -242,20 +242,20 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.dms.runner.TestRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@218e188e)</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@555df150)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">runScenario("BS 7 :  B2C - IGST - Individual - CCP - Extended Warranty -  Exchange", "BS")</span>
-                <span class="method-start">682 ms</span>
+                <span class="method-name">runScenario("BS 14 :  B2B - CGST - Individual", "BS")</span>
+                <span class="method-start">853 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">173706 ms</span>
+                <span class="method-start">243939 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

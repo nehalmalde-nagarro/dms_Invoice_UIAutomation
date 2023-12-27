@@ -35,15 +35,30 @@ public class CoreFunctions {
 		String output = prop.getProperty(str);
 		return output;
 	}
+	public static double taxCollectionRoundOff(double val) {
+		 double numberToTruncate = val;
+
+	        // Cast the double to an int to truncate the decimal part
+	        int truncatedNumber = (int) (numberToTruncate * 100);
+
+	        // Divide by 100.0 to shift the decimal back to the correct position
+	        double result = truncatedNumber / 100.0;
+			return result;
+	}
+	public static double roundOff(double val) {
+		 val = Math.round(val * 100);
+		 val = val/100;
+		 return val;
+	}
 	   public static double formatAndConvertStringToDouble(String str) {
 	        // Remove commas and decimal places
 	        String cleanedStr = str.replaceAll("[^\\d.]", "");
 
 	        // Split the string by the decimal point
-	        String[] parts = cleanedStr.split("\\.");
+//	        String[] parts = cleanedStr.split("\\.");
 
 	        // Take only the integer part (before the decimal point)
-	        return Double.parseDouble(parts[0]);
+	        return Double.parseDouble(cleanedStr);
 	    }
 	   public static double convertStringToDouble(String str) {
 	    
@@ -66,9 +81,11 @@ public class CoreFunctions {
 	public static Double percent(Double num,Double per) {
 		
 		 
-		 double perOfNo=(num*per)/100;
+		 double perOfNo=(num*per);
 		 
-		 return perOfNo;
+		 System.out.println("perrrr "+perOfNo);
+		 
+		 return perOfNo/100;
 		
 	}
 	public static List<Map<String, String>> test(String sheetName)

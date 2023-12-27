@@ -546,12 +546,14 @@ Feature: BS
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
+    Then Validation on Charge details page
+    
 
     Examples: 
       | rowNumber |
       |        11 |
 
-  @BS11
+  @BS11	
   Scenario Outline: BS 11 :  B2C - IGST - Individual - CCP - Extended Warranty -  Scrapage
     Given User is on Home Page
     When User clicks on "Add Invoice" button
@@ -594,6 +596,8 @@ Feature: BS
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
+    Then Validation on Charge details page
+    
 
     Examples: 
       | rowNumber |
@@ -639,6 +643,8 @@ Feature: BS
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
+     Then Validation on Charge details page
+    
 
     Examples: 
       | rowNumber |
@@ -666,14 +672,16 @@ Feature: BS
     And User clicks on "SEARCH" button on popup
     And selects the dealer for scenario <rowNumber> from searched results
     And User clicks on "OK" button
-    And User clicks on "NEXT" button
+    And User clicks on "NEXT" button of Vehicle Details tab
     Then Verify user is navigated to "Financial Info"
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     And User selects the "No Offer" from old car offers
+        And User enters and select other offers for scenario <rowNumber>
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
+    Then Validation on Charge details page
 
     Examples: 
       | rowNumber |
@@ -701,15 +709,17 @@ Feature: BS
     And User clicks on "SEARCH" button on popup
     And selects the dealer for scenario <rowNumber> from searched results
     And User clicks on "OK" button
-    And User clicks on "NEXT" button
+    And User clicks on "NEXT" button of Vehicle Details tab
     Then Verify user is navigated to "Financial Info"
     And User selects all required fields on financial info for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
     And User selects the "No Offer" from old car offers
+    And User enters and select other offers for scenario <rowNumber>
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
+    Then Validation on Charge details page
 
     Examples: 
       | rowNumber |
@@ -761,6 +771,7 @@ Feature: BS
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
+    Then Validation on Charge details page
 
     Examples: 
       | rowNumber |
@@ -813,6 +824,7 @@ Feature: BS
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
+    Then Validation on Charge details page
 
     Examples: 
       | rowNumber |
@@ -864,6 +876,7 @@ Feature: BS
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
+    Then Validation on Charge details page
 
     Examples: 
       | rowNumber |

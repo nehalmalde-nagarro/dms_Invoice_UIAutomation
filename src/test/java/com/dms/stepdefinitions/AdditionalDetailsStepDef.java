@@ -21,6 +21,7 @@ import com.dms.pageobjects.AddInvoice_FinancialInfo;
 import com.dms.pageobjects.LoginPOM;
 import com.dms.pageobjects.SearchInvoice;
 
+import de.erichseifert.vectorgraphics2d.VectorHints.Key;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -34,7 +35,7 @@ public class AdditionalDetailsStepDef {
 	public static String  AD2="";
 	public static String MSSFOfferAmt="";
 	public static String SchemeOfferAmt="";
-	public static String Scrappage="";
+	public static String Scrappage="0";
 	public static String exchnageLoyalty="0";
 	JavascriptExecutor js = (JavascriptExecutor) BrowserHandle.getDriver();
 
@@ -69,21 +70,31 @@ public class AdditionalDetailsStepDef {
 
 	
 	@When("User enters Exchange Loyalty bonus for scenario {int}")
-	public  void user_enters_exchnage_loyalty(int rowNo) {
+	public  void user_enters_exchnage_loyalty(int rowNo) throws AWTException, InterruptedException {
 		rowNo--;
 		if(AddInvoiceStepDef.testData.get(rowNo).get("ExchangeLoyalty")!=null) {
 			System.out.println(AddInvoiceStepDef.testData.get(rowNo).get("ExchangeLoyalty").toString());
 
+			Thread.sleep(2000);
+			
 		exchnageLoyalty=AddInvoiceStepDef.testData.get(rowNo).get("ExchangeLoyalty").toString();
 		CoreFunctions.clearText(additionalDetailsPOM.exchangeLoyaltyBonus());
-		CoreFunctions.setText(additionalDetailsPOM.exchangeLoyaltyBonus(), exchnageLoyalty);
+additionalDetailsPOM.exchangeLoyaltyBonus().sendKeys(exchnageLoyalty);
+additionalDetailsPOM.exchangeLoyaltyBonus().sendKeys(Keys.TAB);
+
+//		Robot robot = new Robot();
+//		robot.keyPress(KeyEvent.VK_TAB);
+//		robot.keyRelease(KeyEvent.VK_TAB);;
+		Thread.sleep(3000);
+		CoreFunctions.click(additionalDetailsPOM.loyaltyExchangeBenefit(), AD1);
+
 		}
 		else 
 		{
 			exchnageLoyalty=CoreFunctions.getElementAttribute(additionalDetailsPOM.exchangeLoyaltyBonus(), "value");
 		}
 		
-		System.out.println(exchnageLoyalty);
+		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$  "+exchnageLoyalty);
 
 
 	}
@@ -538,9 +549,9 @@ Assert.assertEquals(additionalDetailsPOM.chassisNum().getAttribute("disabled"), 
 //		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
 
         CoreFunctions.moveToElement(additionalDetailsPOM.otherOfferNameDropdown());
-//		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
 
-       new Actions(BrowserHandle.getDriver()).sendKeys(Keys.ARROW_DOWN).build().perform();
+//       new Actions(BrowserHandle.getDriver()).sendKeys(Keys.ARROW_DOWN).build().perform();
        CoreFunctions.moveToElement(additionalDetailsPOM.otherOfferNameDropdown());
 
 
