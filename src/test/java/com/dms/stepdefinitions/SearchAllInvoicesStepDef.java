@@ -1,9 +1,11 @@
 package com.dms.stepdefinitions;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
@@ -50,7 +52,7 @@ public class SearchAllInvoicesStepDef {
 		CoreFunctions.setText(searchInvoice.orderId(), orderId);
 	}
 	@When("user enters Order Id for scenario {int}")
-	public void user_enters_order_ids(int rowNo) throws InterruptedException {
+	public void user_enters_order_ids(int rowNo) throws InterruptedException, InvalidFormatException, IOException {
 		rowNo--;
 		testData=CoreFunctions.test("InvoiceData");
 		String orderId = testData.get(rowNo).get("OrderId").toString();

@@ -1,10 +1,12 @@
 package com.dms.stepdefinitions;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.poi.hpsf.Variant;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
@@ -113,8 +115,10 @@ public class VehicleDetailTabStepDef {
 		CoreFunctions.moveToElement(vehicleDetailsPOM.selectExtendedWarrantyDropdown());
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.clickCCPSalepopup()));
 		CoreFunctions.click(vehicleDetailsPOM.clickCCPSalepopup(),"Clicking on Preferred SRV");
-		CoreFunctions.click(loginPOM.spanButton(btn), btn);
 
+        ccpTotal=CoreFunctions.trim(CoreFunctions.getElementText(vehicleDetailsPOM.ccpTotal()));
+
+		
 		CoreFunctions.click(loginPOM.spanButton("OK"), "OK");
 
 		
@@ -199,7 +203,7 @@ public void user_Click_ccp_sale() throws InterruptedException {
 }
 
 	@When("user selects state for scenario {int}")
-	public void user_selects_state_as(int rowNo) throws InterruptedException {
+	public void user_selects_state_as(int rowNo) throws InterruptedException, InvalidFormatException, IOException {
 		rowNo--;
 		testData=CoreFunctions.test("InvoiceData");
 		Thread.sleep(2000);
@@ -232,7 +236,7 @@ public void user_Click_ccp_sale() throws InterruptedException {
 	}
 
 	@When("user selects Extended Warranty for scenario {int}")
-	public void user_selects_extended_warranty_as(int rowNo) throws InterruptedException {
+	public void user_selects_extended_warranty_as(int rowNo) throws InterruptedException, InvalidFormatException, IOException {
 		rowNo--;
 		testData=CoreFunctions.test("InvoiceData");
 		extendedWarrantyValue = testData.get(rowNo).get("ExtendedWarranty").toString();
@@ -251,7 +255,7 @@ public void user_Click_ccp_sale() throws InterruptedException {
 	}
 
 	@When("User enters Fast Tag ID from {int}")
-	public void user_enters_for_fast_tag_id(int rowNo) {
+	public void user_enters_for_fast_tag_id(int rowNo) throws InvalidFormatException, IOException {
 		rowNo--;
 		testData=CoreFunctions.test("InvoiceData");
 		String fastTagID = testData.get(rowNo).get("FastTagID").toString();

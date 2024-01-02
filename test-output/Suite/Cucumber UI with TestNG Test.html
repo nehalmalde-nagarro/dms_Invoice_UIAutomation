@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Cucumber UI with TestNG Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>6/4/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Dec 27 10:28:15 IST 2023</td>
+<td>Started on:</td><td>Fri Dec 29 16:43:03 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>244 seconds (244704 ms)</td>
+<tr><td>Total time:</td><td>2062 seconds (2062216 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -122,8 +122,8 @@ function toggleAllBoxes() {
 	at io.cucumber.testng.AbstractTestNGCucumberTests.tearDownClass(AbstractTestNGCucumberTests.java:57)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	... 69 more
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace758870154", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace758870154'><pre>com.google.gson.JsonIOException: Failed making field &apos;java.lang.Throwable#detailMessage&apos; accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.
+... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2087920762", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2087920762'><pre>com.google.gson.JsonIOException: Failed making field &apos;java.lang.Throwable#detailMessage&apos; accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.
 	at com.google.gson.internal.reflect.ReflectionHelper.makeAccessible(ReflectionHelper.java:38)
 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.getBoundFields(ReflectiveTypeAdapterFactory.java:286)
 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory.create(ReflectiveTypeAdapterFactory.java:130)
@@ -213,20 +213,236 @@ Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field p
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 14 :  B2B - CGST - Individual", "BS"</td>
-<td><div><pre>java.lang.AssertionError: expected [0.66] but found [0.55]
-	at com.dms.stepdefinitions.ChargeDetailsStepDef.validation_on_charge_Detail_page(ChargeDetailsStepDef.java:272)
-	at ✽.Validation on Charge details page(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/BusinessScenarios.feature:722)
-... Removed 4 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace943621760", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace943621760'><pre>java.lang.AssertionError: expected [0.66] but found [0.55]
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 36 :  B2B - IGST - CSD - CCP - Extended Warranty -   Exchange", "BS"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//mat-option//span[text()=&apos;MSSF Offer&apos;]&quot;}
+  (Session info: chrome=114.0.5735.199)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9e7bb76c65087cada4a306507d9e0b88, findElement {using=xpath, value=//mat-option//span[text()=&apos;MSSF Offer&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.199, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, goog:chromeOptions: {debuggerAddress: localhost:55998}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55998/devtoo..., se:cdpVersion: 114.0.5735.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9e7bb76c65087cada4a306507d9e0b88
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
+	at com.dms.pageobjects.AddInvoice_FinancialInfo.chooseFromDropdown(AddInvoice_FinancialInfo.java:29)
+	at com.dms.stepdefinitions.AdditionalDetailsStepDef.user_enter_select_offer(AdditionalDetailsStepDef.java:564)
+	at ✽.User enters and select other offers for scenario 24(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/BusinessScenarios.feature:1798)
+... Removed 5 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace163085471", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace163085471'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//mat-option//span[text()=&apos;MSSF Offer&apos;]&quot;}
+  (Session info: chrome=114.0.5735.199)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9e7bb76c65087cada4a306507d9e0b88, findElement {using=xpath, value=//mat-option//span[text()=&apos;MSSF Offer&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.199, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, goog:chromeOptions: {debuggerAddress: localhost:55998}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55998/devtoo..., se:cdpVersion: 114.0.5735.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9e7bb76c65087cada4a306507d9e0b88
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
+	at com.dms.pageobjects.AddInvoice_FinancialInfo.chooseFromDropdown(AddInvoice_FinancialInfo.java:29)
+	at com.dms.stepdefinitions.AdditionalDetailsStepDef.user_enter_select_offer(AdditionalDetailsStepDef.java:564)
+	at ✽.User enters and select other offers for scenario 24(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/BusinessScenarios.feature:1798)
+</pre></div></td>
+<td>186</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 38 :  B2B - IGST - CSD - CCP -  Exchange  - Finance", "BS"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//mat-option//span[text()=&apos;MSSF Offer&apos;]&quot;}
+  (Session info: chrome=114.0.5735.199)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e2f4d299e169e0db2bc86ae4d7d4c3ed, findElement {using=xpath, value=//mat-option//span[text()=&apos;MSSF Offer&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.199, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, goog:chromeOptions: {debuggerAddress: localhost:56187}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56187/devtoo..., se:cdpVersion: 114.0.5735.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e2f4d299e169e0db2bc86ae4d7d4c3ed
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
+	at com.dms.pageobjects.AddInvoice_FinancialInfo.chooseFromDropdown(AddInvoice_FinancialInfo.java:29)
+	at com.dms.stepdefinitions.AdditionalDetailsStepDef.user_enter_select_offer(AdditionalDetailsStepDef.java:564)
+	at ✽.User enters and select other offers for scenario 24(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/BusinessScenarios.feature:1909)
+... Removed 5 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1910162144", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1910162144'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//mat-option//span[text()=&apos;MSSF Offer&apos;]&quot;}
+  (Session info: chrome=114.0.5735.199)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e2f4d299e169e0db2bc86ae4d7d4c3ed, findElement {using=xpath, value=//mat-option//span[text()=&apos;MSSF Offer&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.199, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, goog:chromeOptions: {debuggerAddress: localhost:56187}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56187/devtoo..., se:cdpVersion: 114.0.5735.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e2f4d299e169e0db2bc86ae4d7d4c3ed
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
+	at com.dms.pageobjects.AddInvoice_FinancialInfo.chooseFromDropdown(AddInvoice_FinancialInfo.java:29)
+	at com.dms.stepdefinitions.AdditionalDetailsStepDef.user_enter_select_offer(AdditionalDetailsStepDef.java:564)
+	at ✽.User enters and select other offers for scenario 24(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/BusinessScenarios.feature:1909)
+</pre></div></td>
+<td>183</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 37 :  B2B - IGST - CSD  - Extended Warranty - CCP NoPack - Exchange  - Leasing", "BS"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//mat-option//span[text()=&apos;MSSF Offer&apos;]&quot;}
+  (Session info: chrome=114.0.5735.199)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [bbe6877d0bc343bd3ee4303fa59ebf9c, findElement {using=xpath, value=//mat-option//span[text()=&apos;MSSF Offer&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.199, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, goog:chromeOptions: {debuggerAddress: localhost:56090}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56090/devtoo..., se:cdpVersion: 114.0.5735.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bbe6877d0bc343bd3ee4303fa59ebf9c
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
+	at com.dms.pageobjects.AddInvoice_FinancialInfo.chooseFromDropdown(AddInvoice_FinancialInfo.java:29)
+	at com.dms.stepdefinitions.AdditionalDetailsStepDef.user_enter_select_offer(AdditionalDetailsStepDef.java:564)
+	at ✽.User enters and select other offers for scenario 25(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/BusinessScenarios.feature:1854)
+... Removed 5 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace133247818", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace133247818'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//mat-option//span[text()=&apos;MSSF Offer&apos;]&quot;}
+  (Session info: chrome=114.0.5735.199)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [bbe6877d0bc343bd3ee4303fa59ebf9c, findElement {using=xpath, value=//mat-option//span[text()=&apos;MSSF Offer&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.199, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, goog:chromeOptions: {debuggerAddress: localhost:56090}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56090/devtoo..., se:cdpVersion: 114.0.5735.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bbe6877d0bc343bd3ee4303fa59ebf9c
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
+	at com.dms.pageobjects.AddInvoice_FinancialInfo.chooseFromDropdown(AddInvoice_FinancialInfo.java:29)
+	at com.dms.stepdefinitions.AdditionalDetailsStepDef.user_enter_select_offer(AdditionalDetailsStepDef.java:564)
+	at ✽.User enters and select other offers for scenario 25(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/BusinessScenarios.feature:1854)
+</pre></div></td>
+<td>188</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 34 :  B2B - CGST - CSD - CCP - Extended Warranty -   Loyalty Acquistion", "BS"</td>
+<td><div><pre>java.lang.AssertionError: expected [0.0] but found [144.0]
+	at com.dms.stepdefinitions.ChargeDetailsStepDef.validation_on_charge_Detail_page(ChargeDetailsStepDef.java:186)
+	at ✽.Validation on Charge details page(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/BusinessScenarios.feature:1709)
+... Removed 5 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace984769661", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace984769661'><pre>java.lang.AssertionError: expected [0.0] but found [144.0]
 	at org.testng.Assert.fail(Assert.java:110)
 	at org.testng.Assert.failNotEquals(Assert.java:1413)
-	at org.testng.Assert.assertEquals(Assert.java:727)
-	at org.testng.Assert.assertEquals(Assert.java:762)
-	at com.dms.stepdefinitions.ChargeDetailsStepDef.validation_on_charge_Detail_page(ChargeDetailsStepDef.java:272)
-	at ✽.Validation on Charge details page(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/BusinessScenarios.feature:722)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:782)
+	at com.dms.stepdefinitions.ChargeDetailsStepDef.validation_on_charge_Detail_page(ChargeDetailsStepDef.java:186)
+	at ✽.Validation on Charge details page(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/BusinessScenarios.feature:1709)
 </pre></div></td>
-<td>243</td>
+<td>219</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 39 :  B2B - IGST - CSD - Extended Warranty - ccp-  Cash", "BS"</td>
+<td></td>
+<td>155</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 31 :  B2B - CGST - CSD - CCP -  Exchange  - Finance", "BS"</td>
+<td></td>
+<td>261</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 35 :  B2B - IGST - CSD", "BS"</td>
+<td></td>
+<td>157</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 33 :  B2B - CGST - CSD - CCP - Extended Warranty -  Scrapage", "BS"</td>
+<td></td>
+<td>222</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 30 :  B2B - CGST - CSD  - Extended Warranty - CCP NoPack - Exchange  - Leasing", "BS"</td>
+<td></td>
+<td>273</td>
+<td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
+<tr>
+<td title='com.dms.runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: com.dms.runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "BS 32 :  B2B - CGST - CSD - Extended Warranty - ccp -  Cash", "BS"</td>
+<td></td>
+<td>211</td>
 <td>com.dms.runner.TestRunner@1e66f1f5</td></tr>
 </table><p>
 </body>

@@ -10,6 +10,7 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.dms.core.CoreFunctions;
 import com.dms.utils.ReadFromProperty;
 
 public class ReadFromDB extends ReadFromProperty {
@@ -24,7 +25,14 @@ public class ReadFromDB extends ReadFromProperty {
 			System.out.println("DB_Name: "+dbName);
 			Log.info("Executing query: " + query);
 			List<String> reqData = new ArrayList<>();
-			Connection connection=DBConnectionUtils.forQA(dbName);
+			Connection connection = null;
+			if (CoreFunctions.readConfig("environment").equalsIgnoreCase("qa"))
+			 connection=DBConnectionUtils.forQA(dbName);
+			if (CoreFunctions.readConfig("environment").equalsIgnoreCase("dev"))
+				 connection=DBConnectionUtils.forDEV(dbName);
+			if (CoreFunctions.readConfig("environment").equalsIgnoreCase("uat"))
+				 connection=DBConnectionUtils.forUAT(dbName);
+
 			try (PreparedStatement stm = connection.prepareStatement(query)) {
 				try (ResultSet resultSet = stm.executeQuery()) {
 					while (resultSet.next()) {

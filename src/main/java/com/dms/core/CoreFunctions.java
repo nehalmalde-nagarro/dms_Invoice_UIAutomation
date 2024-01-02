@@ -88,16 +88,19 @@ public class CoreFunctions {
 		 return perOfNo/100;
 		
 	}
-	public static List<Map<String, String>> test(String sheetName)
+	public static List<Map<String, String>> test(String sheetName) throws IOException, InvalidFormatException
     {
      List<Map<String, String>> testData = new ArrayList<>();
             ExcelReader reader = new ExcelReader();
-        try {
-            testData = reader.getData(Constants.TESTDATA_CSV, sheetName);
-        } 
-        catch (InvalidFormatException | IOException e) {
-            e.printStackTrace();
-        }
+            if (CoreFunctions.readConfig("environment").equalsIgnoreCase("dev")) {
+            testData = reader.getData(Constants.DEV_TESTDATA_CSV, sheetName);
+            }
+            else if (CoreFunctions.readConfig("environment").equalsIgnoreCase("qa")) {
+                testData = reader.getData(Constants.QA_TESTDATA_CSV, sheetName);
+                }
+            else if (CoreFunctions.readConfig("environment").equalsIgnoreCase("uat")) {
+                    testData = reader.getData(Constants.UAT_TESTDATA_CSV, sheetName);
+                }
     return testData;
     }
 

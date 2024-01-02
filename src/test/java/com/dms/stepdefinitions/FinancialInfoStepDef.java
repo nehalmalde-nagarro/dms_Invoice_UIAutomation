@@ -1,10 +1,12 @@
 package com.dms.stepdefinitions;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.logging.log4j.core.Core;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
@@ -168,7 +170,7 @@ public class FinancialInfoStepDef {
 
 	    }
 	    @When("User selects tax rate for scenario {int}")
-	    public void User_selects_tax_rate_for_scenario(int rowNo) {
+	    public void User_selects_tax_rate_for_scenario(int rowNo) throws InvalidFormatException, IOException {
 	    	testData=CoreFunctions.test("InvoiceData");
 	    	rowNo--;
 	    	CoreFunctions.click(financialInfoPOM.clicktaxrateDropdown(), null);
@@ -240,7 +242,7 @@ public class FinancialInfoStepDef {
 //	    User selects Financier for scenario <rowNumber>
 //	    And User selects Finance Amount for scenario <rowNumber>
 	    @When("User selects Financier for scenario {int}")
-	    public void User_selects_financer_for_scenario(int rowNo) throws InterruptedException {
+	    public void User_selects_financer_for_scenario(int rowNo) throws InterruptedException, InvalidFormatException, IOException {
 	    	testData=CoreFunctions.test("InvoiceData");
 	    	rowNo--;
 		    String financier=testData.get(rowNo).get("Financier").toString();
@@ -253,7 +255,7 @@ public class FinancialInfoStepDef {
 
 	    }
 	    @When("User selects Finance Amount for scenario {int}")
-	    public void User_selects_financer_Amount_for_scenario(int rowNo) {
+	    public void User_selects_financer_Amount_for_scenario(int rowNo) throws InvalidFormatException, IOException {
 	    	testData=CoreFunctions.test("InvoiceData");
 	    	rowNo--;
 		    String financierAmt=testData.get(rowNo).get("FinancierAmt").toString();
@@ -261,7 +263,7 @@ public class FinancialInfoStepDef {
 
 	    }
 	    @When("User selects TCS Flag for scenario {int}")
-	    public void User_selects_tcs_flag_for_Scenario(int rowNo) {
+	    public void User_selects_tcs_flag_for_Scenario(int rowNo) throws InvalidFormatException, IOException {
 	    	testData=CoreFunctions.test("InvoiceData");
 	    	rowNo--;
 	    	String tcsFlag=testData.get(rowNo).get("TCSFlag").toString();
@@ -278,7 +280,7 @@ public class FinancialInfoStepDef {
 		}
  
 		@When("User selects Loan Type for scenario {int}")
-		public void user_selects_loan_type_for_scenario(Integer rowNo) {
+		public void user_selects_loan_type_for_scenario(Integer rowNo) throws InvalidFormatException, IOException {
 			testData=CoreFunctions.test("InvoiceData");
 			rowNo--;
 		    // Write code here that turns the phrase above into concrete actions
@@ -291,7 +293,7 @@ public class FinancialInfoStepDef {
 		}
  
 		@When("User selects Loan Status for scenario {int}")
-		public void user_selects_loan_status_for_scenario(Integer rowNo) {
+		public void user_selects_loan_status_for_scenario(Integer rowNo) throws InvalidFormatException, IOException {
 			testData=CoreFunctions.test("InvoiceData");
 			rowNo--;
 		    // Write code here that turns the phrase above into concrete actions
@@ -350,7 +352,7 @@ public class FinancialInfoStepDef {
 		}
 		
 		@When("User selects Down Payment Mode for scenario {int}")
-		public void user_selects_down_payment_mode_for_scenario(Integer rowNo) {
+		public void user_selects_down_payment_mode_for_scenario(Integer rowNo) throws InvalidFormatException, IOException {
 			testData=CoreFunctions.test("InvoiceData");
 			rowNo--;
 			// Write code here that turns the phrase above into concrete actions

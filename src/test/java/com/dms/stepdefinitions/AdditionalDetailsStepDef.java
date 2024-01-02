@@ -3,10 +3,12 @@ package com.dms.stepdefinitions;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -323,7 +325,7 @@ additionalDetailsPOM.exchangeLoyaltyBonus().sendKeys(Keys.TAB);
 
 	}
 	@And("User enter policy no from {int}")
-	public void user_enter_policy_no(int rowNo) {
+	public void user_enter_policy_no(int rowNo) throws InvalidFormatException, IOException {
 		testData = CoreFunctions.test("InvoiceData");
 
 		BrowserHandle.wait.until(
@@ -501,7 +503,7 @@ Assert.assertEquals(additionalDetailsPOM.chassisNum().getAttribute("disabled"), 
 	}
 	
 	@When("Enter reg Num for {string} for scenario {int}")
-	public void enterRegNum(String option,int rowNo ) {
+	public void enterRegNum(String option,int rowNo ) throws InvalidFormatException, IOException {
 		testData = CoreFunctions.test("InvoiceData");
 
 		rowNo--;

@@ -1,9 +1,11 @@
 package com.dms.stepdefinitions;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
@@ -31,7 +33,7 @@ public class AddInvoiceStepDef {
 	JavascriptExecutor js = (JavascriptExecutor) BrowserHandle.getDriver();
 
 	@When("User click on Search Order")
-	public void user_click_on_search_order() {
+	public void user_click_on_search_order() throws InvalidFormatException, IOException {
 		testData = CoreFunctions.test("InvoiceData");
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName());
@@ -351,7 +353,7 @@ public class AddInvoiceStepDef {
 	
 
 	@When("Invoice Details Tab for {string} scenario {int}")
-	public void invoice_tab(String sheet, int rowNo) throws InterruptedException {
+	public void invoice_tab(String sheet, int rowNo) throws InterruptedException, InvalidFormatException, IOException {
 		testData = CoreFunctions.test(sheet);
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName());

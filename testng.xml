@@ -5,9 +5,9 @@
 		<listener class-name="com.dms.listerners.MyListeners" />
 	</listeners>	
   <test thread-count="5" name="Cucumber UI with TestNG Test">
-    <classes>
+    <classes>	
       <class name="com.dms.runner.TestRunner"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
-	
+		

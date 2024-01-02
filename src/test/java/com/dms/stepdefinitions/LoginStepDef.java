@@ -26,6 +26,9 @@ public class LoginStepDef {
 		if (CoreFunctions.readConfig("environment").equalsIgnoreCase("qa")) {
 			BrowserHandle.getDriver().get(CoreFunctions.readConfig("qaSignInurl"));
 		}
+		if (CoreFunctions.readConfig("environment").equalsIgnoreCase("dev")) {
+			BrowserHandle.getDriver().get(CoreFunctions.readConfig("devSignInurl"));
+		}
 		if (CoreFunctions.readConfig("environment").equalsIgnoreCase("preprod")) {
 			BrowserHandle.getDriver().get(CoreFunctions.readConfig("preprodSignInurl"));
 		}

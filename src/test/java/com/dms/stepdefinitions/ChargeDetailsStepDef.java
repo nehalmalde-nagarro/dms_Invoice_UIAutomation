@@ -71,7 +71,7 @@ public class ChargeDetailsStepDef {
 		BrowserHandle.wait.until(ExpectedConditions.textToBePresentInElement(chargeDetailsPOM.engineNum(),
 				VehicleDetailTabStepDef.EngineNum));
 		BrowserHandle.wait.until(
-				ExpectedConditions.textToBePresentInElement(chargeDetailsPOM.color(), VehicleDetailTabStepDef.Color));
+				ExpectedConditions.textToBePresentInElement(chargeDetailsPOM.color(), CoreFunctions.trim(VehicleDetailTabStepDef.Color)));
 		BrowserHandle.wait.until(ExpectedConditions.textToBePresentInElement(chargeDetailsPOM.variant(),
 				VehicleDetailTabStepDef.Variant));
 		Thread.sleep(2000);
@@ -89,7 +89,7 @@ public class ChargeDetailsStepDef {
 		Assert.assertEquals(CoreFunctions.getElementText(chargeDetailsPOM.chassisNum()), VehicleDetailTabStepDef.ChasisNo);
 		BrowserHandle.wait.until(ExpectedConditions.visibilityOf(chargeDetailsPOM.engineNum()));
 		Assert.assertEquals(CoreFunctions.getElementText(chargeDetailsPOM.engineNum()), VehicleDetailTabStepDef.EngineNum);
-		Assert.assertEquals(CoreFunctions.getElementText(chargeDetailsPOM.color()), VehicleDetailTabStepDef.Color);
+		Assert.assertEquals(CoreFunctions.getElementText(chargeDetailsPOM.color()), CoreFunctions.trim(VehicleDetailTabStepDef.Color));
 		Assert.assertEquals(CoreFunctions.getElementText(chargeDetailsPOM.variant()), VehicleDetailTabStepDef.Variant);
 
 //		System.out.println("ccpCode" + VehicleDetailTabStepDef.ccpCode);
@@ -235,14 +235,14 @@ for(String key:chargeDetailsData.keySet()) {
 				 if(CoreFunctions.trim(charges).toLowerCase().contains("CGST".toLowerCase())) {
 					  double percentage=chargeDetailsDataValue.get(charges);
 				      calculatedCGST = CoreFunctions.roundOff(CoreFunctions.percent(AV, percentage));
-				      System.out.println("Charge Name is " + CoreFunctions.trim(charges) +  "Assert GST from ui "+ chargeDetailsData.get(charges)+" From Calculatio "+calculatedIGST);
+				      System.out.println("Charge Name is " + CoreFunctions.trim(charges) +  "Assert GST from ui "+ chargeDetailsData.get(charges)+" From Calculatio "+calculatedCGST);
 				      Assert.assertEquals(calculatedCGST,chargeDetailsData.get(charges));
 
 				  } 
 				 if(CoreFunctions.trim(charges).toLowerCase().contains("SGST".toLowerCase())) {
 					  double percentage=chargeDetailsDataValue.get(charges);
 				      calculatedSGST = CoreFunctions.roundOff(CoreFunctions.percent(AV, percentage));
-				      System.out.println("Charge Name is " + CoreFunctions.trim(charges) +  "Assert GST from ui "+ chargeDetailsData.get(charges)+" From Calculatio "+calculatedIGST);
+				      System.out.println("Charge Name is " + CoreFunctions.trim(charges) +  "Assert GST from ui "+ chargeDetailsData.get(charges)+" From Calculatio "+calculatedSGST);
 				      Assert.assertEquals(calculatedSGST, chargeDetailsData.get(charges));
 
 				  } 
