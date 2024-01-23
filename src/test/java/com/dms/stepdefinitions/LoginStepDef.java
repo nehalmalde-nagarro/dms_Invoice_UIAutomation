@@ -29,8 +29,8 @@ public class LoginStepDef {
 		if (CoreFunctions.readConfig("environment").equalsIgnoreCase("dev")) {
 			BrowserHandle.getDriver().get(CoreFunctions.readConfig("devSignInurl"));
 		}
-		if (CoreFunctions.readConfig("environment").equalsIgnoreCase("preprod")) {
-			BrowserHandle.getDriver().get(CoreFunctions.readConfig("preprodSignInurl"));
+		if (CoreFunctions.readConfig("environment").equalsIgnoreCase("uat")) {
+			BrowserHandle.getDriver().get(CoreFunctions.readConfig("uatSignInurl"));
 		}
 	}
 
@@ -68,8 +68,6 @@ public class LoginStepDef {
 	public void user_click_on_btn(String btn) throws InterruptedException {
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName() + " " + btn);
-		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.spanButton(btn)));
-		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.spanButton(btn)));
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.spanButton(btn)));
 		CoreFunctions.moveToElement(loginPOM.spanButton(btn));
 		CoreFunctions.click(loginPOM.spanButton(btn), btn);
@@ -140,14 +138,11 @@ public class LoginStepDef {
 	@Then("Verify user is able to access the Zendesk messaging window")
 	public void Verify_user_is_able_to_access_the_Zendesk_messaging_window() {
 		
-		
 		BrowserHandle.getDriver().switchTo().defaultContent();
 		BrowserHandle.getDriver().switchTo().frame("Messaging window");
 		BrowserHandle.wait.until(ExpectedConditions.visibilityOf(loginPOM.zendeskMessagingWindow()));
-		
 		Assert.assertTrue(loginPOM.zendeskMessagingWindow().isDisplayed());
 		BrowserHandle.getDriver().switchTo().defaultContent();
-		
 		
 	}
 }

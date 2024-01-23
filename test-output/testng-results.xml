@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-03T10:41:47 IST" name="Suite" finished-at="2024-01-03T10:43:27 IST" duration-ms="100028">
+  <suite started-at="2024-01-23T16:48:20 IST" name="Default suite" finished-at="2024-01-23T16:51:23 IST" duration-ms="182278">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1e66f1f5]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@eadd4fb]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-01-03T10:41:47 IST" name="Cucumber UI with TestNG Test" finished-at="2024-01-03T10:43:27 IST" duration-ms="100028">
+    <test started-at="2024-01-23T16:48:20 IST" name="Default test" finished-at="2024-01-23T16:51:23 IST" duration-ms="182278">
       <class name="com.dms.runner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.dms.runner.TestRunner@1e66f1f5]" started-at="2024-01-03T10:41:47 IST" name="setUpClass" finished-at="2024-01-03T10:41:48 IST" duration-ms="716" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.dms.runner.TestRunner@eadd4fb]" started-at="2024-01-23T16:48:20 IST" name="setUpClass" finished-at="2024-01-23T16:48:23 IST" duration-ms="2302" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@39f93225]]>
+                <![CDATA[org.testng.TestRunner@6a9dced4]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@1e66f1f5]" started-at="2024-01-03T10:41:48 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-03T10:43:27 IST" duration-ms="98717" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.dms.runner.TestRunner@eadd4fb]" started-at="2024-01-23T16:48:23 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-01-23T16:51:22 IST" duration-ms="179476" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["BS 70 :  B2C - CGST - CPC"]]>
+                <![CDATA["BS 3 :  B2B - IGST - Individual  - Extended Warranty - CCP NoPack - Exchange  - Leasing"]]>
               </value>
             </param>
             <param index="1">
@@ -34,35 +34,10 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[Unable to find element with locator By.xpath: //mat-panel-title[contains(text(),'Vehicle Info')]
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.8.1', revision: '8ebccac989'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: driver.version: RemoteWebDriver]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: //mat-panel-title[contains(text(),'Vehicle Info')]
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.8.1', revision: '8ebccac989'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: driver.version: RemoteWebDriver
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at com.dms.utils.PageUtil.findBy(PageUtil.java:16)
-at com.dms.pageobjects.SearchInvoice.infoTitle(SearchInvoice.java:17)
-at com.dms.stepdefinitions.AddInvoiceStepDef.verify_user_is_navigated_to(AddInvoiceStepDef.java:289)
-at ✽.Verify user is navigated to "Vehicle Info"(file:///C:/Users/tanugupta02/git/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/BusinessScenarios.feature:3429)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.dms.runner.TestRunner@1e66f1f5]" started-at="2024-01-03T10:43:27 IST" name="tearDownClass" finished-at="2024-01-03T10:43:27 IST" duration-ms="554" status="FAIL">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.dms.runner.TestRunner@eadd4fb]" started-at="2024-01-23T16:51:22 IST" name="tearDownClass" finished-at="2024-01-23T16:51:23 IST" duration-ms="425" status="FAIL">
           <exception class="com.google.gson.JsonIOException">
             <message>
               <![CDATA[Failed making field 'java.lang.Throwable#detailMessage' accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.]]>
@@ -139,7 +114,7 @@ at org.testng.TestNG.run(TestNG.java:1060)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String java.lang.Throwable.detailMessage accessible: module java.base does not "opens java.lang" to unnamed module @51016012
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private java.lang.String java.lang.Throwable.detailMessage accessible: module java.base does not "opens java.lang" to unnamed module @5383967b
 at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:354)
 at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297)
 at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:178)
@@ -153,6 +128,6 @@ at com.google.gson.internal.reflect.ReflectionHelper.makeAccessible(ReflectionHe
           </reporter-output>
         </test-method> <!-- tearDownClass -->
       </class> <!-- com.dms.runner.TestRunner -->
-    </test> <!-- Cucumber UI with TestNG Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

@@ -38,11 +38,11 @@ public class AddInvoice_InvoiceDetailsPOM {
 	}
 
 	public WebElement chooseOrder(String orderId) {
-		return PageUtil.findBy(By.xpath("//div[contains(text(),'" + orderId + "')]"));
+		return PageUtil.findBy(By.xpath("//div[@class='data-wrapper']//div[contains(text(),'" + orderId + "')]"));
 	}
 	
 	public WebElement isOrderDetailVisible(String data) {
-		return PageUtil.findBy(By.xpath("//div[contains(text(),'" + data + "')]"));
+		return PageUtil.findBy(By.xpath("//div[@class='data-wrapper']//div[contains(text(),'" + data + "')]"));
 	}
 
 	// order details

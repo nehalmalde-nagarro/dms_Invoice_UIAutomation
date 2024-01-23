@@ -115,7 +115,7 @@ public WebElement enterValue_chassis() {
 
 }
 public WebElement chooseVehicleOnVehicalDetailsTab(String txt) {
-	return PageUtil.findBy(By.xpath("//div[contains(text(),'"+txt+"')]"));
+	return PageUtil.findBy(By.xpath("//div[@class='data-wrapper']//div[contains(text(),'"+txt+"')]"));
 
 }
 public WebElement VinSearchIcon() {

@@ -12,8 +12,7 @@ public class Constants {
     public final static String QA_TESTDATA_CSV=WORKING_DIRECTORY+"/src/test/resources/QA_TestData.xlsx";
     public final static String UAT_TESTDATA_CSV=WORKING_DIRECTORY+"/src/test/resources/UAT_TestData.xlsx";
 
-//    public final static String INVOICE_PDF="file:///"+WORKING_DIRECTORY+"/src/test/resources/inv_ind.pdf";
-    public final static String INVOICE_PDF="C:\\Users\\tanugupta02\\Downloads\\VSL-23002081.pdf";
+    public final static String INVOICE_PDF="file:///"+WORKING_DIRECTORY+"/src/test/resources/inv_ind.pdf";
+   
 
 }
-//file:///C:/Users/sprakash01/Downloads/inv_ind.pdf

@@ -225,7 +225,7 @@ public class AddInvoiceStepDef {
 //	Actions ac=new Actions(BrowserHandle.getDriver());
 //	ac.moveToElement(addIn/voicePOM.b2bCustomer()).build().perform();
 //	js.executeScript("window.scrollTo(0,250)");
-//	Thread.sleep(4000);
+
 		CoreFunctions.moveToElement(addInvoicePOM.aadharNumber());
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(addInvoicePOM.b2bCustomer()));
 

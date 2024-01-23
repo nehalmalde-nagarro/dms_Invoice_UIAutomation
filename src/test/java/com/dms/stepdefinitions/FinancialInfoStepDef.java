@@ -30,7 +30,7 @@ public class FinancialInfoStepDef {
 	public static String GST_Type="";
 	public static String invoiceAmt ="";
 	public static String SellingPriceFor ="";
-
+	public static String tcsFlag="";
 
 	@Then("Verify Prefilled fields for OrderId from scenario {int} on Financial Info tab")
 	public void Verify_Prefilled_fields_for_OrderId_from_scenario_on_Financial_Info_tab(int rowNo) throws Exception {
@@ -130,7 +130,7 @@ public class FinancialInfoStepDef {
 			CoreFunctions.click(financialInfoPOM.clickPaymentTypeDropdown(), "Clicking on Payment Type");
 			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.choosePaymentTypeDropdown(paymentType)));
 			CoreFunctions.click(financialInfoPOM.choosePaymentTypeDropdown(paymentType), "Choosing Payment Type");
-			Thread.sleep(2000);
+			
 		}
 		
 		@Then("verify the fields Financier, Finance Amount, Branch and Finance Details are disabled")
@@ -249,7 +249,7 @@ public class FinancialInfoStepDef {
 		    BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.clickFinancerDropdown()));
 			CoreFunctions.click(financialInfoPOM.clickFinancerDropdown(), "Clicking on Financier dropdown");
 			CoreFunctions.setText(financialInfoPOM.searchDropDropDownValue(), financier);
-			Thread.sleep(2000);
+			
 			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.chooseFinancierDropdown(financier)));
 	    	CoreFunctions.click(financialInfoPOM.chooseFromDropdown(financier), "ChosingFinancier");
 
@@ -314,7 +314,7 @@ public class FinancialInfoStepDef {
 		   
 		    BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.loanApplicationDatePicker()));
 			CoreFunctions.click(financialInfoPOM.loanApplicationDatePicker(), "Choosing Loan Application Date");
-		    Thread.sleep(3000);
+		    
 			CoreFunctions.selectDate(BrowserHandle.getDriver(), loanApplicationDate);
 		}
  
@@ -406,10 +406,13 @@ public class FinancialInfoStepDef {
 	       	
 	    	GST_Type=CoreFunctions.getElementText(financialInfoPOM.GST());	
 			SellingPriceFor=CoreFunctions.getElementAttribute(financialInfoPOM.sellingAmount(), "value");
-
+			
 		    invoiceAmt = CoreFunctions.getElementAttribute(financialInfoPOM.invoiceAmount(), "value");
 		    Recevied_Amt =CoreFunctions.getElementAttribute(financialInfoPOM.recievedAmount(), "value");
-	    	if(paymentType.equalsIgnoreCase("finance") || paymentType.equalsIgnoreCase("Leasing")) {
+	    	
+		    
+		    
+		    if(paymentType.equalsIgnoreCase("finance") || paymentType.equalsIgnoreCase("Leasing")) {
 	    		User_selects_financer_for_scenario(rowNo);
 	    		User_selects_financer_Amount_for_scenario(rowNo);
 	    		user_clicks_on_financial_details();
@@ -438,7 +441,7 @@ public class FinancialInfoStepDef {
 	    	User_selects_tcs_flag_for_Scenario(rowNo);
 	    		}
 	    	
-	    	
+	    tcsFlag = CoreFunctions.getElementText(financialInfoPOM.getDropdownSelectedValue("TCSFlag"));	
 	    	
 	    }
 	    

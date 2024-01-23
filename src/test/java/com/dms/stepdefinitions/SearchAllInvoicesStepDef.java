@@ -56,7 +56,7 @@ public class SearchAllInvoicesStepDef {
 		rowNo--;
 		testData=CoreFunctions.test("InvoiceData");
 		String orderId = testData.get(rowNo).get("OrderId").toString();
-		Thread.sleep(3000);
+		
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName() + orderId);
 
@@ -156,8 +156,7 @@ public class SearchAllInvoicesStepDef {
 			e.printStackTrace();
 		}
 
-		Thread.sleep(2000);
-
+		
 	}
 
 	@When("user selects To {string}")
@@ -167,16 +166,15 @@ public class SearchAllInvoicesStepDef {
 
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(searchInvoice.toDate()));
 		CoreFunctions.click(searchInvoice.toDate(), toDate);
-		Thread.sleep(1000);
+		
 		try {
 			CoreFunctions.selectDate(BrowserHandle.getDriver(), toDate);
-//			Thread.sleep(10000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		Thread.sleep(2000);
+		
 
 	}
 

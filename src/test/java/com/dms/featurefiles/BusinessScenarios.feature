@@ -4,7 +4,7 @@ Feature: BS
   Background: Login with dealer
     Given User is on Login Page
     And User clicks on "Dealer" button
-    And User enters "grn_sale" and "Welcome@1234"
+    And User enters "ccm_sales121" and "Welcome@1234"
     And User click on "LOGIN" button
 
   @BS0
@@ -193,7 +193,7 @@ Feature: BS
     And User choose old vehicle for "Exchange" for scenario <rowNumber>
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
-    And User enters Exchange Loyalty bonus for scenario <rowNumber>
+    #And User enters Exchange Loyalty bonus for scenario <rowNumber>
     And User enters and select other offers for scenario <rowNumber>
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button

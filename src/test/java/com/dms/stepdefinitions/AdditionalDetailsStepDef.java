@@ -48,8 +48,9 @@ public class AdditionalDetailsStepDef {
 	AddInvoice_FinancialInfo financialInfoPOM = new AddInvoice_FinancialInfo();
 
 	@When("User selects the {string} from old car offers")
-	public void user_select_old_Car_offer(String option) {
+	public void user_select_old_Car_offer(String option) throws InterruptedException {
 		
+		Thread.sleep(2000);
 		if(option.equalsIgnoreCase("No Offer")) {
 			BrowserHandle.wait
 			.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.oldCarOfferNameDropdown()));
@@ -59,8 +60,7 @@ public class AdditionalDetailsStepDef {
 
 		}
 		else {
-		BrowserHandle.wait
-				.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.oldCarOfferNameDropdown()));
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.oldCarOfferNameDropdown()));
 		CoreFunctions.click(additionalDetailsPOM.oldCarOfferNameDropdown(), option);
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.chooseFromDropdown(option)));
 		CoreFunctions.click(financialInfoPOM.chooseFromDropdown(option), option);
@@ -77,7 +77,7 @@ public class AdditionalDetailsStepDef {
 		if(AddInvoiceStepDef.testData.get(rowNo).get("ExchangeLoyalty")!=null) {
 			System.out.println(AddInvoiceStepDef.testData.get(rowNo).get("ExchangeLoyalty").toString());
 
-			Thread.sleep(2000);
+			
 			
 		exchnageLoyalty=AddInvoiceStepDef.testData.get(rowNo).get("ExchangeLoyalty").toString();
 		CoreFunctions.clearText(additionalDetailsPOM.exchangeLoyaltyBonus());
@@ -87,7 +87,7 @@ additionalDetailsPOM.exchangeLoyaltyBonus().sendKeys(Keys.TAB);
 //		Robot robot = new Robot();
 //		robot.keyPress(KeyEvent.VK_TAB);
 //		robot.keyRelease(KeyEvent.VK_TAB);;
-		Thread.sleep(3000);
+		
 		CoreFunctions.click(additionalDetailsPOM.loyaltyExchangeBenefit(), AD1);
 
 		}
@@ -366,9 +366,9 @@ additionalDetailsPOM.exchangeLoyaltyBonus().sendKeys(Keys.TAB);
 	@Then("Verify error message if text box values are null")
 	public void Text_box_value_Are_null() throws InterruptedException {
 		additionalDetailsPOM.chassisNum().sendKeys((Keys.chord(Keys.CONTROL,"a",Keys.DELETE)));
-		Thread.sleep(1000);
+		
 		CoreFunctions.click(additionalDetailsPOM.engineNo(), null);
-		Thread.sleep(1000);
+		
 		Assert.assertTrue(additionalDetailsPOM.chasisNoError().isDisplayed());
 		
 	}
@@ -405,7 +405,7 @@ Assert.assertEquals(additionalDetailsPOM.chassisNum().getAttribute("disabled"), 
 		Robot robot = new Robot();
 		robot.keyPress(KeyEvent.VK_TAB);
 		robot.keyRelease(KeyEvent.VK_TAB);
-		Thread.sleep(2000);
+		
 	}
 	@And("User diselect the {string} from other offers")
 	public void User_diselect_only_the_MSSFOffer_from_other_offers(String offerName)
@@ -557,7 +557,7 @@ Assert.assertEquals(additionalDetailsPOM.chassisNum().getAttribute("disabled"), 
        CoreFunctions.moveToElement(additionalDetailsPOM.otherOfferNameDropdown());
 
 
-		Thread.sleep(3000);
+	
         
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.otherOfferNameDropdown()));
 		CoreFunctions.click(additionalDetailsPOM.otherOfferNameDropdown(), "Other Offers");
@@ -565,12 +565,12 @@ Assert.assertEquals(additionalDetailsPOM.chassisNum().getAttribute("disabled"), 
 		CoreFunctions.click(financialInfoPOM.chooseFromDropdown("MSSF Offer"), "MSSF Offer");
 		CoreFunctions.click(financialInfoPOM.chooseFromDropdown("Additional Discount 1"), "Additional Discount 1");
 		CoreFunctions.click(financialInfoPOM.chooseFromDropdown("Additional Discount 2"), "Additional Discount 2");
-		Thread.sleep(2000);
+		
 
 		Robot robot = new Robot();
 		robot.keyPress(KeyEvent.VK_TAB);
 		robot.keyRelease(KeyEvent.VK_TAB);
-		Thread.sleep(2000);
+		
 
 //		CoreFunctions.click(additionalDetailsPOM.closeDropDown(), "close dropDown");
 

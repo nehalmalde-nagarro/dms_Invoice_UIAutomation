@@ -138,7 +138,7 @@ public class VehicleDetailTabStepDef {
 		testData=CoreFunctions.test("InvoiceData");
 
 		rowNo--;
-
+		
 		if(financialInfoPOM.getDropdownSelectedValue("ownerManualRef")==null) {
 		
 		String ownerManualValue = testData.get(rowNo).get("OwnerManualPref").toString();
@@ -206,7 +206,7 @@ public void user_Click_ccp_sale() throws InterruptedException {
 	public void user_selects_state_as(int rowNo) throws InterruptedException, InvalidFormatException, IOException {
 		rowNo--;
 		testData=CoreFunctions.test("InvoiceData");
-		Thread.sleep(2000);
+		
 
 		String stateValue = testData.get(rowNo).get("State").toString();
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.selectStateDropdown()));
@@ -218,7 +218,7 @@ public void user_Click_ccp_sale() throws InterruptedException {
 	@When("user selects city for scenario {int}")
 	public void user_selects_city_as(int rowNo) throws InterruptedException {
 		rowNo--;
-		Thread.sleep(2000);
+		
 
 		String cityValue = testData.get(rowNo).get("City").toString();
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.selectCityDropdown()));
@@ -240,7 +240,7 @@ public void user_Click_ccp_sale() throws InterruptedException {
 		rowNo--;
 		testData=CoreFunctions.test("InvoiceData");
 		extendedWarrantyValue = testData.get(rowNo).get("ExtendedWarranty").toString();
-		Thread.sleep(3000);
+		
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.selectExtendedWarrantyDropdown()));
 		CoreFunctions.click(vehicleDetailsPOM.selectExtendedWarrantyDropdown(),"Clicking on Extended Warranty dropdown");
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.chooseExtendedWarranty(extendedWarrantyValue)));
@@ -323,9 +323,7 @@ public void user_Click_ccp_sale() throws InterruptedException {
 	public void verify_if_benefit_already_selected(int rowNo) throws InterruptedException {
 	
 		rowNo--;
-		Thread.sleep(5000);
 		
-		System.out.println(loginPOM.spanButtonIsDisable("OK").getAttribute("disabled"));
 		
 		if(loginPOM.spanButtonIsDisable("OK").getAttribute("disabled")!=(null)) {
 		if(loginPOM.spanButtonIsDisable("OK").getAttribute("disabled").equalsIgnoreCase("true")){

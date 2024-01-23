@@ -401,16 +401,16 @@ public class Query {
 	public static String fetch_loyalty_exchange_benefits(String orderId) throws Exception {
 		String mobileNo=get_fields_From_ShOrderBook("MOBILE", "ORDER_NUM", orderId);
 		query="(\r\n"
-				+ "SELECT \"MULDMS\".\"GD_LOYALTY_ENROL\".\"CARD_NUM\" "
-				+ "FROM \"MULDMS\".\"GD_LOYALTY_ENROL\" JOIN \"MULDMS\".\"AM_LIST_RANGE\"\r\n"
-				+ "ON \"MULDMS\".\"GD_LOYALTY_ENROL\".\"CARD_TYPE\" =\"MULDMS\".\"AM_LIST_RANGE\".\"LIST_CODE\"\r\n"
-				+ "AND \"MULDMS\".\"AM_LIST_RANGE\".\"LIST_GRP_CODE\" =\"MULDMS\".\"GD_LOYALTY_ENROL\".\"CHANNEL\"\r\n"
-				+ "WHERE \"MULDMS\".\"GD_LOYALTY_ENROL\".\"REG_MOBILE\" in\r\n"
-				+ "(SELECT \"REG_MOBILE\"  FROM \"MULDMS\".\"GD_LOYALTY_ENROL\"\r\n"
+				+ "SELECT \"DMSPROD2\".\"MULDMS\".\"GD_LOYALTY_ENROL\".\"CARD_NUM\" "
+				+ "FROM \"DMSPROD2\".\"MULDMS\".\"GD_LOYALTY_ENROL\" JOIN \"DMSPROD2\".\"MULDMS\".\"AM_LIST_RANGE\"\r\n"
+				+ "ON \"DMSPROD2\".\"MULDMS\".\"GD_LOYALTY_ENROL\".\"CARD_TYPE\" =\"DMSPROD2\".\"MULDMS\".\"AM_LIST_RANGE\".\"LIST_CODE\"\r\n"
+				+ "AND \"DMSPROD2\".\"MULDMS\".\"AM_LIST_RANGE\".\"LIST_GRP_CODE\" =\"DMSPROD2\".\"MULDMS\".\"GD_LOYALTY_ENROL\".\"CHANNEL\"\r\n"
+				+ "WHERE \"DMSPROD2\".\"MULDMS\".\"GD_LOYALTY_ENROL\".\"REG_MOBILE\" in\r\n"
+				+ "(SELECT \"REG_MOBILE\"  FROM \"DMSPROD2\".\"MULDMS\".\"GD_LOYALTY_ENROL\"\r\n"
 				+ "WHERE \"REG_MOBILE\" in ('"+mobileNo+"'))\r\n"
-				+ "AND \"MULDMS\".\"GD_LOYALTY_ENROL\".\"CARD_STATUS\"  in ('P')\r\n"
-				+ "AND \"MULDMS\".\"AM_LIST_RANGE\".\"PRINCIPAL_MAP_CD\" =1\r\n"
-				+ "AND \"MULDMS\".\"AM_LIST_RANGE\".\"LIST_NAME\" ='CARD_TYPE')";
+				+ "AND \"DMSPROD2\".\"MULDMS\".\"GD_LOYALTY_ENROL\".\"CARD_STATUS\"  in ('P')\r\n"
+				+ "AND \"DMSPROD2\".\"MULDMS\".\"AM_LIST_RANGE\".\"PRINCIPAL_MAP_CD\" =1\r\n"
+				+ "AND \"DMSPROD2\".\"MULDMS\".\"AM_LIST_RANGE\".\"LIST_NAME\" ='CARD_TYPE')";
 		System.out.println(query);
 		String data = ReadFromDB.getData(Database.MULDMS, query).get(0);
 		return data;
