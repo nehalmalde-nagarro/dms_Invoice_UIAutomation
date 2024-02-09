@@ -29,6 +29,11 @@ public class AddInvoice_FinancialInfo {
 		return PageUtil.findBy(By.xpath("//mat-option//span[text()='" + value + "']"));
 	}
 
+	// choose a given value from dropdown taxrate
+		public WebElement chooseFromDropdownTaxrate(String value) {
+			return PageUtil.findBy(By.xpath("//mat-option//span[text()='"+value+"']"));
+		}
+		
 	// Finanical Info - Payment Details
 	public WebElement clickPaymentTypeDropdown() {
 		return PageUtil.findBy(By.id("paymentType"));

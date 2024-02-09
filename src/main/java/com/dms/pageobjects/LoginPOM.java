@@ -10,6 +10,23 @@ public class LoginPOM {
 		return PageUtil.findBy(By.id("mat-button-toggle-2-button"));
 	}
 
+	public WebElement inputMSPin() {
+		return PageUtil.findBy(By.id("'formInput-'mspin"));
+	}
+	
+	public WebElement verifyMSPin() {
+		return PageUtil.findBy(By.xpath("//span//div[contains(text(),'Verify')]"));
+	}
+	
+	public WebElement msPinVerified() {
+		return PageUtil.findBy(By.xpath("//img[contains(@src,'verify')]"));
+	}
+	
+	
+	public WebElement inputOTP() {
+		return PageUtil.findBy(By.id("'formInput-'otp"));
+	}
+	
 	public WebElement inputUsername() {
 		return PageUtil.findBy(By.id("'formInput-'username"));
 	}
@@ -64,6 +81,9 @@ public class LoginPOM {
 		return PageUtil.findBy(By.xpath("//mat-dialog-container//button//span[contains(text(),'"+btn+"')]"));
 	}
 	
+	public WebElement popupSearchButton() {
+		return PageUtil.findBy(By.xpath("//mat-dialog-container//button//span[contains(text(),'Search')]"));
+	}
 
 	public WebElement invalidUsername() {
 		return PageUtil.findBy(By.id("username_error"));

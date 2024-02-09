@@ -117,4 +117,15 @@ public class AddInvoice_ChargeDetailsPOM {
 			return getChargeDetails().get(chargeName).get(2);
 		}
 		
+		
+		
+		
+		//Submit
+		public WebElement successMessage() {
+			return PageUtil.findBy(By.xpath("//p[contains(text(),'Success')]"));
+		}
+		
+		public WebElement invoiceNumberGenerated() {
+			return PageUtil.findBy(By.xpath("//h2[contains(text(),'Invoice No')]/span"));
+		}
 }

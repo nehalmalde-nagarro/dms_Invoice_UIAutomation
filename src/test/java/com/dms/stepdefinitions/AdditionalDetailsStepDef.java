@@ -5,6 +5,7 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -33,6 +34,7 @@ public class AdditionalDetailsStepDef {
 	LoginPOM loginPOM = new LoginPOM();
 	SearchInvoice searchInvoicePOM = new SearchInvoice();
 	public static String exchangeBenefitAmt="";
+	public static HashMap<String, String> otherOffersMap=new HashMap<String, String>();
 	public static String  AD1="";
 	public static String  AD2="";
 	public static String MSSFOfferAmt="";
@@ -545,52 +547,27 @@ Assert.assertEquals(additionalDetailsPOM.chassisNum().getAttribute("disabled"), 
 		CoreFunctions.click(financialInfoPOM.chooseFromDropdown(text), text);
 		
 	}
-	@When("User enters and select other offers for scenario {int}")
-	public void user_enter_select_offer(int rowNo) throws AWTException, InterruptedException {
-        rowNo--;
-//		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
-
-        CoreFunctions.moveToElement(additionalDetailsPOM.otherOfferNameDropdown());
-		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
-
-//       new Actions(BrowserHandle.getDriver()).sendKeys(Keys.ARROW_DOWN).build().perform();
-       CoreFunctions.moveToElement(additionalDetailsPOM.otherOfferNameDropdown());
-
-
 	
-        
+	@When("User enters and select other offers {string} for scenario {int}")
+	public void user_enter_select_offer(String offer,int rowNo) throws AWTException, InterruptedException {
+		rowNo--;
+		Thread.sleep(1500);
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.otherOfferNameDropdown()));
 		CoreFunctions.click(additionalDetailsPOM.otherOfferNameDropdown(), "Other Offers");
-		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.chooseFromDropdown("MSSF Offer")));
-		CoreFunctions.click(financialInfoPOM.chooseFromDropdown("MSSF Offer"), "MSSF Offer");
-		CoreFunctions.click(financialInfoPOM.chooseFromDropdown("Additional Discount 1"), "Additional Discount 1");
-		CoreFunctions.click(financialInfoPOM.chooseFromDropdown("Additional Discount 2"), "Additional Discount 2");
-		
-
+		CoreFunctions.click(financialInfoPOM.chooseFromDropdown(offer), offer);
+		String offerUpper =offer.toUpperCase();
 		Robot robot = new Robot();
 		robot.keyPress(KeyEvent.VK_TAB);
 		robot.keyRelease(KeyEvent.VK_TAB);
-		
+		CoreFunctions.clearText(additionalDetailsPOM.otherOfferValue(offerUpper));
+		String OfferValue=AddInvoiceStepDef.testData.get(rowNo).get(offer).toString();
 
-//		CoreFunctions.click(additionalDetailsPOM.closeDropDown(), "close dropDown");
-
-		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(additionalDetailsPOM.popUpBtn("MSSF OFFER")));
-		CoreFunctions.click(additionalDetailsPOM.popUpBtn("MSSF OFFER"), "MSSF Offer");
-	    
-		MSSFOfferAmt=CoreFunctions.getElementText(additionalDetailsPOM.chooseFirstRowforMSSFOffer());
+		System.out.println(offerUpper);
+		CoreFunctions.setText(additionalDetailsPOM.otherOfferValue(offerUpper), OfferValue);
+		otherOffersMap.put(offer, OfferValue);
 		
-		CoreFunctions.click(additionalDetailsPOM.chooseFirstRowforMSSFOffer(), exchangeBenefitAmt);
-		CoreFunctions.click(loginPOM.popupButton("OK"),"OK");
-		
-		CoreFunctions.clearText(additionalDetailsPOM.additionalDiscount1());
-		CoreFunctions.clearText(additionalDetailsPOM.additionalDiscount2());
-		AD1=AddInvoiceStepDef.testData.get(rowNo).get("AD1").toString();
-		AD2=AddInvoiceStepDef.testData.get(rowNo).get("AD2").toString();
-		
-		CoreFunctions.setText(additionalDetailsPOM.additionalDiscount1(), AD1);
-		CoreFunctions.setText(additionalDetailsPOM.additionalDiscount2(),AD2);
-
 	}
+	
 	
 }
 

@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
@@ -16,6 +17,7 @@ import com.dms.dbconfig.Query;
 import com.dms.logs.Logs;
 import com.dms.pageobjects.AddInvoice_FinancialInfo;
 import com.dms.pageobjects.AddInvoice_InvoiceDetailsPOM;
+import com.dms.pageobjects.AddInvoice_VehicleDetailsPOM;
 import com.dms.pageobjects.LoginPOM;
 import com.dms.pageobjects.SearchInvoice;
 
@@ -27,6 +29,8 @@ public class AddInvoiceStepDef {
 
 	// add
 	AddInvoice_InvoiceDetailsPOM addInvoicePOM = new AddInvoice_InvoiceDetailsPOM();
+	AddInvoice_VehicleDetailsPOM vehicleDetailsPOM = new AddInvoice_VehicleDetailsPOM();
+	LoginStepDef loginStepDef = new LoginStepDef();
 	LoginPOM loginPOM = new LoginPOM();
 	AddInvoice_FinancialInfo financialInfo = new AddInvoice_FinancialInfo();
 	SearchInvoice searchInvoicePOM = new SearchInvoice();
@@ -249,11 +253,27 @@ public class AddInvoiceStepDef {
 	}
 
 	@Then("user enters Bill GSTN field from {int}")
-	public void user_enters_in_bill_gstn_field(int rowNo) {
+	public void user_enters_in_bill_gstn_field(int rowNo) throws InterruptedException {
 		rowNo--;
-		String Text = testData.get(rowNo).get("Bill GSTN").toString();
-		CoreFunctions.clearText(addInvoicePOM.billGSTN());
-		CoreFunctions.setText(addInvoicePOM.billGSTN(), Text);
+		//String Text = testData.get(rowNo).get("Bill GSTN").toString();
+		//CoreFunctions.clearText(addInvoicePOM.billGSTN());
+		//CoreFunctions.setText(addInvoicePOM.billGSTN(), Text);
+		//JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+		Thread.sleep(4000);
+		String existingValue = CoreFunctions.getElementAttribute(addInvoicePOM.billGSTN(), "value");
+		System.out.println("existingValue : "+existingValue);
+		if(!existingValue.equals("GSTUNREGISTERED"))
+		{
+			if_user_selects_b2b_customer_as("Yes");
+			loginStepDef.user_click_on_button("VALIDATE");
+			BrowserHandle.wait.until(ExpectedConditions.visibilityOf(addInvoicePOM.billGstnValidated()));
+			
+		}
+		else
+		{
+			if_user_selects_b2b_customer_as("No");
+		}
 	}
 
 	@Then("Verify if Sales Type is {string}")
@@ -285,7 +305,14 @@ public class AddInvoiceStepDef {
 	}
 
 	@Then("Verify user is navigated to {string}")
-	public void verify_user_is_navigated_to(String text) {
+	public void verify_user_is_navigated_to(String text) throws InterruptedException {
+		if(text.contains("Vehicle") || text.contains("Financial"))
+		{
+			BrowserHandle.wait.until(ExpectedConditions.visibilityOf(vehicleDetailsPOM.informationBox()));
+			loginStepDef.user_click_on_btn("OK");
+			Thread.sleep(2000);
+		}
+		
 		Assert.assertTrue(searchInvoicePOM.infoTitle(text).isDisplayed());
 	}
 

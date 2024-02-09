@@ -23,6 +23,7 @@ import io.cucumber.java.en.Then;
 public class ChargeDetailsStepDef {
 	AddInvoice_ChargeDetailsPOM chargeDetailsPOM = new AddInvoice_ChargeDetailsPOM();
 	public static List<Map<String, String>> testData = new ArrayList<>();
+	public static String invoiceNumberGenerated="";
 
 	@Then("Verify Prefilled fields for OrderId from scenario {int} on Charge Details tab")
 	public void Verify_Prefilled_fields_for_OrderId_from_scenario_on_Charge_Details_tab(int rowNo) throws Exception {
@@ -74,7 +75,7 @@ public class ChargeDetailsStepDef {
 				ExpectedConditions.textToBePresentInElement(chargeDetailsPOM.color(), CoreFunctions.trim(VehicleDetailTabStepDef.Color)));
 		BrowserHandle.wait.until(ExpectedConditions.textToBePresentInElement(chargeDetailsPOM.variant(),
 				VehicleDetailTabStepDef.Variant));
-		
+		Set<String> otherOffersKeys = AdditionalDetailsStepDef.otherOffersMap.keySet();
 		String SP = CoreFunctions.getElementText(chargeDetailsPOM.sellingPrice());
 		String cleanedStr = SP.replaceAll("[^\\d.]", "");
 		// Split the string by the decimal point
@@ -135,7 +136,7 @@ for(String key:chargeDetailsData.keySet()) {
 	    System.out.println(key + " " + value);
 }
 
-
+		
 
 		for (String charges : chargesName) {
 
@@ -146,27 +147,43 @@ for(String key:chargeDetailsData.keySet()) {
 //						+ chargeDetailsPOM.getChargeAmountForProvidedChargeName(charges));
 //				AV -= CoreFunctions
 //						.convertStringToDouble(chargeDetailsPOM.getChargeAmountForProvidedChargeName(charges));
-				System.out.println("Assert AD1 input" + AdditionalDetailsStepDef.AD1 + " form Charge details UI "
+				System.out.println("Assert AD1 input" + AdditionalDetailsStepDef.otherOffersMap.get(charges) + " form Charge details UI "
 						+chargeDetailsData.get(charges));	
-				Assert.assertEquals(CoreFunctions.convertStringToDouble(AdditionalDetailsStepDef.AD1 ), chargeDetailsData.get(charges));
+				//Assert.assertEquals(CoreFunctions.convertStringToDouble(AdditionalDetailsStepDef.otherOffersMap.get(charges) ), chargeDetailsData.get(charges));
 				AV -= chargeDetailsData.get(charges);
 
 				System.out.println(" AV After Subtract DIS1" + AV);
 			} 
 			else if (CoreFunctions.trim(charges).toLowerCase().contains("Discount 2".toLowerCase())) {
-				System.out.println("Assert AD2 input" + CoreFunctions.convertStringToDouble(AdditionalDetailsStepDef.AD2) + " form Charge details UI "
+				System.out.println("Assert AD2 input" + CoreFunctions.convertStringToDouble(AdditionalDetailsStepDef.otherOffersMap.get(charges)) + " form Charge details UI "
 						+ chargeDetailsData.get(charges));
-				Assert.assertEquals( CoreFunctions.convertStringToDouble(AdditionalDetailsStepDef.AD2), chargeDetailsData.get(charges));
+				//Assert.assertEquals( CoreFunctions.convertStringToDouble(AdditionalDetailsStepDef.AD2), chargeDetailsData.get(charges));
 				AV -= chargeDetailsData.get(charges);
 				System.out.println(" AV After Subtract DIS2" + AV);
 			}
 			else if (CoreFunctions.trim(charges).toLowerCase().contains("Discount 3".toLowerCase())) {
+				System.out.println("Assert AD3 input" + CoreFunctions.convertStringToDouble(AdditionalDetailsStepDef.otherOffersMap.get(charges)) + " form Charge details UI "
+						+ chargeDetailsData.get(charges));
+				//Assert.assertEquals( CoreFunctions.convertStringToDouble(AdditionalDetailsStepDef.otherOffersMap.get(charges)), chargeDetailsData.get(charges));
 				AV -= chargeDetailsData.get(charges);
 				System.out.println(" AV After Subtract DIS3" + AV);
 			}
 			else if (CoreFunctions.trim(charges).toLowerCase().contains("Discount 4".toLowerCase())) {
+				System.out.println("Assert AD4 input" + CoreFunctions.convertStringToDouble(AdditionalDetailsStepDef.otherOffersMap.get(charges)) + " form Charge details UI "
+						+ chargeDetailsData.get(charges));
+				//Assert.assertEquals( CoreFunctions.convertStringToDouble(AdditionalDetailsStepDef.otherOffersMap.get(charges)), chargeDetailsData.get(charges));
 				AV -= chargeDetailsData.get(charges);
 			System.out.println(" AV After Subtract DIS4" + AV);
+			}
+			else if (CoreFunctions.trim(charges).toLowerCase().contains("AUTO CARD".toLowerCase())) {
+				
+				//Assert.assertEquals( CoreFunctions.convertStringToDouble(AdditionalDetailsStepDef.otherOffersMap.get(charges)), chargeDetailsData.get(charges));
+				AV -= chargeDetailsData.get(charges);
+				System.out.println(" AV After Subtract Auto Card" + AV);
+			}
+			else if (CoreFunctions.trim(charges).toLowerCase().contains("ADS 10".toLowerCase())) {
+				AV -= chargeDetailsData.get(charges);
+				System.out.println(" AV After Subtract ADS 10" + AV);
 			}
 			else if (CoreFunctions.trim(charges).toLowerCase().contains("MDS Discount".toLowerCase())) {
 				AV -= chargeDetailsData.get(charges);
@@ -226,6 +243,15 @@ for(String key:chargeDetailsData.keySet()) {
 				       
 				       System.out.println("  percentageOfTaxCollection : "+percentageOfTaxCollection+" taxCollectionAmtfromUI :  "+taxCollectionAmtfromUI);
 					   
+				       if(FinancialInfoStepDef.taxRate.contains("Normal"))
+				       {
+				    	   Assert.assertEquals(percentageOfTaxCollection, 1.0);
+				       }
+				       else if(FinancialInfoStepDef.taxRate.contains("Higher"))
+				       {
+				    	   Assert.assertEquals(percentageOfTaxCollection, 5.0);
+				       }
+				       
 				  }
 			  else if (CoreFunctions.trim(charges).toLowerCase().contains("GST".toLowerCase())) {
      		 if(CoreFunctions.trim(charges).toLowerCase().contains("IGST".toLowerCase())) {
@@ -298,6 +324,14 @@ Assert.assertEquals(CoreFunctions.convertStringToDouble( CoreFunctions.getElemen
 	
 	
 	
-	
+	@Then("Verify user is navigated to Invoice Generation screen")
+	public void Verify_user_is_navigated_to_Invoice_Generation_screen()
+	{
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(chargeDetailsPOM.successMessage()));
+		Assert.assertTrue(chargeDetailsPOM.successMessage().isDisplayed());
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(chargeDetailsPOM.invoiceNumberGenerated()));
+		invoiceNumberGenerated = CoreFunctions.getElementText(chargeDetailsPOM.invoiceNumberGenerated());
+		System.out.println("Invoice Number Generated: " +invoiceNumberGenerated);
+	}
 
 }

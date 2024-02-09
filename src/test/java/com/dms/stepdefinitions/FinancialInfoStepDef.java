@@ -31,6 +31,7 @@ public class FinancialInfoStepDef {
 	public static String invoiceAmt ="";
 	public static String SellingPriceFor ="";
 	public static String tcsFlag="";
+	public static String taxRate="";
 
 	@Then("Verify Prefilled fields for OrderId from scenario {int} on Financial Info tab")
 	public void Verify_Prefilled_fields_for_OrderId_from_scenario_on_Financial_Info_tab(int rowNo) throws Exception {
@@ -360,6 +361,21 @@ public class FinancialInfoStepDef {
 			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.downPaymentMode()));
 			CoreFunctions.setText(financialInfoPOM.downPaymentMode(),downPaymentMode );
 		}
+		
+		@When("User selects the tax rate for scenario {int}")
+		public void user_selects_the_tax_rate_for_scenario (Integer rowNo) throws InvalidFormatException, IOException, InterruptedException {
+			testData=CoreFunctions.test("InvoiceData");
+			rowNo--;
+			String taxRateFromExcel = testData.get(rowNo).get("TaxRate").toString();
+			System.out.println("taxRateFromExcel: "+taxRateFromExcel);
+			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.clicktaxrateDropdown()));
+			CoreFunctions.click(financialInfoPOM.clicktaxrateDropdown(), "");
+			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.chooseFromDropdownTaxrate(taxRateFromExcel)));
+			CoreFunctions.click(financialInfoPOM.chooseFromDropdownTaxrate(taxRateFromExcel), "");
+			
+			taxRate = CoreFunctions.getElementText(financialInfoPOM.getDropdownSelectedValue("taxRate"));
+		}
+		
  
 		@When("User selects Loan Rejection Date for scenario {int}")
 		public void user_selects_loan_rejection_date_for_scenario(Integer rowNo) throws Exception {
@@ -445,5 +461,12 @@ public class FinancialInfoStepDef {
 	    	
 	    }
 	    
-	 
+	 @When("User selects GST as {string}")
+	 public void user_selects_GST_as(String gstValue) throws Exception 
+	 {
+		 BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.clickGSTDropdown()));
+		 CoreFunctions.click(financialInfoPOM.clickGSTDropdown(), gstValue); 
+		 BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.chooseFromDropdown(gstValue)));
+		 CoreFunctions.click(financialInfoPOM.chooseFromDropdown(gstValue), gstValue); 
+	 }
 	}

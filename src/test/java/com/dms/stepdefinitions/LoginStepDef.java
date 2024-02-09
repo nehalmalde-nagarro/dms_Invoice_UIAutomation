@@ -1,7 +1,12 @@
 package com.dms.stepdefinitions;
 
 import java.io.IOException;
+import java.util.List;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
@@ -35,21 +40,32 @@ public class LoginStepDef {
 	}
 
 	@When("User enters {string} and {string}")
-	public void user_enters_and(String username, String password) {
+	public void user_enters_and(String username, String password) throws InterruptedException {
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName() + " username : " + username + " password : " + password);
 //   CoreFunctions.click(loginPOM.dealerBtn(), "dealer");
-		CoreFunctions.setText(loginPOM.inputUsername(), username);
-		CoreFunctions.setText(loginPOM.inputPassword(), password);
-		
+		// CoreFunctions.setText(loginPOM.inputUsername(), username);
+		// CoreFunctions.setText(loginPOM.inputPassword(), password);
+
+		// CoreFunctions.setText(loginPOM.inputMSPin(), username);
+		loginPOM.inputMSPin().sendKeys(username + Keys.TAB);
+
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.verifyMSPin()));
+		JavascriptExecutor executor = (JavascriptExecutor) BrowserHandle.getDriver();
+		executor.executeScript("arguments[0].click();", loginPOM.verifyMSPin());
+
+		BrowserHandle.wait.until(ExpectedConditions.visibilityOf(loginPOM.msPinVerified()));
+
 		BrowserHandle.getDriver().switchTo().frame(1);
-		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.closeZendesk()));
-		CoreFunctions.click(loginPOM.closeZendesk(), "Closing Zendesk");
-		
-		BrowserHandle.getDriver().switchTo().defaultContent();
+		  BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.
+		  closeZendesk())); CoreFunctions.click(loginPOM.closeZendesk(),
+		  "Closing Zendesk");
+		  
+		  BrowserHandle.getDriver().switchTo().defaultContent(); 
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.inputOTP()));
+		CoreFunctions.setText(loginPOM.inputOTP(), password);
 	}
 
-	
 	@When("User click on Captcha")
 	public void user_click_on_captcha() {
 		Logs.logger.info(new Object() {
@@ -61,7 +77,12 @@ public class LoginStepDef {
 	public void user_click_on_button(String button) {
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName() + " " + button);
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.button(button)));
 		CoreFunctions.click(loginPOM.button(button), button);
+
+		
+		  
+		 
 	}
 
 	@When("User clicks on {string} button")
@@ -72,16 +93,16 @@ public class LoginStepDef {
 		CoreFunctions.moveToElement(loginPOM.spanButton(btn));
 		CoreFunctions.click(loginPOM.spanButton(btn), btn);
 	}
-	
+
 	@When("User clicks on {string} button on popup")
 	public void user_click_on_btn_on_popup(String btn) {
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName() + " " + btn);
-		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.popupButton(btn)));
-		CoreFunctions.click(loginPOM.popupButton(btn), btn);
-	}
+		
+			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.popupButton(btn)));
+			CoreFunctions.click(loginPOM.popupButton(btn), btn);
 
-	
+	}
 
 	@Then("Verify if user Logs in sucessfully")
 	public void verify_if_user_logs_in_sucessfully() {
@@ -90,7 +111,6 @@ public class LoginStepDef {
 		Assert.assertTrue(loginPOM.signOut().isDisplayed());
 	}
 
-	
 	@Then("Verify if user not Logs in sucessfully")
 	public void verify_if_user_not_logs_in_sucessfully() {
 		Logs.logger.info(new Object() {
@@ -121,28 +141,25 @@ public class LoginStepDef {
 		Assert.assertTrue(loginPOM.invalidPassword().isDisplayed());
 	}
 
-	
 	@When("User clicks on open Zendesk messaging window button")
 	public void User_clicks_on_open_Zendesk_messaging_window_button() {
-		
+
 		BrowserHandle.getDriver().switchTo().frame("launcher");
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.openZendeskMessagingWindow()));
 		CoreFunctions.click(loginPOM.openZendeskMessagingWindow(), "open Zendesk");
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName() + " " + loginPOM.openZendeskMessagingWindow());
-		
-		
-		
+
 	}
-	
+
 	@Then("Verify user is able to access the Zendesk messaging window")
 	public void Verify_user_is_able_to_access_the_Zendesk_messaging_window() {
-		
+
 		BrowserHandle.getDriver().switchTo().defaultContent();
 		BrowserHandle.getDriver().switchTo().frame("Messaging window");
 		BrowserHandle.wait.until(ExpectedConditions.visibilityOf(loginPOM.zendeskMessagingWindow()));
 		Assert.assertTrue(loginPOM.zendeskMessagingWindow().isDisplayed());
 		BrowserHandle.getDriver().switchTo().defaultContent();
-		
+
 	}
 }

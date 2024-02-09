@@ -135,7 +135,7 @@ public class AddInvoice_VehicleDetailsPOM {
 	}
 
 	public WebElement searchInDropdown() {
-		return PageUtil.findBy(By.xpath("//input[@placeholder='Select']"));
+		return PageUtil.findBy(By.xpath("//input[@aria-label='dropdown search']"));
 	}
 
 	public WebElement selectCityDropdown() {
@@ -159,4 +159,11 @@ public class AddInvoice_VehicleDetailsPOM {
 	public WebElement chooseExtendedWarranty(String extendedWarrantyValue) {
 		return PageUtil.findBy(By.xpath("//span[contains(text(),'"+extendedWarrantyValue+"')]"));
 	}
+	
+	//information popup
+	public WebElement informationBox() {
+		return PageUtil.findBy(By.xpath("//span[text()=' Information']"));
+	}
+	
+	
 }

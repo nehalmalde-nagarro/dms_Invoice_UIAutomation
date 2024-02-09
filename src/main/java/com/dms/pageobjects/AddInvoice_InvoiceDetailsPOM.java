@@ -199,4 +199,11 @@ public class AddInvoice_InvoiceDetailsPOM {
 		return PageUtil.findBy(By.id("billGSTN_error"));
 	}	
 
+	
+	//bill gstn validate
+	public WebElement billGstnValidated() {
+		return PageUtil.findBy(By.xpath("//img[contains(@src,'circle-green')]"));
+	}
+	
+	
 }

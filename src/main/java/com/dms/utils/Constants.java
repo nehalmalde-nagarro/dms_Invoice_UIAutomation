@@ -10,7 +10,7 @@ public class Constants {
     public final static String BROWSER_CONFIG_PATH=WORKING_DIRECTORY+"/src/test/resources/browser-config.properties";
     public final static String DEV_TESTDATA_CSV=WORKING_DIRECTORY+"/src/test/resources/DEV_TestData.xlsx";
     public final static String QA_TESTDATA_CSV=WORKING_DIRECTORY+"/src/test/resources/QA_TestData.xlsx";
-    public final static String UAT_TESTDATA_CSV=WORKING_DIRECTORY+"/src/test/resources/UAT_TestData.xlsx";
+    public final static String UAT_TESTDATA_CSV=WORKING_DIRECTORY+"/src/test/resources/UAT_BS_TestData.xlsx";
 
     public final static String INVOICE_PDF="file:///"+WORKING_DIRECTORY+"/src/test/resources/inv_ind.pdf";
    

@@ -144,6 +144,7 @@ public class VehicleDetailTabStepDef {
 		String ownerManualValue = testData.get(rowNo).get("OwnerManualPref").toString();
 		CoreFunctions.moveToElement(vehicleDetailsPOM.clickownersManualPrefDropdown());
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.clickownersManualPrefDropdown()));
+		
 		CoreFunctions.click(vehicleDetailsPOM.clickownersManualPrefDropdown(), "Clicking on Owner Pref");
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.chooseownersManualPref(ownerManualValue)));
 		CoreFunctions.click(vehicleDetailsPOM.chooseownersManualPref(ownerManualValue), "selecting the Owner manual");
@@ -196,6 +197,7 @@ public class VehicleDetailTabStepDef {
 	
 @When("User clicks on CCP Sale popup")
 public void user_Click_ccp_sale() throws InterruptedException {
+	Thread.sleep(2000);
 	CoreFunctions.moveToElement(vehicleDetailsPOM.selectExtendedWarrantyDropdown());
 	BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.clickCCPSalepopup()));
 	CoreFunctions.click(vehicleDetailsPOM.clickCCPSalepopup(),"Clicking on ccp");
@@ -206,11 +208,13 @@ public void user_Click_ccp_sale() throws InterruptedException {
 	public void user_selects_state_as(int rowNo) throws InterruptedException, InvalidFormatException, IOException {
 		rowNo--;
 		testData=CoreFunctions.test("InvoiceData");
-		
+		Thread.sleep(4000);
 
 		String stateValue = testData.get(rowNo).get("State").toString();
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.selectStateDropdown()));
 		CoreFunctions.click(vehicleDetailsPOM.selectStateDropdown(),"Clicking on Select State dropdown");
+		CoreFunctions.setText(vehicleDetailsPOM.searchInDropdown(), stateValue);
+		Thread.sleep(1000);
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.chooseState(stateValue)));
 		CoreFunctions.click(vehicleDetailsPOM.chooseState(stateValue),"Selecting State");
 	}
@@ -219,10 +223,12 @@ public void user_Click_ccp_sale() throws InterruptedException {
 	public void user_selects_city_as(int rowNo) throws InterruptedException {
 		rowNo--;
 		
-
+		Thread.sleep(2000);
 		String cityValue = testData.get(rowNo).get("City").toString();
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.selectCityDropdown()));
 		CoreFunctions.click(vehicleDetailsPOM.selectCityDropdown(),"Clicking on Select City dropdown");
+		CoreFunctions.setText(vehicleDetailsPOM.searchInDropdown(), cityValue);
+		Thread.sleep(1000);
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.chooseCity(cityValue)));
 		CoreFunctions.click(vehicleDetailsPOM.chooseCity(cityValue),"Selecting City");
 	}
@@ -336,7 +342,7 @@ public void user_Click_ccp_sale() throws InterruptedException {
 		ccpCode=CoreFunctions.trim(CoreFunctions.getElementText(vehicleDetailsPOM.selectedCCPCode()));
 		ccpDesc=CoreFunctions.trim(CoreFunctions.getElementText(vehicleDetailsPOM.selectedCCPDesc()));
         ccpTotal=CoreFunctions.trim(CoreFunctions.getElementText(vehicleDetailsPOM.ccpTotal()));
-//         System.out.println("ccpCode"+ccpCode+"ccpDesc"+ccpDesc+"ccpTotal"+ccpTotal);
+         System.out.println("ccpCode"+ccpCode+"ccpDesc"+ccpDesc+"ccpTotal"+ccpTotal);
 
 		
 		

@@ -4,7 +4,8 @@ Feature: BS
   Background: Login with dealer
     Given User is on Login Page
     And User clicks on "Dealer" button
-    And User enters "ccm_sales121" and "Welcome@1234"
+    #And User enters "ccm_sales121" and "Welcome@1234"
+    And User enters "677272" and "5555"
     And User click on "LOGIN" button
 
   @BS0
@@ -37,6 +38,7 @@ Feature: BS
     And User clicks on "NEXT" button of Vehicle Details tab
     Then Verify user is navigated to "Financial Info"
     And User selects all required fields on financial info for scenario <rowNumber>
+    And User selects the tax rate for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
     And User selects the "No Offer" from old car offers
@@ -45,7 +47,11 @@ Feature: BS
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
     Then Validation on Charge details page
-
+    And User clicks on "SAVE & PREVIEW" button
+		 And User clicks on "SUBMIT" button
+		 Then Verify user is navigated to Invoice Generation screen
+		 
+		 
     Examples: 
       | rowNumber |
       |         8 |
@@ -80,6 +86,7 @@ Feature: BS
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Financial Info"
     And User selects all required fields on financial info for scenario <rowNumber>
+    And User selects the tax rate for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
     And User selects the "Exchange" from old car offers
@@ -134,6 +141,7 @@ Feature: BS
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Financial Info"
     And User selects all required fields on financial info for scenario <rowNumber>
+    And User selects the tax rate for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
     And User selects the "Loyalty/Acquisition Bonus" from old car offers
@@ -159,7 +167,7 @@ Feature: BS
     And User clicks on "SEARCH" button
     And User select from displayed orders for scenario <rowNumber>
     And User clicks on "OK" button
-    And if user selects B2B Customer as "Yes"
+  #  And if user selects B2B Customer as "Yes"
     And user enters Bill GSTN field from <rowNumber>
     And user enters all required fields from <rowNumber>
     And User clicks on "NEXT" button
@@ -181,12 +189,13 @@ Feature: BS
     Then Verify user is navigated to "Financial Info"
     When User selects payment type as "Leasing"
     And User selects all required fields on financial info for scenario <rowNumber>
+    And User selects the tax rate for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
     And User selects the "Exchange" from old car offers
-    And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
-    And User choose Loyalty Card for scenario <rowNumber>
-    And User click "OK" button on loyalty card popup
+  #  And Click on "LOYALTY EXCHANGE/ADDITIONAL CAR BENEFITS" tab on Additional Details
+   # And User choose Loyalty Card for scenario <rowNumber>
+  #  And User click "OK" button on loyalty card popup
     And Click on "OLD VEHICLE DETAILS" tab on Additional Details
     And Enter reg Num for "Exchange" for scenario <rowNumber>
     And User clicks on "SEARCH" button on popup
@@ -234,6 +243,7 @@ Feature: BS
     Then Verify user is navigated to "Financial Info"
     When User selects payment type as "Finance"
     And User selects all required fields on financial info for scenario <rowNumber>
+    And User selects the tax rate for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
     And User selects the "Exchange" from old car offers
@@ -288,6 +298,7 @@ Feature: BS
     Then Verify user is navigated to "Financial Info"
     When User selects payment type as "Cash"
     And User selects all required fields on financial info for scenario <rowNumber>
+    And User selects the tax rate for scenario <rowNumber>
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Loyalty"
     And User selects the "No Offer" from old car offers

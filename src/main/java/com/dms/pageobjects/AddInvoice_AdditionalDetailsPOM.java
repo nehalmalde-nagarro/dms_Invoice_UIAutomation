@@ -215,6 +215,8 @@ public WebElement firstOptionFromPopup() {
 }
  
 
-
+public WebElement otherOfferValue(String offer) {
+	return PageUtil.findBy(By.xpath("//mat-label[contains(text(),'"+offer+"')]/parent::label/following-sibling::input"));
+}
 
 }
