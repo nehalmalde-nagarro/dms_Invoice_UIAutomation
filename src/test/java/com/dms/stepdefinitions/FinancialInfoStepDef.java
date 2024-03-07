@@ -14,6 +14,7 @@ import com.dms.browserInstance.BrowserHandle;
 import com.dms.core.CoreFunctions;
 import com.dms.dbconfig.Query;
 import com.dms.logs.Logs;
+import com.dms.pageobjects.AddInvoice_AdditionalDetailsPOM;
 import com.dms.pageobjects.AddInvoice_FinancialInfo;
 import com.dms.pageobjects.LoginPOM;
 
@@ -366,12 +367,16 @@ public class FinancialInfoStepDef {
 		public void user_selects_the_tax_rate_for_scenario (Integer rowNo) throws InvalidFormatException, IOException, InterruptedException {
 			testData=CoreFunctions.test("InvoiceData");
 			rowNo--;
-			String taxRateFromExcel = testData.get(rowNo).get("TaxRate").toString();
-			System.out.println("taxRateFromExcel: "+taxRateFromExcel);
-			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.clicktaxrateDropdown()));
-			CoreFunctions.click(financialInfoPOM.clicktaxrateDropdown(), "");
-			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.chooseFromDropdownTaxrate(taxRateFromExcel)));
-			CoreFunctions.click(financialInfoPOM.chooseFromDropdownTaxrate(taxRateFromExcel), "");
+			if(CoreFunctions.getElementText(financialInfoPOM.getDropdownSelectedValue("TCSFlag")).equalsIgnoreCase("Yes"))
+			{
+				String taxRateFromExcel = testData.get(rowNo).get("TaxRate").toString();
+				System.out.println("taxRateFromExcel: "+taxRateFromExcel);
+				BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.clicktaxrateDropdown()));
+				CoreFunctions.click(financialInfoPOM.clicktaxrateDropdown(), "");
+				BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(financialInfoPOM.chooseFromDropdownTaxrate(taxRateFromExcel)));
+				CoreFunctions.click(financialInfoPOM.chooseFromDropdownTaxrate(taxRateFromExcel), "");
+			}
+			
 			
 			taxRate = CoreFunctions.getElementText(financialInfoPOM.getDropdownSelectedValue("taxRate"));
 		}

@@ -1,15 +1,26 @@
 package com.dms.core;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Properties;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -352,4 +363,42 @@ public class CoreFunctions {
     }
 
 	
+	
+	public static int validateExportedExcel() throws IOException {
+		// TODO Auto-generated method stub
+		Path dir = Paths.get(System.getProperty("user.dir") + "\\Downloads");  // specify your directory
+		//Path dir = Paths.get("C:\\Users\\sprakash01\\Downloads"); 
+		Optional<Path> lastFilePath = Files.list(dir)    // here we get the stream with full directory listing
+		    .filter(f -> !Files.isDirectory(f))  // exclude subdirectories from listing
+		    .max(Comparator.comparingLong(f -> f.toFile().lastModified()));  // finally get the last file using simple comparator by lastModified field
+
+		System.out.println(lastFilePath);
+		if ( lastFilePath.isPresent() ) // your folder may be empty
+		{
+			
+		} 
+		List<List<String>> records = new ArrayList<>();
+		String result = lastFilePath.stream()
+	              .findFirst()  // returns Optional
+	              .map(Object::toString)
+	              .orElse("");		
+		try (BufferedReader br = new BufferedReader(new FileReader(result))) {
+		    String line;
+		    while ((line = br.readLine()) != null) {
+		        String[] values = line.split(",");
+		        records.add(Arrays.asList(values));
+		    }
+		}
+		
+		System.out.println(records.size());
+		return records.size();
+	}
+	
+	public static void clickTabKey() throws AWTException
+	{
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_TAB);
+		robot.keyRelease(KeyEvent.VK_TAB);
+		
+	}
 }

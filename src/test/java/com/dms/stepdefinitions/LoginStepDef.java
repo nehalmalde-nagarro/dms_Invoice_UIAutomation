@@ -65,7 +65,29 @@ public class LoginStepDef {
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.inputOTP()));
 		CoreFunctions.setText(loginPOM.inputOTP(), password);
 	}
+	
+	@When("User enters MSIL {string} and {string}")
+	public void user_enters_MSIL_User_and_Password(String username, String password) throws InterruptedException {
+		Logs.logger.info(new Object() {
+		}.getClass().getEnclosingMethod().getName() + " username : " + username + " password : " + password);
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.MSILUserName()));
+		CoreFunctions.setText( loginPOM.MSILUserName(),username);
 
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.MSILPassword()));
+		CoreFunctions.setText( loginPOM.MSILPassword(),password);
+		
+
+	}
+
+	@When("User click on Sign in button")
+	public void user_click_on_Sign_in_button() throws InterruptedException {
+		
+		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.MSILSignInButton()));
+		CoreFunctions.click( loginPOM.MSILSignInButton(),null);
+
+		
+	}
+	
 	@When("User click on Captcha")
 	public void user_click_on_captcha() {
 		Logs.logger.info(new Object() {
@@ -74,7 +96,8 @@ public class LoginStepDef {
 	}
 
 	@When("User click on {string} button")
-	public void user_click_on_button(String button) {
+	public void user_click_on_button(String button) throws InterruptedException {
+		Thread.sleep(1000);
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName() + " " + button);
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.button(button)));
@@ -89,6 +112,7 @@ public class LoginStepDef {
 	public void user_click_on_btn(String btn) throws InterruptedException {
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName() + " " + btn);
+		
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.spanButton(btn)));
 		CoreFunctions.moveToElement(loginPOM.spanButton(btn));
 		CoreFunctions.click(loginPOM.spanButton(btn), btn);

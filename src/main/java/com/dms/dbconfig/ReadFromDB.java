@@ -26,25 +26,66 @@ public class ReadFromDB extends ReadFromProperty {
 			Log.info("Executing query: " + query);
 			List<String> reqData = new ArrayList<>();
 			Connection connection = null;
+			
 			if (CoreFunctions.readConfig("environment").equalsIgnoreCase("qa"))
 			 connection=DBConnectionUtils.forQA(dbName);
 			if (CoreFunctions.readConfig("environment").equalsIgnoreCase("dev"))
 				 connection=DBConnectionUtils.forDEV(dbName);
 			if (CoreFunctions.readConfig("environment").equalsIgnoreCase("uat"))
+			{
 				 connection=DBConnectionUtils.forUAT(dbName);
-
-			try (PreparedStatement stm = connection.prepareStatement(query)) {
-				try (ResultSet resultSet = stm.executeQuery()) {
-					while (resultSet.next()) {
-						reqData.add(resultSet.getString(1));
-					}
-				}
-
-			} catch (SQLException e1) {
-				Log.error(e1.getMessage());
+				 
 			}
+				
+			
+				try (PreparedStatement stm = connection.prepareStatement(query)) {
+					try (ResultSet resultSet = stm.executeQuery()) {
+						while (resultSet.next()) {
+							reqData.add(resultSet.getString(1));
+						}
+					}
+
+				} catch (SQLException e1) {
+					Log.error(e1.getMessage());
+				}
+			
 
 			return reqData;
 		}
 		
+		
+		
+		
+		public static List<String> getDataRedShift(String dbName, String query) throws Exception 
+		{	
+			Class.forName("org.postgresql.Driver");
+			System.out.println("DB_Name: "+dbName);
+			Log.info("Executing query: " + query);
+			List<String> reqData = new ArrayList<>();
+			Connection connection = null;
+			Connection connectionRedSift = null;
+			if (CoreFunctions.readConfig("environment").equalsIgnoreCase("qa"))
+			 connection=DBConnectionUtils.forQA(dbName);
+			if (CoreFunctions.readConfig("environment").equalsIgnoreCase("dev"))
+				 connection=DBConnectionUtils.forDEV(dbName);
+			if (CoreFunctions.readConfig("environment").equalsIgnoreCase("uat"))
+			{
+				 connectionRedSift=DBConnectionUtils.forRedShiftUAT(dbName);
+			}
+				
+			
+				try (PreparedStatement stm = connectionRedSift.prepareStatement(query)) {
+					try (ResultSet resultSet = stm.executeQuery()) {
+						while (resultSet.next()) {
+							reqData.add(resultSet.getString(1));
+						}
+					}
+
+				} catch (SQLException e1) {
+					Log.error(e1.getMessage());
+				}
+			
+
+			return reqData;
+		}
 }

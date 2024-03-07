@@ -39,10 +39,12 @@ com\dms\stepdefinitions\LoginStepDef$3.class
 com\dms\stepdefinitions\LoginStepDef$7.class
 com\dms\stepdefinitions\SearchAllInvoicesStepDef$22.class
 com\dms\stepdefinitions\SearchAllInvoicesStepDef$13.class
+com\dms\stepdefinitions\ReportsStepDef.class
 com\dms\stepdefinitions\SearchAllInvoicesStepDef$23.class
 com\dms\stepdefinitions\ValidatePDFStepDef.class
 com\dms\stepdefinitions\SearchAllInvoicesStepDef$7.class
 com\dms\stepdefinitions\AddInvoiceStepDef.class
+com\dms\stepdefinitions\LoginStepDef$13.class
 com\dms\stepdefinitions\DealerInformationStepDef.class
 com\dms\stepdefinitions\SearchAllInvoicesStepDef$15.class
 com\dms\apphooks\ApplicationHooks.class

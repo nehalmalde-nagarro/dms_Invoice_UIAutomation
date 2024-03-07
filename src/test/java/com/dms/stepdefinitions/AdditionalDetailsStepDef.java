@@ -83,8 +83,8 @@ public class AdditionalDetailsStepDef {
 			
 		exchnageLoyalty=AddInvoiceStepDef.testData.get(rowNo).get("ExchangeLoyalty").toString();
 		CoreFunctions.clearText(additionalDetailsPOM.exchangeLoyaltyBonus());
-additionalDetailsPOM.exchangeLoyaltyBonus().sendKeys(exchnageLoyalty);
-additionalDetailsPOM.exchangeLoyaltyBonus().sendKeys(Keys.TAB);
+		additionalDetailsPOM.exchangeLoyaltyBonus().sendKeys(exchnageLoyalty);
+		additionalDetailsPOM.exchangeLoyaltyBonus().sendKeys(Keys.TAB);
 
 //		Robot robot = new Robot();
 //		robot.keyPress(KeyEvent.VK_TAB);

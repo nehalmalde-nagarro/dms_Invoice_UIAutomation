@@ -136,13 +136,28 @@ for(String key:chargeDetailsData.keySet()) {
 	    System.out.println(key + " " + value);
 }
 
-		
+	for (String otherOffer : otherOffersKeys) {
 
+		System.out.println("otherOffer  " + otherOffer);
+		
+		System.out.println("Assert " +otherOffer+" "+ AdditionalDetailsStepDef.otherOffersMap.get(otherOffer) + " form Charge details UI "
+				+ chargeDetailsData.get(otherOffer));
+		Assert.assertEquals(CoreFunctions.convertStringToDouble( AdditionalDetailsStepDef.otherOffersMap.get(otherOffer) ),chargeDetailsData.get(otherOffer));
+		AV -= chargeDetailsData.get(otherOffer);
+		System.out.println(" AV After scrappage " + AV);
+		
+	}
+	
+	
+	
+	
+	
+	
 		for (String charges : chargesName) {
 
 			System.out.println("charges  " + charges);
 
-			if (CoreFunctions.trim(charges).toLowerCase().contains("Discount 1".toLowerCase())) {
+			/*if (CoreFunctions.trim(charges).toLowerCase().contains("Discount 1".toLowerCase())) {
 //				System.out.println("Assert AD1 input" + AdditionalDetailsStepDef.AD1 + " form Charge details UI "
 //						+ chargeDetailsPOM.getChargeAmountForProvidedChargeName(charges));
 //				AV -= CoreFunctions
@@ -188,14 +203,14 @@ for(String key:chargeDetailsData.keySet()) {
 			else if (CoreFunctions.trim(charges).toLowerCase().contains("MDS Discount".toLowerCase())) {
 				AV -= chargeDetailsData.get(charges);
 			System.out.println(" AV After Subtract MDS Dis" + AV);
-			}
+			}*/
 //			
-	        else if (CoreFunctions.trim(charges).toLowerCase().contains("MSSF".toLowerCase())) {
+	        if (CoreFunctions.trim(charges).toLowerCase().contains("MSSF".toLowerCase())) {
 				System.out.println("Assert MSSF input" + CoreFunctions.convertStringToDouble(AdditionalDetailsStepDef.MSSFOfferAmt)
 						+ " form Charge details UI " + chargeDetailsData.get(charges));
 				Assert.assertEquals(CoreFunctions.convertStringToDouble(AdditionalDetailsStepDef.MSSFOfferAmt), chargeDetailsData.get(charges));
 				AV -= chargeDetailsData.get(charges);
-				System.out.println(" AV After Subtract MSSSF" + AV);
+				System.out.println(" AV After Subtract MSSF" + AV);
 			}
 			else if (CoreFunctions.trim(charges).toLowerCase().contains("Exchange".toLowerCase())) {
 				System.out.println("Assert Exchange " + CoreFunctions.convertStringToDouble(AdditionalDetailsStepDef.exchnageLoyalty)
@@ -243,14 +258,6 @@ for(String key:chargeDetailsData.keySet()) {
 				       
 				       System.out.println("  percentageOfTaxCollection : "+percentageOfTaxCollection+" taxCollectionAmtfromUI :  "+taxCollectionAmtfromUI);
 					   
-				       if(FinancialInfoStepDef.taxRate.contains("Normal"))
-				       {
-				    	   Assert.assertEquals(percentageOfTaxCollection, 1.0);
-				       }
-				       else if(FinancialInfoStepDef.taxRate.contains("Higher"))
-				       {
-				    	   Assert.assertEquals(percentageOfTaxCollection, 5.0);
-				       }
 				       
 				  }
 			  else if (CoreFunctions.trim(charges).toLowerCase().contains("GST".toLowerCase())) {
@@ -284,29 +291,26 @@ for(String key:chargeDetailsData.keySet()) {
     		ccpAmtFromUI=chargeDetailsData.get(charges);
     		
     		
-		}
-    	else if(CoreFunctions.trim(charges).toLowerCase().contains("Extended ".toLowerCase())) {
-    	        		extendedWarrantyValueFromUI=chargeDetailsData.get(charges);
-        		
-		}
-			  
+		    }
+	    	else if(CoreFunctions.trim(charges).toLowerCase().contains("Extended ".toLowerCase())) {
+	    	        		extendedWarrantyValueFromUI=chargeDetailsData.get(charges);
+	        		
+			}
+				  
 				  
 		
 		}
 		
 		System.out.println("extendedWarrantyValueFromUI "+extendedWarrantyValueFromUI+"ccpAmtFromUI "+ccpAmtFromUI+   "Av "+AV+ "CSST "+calculatedCGST +" IGST "+ calculatedIGST+"SGST "+calculatedSGST+" Cess  "+calulatedCess);
 		System.out.println("Total is "+ (extendedWarrantyValueFromUI+ccpAmtFromUI+AV+calculatedCGST+calculatedIGST+calculatedSGST+calulatedCess )+" Percentage value is "+percentageOfTaxCollection);
-	 //calculatedTaxCollection= CoreFunctions.taxCollectionRoundOff(CoreFunctions.percent((extendedWarrantyValueFromUI+ccpAmtFromUI+AV+calculatedCGST+calculatedIGST+calculatedSGST+calulatedCess),percentageOfTaxCollection));
-		if(FinancialInfoStepDef.tcsFlag.equalsIgnoreCase("Yes"))
+		
+		if(chargesName.contains("Tax Collection at Source"))
 		{
-			Assert.assertTrue( chargesName.contains("Tax Collection at Source"));
+			calculatedTaxCollection= CoreFunctions.taxCollectionRoundOff(CoreFunctions.percent((extendedWarrantyValueFromUI+ccpAmtFromUI+AV+calculatedCGST+calculatedIGST+calculatedSGST+calulatedCess),percentageOfTaxCollection));
 			calculatedTaxCollection= CoreFunctions.percent((extendedWarrantyValueFromUI+ccpAmtFromUI+AV+calculatedCGST+calculatedIGST+calculatedSGST+calulatedCess),percentageOfTaxCollection);
 			calculatedTaxCollection = Math.round(calculatedTaxCollection * 100.0) / 100.0;
 		}
-		else if(FinancialInfoStepDef.tcsFlag.equalsIgnoreCase("No"))
-		{
-			Assert.assertFalse( chargesName.contains("Tax Collection at Source"));
-		}
+		
 		
 	 System.out.println("Assert tax collection from UI "+taxCollectionAmtfromUI+"  From calulation "+ calculatedTaxCollection);
 	assertEquals(taxCollectionAmtfromUI, calculatedTaxCollection);

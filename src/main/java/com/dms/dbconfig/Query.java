@@ -1,5 +1,7 @@
 package com.dms.dbconfig;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import com.dms.core.CoreFunctions;
@@ -456,4 +458,60 @@ String query="(\r\n"
 		return data;
 	}
 
+	
+	public static String get_order_count_for_sales_register_report_dealer(String fromDate, String toDate, String status)
+			throws Exception {
+		
+		SimpleDateFormat inputDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		SimpleDateFormat outputDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		Date DateFrom = inputDateFormat.parse(fromDate);
+		String outputFromDate = outputDateFormat.format(DateFrom);
+		Date DateTo = inputDateFormat.parse(toDate);
+		String outputToDate = outputDateFormat.format(DateTo);
+	
+		String query="(\r\n"
+		+ "select count(*) from \"dwh_dms_report\".\"fact_sale_register\" where \"DEALER_MAP_CD\"=12356 and \"LOCATION_CODE\"='GRN'  "
+		+"and \"principal_map_cd\" ='"+principal_map_cd+"'"
+		+"and \"status\" ='"+status+"'"
+		+ "and \"inv_dt\">='"+outputFromDate+" 00:00:00.000' and \"inv_dt\"<='"+outputToDate+" 23:59:59.000'\r\n"
+		+ ")";
+ 
+		System.out.println(query);
+		String data = ReadFromDB.getDataRedShift(Database.dwh_dms_report, query).get(0);
+		return data;
+	}
+	
+	
+	
+	public static String get_order_count_for_sales_register_report_MSIL(String fromDate, String toDate, String status, String dealerName, String location, String regionCode, String channelCode)
+			throws Exception {
+		
+		SimpleDateFormat inputDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		SimpleDateFormat outputDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		Date DateFrom = inputDateFormat.parse(fromDate);
+		String outputFromDate = outputDateFormat.format(DateFrom);
+		Date DateTo = inputDateFormat.parse(toDate);
+		String outputToDate = outputDateFormat.format(DateTo);
+	
+		String query="(\r\n"
+		+ "select dealer_map_cd from \"dwh_dms_report\".\"dim_dealer\" where \"DEALER_NAME\" like '"+dealerName+"' and \"LOCATION_CODE\"='"+location+"'  "
+		+ ")";
+ 
+		System.out.println(query);
+		String dealerMapCode = ReadFromDB.getDataRedShift(Database.dwh_dms_report, query).get(0);
+		
+		
+		String query1="(\r\n"
+				+ "select count(*) from \"dwh_dms_report\".\"fact_sale_register\" where \"DEALER_MAP_CD\"='"+dealerMapCode+"' and \"LOCATION_CODE\"='"+location+"'  "
+				+"and \"principal_map_cd\" ='"+principal_map_cd+"'"
+				+"and \"status\" ='"+status+"'"
+				+"and \"region_code\" ='"+regionCode+"'"
+				+"and \"channel_code\" ='"+channelCode+"'"
+				+ "and \"inv_dt\">='"+outputFromDate+" 00:00:00.000' and \"inv_dt\"<='"+outputToDate+" 23:59:59.000'\r\n"
+				+ ")";
+		 
+				System.out.println(query1);
+				String data = ReadFromDB.getDataRedShift(Database.dwh_dms_report, query1).get(0);
+		return data;
+	}
 }

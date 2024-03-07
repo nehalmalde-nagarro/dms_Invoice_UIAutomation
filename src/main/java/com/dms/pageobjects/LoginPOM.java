@@ -6,6 +6,20 @@ import org.openqa.selenium.WebElement;
 import com.dms.utils.PageUtil;
 
 public class LoginPOM {
+	public WebElement MSILUserButton() {
+		return PageUtil.findBy(By.id("mat-button-toggle-1-button"));
+	}
+	public WebElement MSILUserName() {
+		return PageUtil.findBy(By.id("userNameInput"));
+	}
+	public WebElement MSILPassword() {
+		return PageUtil.findBy(By.id("passwordInput"));
+	}
+	public WebElement MSILSignInButton() {
+		return PageUtil.findBy(By.id("submitButton"));
+	}
+	
+	
 	public WebElement dealerBtn() {
 		return PageUtil.findBy(By.id("mat-button-toggle-2-button"));
 	}
@@ -17,7 +31,6 @@ public class LoginPOM {
 	public WebElement verifyMSPin() {
 		return PageUtil.findBy(By.xpath("//span//div[contains(text(),'Verify')]"));
 	}
-	
 	public WebElement msPinVerified() {
 		return PageUtil.findBy(By.xpath("//img[contains(@src,'verify')]"));
 	}
@@ -71,7 +84,7 @@ public class LoginPOM {
 	}
 
 	public WebElement spanButton(String btn) {
-		return PageUtil.findBy(By.xpath("//button//span[contains(text(),'" + btn + "')]"));
+		return PageUtil.findBy(By.xpath("//button//span[contains(text(),'"+ btn +"')]"));
 	}
 	public WebElement spanButtonIsDisable(String btn) {
 		return PageUtil.findBy(By.xpath("//span[contains(text(),'" + btn + "')]//parent::button"));

@@ -3,6 +3,7 @@ package com.dms.dbconfig;
 public class Database {
 
 	public static final String MULDMS = "MULDMS";
+	public static final String dwh_dms_report = "dwh_dms_report";
 
 //	public static final String COMMON_SUPERVISOR = "common-supervisor";
 	
@@ -41,4 +42,15 @@ public class Database {
 	}
 	
 
+	
+	public static final class RedShiftUAT {
+
+		public static final String URL = "jdbc:postgresql://dms-uat-redshift-cluster-2.c6hmgagfvk4z.ap-south-1.redshift.amazonaws.com:5439/dev";
+		public static final class dwh_dms_report {
+			public static final String USERNAME = "awsuser";
+			public static final String PASSWORD = "redshiftDmsUat5857";
+		}
+
+		
+	}
 }

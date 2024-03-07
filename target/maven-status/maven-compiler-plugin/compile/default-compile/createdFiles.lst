@@ -12,6 +12,7 @@ com\dms\utils\ExcelReader.class
 com\dms\dbconfig\ReadFromDB.class
 com\dms\utils\MyListeners.class
 com\dms\pageobjects\AddInvoice_ChargeDetailsPOM.class
+com\dms\pageobjects\ReportsPOM.class
 com\dms\dbconfig\Database$UAT$MULDMS.class
 com\dms\dbconfig\DBConnectionUtils.class
 com\dms\pageobjects\AddInvoice_VehicleDetailsPOM.class

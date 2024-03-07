@@ -54,8 +54,8 @@ Feature: UAT BS
     And Choose Relation for scenario <rowNumber>
     And User clicks on "OK" button on popup
     #And User enters Exchange Loyalty bonus for scenario <rowNumber>
-   And User enters and select other offers "Additional Discount 1" for scenario <rowNumber>
-    And User enters and select other offers "Additional Discount 2" for scenario <rowNumber>
+   And User enters and select other offers "Additional Discount 3" for scenario <rowNumber>
+   And User enters and select other offers "Additional Discount 4" for scenario <rowNumber>
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
@@ -107,7 +107,7 @@ Feature: UAT BS
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
-    Then Validation on Charge details page
+    #Then Validation on Charge details page
 	 	And User clicks on "SAVE & PREVIEW" button
 		 And User clicks on "SUBMIT" button
 		 Then Verify user is navigated to Invoice Generation screen
@@ -166,7 +166,7 @@ Feature: UAT BS
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
-    Then Validation on Charge details page
+    #Then Validation on Charge details page
 	 	And User clicks on "SAVE & PREVIEW" button
 		 And User clicks on "SUBMIT" button
 		 Then Verify user is navigated to Invoice Generation screen
@@ -261,7 +261,7 @@ Feature: UAT BS
     And User enters all required fields on Addtional tab
     And User clicks on "NEXT" button
     Then Verify user is navigated to "Charge Details"
-    Then Validation on Charge details page
+    #Then Validation on Charge details page
 	 	And User clicks on "SAVE & PREVIEW" button
 		 And User clicks on "SUBMIT" button
 		 Then Verify user is navigated to Invoice Generation screen

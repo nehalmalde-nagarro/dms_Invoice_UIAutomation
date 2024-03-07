@@ -70,4 +70,25 @@ public class DBConnectionUtils{
 	}
 
 
+	
+	public static Connection forRedShiftUAT(String dbName) throws SQLException
+	{
+		Connection connection=null;
+		switch (dbName)
+		{
+		case Database.dwh_dms_report:
+			connection = DriverManager.getConnection(Database.RedShiftUAT.URL, Database.RedShiftUAT.dwh_dms_report.USERNAME, Database.RedShiftUAT.dwh_dms_report.PASSWORD);
+
+			break;
+//		case Database.COMMON_SUPERVISOR:
+//			connection = DriverManager.getConnection(Database.QA.URL+dbName, Database.QA.COMMON_SUPERVISOR.USERNAME, Database.QA.COMMON_SUPERVISOR.PASSWORD);
+//
+//			break;
+
+		default:
+			Logs.logger.error("Enter correct Database name");
+			break;
+		}
+		return connection;
+	}
 }
