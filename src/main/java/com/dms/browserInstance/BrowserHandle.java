@@ -1,5 +1,6 @@
 package com.dms.browserInstance;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.HashMap;
 
@@ -10,6 +11,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.dms.core.CoreFunctions;
 import com.dms.logs.Logs;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -19,7 +21,7 @@ public class BrowserHandle extends Logs {
 	public static WebDriverWait wait ;
 	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
 
-	public WebDriver settingBrowser(String browser) {
+	public WebDriver settingBrowser(String browser) throws IOException {
 		logger.info("Setting Up "+browser+" ");
 
 		if (browser.equalsIgnoreCase("chrome")) {

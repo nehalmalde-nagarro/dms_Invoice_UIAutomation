@@ -364,7 +364,7 @@ public class CoreFunctions {
 
 	
 	
-	public static int validateExportedExcel() throws IOException {
+	public static int validateExportedSaleRegisterExcel() throws IOException {
 		// TODO Auto-generated method stub
 		Path dir = Paths.get(System.getProperty("user.dir") + "\\Downloads");  // specify your directory
 		//Path dir = Paths.get("C:\\Users\\sprakash01\\Downloads"); 
@@ -381,18 +381,78 @@ public class CoreFunctions {
 		String result = lastFilePath.stream()
 	              .findFirst()  // returns Optional
 	              .map(Object::toString)
-	              .orElse("");		
+	              .orElse("");	
+		
+		
 		try (BufferedReader br = new BufferedReader(new FileReader(result))) {
 		    String line;
+		   
 		    while ((line = br.readLine()) != null) {
 		        String[] values = line.split(",");
+		        System.out.println(values);
 		        records.add(Arrays.asList(values));
+		        
 		    }
+		    
+		    
 		}
 		
 		System.out.println(records.size());
 		return records.size();
 	}
+	
+	
+	public static Integer validateExportedOnlineReportExcel() throws IOException {
+		// TODO Auto-generated method stub
+		Path dir = Paths.get(System.getProperty("user.dir") + "\\Downloads");  // specify your directory
+		//Path dir = Paths.get("C:\\Users\\sprakash01\\Downloads"); 
+		Optional<Path> lastFilePath = Files.list(dir)    // here we get the stream with full directory listing
+		    .filter(f -> !Files.isDirectory(f))  // exclude subdirectories from listing
+		    .max(Comparator.comparingLong(f -> f.toFile().lastModified()));  // finally get the last file using simple comparator by lastModified field
+
+		System.out.println(lastFilePath);
+		if ( lastFilePath.isPresent() ) // your folder may be empty
+		{
+			
+		} 
+		List<List<String>> records = new ArrayList<>();
+		String result = lastFilePath.stream()
+	              .findFirst()  // returns Optional
+	              .map(Object::toString)
+	              .orElse("");	
+		
+		Integer sum=0;
+		try (BufferedReader br = new BufferedReader(new FileReader(result))) {
+		    String line;
+		    List<Integer> invoiceCountList =  new ArrayList<Integer>();
+		    while ((line = br.readLine()) != null) {
+		        String[] values = line.split(",");
+		       
+		        records.add(Arrays.asList(values));
+		        
+		    }
+		    for(int i=0;i<records.size();i++)
+	        {
+		    	//System.out.println(records.get(i));
+		    	if(i>0)
+		    	{
+		    		
+		    		invoiceCountList.add(Integer.parseInt( records.get(i).get(8).substring(1, records.get(i).get(8).length()-1)));
+		    		//System.out.println(Integer.parseInt( records.get(i).get(8).substring(1, records.get(i).get(8).length()-1)));
+		    				    		
+		    	}
+	        	
+	        }
+		    for(Integer count: invoiceCountList)
+		    {
+		    	System.out.println(count);
+		    	sum+=count;
+		    }
+		}
+
+		return sum;
+	}
+	
 	
 	public static void clickTabKey() throws AWTException
 	{
@@ -400,5 +460,38 @@ public class CoreFunctions {
 		robot.keyPress(KeyEvent.VK_TAB);
 		robot.keyRelease(KeyEvent.VK_TAB);
 		
+	}
+	
+	
+	public static String appendStringForQuery(String value)
+	{
+		List<String> valueList = Arrays.asList( value.split(","));
+		String valueForQuery = new String();
+		for(int i =0;i<valueList.size();i++)
+		{
+			if(i<valueList.size()-1)
+				valueForQuery+="'"+valueList.get(i)+"'"+",";
+			else
+				valueForQuery+="'"+valueList.get(i)+"'";
+		}
+		
+		System.out.println(valueForQuery);
+		return valueForQuery;
+	}
+	
+	
+	public static String appendStringForQuery(List<String> valueList)
+	{
+		String valueForQuery = new String();
+		for(int i =0;i<valueList.size();i++)
+		{
+			if(i<valueList.size()-1)
+				valueForQuery+="'"+valueList.get(i)+"'"+",";
+			else
+				valueForQuery+="'"+valueList.get(i)+"'";
+		}
+		
+		System.out.println(valueForQuery);
+		return valueForQuery;
 	}
 }

@@ -1,5 +1,7 @@
 package com.dms.pageobjects;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -77,6 +79,10 @@ public class ReportsPOM {
 	}
 	
 	
+	public WebElement selectDealerFromListBasedonLocation(String dealer, String location) {
+		return PageUtil.findBy(By.xpath("//div/span[contains(text(),'"+dealer+"')]/parent::div/following-sibling::div[2][contains(text(),'"+location+"')]"));
+	}
+	
 	
 	//Online Reports
 	
@@ -104,4 +110,24 @@ public class ReportsPOM {
 		return PageUtil.findBy(By.xpath("//mat-radio-button//label[text()='"+value+"']"));
 	}
 	
+	
+	
+	
+	//Export to excel
+	public WebElement exportToExcelButton() {
+		return PageUtil.findBy(By.xpath("//*[contains(text(),'Export to Excel')]"));
+	}
+	
+	//get all options in dropdown
+	
+	
+	public List<WebElement> dropdownOptionsList() {
+		return PageUtil.findBys(By.xpath("//mat-option/span/span"));
+	}
+	
+	public WebElement allOptionCheckbox() {
+		return PageUtil.findBy(By.xpath("//mat-checkbox//label[contains(text(),'All')]"));
+	}
+	
+	 
 }

@@ -1,6 +1,7 @@
 package com.dms.dbconfig;
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -459,7 +460,7 @@ String query="(\r\n"
 	}
 
 	
-	public static String get_order_count_for_sales_register_report_dealer(String fromDate, String toDate, String status)
+	public static String get_order_count_for_sales_register_report_dealer(String fromDate, String toDate, String status, List<String> modelCodeList,List<String> variantCodeList,List<String> colorCodeList)
 			throws Exception {
 		
 		SimpleDateFormat inputDateFormat = new SimpleDateFormat("dd-MM-yyyy");
@@ -473,6 +474,12 @@ String query="(\r\n"
 		+ "select count(*) from \"dwh_dms_report\".\"fact_sale_register\" where \"DEALER_MAP_CD\"=12356 and \"LOCATION_CODE\"='GRN'  "
 		+"and \"principal_map_cd\" ='"+principal_map_cd+"'"
 		+"and \"status\" ='"+status+"'"
+		+"and \"model_code\" in ("+CoreFunctions.appendStringForQuery(modelCodeList)+")"
+		//+"and \"model\" in ("+CoreFunctions.appendStringForQuery(modelList)+")"
+		+"and \"variant_code\" in ("+CoreFunctions.appendStringForQuery(variantCodeList)+")"
+		//+"and \"variant_desc\" in ("+CoreFunctions.appendStringForQuery(variantList)+")"
+		+"and \"color_code\" in ("+CoreFunctions.appendStringForQuery(colorCodeList)+")"
+		//+"and \"color_desc\" in ("+CoreFunctions.appendStringForQuery(colorList)+")"		
 		+ "and \"inv_dt\">='"+outputFromDate+" 00:00:00.000' and \"inv_dt\"<='"+outputToDate+" 23:59:59.000'\r\n"
 		+ ")";
  
@@ -483,7 +490,7 @@ String query="(\r\n"
 	
 	
 	
-	public static String get_order_count_for_sales_register_report_MSIL(String fromDate, String toDate, String status, String dealerName, String location, String regionCode, String channelCode)
+	public static String get_order_count_for_sales_register_report_MSIL(String fromDate, String toDate, String status, String dealerName, String location, String regionCode, String channelCode, List<String> modelCodeList,List<String> variantCodeList,List<String> colorCodeList)
 			throws Exception {
 		
 		SimpleDateFormat inputDateFormat = new SimpleDateFormat("dd-MM-yyyy");
@@ -492,9 +499,10 @@ String query="(\r\n"
 		String outputFromDate = outputDateFormat.format(DateFrom);
 		Date DateTo = inputDateFormat.parse(toDate);
 		String outputToDate = outputDateFormat.format(DateTo);
-	
+		
+		
 		String query="(\r\n"
-		+ "select dealer_map_cd from \"dwh_dms_report\".\"dim_dealer\" where \"DEALER_NAME\" like '"+dealerName+"' and \"LOCATION_CODE\"='"+location+"'  "
+		+ "select dealer_map_cd from \"dwh_dms_report\".\"dim_dealer\" where \"DEALER_NAME\" like '"+dealerName+"%' and \"LOCATION_CODE\"='"+location+"'  "
 		+ ")";
  
 		System.out.println(query);
@@ -506,8 +514,47 @@ String query="(\r\n"
 				+"and \"principal_map_cd\" ='"+principal_map_cd+"'"
 				+"and \"status\" ='"+status+"'"
 				+"and \"region_code\" ='"+regionCode+"'"
-				+"and \"channel_code\" ='"+channelCode+"'"
+				+"and \"model_code\" in ("+CoreFunctions.appendStringForQuery(modelCodeList)+")"
+				+"and \"variant_code\" in ("+CoreFunctions.appendStringForQuery(variantCodeList)+")"
+				+"and \"color_code\" in ("+CoreFunctions.appendStringForQuery(colorCodeList)+")"
+				+"and \"channel_code\" in ("+CoreFunctions.appendStringForQuery(channelCode)+")"
 				+ "and \"inv_dt\">='"+outputFromDate+" 00:00:00.000' and \"inv_dt\"<='"+outputToDate+" 23:59:59.000'\r\n"
+				+ ")";
+		 
+				System.out.println(query1);
+				String data = ReadFromDB.getDataRedShift(Database.dwh_dms_report, query1).get(0);
+		return data;
+	}
+	
+	
+	
+	
+	public static String get_order_count_for_online_report_MSIL(String fromDate, String toDate,  String dealerName, String location, String regionCode, String channelCode)
+			throws Exception {
+		
+		SimpleDateFormat inputDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		SimpleDateFormat outputDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		Date DateFrom = inputDateFormat.parse(fromDate);
+		String outputFromDate = outputDateFormat.format(DateFrom);
+		Date DateTo = inputDateFormat.parse(toDate);
+		String outputToDate = outputDateFormat.format(DateTo);
+		
+		
+		String query="(\r\n"
+		+ "select dealer_map_cd from \"dwh_dms_report\".\"dim_dealer\" where \"DEALER_NAME\" like '"+dealerName+"%' and \"LOCATION_CODE\"='"+location+"'  "
+		+ ")";
+ 
+		System.out.println(query);
+		String dealerMapCode = ReadFromDB.getDataRedShift(Database.dwh_dms_report, query).get(0);
+		
+		
+		String query1="(\r\n"
+				+ "select count(*) from \"dwh_dms_report\".\"fact_online_retail_report\" where \"DEALER_MAP_CD\"='"+dealerMapCode+"' and \"loc_cd\"='"+location+"'  "
+				+"and \"principal_map_cd\" ='"+principal_map_cd+"'"
+				+"and \"region_cd\" ='"+regionCode+"'"
+				+"and \"inv_cnt_flag\" =1"
+				+"and \"channel\" in ("+CoreFunctions.appendStringForQuery(channelCode)+")"
+				+ "and \"event_date\">='"+outputFromDate+" 00:00:00.000' and \"event_date\"<='"+outputToDate+" 23:59:59.000'\r\n"
 				+ ")";
 		 
 				System.out.println(query1);

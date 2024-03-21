@@ -4,9 +4,13 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -26,6 +30,9 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+
+
+
 public class ReportsStepDef {
 	
 	AddInvoice_InvoiceDetailsPOM addInvoicePOM = new AddInvoice_InvoiceDetailsPOM();
@@ -38,6 +45,15 @@ public class ReportsStepDef {
 	JavascriptExecutor js = (JavascriptExecutor) BrowserHandle.getDriver();
 	boolean flag = new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
 	        "return document.readyState").equals("complete"));
+	
+	
+	public static List<String> modelCodeList = new ArrayList<>();
+	public static List<String> modelList = new ArrayList<>();
+	
+	public static List<String> variantCodeList = new ArrayList<>();
+	public static List<String> variantList = new ArrayList<>();
+	public static List<String> colorCodeList = new ArrayList<>();
+	public static List<String> colorList = new ArrayList<>();
 	
 	@Given("user is on the Online Report Landing page")
 	public void user_is_on_the_Online_Report_Landing_page() throws InterruptedException {
@@ -104,64 +120,165 @@ public class ReportsStepDef {
 
 	@And("user selects Model Details as {string}")
 	public void user_selects_model_details_as(String model) throws AWTException {
+		List<String> modelListFromFeature = Arrays.asList( model.split(","));
 		new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
 		        "return document.readyState").equals("complete"));
 			if(!model.contains("All"))
 			{
-			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(reportsPOM.modelDetails()));
-			CoreFunctions.click(reportsPOM.modelDetails(), null);
-			
-			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.searchInDropdown()));
-			CoreFunctions.setText(vehicleDetailsPOM.searchInDropdown(), model);
-			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(reportsPOM.selectInDropdown(model)));
-			CoreFunctions.click(reportsPOM.selectInDropdown(model), null);
-			new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
-			        "return document.readyState").equals("complete"));
-			CoreFunctions.clickTabKey();
-			
+				BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(reportsPOM.modelDetails()));
+				CoreFunctions.click(reportsPOM.modelDetails(), null);
+				new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+				        "return document.readyState").equals("complete"));
+				BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(reportsPOM.allOptionCheckbox()));
+				CoreFunctions.click(reportsPOM.allOptionCheckbox(), null);
+				
+				for(String s: modelListFromFeature)
+				{
+					new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+					        "return document.readyState").equals("complete"));
+					BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.searchInDropdown()));
+					CoreFunctions.setText(vehicleDetailsPOM.searchInDropdown(), s);
+					BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(reportsPOM.selectInDropdown(s)));
+					CoreFunctions.click(reportsPOM.selectInDropdown(s), null);
+					new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+					        "return document.readyState").equals("complete"));
+					String[] modelSplit = s.split("-");
+					modelCodeList.add(modelSplit[0].trim());
+					modelList.add(modelSplit[1].trim());
+				}
+				CoreFunctions.clickTabKey();
+				new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+				        "return document.readyState").equals("complete"));
 			
 			}
-		
+			else
+			{
+				new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+				        "return document.readyState").equals("complete"));
+				BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(reportsPOM.modelDetails()));
+				CoreFunctions.click(reportsPOM.modelDetails(), null);
+				new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+				        "return document.readyState").equals("complete"));
+				List<WebElement> optionsList= reportsPOM.dropdownOptionsList();
+				for(WebElement w : optionsList )
+				{
+					String[] modelSplit = w.getText().split("-");
+					modelCodeList.add(modelSplit[0].trim());
+					modelList.add(modelSplit[1].trim());
+				}
+				CoreFunctions.clickTabKey();
+				new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+				        "return document.readyState").equals("complete"));
+			}
 		
 	}
 
 	@And("user selects Variant Details as {string}")
 	public void user_selects_variant_details_as(String variant) throws AWTException {
+		List<String> variantListFromFeature = Arrays.asList( variant.split(","));
 		new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
 		        "return document.readyState").equals("complete"));
 			if(!variant.contains("All"))
 			{
-			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(reportsPOM.variantDetails()));
-			CoreFunctions.click(reportsPOM.modelDetails(), null);
-			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.searchInDropdown()));
-			CoreFunctions.setText(vehicleDetailsPOM.searchInDropdown(), variant);
-			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(reportsPOM.selectInDropdown(variant)));
-			CoreFunctions.click(reportsPOM.selectInDropdown(variant), null);
-			new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
-			        "return document.readyState").equals("complete"));
-			CoreFunctions.clickTabKey();
+				BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(reportsPOM.variantDetails()));
+				CoreFunctions.click(reportsPOM.variantDetails(), null);
+				new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+				        "return document.readyState").equals("complete"));
+				BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(reportsPOM.allOptionCheckbox()));
+				CoreFunctions.click(reportsPOM.allOptionCheckbox(), null);
+				for(String s: variantListFromFeature)
+				{
+					new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+					        "return document.readyState").equals("complete"));
+					BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.searchInDropdown()));
+					CoreFunctions.setText(vehicleDetailsPOM.searchInDropdown(), s);
+					BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(reportsPOM.selectInDropdown(s)));
+					CoreFunctions.click(reportsPOM.selectInDropdown(s), null);
+					new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+					        "return document.readyState").equals("complete"));
+					String[] variantSplit = s.split("-");
+					variantCodeList.add(variantSplit[0].trim());
+					variantList.add(variantSplit[1].trim());
+				}
+				CoreFunctions.clickTabKey();
+				new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+				        "return document.readyState").equals("complete"));
+			}
 			
-		}
+			else
+			{
+				new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+				        "return document.readyState").equals("complete"));
+				BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(reportsPOM.variantDetails()));
+				CoreFunctions.click(reportsPOM.variantDetails(), null);
+				new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+				        "return document.readyState").equals("complete"));
+				List<WebElement> optionsList= reportsPOM.dropdownOptionsList();
+				for(WebElement w : optionsList )
+				{
+					String[] variantSplit = w.getText().split("-");
+					variantCodeList.add(variantSplit[0].trim());
+					variantList.add(variantSplit[1].trim());
+				}
+				CoreFunctions.clickTabKey();
+				new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+				        "return document.readyState").equals("complete"));
+			}
 		
 	}
 
 	@And("user selects Color Details as {string}")
 	public void user_selects_color_details_as(String color) throws AWTException {
+		List<String> colorListFromFeature = Arrays.asList( color.split(","));
 		new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
 		        "return document.readyState").equals("complete"));
 			if(!color.contains("All"))
 			{
 				BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(reportsPOM.colorDetails()));
 				CoreFunctions.click(reportsPOM.colorDetails(), null);
-				BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.searchInDropdown()));
-				CoreFunctions.setText(vehicleDetailsPOM.searchInDropdown(), color);
-				BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(reportsPOM.selectInDropdown(color)));
-				CoreFunctions.click(reportsPOM.selectInDropdown(color), null);
 				new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
 				        "return document.readyState").equals("complete"));
+				BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(reportsPOM.allOptionCheckbox()));
+				CoreFunctions.click(reportsPOM.allOptionCheckbox(), null);
+				for(String s: colorListFromFeature)
+				{
+					new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+					        "return document.readyState").equals("complete"));
+					BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.searchInDropdown()));
+					CoreFunctions.setText(vehicleDetailsPOM.searchInDropdown(), s);
+					BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(reportsPOM.selectInDropdown(s)));
+					CoreFunctions.click(reportsPOM.selectInDropdown(s), null);
+					new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+					        "return document.readyState").equals("complete"));
+					
+					String[] colorSplit = s.split("-");
+					colorCodeList.add(colorSplit[0].trim());
+					colorList.add(colorSplit[1].trim());
+				}
 				CoreFunctions.clickTabKey();
+				new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+				        "return document.readyState").equals("complete"));
 				
-		}
+			}
+			else
+			{
+				new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+				        "return document.readyState").equals("complete"));
+				BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(reportsPOM.colorDetails()));
+				CoreFunctions.click(reportsPOM.colorDetails(), null);
+				new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+				        "return document.readyState").equals("complete"));
+				List<WebElement> optionsList= reportsPOM.dropdownOptionsList();
+				for(WebElement w : optionsList )
+				{
+					String[] colorSplit = w.getText().split("-");
+					colorCodeList.add(colorSplit[0].trim());
+					colorList.add(colorSplit[1].trim());
+				}
+				CoreFunctions.clickTabKey();
+				new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+				        "return document.readyState").equals("complete"));
+			}
 		
 		
 	}
@@ -230,19 +347,55 @@ public class ReportsStepDef {
 		
 	}
 	
+	
+	@Given("user selects Dealer as {string} and {string} for online report")
+	public void user_selects_dealer_for_onlineReport(String dealerName, String location) throws InterruptedException {
+		new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+		        "return document.readyState").equals("complete"));
+			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(reportsPOM.dealer()));
+			CoreFunctions.click(reportsPOM.dealer(), null);
+			CoreFunctions.click(reportsPOM.dealer(), null);
+			if(!dealerName.contains("ALL DEALER"))
+			{
+				BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(reportsPOM.dealerName()));
+				CoreFunctions.setText(reportsPOM.dealerName(), dealerName);
+				
+				BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.popupButton("Search")));
+				CoreFunctions.click(loginPOM.popupButton("Search"), null);
+			}
+			
+			new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+			        "return document.readyState").equals("complete"));
+			Thread.sleep(2000);
+			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(reportsPOM.selectDealerFromListBasedonLocation(dealerName, location)));
+			CoreFunctions.click(reportsPOM.selectDealerFromListBasedonLocation(dealerName, location), null);
+			new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+			        "return document.readyState").equals("complete"));
+			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.popupButton("Search")));
+			CoreFunctions.click(loginPOM.popupButton("OK"), null);
+		
+		
+	}
+	
 	@Given("user selects Channel as {string}")
 	public void user_selects_channel_as(String channel) throws AWTException {
+		
+		List<String> channelList = Arrays.asList( channel.split(","));
+		
 		new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
 		        "return document.readyState").equals("complete"));
 			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(reportsPOM.channel()));
 			CoreFunctions.click(reportsPOM.channel(), null);
-			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(reportsPOM.selectInDropdown(channel)));
-			CoreFunctions.click(reportsPOM.selectInDropdown(channel), null);
-			new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
-			        "return document.readyState").equals("complete"));
+			for(String s: channelList)
+			{
+				BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(reportsPOM.selectInDropdown(s)));
+				CoreFunctions.click(reportsPOM.selectInDropdown(s), null);
+				new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+				        "return document.readyState").equals("complete"));
+			}
+			
 			CoreFunctions.clickTabKey();
 			
-		
 	}
 
 
@@ -287,16 +440,14 @@ public class ReportsStepDef {
 	public void user_selects_model_as(String model) {
 		new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
 		        "return document.readyState").equals("complete"));
-		if(!model.contains("All"))
-		{
+		
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(reportsPOM.model()));
 		CoreFunctions.click(reportsPOM.model(), null);
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(vehicleDetailsPOM.searchInDropdown()));
 		CoreFunctions.setText(vehicleDetailsPOM.searchInDropdown(), model);
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(reportsPOM.selectInDropdown(model)));
 		CoreFunctions.click(reportsPOM.selectInDropdown(model), null);
-		}
-		
+				
 	}
 	
 	@Given("user selects Fuel as {string}")
@@ -323,22 +474,41 @@ public class ReportsStepDef {
 	@Given("user validates the dealer sales register report from {string} to {string} and {string}")
 	public void user_validates_the_dealer_sales_register_report(String fromDate, String toDate, String status) throws Exception {
 		
-		Thread.sleep(5000);
-		int rowCountFromFile = CoreFunctions.validateExportedExcel();
+		Thread.sleep(8000);
+		new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+		        "return document.readyState").equals("complete"));
+		int rowCountFromFile = CoreFunctions.validateExportedSaleRegisterExcel();
 		
-		String queryOrderCount = Query.get_order_count_for_sales_register_report_dealer(fromDate, toDate, status);
+		String queryOrderCount = Query.get_order_count_for_sales_register_report_dealer(fromDate, toDate, status,modelCodeList, variantCodeList,colorCodeList);
 		Assert.assertEquals(rowCountFromFile-1, Integer.parseInt(queryOrderCount) );
+		
 		
 	}
 
 	@Given("user validates the MSIL sales register report from {string} to {string},{string},{string},{string},{string},{string}")
 	public void user_validates_the_MSIL_sales_register_report(String fromDate, String toDate, String status,String dealerName, String location,String regionCode, String channelCode) throws Exception {
 		
-		Thread.sleep(5000);
-		int rowCountFromFile = CoreFunctions.validateExportedExcel();
+		Thread.sleep(8000);
+		new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+		        "return document.readyState").equals("complete"));
+		int rowCountFromFile = CoreFunctions.validateExportedSaleRegisterExcel();
 		
-		String queryOrderCount = Query.get_order_count_for_sales_register_report_MSIL(fromDate, toDate, status,dealerName, location, regionCode, channelCode);
+		String queryOrderCount = Query.get_order_count_for_sales_register_report_MSIL(fromDate, toDate, status,dealerName, location, regionCode, channelCode,modelCodeList, variantCodeList,colorCodeList);
 		Assert.assertEquals(rowCountFromFile-1, Integer.parseInt(queryOrderCount) );
+		
+	}
+	
+	
+	@Given("user validates the MSIL online report from {string} to {string},{string},{string},{string},{string}")
+	public void user_validates_the_MSIL_online_report(String fromDate, String toDate,String dealerName, String location,String regionCode, String channelCode) throws Exception {
+		
+		Thread.sleep(5000);
+		new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+		        "return document.readyState").equals("complete"));
+		int invoiceCountFromFile = CoreFunctions.validateExportedOnlineReportExcel();
+		
+		String queryOrderCount = Query.get_order_count_for_online_report_MSIL(fromDate, toDate, dealerName, location, regionCode, channelCode);
+		Assert.assertEquals(invoiceCountFromFile, Integer.parseInt(queryOrderCount) );
 		
 	}
 	

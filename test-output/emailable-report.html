@@ -9,9 +9,9 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">67,701</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">80,520</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">com.dms.runner.TestRunner</td><td><a href="#m0">tearDownClass</a></td><td rowspan="1">1709806300835</td><td rowspan="1">443</td></tr><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.dms.runner.TestRunner</td><td><a href="#m1">runScenario</a></td><td rowspan="1">1709806235667</td><td rowspan="1">65165</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">com.dms.runner.TestRunner</td><td><a href="#m0">tearDownClass</a></td><td rowspan="1">1711004266473</td><td rowspan="1">285</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.dms.runner.TestRunner</td><td><a href="#m1">runScenario</a></td><td rowspan="1">1711004187195</td><td rowspan="1">79274</td></tr></tbody>
 </table>
 <h2>Default test</h2><h3 id="m0">com.dms.runner.TestRunner#tearDownClass</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">com.google.gson.JsonIOException: Failed making field &apos;java.lang.Throwable#detailMessage&apos; accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.
 	at com.google.gson.internal.reflect.ReflectionHelper.makeAccessible(ReflectionHelper.java:38)
@@ -92,15 +92,6 @@ Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field p
 	at com.google.gson.internal.reflect.ReflectionHelper.makeAccessible(ReflectionHelper.java:35)
 	... 69 more
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.dms.runner.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Validate Sales Register Report submit functionality&quot;</td><td>&quot;MSIL User Reports&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
-	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
-	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
-	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:266)
-	at java.base/java.util.Objects.checkIndex(Objects.java:361)
-	at java.base/java.util.ArrayList.get(ArrayList.java:427)
-	at com.dms.dbconfig.Query.get_order_count_for_sales_register_report_MSIL(Query.java:501)
-	at com.dms.stepdefinitions.ReportsStepDef.user_validates_the_MSIL_sales_register_report(ReportsStepDef.java:340)
-	at ✽.user validates the MSIL sales register report from &quot;01-11-2023&quot; to &quot;30-11-2023&quot;,&quot;Invoiced&quot;,&quot;PREM MOTOR&quot;,&quot;GRN&quot;,&quot;C2&quot;,&quot;NRM&quot;(file:///C:/Users/sprakash01/ProjectFiles/dms_Invoice_UIAutomation/src/test/java/com/dms/featurefiles/ReportMSIL.feature:27)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.dms.runner.TestRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Validate Sales Register Report submit functionality&quot;</td><td>&quot;Dealer - Sales Register Report&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

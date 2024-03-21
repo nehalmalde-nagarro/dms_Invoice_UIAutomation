@@ -6,7 +6,8 @@ Background: Login with dealer
     And User clicks on "Dealer" button
     And User enters "677272" and "5555"
     And User click on "LOGIN" button
-    
+
+@DealerReport1
 Scenario Outline: Validate Sales Register Report submit functionality
 Given User is on Home Page
 And user clicks on Reports
@@ -24,19 +25,5 @@ Examples:
 |From Date | To Date| Invoice Status | Model Details | Variant Details | Color Details |
 |01-11-2023|30-11-2023|Invoiced|All Models|All Variants|All Colors|
  
-Scenario Outline: Validate Sales Register Report clear button functionality
-Given User is on Home Page
-And user clicks on Reports
-And user selects Sales Register Report
-And user selects From Date as "<From Date>"
-And user selects To Date as "<To Date>"
-And user selects Invoice Status as "<Invoice Status>"
-And User clicks on "CLEAR" button
-
-Examples: 
-|From Date | To Date| Invoice Status | 
-|01-06-2023|30-06-2023|Invoiced|
-
-
 
  

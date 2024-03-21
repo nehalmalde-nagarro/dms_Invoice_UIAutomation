@@ -1,6 +1,7 @@
 package com.dms.stepdefinitions;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -8,6 +9,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.dms.browserInstance.BrowserHandle;
@@ -98,6 +100,7 @@ public class LoginStepDef {
 	@When("User click on {string} button")
 	public void user_click_on_button(String button) throws InterruptedException {
 		Thread.sleep(1000);
+		
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName() + " " + button);
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.button(button)));
@@ -112,7 +115,13 @@ public class LoginStepDef {
 	public void user_click_on_btn(String btn) throws InterruptedException {
 		Logs.logger.info(new Object() {
 		}.getClass().getEnclosingMethod().getName() + " " + btn);
-		
+		if(btn.contains("Export"))
+		{
+			BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(BrowserHandle.getDriver().findElement(By.xpath(" //div[text()=' SR. NO. ']"))));
+			//Thread.sleep(5000);
+		}
+		new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+		        "return document.readyState").equals("complete"));
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.spanButton(btn)));
 		CoreFunctions.moveToElement(loginPOM.spanButton(btn));
 		CoreFunctions.click(loginPOM.spanButton(btn), btn);
