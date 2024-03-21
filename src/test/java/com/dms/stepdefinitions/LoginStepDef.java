@@ -125,6 +125,8 @@ public class LoginStepDef {
 		BrowserHandle.wait.until(ExpectedConditions.elementToBeClickable(loginPOM.spanButton(btn)));
 		CoreFunctions.moveToElement(loginPOM.spanButton(btn));
 		CoreFunctions.click(loginPOM.spanButton(btn), btn);
+		new WebDriverWait(BrowserHandle.getDriver(), Duration.ofSeconds(60)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript(
+		        "return document.readyState").equals("complete"));
 	}
 
 	@When("User clicks on {string} button on popup")
